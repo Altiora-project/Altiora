@@ -9,9 +9,3 @@
     @content;
   }
 }
-
-@mixin mobile {
-  @media (min-width: 390px) {
-    @content;
-  }
-}
