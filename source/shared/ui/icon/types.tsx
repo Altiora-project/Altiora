@@ -1,6 +1,7 @@
 import { FC, SVGProps } from 'react'
 
 export type typeIconName =
+  | 'lineLogo'
   | 'envelop'
   | 'chevronRight'
   | 'chevronLeft'
@@ -10,6 +11,15 @@ export type typeIconName =
   | 'arrowUp'
   | 'close'
   | 'phone'
+  | 'wrench'
+  | 'chartSpline'
+  | 'star'
+  | 'megaphone'
+  | 'support'
+  | 'mouseClick'
+  | 'chartPie'
+  | 'handshake'
+  | 'trendingUp'
 
 export type typeIcon = {
   size?: undefined | 'auto' | 'sm' | 'md' | 'lg'
