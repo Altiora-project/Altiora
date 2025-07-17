@@ -20,6 +20,7 @@ export type typeIconName =
   | 'chartPie'
   | 'handshake'
   | 'trendingUp'
+  | 'checkbox'
 
 export type typeIcon = {
   size?: undefined | 'auto' | 'sm' | 'md' | 'lg'

@@ -18,6 +18,7 @@ import { MouseClickIcon } from './ui/icons/mouse-click'
 import { ChartPieIcon } from './ui/icons/chart-pie'
 import { HandshakeIcon } from './ui/icons/handshake'
 import { TrendingUpIcon } from './ui/icons/trending-up'
+import { CheckboxIcon } from './ui/icons/checkbox-icon'
 
 export const ICONS: typeIconsType = {
   lineLogo: LineLogoIcon,
@@ -38,5 +39,6 @@ export const ICONS: typeIconsType = {
   mouseClick: MouseClickIcon,
   chartPie: ChartPieIcon,
   handshake: HandshakeIcon,
-  trendingUp: TrendingUpIcon
+  trendingUp: TrendingUpIcon,
+  checkbox: CheckboxIcon
 }
