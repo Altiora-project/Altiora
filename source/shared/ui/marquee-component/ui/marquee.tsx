@@ -1,14 +1,26 @@
 'use client'
 
-import { FC } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { typeMarqueeProps } from '../types'
 import Marquee from 'react-fast-marquee'
 import classes from '../styles/styles.module.scss'
 
 export const MarqueeComponent: FC<typeMarqueeProps> = ({ phrases }) => {
+  const [width, setWidth] = useState(0)
+
+  useEffect(() => {
+    setWidth(document.documentElement.clientWidth)
+
+    const handleResize = () => {
+      setWidth(document.documentElement.clientWidth)
+    }
+
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
   let icon
-  console.log(document.documentElement.clientWidth)
-  if (document.documentElement.clientWidth <= 744) {
+  if (width <= 744) {
     // TODO: исправить на <Icon size='sm' className={classes.logoIcon}>
     icon = (
       <div className={classes.logoIconWrapper}>
