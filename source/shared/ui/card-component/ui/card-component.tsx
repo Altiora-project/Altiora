@@ -4,7 +4,14 @@ import { CardComponentProps } from '../types'
 import clsx from 'clsx'
 import Link from 'next/link'
 
-export const CardComponent: FC<CardComponentProps> = ({ radius, background, tag, href, children, ...otherProps }) => {
+export const CardComponent: FC<CardComponentProps> = ({
+  radius,
+  background,
+  tag,
+  href = '',
+  children,
+  ...otherProps
+}) => {
   if (tag === 'link') {
     return (
       <Link
