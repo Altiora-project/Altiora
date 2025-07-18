@@ -1,15 +1,14 @@
 .container {
-    background-color: var(--color-background1);
-    width: 160px;
-    height: 38px;
-    border-radius: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background-color: var(--color-background1);
+  width: 160px;
+  height: 38px;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-@include bp.desktop {
+  @include bp.desktop {
     width: 275px;
     height: 64px;
-}
-
+  }
 }
