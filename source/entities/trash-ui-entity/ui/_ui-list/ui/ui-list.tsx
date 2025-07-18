@@ -1,5 +1,6 @@
 import { UIButton } from '../../button'
 import { UIMainBlock } from '../../main-block'
+import { UIPartnerBage } from '../../partner-bage'
 import classes from '../styles/styles.module.scss'
 
 export const UIList: React.FC = () => {
@@ -8,6 +9,8 @@ export const UIList: React.FC = () => {
       <UIMainBlock />
 
       <UIButton />
+
+      <UIPartnerBage />
 
       {/* Добавляем компоненты ниже */}
     </div>
