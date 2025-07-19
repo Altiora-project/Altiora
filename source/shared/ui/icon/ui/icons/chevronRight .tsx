@@ -12,7 +12,7 @@ export const ChevronRightIcon: React.FC<typeIconProps> = ({ size, ...otherProps 
         xmlns="http://www.w3.org/2000/svg"
         {...otherProps}
       >
-        <path d="M0 1.3 5.765 8 0 14.7 1.118 16 8 8 1.118 0z" fill="#111" />
+        <path d="M0 1.3 5.765 8 0 14.7 1.118 16 8 8 1.118 0z" fill="currentColor" />
       </svg>
     )
   if (size === 'md')
@@ -26,7 +26,7 @@ export const ChevronRightIcon: React.FC<typeIconProps> = ({ size, ...otherProps 
         xmlns="http://www.w3.org/2000/svg"
         {...otherProps}
       >
-        <path d="M2 3.949 10.647 14 2 24.051 3.677 26 14 14 3.677 2z" fill="#111" strokeWidth="2" />
+        <path d="M2 3.949 10.647 14 2 24.051 3.677 26 14 14 3.677 2z" fill="currentColor" strokeWidth="2" />
       </svg>
     )
 
@@ -41,14 +41,14 @@ export const ChevronRightIcon: React.FC<typeIconProps> = ({ size, ...otherProps 
         xmlns="http://www.w3.org/2000/svg"
         {...otherProps}
       >
-        <path d="M2 5.573 17.853 24 2 42.427 5.074 46 24 24 5.074 2z" fill="#111" strokeWidth="2" />
+        <path d="M2 5.573 17.853 24 2 42.427 5.074 46 24 24 5.074 2z" fill="currentColor" strokeWidth="2" />
       </svg>
     )
 
   if (size === 'auto')
     return (
       <svg fill="none" viewBox="0 0 26 48" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" {...otherProps}>
-        <path d="M2 5.573 17.853 24 2 42.427 5.074 46 24 24 5.074 2z" fill="#111" strokeWidth="2" />
+        <path d="M2 5.573 17.853 24 2 42.427 5.074 46 24 24 5.074 2z" fill="currentColor" strokeWidth="2" />
       </svg>
     )
 }

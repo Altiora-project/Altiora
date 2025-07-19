@@ -6,6 +6,8 @@ import { UIContainer } from '../ui-container'
 
 import { Icon } from '@shared/ui/icon'
 
+import classes from './style.module.scss'
+
 export const UIIcons: React.FC = () => {
   return (
     <UIContainer
@@ -25,47 +27,125 @@ export const UIIcons: React.FC = () => {
       ]}
       components={
         <>
-          <div>
-            <div style={{ color: '#111111' }}>
-              <Icon size="sm" icon="close" />
+          <div className={classes.container}>
+            <div>
+              <div style={{ color: '#50F195' }}>
+                <Icon size="sm" icon="close" />
+              </div>
+              size="sm"
+              <div style={{ color: '#50F195' }}>
+                <Icon size="md" icon="phone" />
+              </div>
+              size="md"
+              <div style={{ color: '#50F195' }}>
+                <Icon size="lg" icon="phone" />
+              </div>
+              size="lg"
+              <div style={{ width: '100px', color: '#50F195' }}>
+                <Icon size="auto" icon="phone" />
+              </div>
+              size="auto"
             </div>
-            size="sm"
-            <div style={{ color: '#50F195' }}>
-              <Icon size="md" icon="phone" />
+          </div>
+          <div className={classes.container}>
+            <div className={classes.iconsWrapper}>
+              <div className={classes.icon}>
+                <Icon size="lg" icon="lineLogo" /> <span style={{ color: '#111111' }}>- lineLogo</span>
+              </div>
+              <div className={classes.icon}>
+                <Icon size="md" icon="chevronRight" />
+                <span style={{ color: '#111111' }}> -chevronRight</span>
+              </div>
+              <div className={classes.icon}>
+                <Icon size="md" icon="chevronLeft" />
+                <span style={{ color: '#111111' }}> - chevronLeft</span>
+              </div>
+              <div className={classes.icon}>
+                <Icon size="md" icon="chevronDown" />
+                <span style={{ color: '#111111' }}> - chevronDown</span>
+              </div>
+              <div className={classes.icon}>
+                <Icon size="md" icon="chevronUp" />
+                <span style={{ color: '#111111' }}> - chevronUp</span>
+              </div>
+              <div className={classes.icon}>
+                <Icon size="lg" icon="button" />
+                <span style={{ color: '#111111' }}> - button</span>
+              </div>
+              <div className={classes.icon}>
+                <Icon size="lg" icon="arrowLeft" />
+                <span style={{ color: '#111111' }}> - arrowLeft</span>
+              </div>
+              <div className={classes.icon}>
+                <Icon size="lg" icon="arrowRight" />
+                <span style={{ color: '#111111' }}> - arrowRight</span>
+              </div>
+              <div className={classes.icon}>
+                <Icon size="lg" icon="arrowUp" />
+                <span style={{ color: '#111111' }}> - arrowUp</span>
+              </div>
+              <div className={classes.icon}>
+                <Icon size="sm" icon="close" />
+                <span style={{ color: '#111111' }}> - close</span>
+              </div>
             </div>
-            size="md"
-            <div style={{ color: '#50F195' }}>
-              <Icon size="lg" icon="phone" />
-            </div>{' '}
-            size="lg"
-            <div style={{ width: '100px', color: '#50F195' }}>
-              <Icon size="auto" icon="phone" />
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', width: '200px' }}>
+              <div className={classes.icon}>
+                <Icon size="md" icon="envelop" />
+                <span style={{ color: '#111111' }}> - envelop</span>
+              </div>
+              <div className={classes.icon}>
+                <Icon size="lg" icon="phone" />
+                <span style={{ color: '#111111' }}>- phone</span>
+              </div>
+              <div className={classes.icon}>
+                <Icon size="lg" icon="wrench" />
+                <span style={{ color: '#111111' }}> - wrench</span>
+              </div>
+              <div className={classes.icon}>
+                <Icon size="lg" icon="chartSpline" />
+                <span style={{ color: '#111111' }}> - chartSpline</span>
+              </div>
+              <div className={classes.icon}>
+                <Icon size="lg" icon="star" />
+                <span style={{ color: '#111111' }}> - star</span>
+              </div>
+              <div className={classes.icon}>
+                <Icon size="lg" icon="megaphone" />
+                <span style={{ color: '#111111' }}> - megaphone</span>
+              </div>
             </div>
-            size="auto"
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', width: '200px' }}>
+              <div className={classes.icon}>
+                <Icon size="lg" icon="support" />
+                <span style={{ color: '#111111' }}> - support</span>
+              </div>
+              <div className={classes.icon}>
+                <Icon size="lg" icon="mouseClick" />
+                <span style={{ color: '#111111' }}> - mouseClick</span>
+              </div>
+              <div className={classes.icon}>
+                <Icon size="lg" icon="chartPie" />
+                <span style={{ color: '#111111' }}> - chartPie</span>
+              </div>
+              <div className={classes.icon}>
+                <Icon size="lg" icon="handshake" />
+                <span style={{ color: '#111111' }}> - handshake</span>
+              </div>
+              <div className={classes.icon}>
+                <Icon size="lg" icon="trendingUp" />
+                <span style={{ color: '#111111' }}> - trendingUp</span>
+              </div>
+              <div className={classes.icon}>
+                <Icon size="lg" icon="checkbox" />
+                <span style={{ color: '#111111' }}> - checkbox</span>
+              </div>
+            </div>
           </div>
         </>
       }
     />
   )
 }
-
-// | 'lineLogo'
-//   | 'envelop'
-//   | 'chevronRight'
-//   | 'chevronLeft'
-//   | 'button'
-//   | 'arrowLeft'
-//   | 'arrowRight'
-//   | 'arrowUp'
-//   | 'close'
-//   | 'phone'
-//   | 'wrench'
-//   | 'chartSpline'
-//   | 'star'
-//   | 'megaphone'
-//   | 'support'
-//   | 'mouseClick'
-//   | 'chartPie'
-//   | 'handshake'
-//   | 'trendingUp'
-//   | 'checkbox'

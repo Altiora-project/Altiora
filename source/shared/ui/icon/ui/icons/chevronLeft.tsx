@@ -29,7 +29,7 @@ export const chevronLeftIcon: React.FC<typeIconProps> = ({ size, ...otherProps }
         transform="scale(-1 1)"
         {...otherProps}
       >
-        <path d="M2 3.949 10.647 14 2 24.051 3.677 26 14 14 3.677 2z" fill="#111" strokeWidth="2" />
+        <path d="M2 3.949 10.647 14 2 24.051 3.677 26 14 14 3.677 2z" fill="currentColor" strokeWidth="2" />
       </svg>
     )
 
@@ -43,7 +43,7 @@ export const chevronLeftIcon: React.FC<typeIconProps> = ({ size, ...otherProps }
         transform="scale(-1 1)"
         {...otherProps}
       >
-        <path d="M2 3.949 10.647 14 2 24.051 3.677 26 14 14 3.677 2z" fill="#111" strokeWidth="2" />
+        <path d="M2 3.949 10.647 14 2 24.051 3.677 26 14 14 3.677 2z" fill="currentColor" strokeWidth="2" />
       </svg>
     )
 
@@ -59,7 +59,7 @@ export const chevronLeftIcon: React.FC<typeIconProps> = ({ size, ...otherProps }
         transform="scale(-1 1)"
         {...otherProps}
       >
-        <path d="M2 5.573 17.853 24 2 42.427 5.074 46 24 24 5.074 2z" fill="#111" strokeWidth="2" />
+        <path d="M2 5.573 17.853 24 2 42.427 5.074 46 24 24 5.074 2z" fill="currentColor" strokeWidth="2" />
       </svg>
     )
 }

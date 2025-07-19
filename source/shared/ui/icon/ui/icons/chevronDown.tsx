@@ -10,9 +10,10 @@ export const chevronDownIcon: React.FC<typeIconProps> = ({ size, ...otherProps }
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         transform="rotate(90)"
+        stroke="currentColor"
         {...otherProps}
       >
-        <path d="M0 1.3 5.765 8 0 14.7 1.118 16 8 8 1.118 0z" fill="#111" />
+        <path d="M0 1.3 5.765 8 0 14.7 1.118 16 8 8 1.118 0z" />
       </svg>
     )
 
@@ -25,16 +26,24 @@ export const chevronDownIcon: React.FC<typeIconProps> = ({ size, ...otherProps }
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         transform="rotate(90)"
+        stroke="currentColor"
         {...otherProps}
       >
-        <path d="M2 3.949 10.647 14 2 24.051 3.677 26 14 14 3.677 2z" fill="#111" stroke="#111" stroke-width="2" />
+        <path d="M2 3.949 10.647 14 2 24.051 3.677 26 14 14 3.677 2z" fill="currentColor" strokeWidth="2" />
       </svg>
     )
 
   if (size == 'auto')
     return (
-      <svg viewBox="0 0 26 48" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(90)" {...otherProps}>
-        <path d="M2 5.573 17.853 24 2 42.427 5.074 46 24 24 5.074 2z" fill="#111" stroke="#111" stroke-width="2" />
+      <svg
+        viewBox="0 0 26 48"
+        fill="none"
+        stroke="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+        transform="rotate(90)"
+        {...otherProps}
+      >
+        <path d="M2 5.573 17.853 24 2 42.427 5.074 46 24 24 5.074 2z" fill="currentColor" strokeWidth="2" />
       </svg>
     )
 
@@ -45,11 +54,12 @@ export const chevronDownIcon: React.FC<typeIconProps> = ({ size, ...otherProps }
         height="48"
         viewBox="0 0 26 48"
         fill="none"
+        stroke="currentColor"
         xmlns="http://www.w3.org/2000/svg"
         transform="rotate(90)"
         {...otherProps}
       >
-        <path d="M2 5.573 17.853 24 2 42.427 5.074 46 24 24 5.074 2z" fill="#111" stroke="#111" stroke-width="2" />
+        <path d="M2 5.573 17.853 24 2 42.427 5.074 46 24 24 5.074 2z" fill="#currentColor" stroke-width="2" />
       </svg>
     )
 }
