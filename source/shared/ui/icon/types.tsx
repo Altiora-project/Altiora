@@ -5,6 +5,8 @@ export type typeIconName =
   | 'envelop'
   | 'chevronRight'
   | 'chevronLeft'
+  | 'chevronDown'
+  | 'chevronUp'
   | 'button'
   | 'arrowLeft'
   | 'arrowRight'

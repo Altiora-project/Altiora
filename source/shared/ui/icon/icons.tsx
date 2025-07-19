@@ -19,12 +19,16 @@ import { ChartPieIcon } from './ui/icons/chart-pie'
 import { HandshakeIcon } from './ui/icons/handshake'
 import { TrendingUpIcon } from './ui/icons/trending-up'
 import { CheckboxIcon } from './ui/icons/checkbox-icon'
+import { chevronDownIcon } from './ui/icons/chevronDown'
+import { chevronUpIcon } from './ui/icons/chevronUp'
 
 export const ICONS: typeIconsType = {
   lineLogo: LineLogoIcon,
   envelop: EnvelopIcon,
   chevronRight: ChevronRightIcon,
   chevronLeft: chevronLeftIcon,
+  chevronDown: chevronDownIcon,
+  chevronUp: chevronUpIcon,
   button: ButtonIcon,
   arrowLeft: ArrowLeftIcon,
   arrowRight: ArrowRightIcon,
