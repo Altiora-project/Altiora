@@ -43,7 +43,7 @@ export const MegaphoneIcon: React.FC<typeIconProps> = ({ size, ...otherProps }) 
     )
   }
 
-  if (size === 'lg' || size === undefined)
+  if (size === 'lg')
     return (
       <svg
         width="50"
@@ -65,7 +65,7 @@ export const MegaphoneIcon: React.FC<typeIconProps> = ({ size, ...otherProps }) 
 
   if (size === 'auto')
     return (
-      <svg fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" {...otherProps}>
+      <svg fill="none" viewBox="0 0 50 38" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" {...otherProps}>
         <path
           d="M24 29.898a7.7 7.7 0 0 1-1.317 2.66 7.6 7.6 0 0 1-2.22 1.947 7.42 7.42 0 0 1-5.712.72 7.5 7.5 0 0 1-2.623-1.336 7.6 7.6 0 0 1-1.919-2.254 7.74 7.74 0 0 1-.71-5.797M2.501 15.185 47.5 2.5v30.442l-45-10.147z"
           strokeWidth="4"

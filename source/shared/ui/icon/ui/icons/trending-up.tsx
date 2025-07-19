@@ -42,7 +42,7 @@ export const TrendingUpIcon: React.FC<typeIconProps> = ({ size, ...otherProps })
     )
   }
 
-  if (size === 'lg' || size === undefined)
+  if (size === 'lg')
     return (
       <svg
         width="45"
@@ -64,7 +64,7 @@ export const TrendingUpIcon: React.FC<typeIconProps> = ({ size, ...otherProps })
 
   if (size === 'auto')
     return (
-      <svg fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" {...otherProps}>
+      <svg fill="none" viewBox="0 0 45 25" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" {...otherProps}>
         <path
           d="M30.673 2.347h11.878m0 0v11.878m0-11.878L25.724 19.174l-9.898-9.898L2.96 22.143"
           strokeWidth="4"

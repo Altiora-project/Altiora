@@ -47,7 +47,7 @@ export const ChevronRightIcon: React.FC<typeIconProps> = ({ size, ...otherProps 
 
   if (size === 'auto')
     return (
-      <svg fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" {...otherProps}>
+      <svg fill="none" viewBox="0 0 26 48" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" {...otherProps}>
         <path d="M2 5.573 17.853 24 2 42.427 5.074 46 24 24 5.074 2z" fill="#111" strokeWidth="2" />
       </svg>
     )

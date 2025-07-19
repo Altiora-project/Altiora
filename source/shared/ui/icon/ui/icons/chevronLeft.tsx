@@ -36,7 +36,7 @@ export const chevronLeftIcon: React.FC<typeIconProps> = ({ size, ...otherProps }
   if (size == 'auto')
     return (
       <svg
-        viewBox="0 0 16 28"
+        viewBox="0 0 26 48"
         fill="none"
         stroke="currentColor"
         xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +47,7 @@ export const chevronLeftIcon: React.FC<typeIconProps> = ({ size, ...otherProps }
       </svg>
     )
 
-  if (size == 'lg' || undefined)
+  if (size == 'lg')
     return (
       <svg
         width="26"

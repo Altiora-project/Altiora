@@ -12,7 +12,7 @@ export const CheckboxIcon: React.FC<typeIconProps> = ({ size, ...otherProps }) =
     )
   }
 
-  if (size === 'lg' || size === undefined)
+  if (size === 'lg')
     return (
       <svg
         width="32"

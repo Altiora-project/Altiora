@@ -21,7 +21,7 @@ export const EnvelopIcon: React.FC<typeIconProps> = ({ size, ...otherProps }) =>
     )
   }
 
-  if (size === 'lg' || size === undefined)
+  if (size === 'lg')
     return (
       <svg
         width="61"
@@ -42,7 +42,7 @@ export const EnvelopIcon: React.FC<typeIconProps> = ({ size, ...otherProps }) =>
 
   if (size === 'auto')
     return (
-      <svg fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" {...otherProps}>
+      <svg fill="none" viewBox="0 0 61 44" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" {...otherProps}>
         <path
           d="M8.318 1.5h44.364c3.777 0 6.818 3.034 6.818 6.75v27.5c0 3.716-3.041 6.75-6.818 6.75H8.318c-3.777 0-6.818-3.034-6.818-6.75V8.25c0-3.716 3.041-6.75 6.818-6.75ZM54.53 7.533l-19.8 15.504a6.87 6.87 0 0 1-8.46 0L6.47 7.533 4.046 5.635V35.75c0 2.359 1.924 4.25 4.272 4.25h44.364c2.348 0 4.272-1.891 4.272-4.25V5.635zM9.465 6.681l18.392 14.401a4.29 4.29 0 0 0 5.286 0L51.535 6.681 54.96 4H6.041z"
           fill="#FEFEFE"

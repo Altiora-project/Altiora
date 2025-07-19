@@ -43,7 +43,7 @@ export const ChartPieIcon: React.FC<typeIconProps> = ({ size, ...otherProps }) =
     )
   }
 
-  if (size === 'lg' || size === undefined)
+  if (size === 'lg')
     return (
       <svg
         width="45"
@@ -65,7 +65,7 @@ export const ChartPieIcon: React.FC<typeIconProps> = ({ size, ...otherProps }) =
 
   if (size === 'auto')
     return (
-      <svg fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" {...otherProps}>
+      <svg fill="none" viewBox="0 0 45 45" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" {...otherProps}>
         <path
           d="M40.988 29.925a19.795 19.795 0 1 1-26.15-25.853m25.734 18.153c1.093 0 1.99-.889 1.88-1.976A19.796 19.796 0 0 0 24.73 2.53c-1.088-.109-1.975.788-1.975 1.88v15.837a1.98 1.98 0 0 0 1.98 1.98z"
           strokeWidth="4"

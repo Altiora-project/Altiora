@@ -43,7 +43,7 @@ export const MouseClickIcon: React.FC<typeIconProps> = ({ size, ...otherProps })
     )
   }
 
-  if (size === 'lg' || size === undefined)
+  if (size === 'lg')
     return (
       <svg
         width="42"
@@ -65,7 +65,7 @@ export const MouseClickIcon: React.FC<typeIconProps> = ({ size, ...otherProps })
 
   if (size === 'auto')
     return (
-      <svg fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" {...otherProps}>
+      <svg fill="none" viewBox="0 0 42 42" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" {...otherProps}>
         <path
           d="m24.748 6.037-3.75 3.562M8.061 13.35l-5.438-1.5m7.125 9L6.186 24.6m5.812-22.125 1.5 5.438m1.944 8.606a.934.934 0 0 1 1.225-1.225l20.625 8.438a.937.937 0 0 1-.139 1.78l-8.154 1.951a1.88 1.88 0 0 0-1.388 1.386l-1.95 8.156a.938.938 0 0 1-1.781.139z"
           strokeWidth="4"

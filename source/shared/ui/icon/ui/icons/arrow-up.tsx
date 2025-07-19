@@ -18,7 +18,7 @@ export const ArrowUpIcon: React.FC<typeIconProps> = ({ size, ...otherProps }) =>
 
   if (size === 'auto')
     return (
-      <svg fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" {...otherProps}>
+      <svg viewBox="0 0 20 19" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" {...otherProps}>
         <path d="m3 10 7-7m0 0 7 7m-7-7v14" strokeWidth="3" strokeLinecap="square" />
       </svg>
     )

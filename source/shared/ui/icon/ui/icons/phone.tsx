@@ -42,15 +42,7 @@ export const PhoneIcon: React.FC<typeIconProps> = ({ size, ...otherProps }) => {
 
   if (size === 'auto')
     return (
-      <svg
-        width="50"
-        height="50"
-        viewBox="0 0 50 50"
-        fill="none"
-        stroke="currentColor"
-        xmlns="http://www.w3.org/2000/svg"
-        {...otherProps}
-      >
+      <svg viewBox="0 0 50 50" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" {...otherProps}>
         <path
           d="M3.018 13.816c-.199 5.247 1.13 14.159 10.068 23.098 2.157 2.156 4.312 3.87 6.414 5.226M7.229 5.577c3.83-3.83 9.942-3.316 12.374 1.042l1.785 3.199c1.61 2.886.964 6.672-1.573 9.208 0 0-3.076 3.078 2.502 8.657 5.577 5.577 8.657 2.502 8.657 2.502 2.536-2.537 6.322-3.184 9.208-1.573l3.198 1.785c4.359 2.432 4.873 8.543 1.043 12.374-2.302 2.302-5.122 4.093-8.239 4.21-2.238.086-5.144-.107-8.434-1.05"
           strokeWidth="5"

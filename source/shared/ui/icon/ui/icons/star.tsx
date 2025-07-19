@@ -43,7 +43,7 @@ export const StarIcon: React.FC<typeIconProps> = ({ size, ...otherProps }) => {
     )
   }
 
-  if (size === 'lg' || size === undefined)
+  if (size === 'lg')
     return (
       <svg
         width="45"
@@ -65,7 +65,7 @@ export const StarIcon: React.FC<typeIconProps> = ({ size, ...otherProps }) => {
 
   if (size === 'auto')
     return (
-      <svg fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" {...otherProps}>
+      <svg fill="none" viewBox="0 0 45 42" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" {...otherProps}>
         <path
           d="M21.814 2.788a1.048 1.048 0 0 1 1.88 0l4.574 9.263a4.2 4.2 0 0 0 3.157 2.296l10.227 1.497a1.049 1.049 0 0 1 .582 1.79l-7.396 7.201a4.2 4.2 0 0 0-1.21 3.718l1.746 10.175a1.049 1.049 0 0 1-1.526 1.108l-9.142-4.806a4.2 4.2 0 0 0-3.905 0l-9.14 4.806a1.05 1.05 0 0 1-1.524-1.108l1.744-10.173a4.2 4.2 0 0 0-1.21-3.72l-7.396-7.2a1.049 1.049 0 0 1 .582-1.793l10.225-1.495a4.2 4.2 0 0 0 3.161-2.296z"
           strokeWidth="4"

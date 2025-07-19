@@ -43,7 +43,7 @@ export const HandshakeIcon: React.FC<typeIconProps> = ({ size, ...otherProps }) 
     )
   }
 
-  if (size === 'lg' || size === undefined)
+  if (size === 'lg')
     return (
       <svg
         width="45"
@@ -65,7 +65,7 @@ export const HandshakeIcon: React.FC<typeIconProps> = ({ size, ...otherProps }) 
 
   if (size === 'auto')
     return (
-      <svg fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" {...otherProps}>
+      <svg fill="none" viewBox="0 0 45 41" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" {...otherProps}>
         <path
           d="m20.775 30.084 3.96 3.959a4.2 4.2 0 0 0 5.938-5.939m-3.959-3.959 4.949 4.949a4.2 4.2 0 1 0 5.939-5.939l-7.681-7.68a5.94 5.94 0 0 0-8.393 0l-1.743 1.742a4.199 4.199 0 1 1-5.938-5.94l5.562-5.562a11.46 11.46 0 0 1 13.976-1.722l.93.554a3.96 3.96 0 0 0 2.812.495l3.444-.693m0-1.98 1.98 21.776h-3.96M4.94 2.37 2.96 24.145l12.867 12.867a4.2 4.2 0 0 0 5.939-5.938M4.939 4.349h15.836"
           strokeWidth="4"

@@ -43,7 +43,7 @@ export const WrenchIcon: React.FC<typeIconProps> = ({ size, ...otherProps }) => 
     )
   }
 
-  if (size === 'lg' || size === undefined)
+  if (size === 'lg')
     return (
       <svg
         width="52"
@@ -65,7 +65,7 @@ export const WrenchIcon: React.FC<typeIconProps> = ({ size, ...otherProps }) => 
 
   if (size === 'auto')
     return (
-      <svg fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" {...otherProps}>
+      <svg fill="none" viewBox="0 0 52 52" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" {...otherProps}>
         <path
           d="M31.253 13.003a2.5 2.5 0 0 0 0 3.5l4 4a2.5 2.5 0 0 0 3.5 0l9.425-9.425a15 15 0 0 1-19.85 19.85L11.053 48.203a5.304 5.304 0 0 1-7.5-7.5l17.275-17.275a15 15 0 0 1 19.85-19.85z"
           strokeWidth="4"

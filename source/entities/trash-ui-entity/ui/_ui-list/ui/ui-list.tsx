@@ -1,4 +1,5 @@
 import { UIButton } from '../../button'
+import { UIIcons } from '../../icons'
 import { UIMainBlock } from '../../main-block'
 import classes from '../styles/styles.module.scss'
 
@@ -8,6 +9,8 @@ export const UIList: React.FC = () => {
       <UIMainBlock />
 
       <UIButton />
+
+      <UIIcons />
 
       {/* Добавляем компоненты ниже */}
     </div>

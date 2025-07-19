@@ -43,7 +43,7 @@ export const SupportIcon: React.FC<typeIconProps> = ({ size, ...otherProps }) =>
     )
   }
 
-  if (size === 'lg' || size === undefined)
+  if (size === 'lg')
     return (
       <svg
         width="50"
@@ -65,7 +65,7 @@ export const SupportIcon: React.FC<typeIconProps> = ({ size, ...otherProps }) =>
 
   if (size === 'auto')
     return (
-      <svg fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" {...otherProps}>
+      <svg fill="none" viewBox="0 0 50 46" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" {...otherProps}>
         <path
           d="M25 35.014V44m5.186-30.26 2.077-.858m0-5.158-2.077-.86m5.731-2.788L35.055 2m.862 14.53-.862 2.074m6.028-14.528L41.945 2m-.002 16.606-.86-2.076m3.654-8.806 2.079-.86m-2.079 6.018 2.079.86m.684 12.286v4.493a4.5 4.5 0 0 1-1.318 3.177A4.5 4.5 0 0 1 43 35.014H7a4.5 4.5 0 0 1-3.182-1.316A4.5 4.5 0 0 1 2.5 30.521V8.056A4.5 4.5 0 0 1 3.818 4.88 4.5 4.5 0 0 1 7 3.564h15.75M16 44h18m11.25-33.697c0 3.722-3.022 6.74-6.75 6.74s-6.75-3.018-6.75-6.74 3.022-6.74 6.75-6.74 6.75 3.018 6.75 6.74"
           strokeWidth="4"

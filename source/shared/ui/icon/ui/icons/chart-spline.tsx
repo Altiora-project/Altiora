@@ -43,7 +43,7 @@ export const ChartSplineIcon: React.FC<typeIconProps> = ({ size, ...otherProps }
     )
   }
 
-  if (size === 'lg' || size === undefined)
+  if (size === 'lg')
     return (
       <svg
         width="41"
@@ -65,7 +65,7 @@ export const ChartSplineIcon: React.FC<typeIconProps> = ({ size, ...otherProps }
 
   if (size === 'auto')
     return (
-      <svg fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" {...otherProps}>
+      <svg fill="none" viewBox="0 0 41 40" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" {...otherProps}>
         <path
           d="M2.94 2.184v31.673a3.96 3.96 0 0 0 3.959 3.96h31.673m-27.714-9.898c.99-3.96 2.97-13.857 7.918-13.857 3.96 0 3.96 5.938 7.919 5.938 4.948 0 8.908-9.898 9.897-13.857"
           strokeWidth="4"

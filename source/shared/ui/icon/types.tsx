@@ -23,11 +23,11 @@ export type typeIconName =
   | 'checkbox'
 
 export type typeIcon = {
-  size?: undefined | 'auto' | 'sm' | 'md' | 'lg'
+  size?: 'auto' | 'sm' | 'md' | 'lg'
 }
 export interface IconProps extends SVGProps<SVGSVGElement> {
   icon: typeIconName
-  size?: undefined | 'auto' | 'sm' | 'md' | 'lg'
+  size?: 'auto' | 'sm' | 'md' | 'lg'
 }
 
 export type typeIconsType = {
