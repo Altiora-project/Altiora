@@ -6,7 +6,7 @@ export const HeroBlockImage: FC<HTMLAttributes<HTMLDivElement>> = ({ className, 
   return (
     <div className={className} {...props}>
       <Image
-        src={'/image/hero-logo-dt1.png'}
+        src={'/image/hero-logo-dt.png'}
         width={941}
         height={660}
         style={{ maxWidth: '100%', height: 'auto' }}
