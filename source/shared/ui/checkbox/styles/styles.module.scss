@@ -1,0 +1,42 @@
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: transparent;
+
+  // Unchecked state
+  border-color: var(--color-white);
+  color: transparent;
+
+  // Checked state
+  &[data-state='checked'] {
+    border-color: var(--color-accent-primary);
+    color: var(--color-accent-primary);
+  }
+
+  // Size variants
+  &.size-md {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+
+    svg {
+      width: 30px;
+      height: 28px;
+    }
+  }
+
+  &.size-sm {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+
+    svg {
+      width: 18px;
+      height: 16px;
+    }
+  }
+}

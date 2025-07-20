@@ -3,8 +3,9 @@
   --color-background1: #2f2f2f4d;
   --color-background2: #353735;
 
-  --color-foreground: #111111; //текст
+  --color-foreground: #ffffff; //текст
   --color-foreground-light1: #cccccc;
+  --color-white-light: #ffffff;
   --color-white: #fefefe;
   --color-grey: #f1f1f1;
   --color-grey1: #cccccc;
@@ -21,18 +22,23 @@ body {
   max-width: 100dvw;
   overflow-x: hidden;
   min-height: 100dvh;
+  background-color: var(--color-background);
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: var(--color-foreground-light1);
+  background: var(--color-background);
   font-family: var(--font-main), serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  margin: 0 auto;
+
+  @include bp.desktop {
+    max-width: 1920px;
+  }
 
   main {
     width: 100%;
@@ -49,14 +55,90 @@ body {
     transition: text-decoration-color 0.2s ease-in-out;
 
     &:hover {
-      text-decoration-color: var(--foreground);
+      text-decoration-color: var(--color-accent-primary);
     }
+  }
+}
+
+h1 {
+  color: var(--color-white-light);
+  font-family: var(--font-secondary);
+  font-weight: 700;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  font-size: 28px;
+  vertical-align: bottom;
+  text-align: left;
+  line-height: 130%;
+
+  span {
+    color: var(--color-accent-primary);
+  }
+
+  @include bp.tablet {
+    font-size: 30px;
+    line-height: 100%;
+  }
+
+  @include bp.desktop {
+    font-size: 64px;
+    line-height: 130%;
+    margin-block-start: 48px;
+  }
+}
+
+h2 {
+  color: var(--color-grey);
+  font-family: var(--font-secondary);
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: lowercase;
+  font-size: 16px;
+  vertical-align: bottom;
+  text-align: left;
+
+  @include bp.tablet {
+    font-size: 32px;
+  }
+
+  @include bp.desktop {
+    font-size: 70px;
+    margin-block-start: 10px;
+    margin-block-end: 10px;
+  }
+}
+
+h3 {
+  color: var(--color-accent-primary);
+  font-family: var(--font-main);
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 0%;
+  font-size: 14px;
+  text-align: left;
+
+  @include bp.tablet {
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+
+  @include bp.desktop {
+    font-size: 28px;
   }
 }
 
 .container {
   margin: 0 1rem;
   width: 100%;
+
+  @include bp.tablet {
+    margin: 0 2rem;
+  }
+
+  @include bp.desktop {
+    margin: 0 3.75rem;
+  }
 }
 
 * {
