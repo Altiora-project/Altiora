@@ -3,10 +3,9 @@
 import React from 'react'
 
 import { UIContainer } from '../ui-container'
+import classes from './style.module.scss'
 
 import { Icon } from '@shared/ui/icon'
-
-import classes from './style.module.scss'
 
 export const UIIcons: React.FC = () => {
   return (
@@ -36,7 +35,7 @@ export const UIIcons: React.FC = () => {
               <div style={{ color: '#50F195' }}>
                 <Icon size="md" icon="phone" />
               </div>
-              size="md"
+              <span>size="md"</span>
               <div style={{ color: '#50F195' }}>
                 <Icon size="lg" icon="phone" />
               </div>
