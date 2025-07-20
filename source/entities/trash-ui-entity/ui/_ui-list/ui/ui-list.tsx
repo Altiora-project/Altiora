@@ -13,6 +13,7 @@ export const UIList: React.FC = () => {
       <UIButton />
 
       <UIMarquee />
+
       <UIIcons />
 
       {/* Добавляем компоненты ниже */}
