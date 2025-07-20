@@ -1,5 +1,5 @@
 import { UIButton } from '../../button'
-import { UICardComponent } from '../../card-componet/card-component'
+import { UICardComponent } from '../../card-component/card-component'
 import { UIIcons } from '../../icons'
 import { UIMainBlock } from '../../main-block'
 import { UICheckbox } from '../../checkbox'
@@ -13,6 +13,7 @@ export const UIList: React.FC = () => {
       <UIButton />
 
       <UICardComponent />
+
       <UIIcons />
 
       {/* Добавляем компоненты ниже */}
