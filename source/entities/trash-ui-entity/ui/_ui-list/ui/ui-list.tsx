@@ -1,4 +1,5 @@
 import { UIButton } from '../../button'
+import { UICardComponent } from '../../card-component/card-component'
 import { UIIcons } from '../../icons'
 import { UIMainBlock } from '../../main-block'
 import { UIMarquee } from '../../marquee'
@@ -13,6 +14,7 @@ export const UIList: React.FC = () => {
       <UIButton />
 
       <UIMarquee />
+      <UICardComponent />
 
       <UIIcons />
 
