@@ -3,7 +3,7 @@
   --color-background1: #2f2f2f4d;
   --color-background2: #353735;
 
-  --color-foreground: #111111; //текст
+  --color-foreground: #ffffff; //текст
   --color-foreground-light1: #cccccc;
   --color-white-light: #ffffff;
   --color-white: #fefefe;
@@ -22,18 +22,23 @@ body {
   max-width: 100dvw;
   overflow-x: hidden;
   min-height: 100dvh;
+  background-color: var(--color-background);
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: var(--color-foreground-light1);
+  background: var(--color-background);
   font-family: var(--font-main), serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  margin: 0 auto;
+
+  @include bp.desktop {
+    max-width: 1920px;
+  }
 
   main {
     width: 100%;
@@ -50,7 +55,7 @@ body {
     transition: text-decoration-color 0.2s ease-in-out;
 
     &:hover {
-      text-decoration-color: var(--foreground);
+      text-decoration-color: var(--color-accent-primary);
     }
   }
 }
@@ -67,7 +72,7 @@ h1 {
   line-height: 130%;
 
   span {
-    color: --color-accent-primary;
+    color: var(--color-accent-primary);
   }
 
   @include bp.tablet {
@@ -126,6 +131,14 @@ h3 {
 .container {
   margin: 0 1rem;
   width: 100%;
+
+  @include bp.tablet {
+    margin: 0 2rem;
+  }
+
+  @include bp.desktop {
+    margin: 0 3.75rem;
+  }
 }
 
 * {
