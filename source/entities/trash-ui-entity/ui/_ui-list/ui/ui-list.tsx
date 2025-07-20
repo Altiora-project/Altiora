@@ -4,20 +4,18 @@ import { UIIcons } from '../../icons'
 import { UIMainBlock } from '../../main-block'
 import { UICheckbox } from '../../checkbox'
 import classes from '../styles/styles.module.scss'
+import { UIFormSubmitModal } from '../../form-submit-modal'
 
 export const UIList: React.FC = () => {
   return (
     <div className={classes.container}>
       <UIMainBlock />
-
       <UIButton />
-
       <UICardComponent />
-
       <UIIcons />
-
-      {/* Добавляем компоненты ниже */}
       <UICheckbox />
+      <UIFormSubmitModal />
+      {/* Добавляем компоненты ниже */}
     </div>
   )
 }
