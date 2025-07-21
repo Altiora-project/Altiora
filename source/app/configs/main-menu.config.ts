@@ -4,19 +4,19 @@ import type { typeMainMenuItem } from '@shared/ui/main-menu/types/types'
 
 export const mainMenu: typeMainMenuItem[] = [
   {
-    title: 'Home',
-    rout: routes.mainPage
+    label: 'Home',
+    url: routes.mainPage
   },
   {
-    title: 'UI',
-    rout: routes.ui
+    label: 'UI',
+    url: routes.ui
   },
   {
-    title: 'Posts',
-    rout: routes.postList
+    label: 'Posts',
+    url: routes.postList
   },
   {
-    title: 'Complex',
-    rout: createRoute(routes.complexRout, { id: '1', value: 'value' })
+    label: 'Complex',
+    url: createRoute(routes.complexRout, { id: '1', value: 'value' })
   }
 ]
