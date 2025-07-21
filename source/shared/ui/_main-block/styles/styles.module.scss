@@ -1,6 +1,6 @@
 @use 'sass:math';
 
-$bg-color: oklch(0 0 0 / 0.2);
+$bg-color: oklch(255 0 0 / 0.2);
 $radius: 1rem;
 $big-radius: math.div($radius, 2) * 3;
 
