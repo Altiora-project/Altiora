@@ -8,10 +8,9 @@ export const UIList: React.FC = () => {
     <div className={classes.container}>
       <UIMainBlock />
 
-      <UIButton />
-
       {/* Добавляем компоненты ниже */}
       <UICheckbox />
+      <UIButton />
     </div>
   )
 }
