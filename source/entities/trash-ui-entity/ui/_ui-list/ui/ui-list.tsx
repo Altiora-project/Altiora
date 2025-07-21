@@ -21,14 +21,12 @@ export const UIList: React.FC = () => {
 
       {/* Добавляем компоненты ниже */}
       <UICheckbox />
-      <UIButton />
-      <UIButton />
-      <UIInput />
       <UIMarquee />
       <UICardComponent />
       <UIIcons />
       <UISliderCard />
-      {/* Добавляем компоненты ниже */}
+      <UIInput />
+      <UIButton />
       <UICheckbox />
       <MainMenuMobileTest />
       <UILogo />
