@@ -1,6 +1,8 @@
-$bg-color: oklch(0 0 0 / 0.2);
+@use 'sass:math';
+
+$bg-color: oklch(255 0 0 / 0.2);
 $radius: 1rem;
-$big-radius: $radius / 2 * 3;
+$big-radius: math.div($radius, 2) * 3;
 
 .container {
   display: block;
