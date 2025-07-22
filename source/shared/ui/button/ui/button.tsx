@@ -1,6 +1,6 @@
 import classes from '../styles/styles.module.scss'
-import { typeButtonProps } from '../types/types'
 import clsx from 'clsx'
+import { typeButtonProps } from '../types/types'
 
 export const Button: React.FC<typeButtonProps> = props => {
   const { className, variant = 'default', ...otherProps } = props

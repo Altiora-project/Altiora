@@ -1,9 +1,8 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-
-import { getPostAction } from '../api/server-actions'
 import { UserModel } from '../model'
+import { useEffect, useState } from 'react'
+import { getPostAction } from '../api/server-actions'
 
 export const useGetPost = (id: string) => {
   const [isLoading, setIsLoading] = useState(false)
@@ -30,7 +29,7 @@ export const useGetPost = (id: string) => {
     }
 
     fetchData()
-  }, [id])
+  }, [])
 
   return {
     isLoading,

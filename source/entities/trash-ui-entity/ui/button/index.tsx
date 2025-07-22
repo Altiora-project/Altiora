@@ -1,10 +1,8 @@
 'use client'
 
 import React from 'react'
-
-import { UIContainer } from '../ui-container'
-
 import { Button } from '@shared/ui/button'
+import { UIContainer } from '../ui-container'
 
 export const UIButton: React.FC = () => {
   return (

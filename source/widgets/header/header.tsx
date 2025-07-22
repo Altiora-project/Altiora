@@ -1,7 +1,7 @@
+import { siteName } from '@shared/lib/environment/public'
 import classes from './styles.module.scss'
 import type { typeHeaderProps } from './types'
 
-import { siteName } from '@shared/lib/environment/public'
 import { MainMenuDesktop, MainMenuMobile } from '@shared/ui/main-menu'
 
 export const Header: React.FC<typeHeaderProps> = ({ menuList }) => {

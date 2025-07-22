@@ -1,10 +1,7 @@
 import { HTMLAttributes } from 'react'
-
-import classes from './styles.module.scss'
 import clsx from 'clsx'
-
+import classes from './styles.module.scss'
 import { getPostAction } from '@entities/post'
-
 import { isDevMode } from '@shared/lib/environment/public'
 import { NotFoundBlock } from '@shared/ui/not-found'
 

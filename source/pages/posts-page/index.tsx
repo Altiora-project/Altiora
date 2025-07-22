@@ -1,8 +1,6 @@
 import { HTMLAttributes } from 'react'
-
-import classes from './styles.module.scss'
 import clsx from 'clsx'
-
+import classes from './styles.module.scss'
 import { PostList } from '@features/post-list'
 
 export const PostsPage: React.FC<HTMLAttributes<HTMLDivElement>> = ({ className, ...otherProps }) => {
