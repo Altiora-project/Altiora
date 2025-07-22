@@ -1,5 +1,5 @@
 import { UIBadge } from '../../badge'
-'use client'
+;('use client')
 
 import { UIButton } from '../../button'
 import { UIInput } from '../../input'
