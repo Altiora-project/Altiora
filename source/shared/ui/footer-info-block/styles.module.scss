@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  @include bp.desktop {
+    gap: 24px;
+  }
+}
+
+.text {
+  width: 100%;
+  font-size: clamp(1rem, 0.8725rem + 0.5229vw, 1.5rem);
+  color: var(--color-grey2);
+
+  @include bp.desktop {
+    width: auto;
+  }
+}
+
+.addressBlock {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include bp.desktop {
+    gap: 32px;
+  }
+}
+
+.linkBlock {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include bp.desktop {
+    gap: 20px;
+  }
+}
+
+.year {
+  @include bp.desktop {
+    display: none;
+  }
+}
