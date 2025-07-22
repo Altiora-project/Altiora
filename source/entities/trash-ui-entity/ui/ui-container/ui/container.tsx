@@ -1,6 +1,6 @@
-import clsx from 'clsx'
-import { typeContainerProps } from '../types/types'
 import classes from '../styles/styles.module.scss'
+import { typeContainerProps } from '../types/types'
+import clsx from 'clsx'
 
 export const UIContainer: React.FC<typeContainerProps> = ({
   className,

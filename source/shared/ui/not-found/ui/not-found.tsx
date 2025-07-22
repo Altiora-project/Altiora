@@ -1,5 +1,5 @@
-import clsx from 'clsx'
 import classes from '../styles/not-found.module.scss'
+import clsx from 'clsx'
 
 export const NotFound: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ className, ...otherProps }) => {
   return (

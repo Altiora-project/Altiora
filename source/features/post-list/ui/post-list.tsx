@@ -1,8 +1,10 @@
-import { getPostListAction } from '@entities/post'
 import classes from '../styles/styles.module.scss'
-import { isDevMode } from '@shared/lib/environment/public'
 import Link from 'next/link'
+
+import { getPostListAction } from '@entities/post'
+
 import { createRoute, routes } from '@shared/configs/routes'
+import { isDevMode } from '@shared/lib/environment/public'
 
 export const PostList: React.FC = async () => {
   const posts = await getPostListAction()

@@ -1,8 +1,8 @@
 'use client'
 
-import * as Dialog from '@radix-ui/react-dialog'
-import type { typeModalProps } from '../types/types'
 import classes from '../styles/styles.module.scss'
+import type { typeModalProps } from '../types/types'
+import * as Dialog from '@radix-ui/react-dialog'
 
 export const Modal: React.FC<typeModalProps> = ({
   isOpen,

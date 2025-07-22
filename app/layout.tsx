@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import NextTopLoader from 'nextjs-toploader'
 
 import { mainMenu } from '@app/configs/main-menu.config'
-import { montserratFont } from '@app/fonts'
+import { drukWideCyrFont, manropeFont } from '@app/fonts'
 
 import { Footer } from '@widgets/footer/footer'
 import { Header } from '@widgets/header'
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const RootLayout: React.FC<React.PropsWithChildren & { modal: React.ReactNode }> = ({ children, modal }) => {
   return (
     <html lang="en">
-      <body className={`${montserratFont.variable}`}>
+      <body className={`${manropeFont.variable} ${drukWideCyrFont.variable}`}>
         <NextTopLoader color="#000000" shadow={false} showSpinner={false} />
 
         <Header menuList={mainMenu} />

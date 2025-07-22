@@ -1,6 +1,7 @@
-import type { HTMLAttributes } from 'react'
 import classes from './styles.module.scss'
 import clsx from 'clsx'
+import type { HTMLAttributes } from 'react'
+
 import { UIList } from '@entities/trash-ui-entity'
 
 export const UIPage: React.FC<HTMLAttributes<HTMLDivElement>> = ({ className, ...otherProps }) => {

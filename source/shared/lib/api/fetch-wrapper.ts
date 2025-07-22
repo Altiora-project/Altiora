@@ -1,6 +1,7 @@
-import { backendDomain } from '@shared/lib/environment/private'
 import { getDefaultApiHeaders } from './configs/default-headers.config'
 import type { typeApiResponse, typeResponseType } from './types/types'
+
+import { backendDomain } from '@shared/lib/environment/private'
 
 const getErrorMessage = (response: Response, responseData: unknown) => {
   if (typeof responseData === 'object' && responseData !== null) {
