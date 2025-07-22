@@ -1,4 +1,4 @@
-@import '@app/styles/bp.scss';
+@use '@app/styles/bp.scss' as *;
 
 .card {
   display: flex;
