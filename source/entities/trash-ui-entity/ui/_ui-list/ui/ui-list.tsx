@@ -3,7 +3,6 @@ import { UIButton } from '../../button'
 import { UICardComponent } from '../../card-component/card-component'
 import { UICheckbox } from '../../checkbox'
 import { UIFooterInfoBlock } from '../../footer-info-block'
-import { UIHeaderMenuDesktop } from '../../header-menu-desktop'
 import { UIIcons } from '../../icons'
 import { UIInput } from '../../input'
 import { UILogo } from '../../logo'
@@ -25,7 +24,6 @@ export const UIList: React.FC = () => {
       <UIIcons />
 
       <UIBadge />
-      <UIHeaderMenuDesktop />
       <UISliderCard />
       {/* Добавляем компоненты ниже */}
       <UICheckbox />
