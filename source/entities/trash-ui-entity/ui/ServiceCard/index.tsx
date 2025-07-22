@@ -2,12 +2,12 @@
 
 import { UIContainer } from '../ui-container'
 
-import Card from '@shared/ui/card'
+import ServiceCard from '@shared/ui/service-card'
 
-export const UICard: React.FC = () => {
+export const UIServiceCard: React.FC = () => {
   return (
     <UIContainer
-      title="Card"
+      title="ServiceCard"
       description="Компонент карточки для всех брэйкпоинтов"
       props={[
         { key: 'icon', value: '(ReactNode) - иконка' },
@@ -22,7 +22,7 @@ export const UICard: React.FC = () => {
               backgroundColor: '#1D1E1D'
             }}
           >
-            <Card
+            <ServiceCard
               icon={
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 38" fill="none">
                   <path

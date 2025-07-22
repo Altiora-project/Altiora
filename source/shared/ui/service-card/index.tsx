@@ -2,13 +2,13 @@ import { FC, ReactNode } from 'react'
 
 import styles from './styles.module.scss'
 
-interface CardProps {
+interface ServiceCardProps {
   icon?: ReactNode
   title?: ReactNode
   text?: ReactNode
 }
 
-const Card: FC<CardProps> = ({ icon, title, text }) => {
+const ServiceCard: FC<ServiceCardProps> = ({ icon, title, text }) => {
   return (
     <div className={styles.card}>
       {icon && <div className={styles.icon}>{icon}</div>}
@@ -20,4 +20,4 @@ const Card: FC<CardProps> = ({ icon, title, text }) => {
   )
 }
 
-export default Card
+export default ServiceCard

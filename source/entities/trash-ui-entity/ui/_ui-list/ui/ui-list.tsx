@@ -1,18 +1,17 @@
 'use client'
 
 import { UIButton } from '../../button'
-import { UICard } from '../../card'
-import { UIInput } from '../../input'
 import { UICardComponent } from '../../card-component/card-component'
 import { UICheckbox } from '../../checkbox'
 import { UIFooterInfoBlock } from '../../footer-info-block'
 import { UIIcons } from '../../icons'
+import { UIInput } from '../../input'
 import { UILogo } from '../../logo'
 import { UIMainBlock } from '../../main-block'
-import { UIMarquee } from '../../marquee'
-import { UISliderCard } from '../../slider-card'
 import { MainMenuMobileTest } from '../../main-menu-mobile-test'
-
+import { UIMarquee } from '../../marquee'
+import { UIServiceCard } from '../../ServiceCard'
+import { UISliderCard } from '../../slider-card'
 import classes from '../styles/styles.module.scss'
 
 export const UIList: React.FC = () => {
@@ -28,7 +27,7 @@ export const UIList: React.FC = () => {
       <UISliderCard />
       {/* Добавляем компоненты ниже */}
       <UICheckbox />
-      <UICard />
+      <UIServiceCard />
       <MainMenuMobileTest />
       <UILogo />
       <UIFooterInfoBlock />
