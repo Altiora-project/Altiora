@@ -1,19 +1,16 @@
 import { UIBadge } from '../../badge'
-;('use client')
-
 import { UIButton } from '../../button'
-import { UIInput } from '../../input'
 import { UICardComponent } from '../../card-component/card-component'
 import { UICheckbox } from '../../checkbox'
-import { UIHeaderMenuDesktop } from '../../header-menu-desktop'
 import { UIFooterInfoBlock } from '../../footer-info-block'
+import { UIHeaderMenuDesktop } from '../../header-menu-desktop'
 import { UIIcons } from '../../icons'
+import { UIInput } from '../../input'
 import { UILogo } from '../../logo'
 import { UIMainBlock } from '../../main-block'
+import { MainMenuMobileTest } from '../../main-menu-mobile-test'
 import { UIMarquee } from '../../marquee'
 import { UISliderCard } from '../../slider-card'
-import { MainMenuMobileTest } from '../../main-menu-mobile-test'
-
 import classes from '../styles/styles.module.scss'
 
 export const UIList: React.FC = () => {
