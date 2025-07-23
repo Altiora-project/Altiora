@@ -6,6 +6,8 @@ import styles from './styles.module.scss'
 import Image from 'next/image'
 
 const VideoFeature: FC = () => {
+  const isFile = /\.(mp4|webm|ogg|mkv|flv|m4v|mov|wmv|mpg|mpeg)$/i.test(data.video)
+  const Tag = isFile ? 'video' : 'iframe'
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>{data.title}</h2>
@@ -16,11 +18,14 @@ const VideoFeature: FC = () => {
             <p>Видео</p>
           </span>
         </div>
-        <iframe
-          className={styles.video}
+        <Tag
+          className={styles.video__player}
           src={data.video}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
+          {...(!isFile && {
+            allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+          })}
+          {...(!isFile && { allowFullScreen: true })}
+          {...(isFile && { controls: true })}
         />
       </div>
       <div className={styles.more}>
