@@ -5,7 +5,7 @@ import classes from '../styles/styles.module.scss'
 import type { CheckboxProps } from '../types/types'
 import { CheckIcon } from './check-icon'
 
-export const Checkbox: React.FC<CheckboxProps> = ({ size = 'md', className, ...props }) => {
+export const Checkbox: React.FC<CheckboxProps> = ({ size = 'auto', className, ...props }) => {
   return (
     <CheckboxPrimitive.Root className={clsx(classes.checkbox, classes[`size-${size}`], className)} {...props}>
       <CheckboxPrimitive.Indicator>
