@@ -2,9 +2,9 @@ import { FC, ReactNode } from 'react'
 
 import styles from './styles.module.scss'
 
-interface ServiceCardProps {
+interface ServiceCardProps extends React.HTMLAttributes<HTMLDivElement> {
   icon?: ReactNode
-  title?: ReactNode
+  title?: string
   text?: ReactNode
 }
 
