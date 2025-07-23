@@ -3,7 +3,7 @@ import { FC } from 'react'
 import { typeFormSubmitModalProps } from '../types'
 import Link from 'next/link'
 import classes from '../styles/styles.module.scss'
-import { Icon } from '@shared/ui/icon'
+import Image from 'next/image'
 
 export const FormSubmitModal: FC<typeFormSubmitModalProps> = ({ buttonLink, ...otherProps }) => {
   return (
@@ -14,14 +14,12 @@ export const FormSubmitModal: FC<typeFormSubmitModalProps> = ({ buttonLink, ...o
           <p className={classes.textInfo}>
             С вами свяжутся в течение двух рабочих дней для более детального обсуждения проекта.
           </p>
-          {/*  TODO: поменять на компонент кнопки */}
           <Link className={classes.link} href={buttonLink}>
             вернуться к сайту
           </Link>
         </div>
-        {/* TODO: изменить, когда появится компонент <Logo size='md'/> */}
-        <div className={classes.iconContainer}>
-          <Icon size={'auto'} icon="lineLogo" style={{ height: '300px', width: '225px' }} />
+        <div className={classes.logoContainer}>
+          <Image src="/logo.svg" width={225} height={300} alt="Логотип" className={classes.logo} />
         </div>
       </CardComponent>
     </>
