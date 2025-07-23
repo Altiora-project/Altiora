@@ -15,19 +15,9 @@ export const UIButton: React.FC = () => {
       description="Кнопка со всеми стандартными props и дополнительными:"
       props={[
         { key: 'variant', value: '("primary" | "secondary") вариант отображения' },
-        { key: 'onClick', value: 'Функция, которая вызывается при клике на кнопку.' },
-        { key: 'onMouseEnter', value: 'Функция, которая вызывается, когда указатель мыши перемещается над кнопкой.' },
-        { key: 'onMouseLeave', value: 'Функция, которая вызывается, когда указатель мыши покидает область кнопки.' },
-        {
-          key: 'disabled',
-          value:
-            'Булево значение, указывающее, доступна ли кнопка для взаимодействия (true - недоступна, false - доступна).'
-        },
-        { key: 'type', value: 'Тип кнопки, например, "button", "submit", "reset".' },
-        { key: 'className', value: 'CSS-класс для кнопки.' },
-        { key: 'style', value: 'Объект стилей для кнопки.' },
-        { key: 'children', value: 'Содержимое кнопки (текст, HTML-элементы и т.д.).' },
-        { key: 'id', value: 'Уникальный идентификатор для кнопки.' }
+        { key: 'leftIcon', value: 'Иконка слева' },
+        { key: 'rightIcon', value: 'Иконка справа' },
+        { key: 'children', value: 'Содержимое кнопки (текст, HTML-элементы и т.д.)' }
       ]}
       components={
         <>
