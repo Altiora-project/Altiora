@@ -5,7 +5,7 @@ import moreIcon from './moreIcon.svg'
 import styles from './styles.module.scss'
 import Image from 'next/image'
 
-const VideoFeature: FC<HTMLDivElement> = () => {
+const VideoFeature: FC = () => {
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>{data.title}</h2>
