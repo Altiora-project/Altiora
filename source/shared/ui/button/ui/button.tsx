@@ -1,13 +1,19 @@
+import React from 'react'
+import clsx from 'clsx'
 import classes from '../styles/styles.module.scss'
 import { typeButtonProps } from '../types/types'
-import clsx from 'clsx'
 
-export const Button: React.FC<typeButtonProps> = props => {
-  const { className, variant = 'default', ...otherProps } = props
-
-  return (
-    <button className={clsx(classes.button, classes[variant], className)} {...otherProps}>
-      {props.children}
-    </button>
-  )
-}
+export const Button: React.FC<typeButtonProps> = ({
+  variant = 'primary',
+  leftIcon,
+  rightIcon,
+  children,
+  disabled,
+  onClick
+}) => (
+  <button className={clsx(classes.button, classes[variant])} disabled={disabled} onClick={onClick}>
+    {leftIcon && <span className={classes.leftIcon}>{leftIcon}</span>}
+    {children}
+    {rightIcon && <span className={classes.rightIcon}>{rightIcon}</span>}
+  </button>
+)

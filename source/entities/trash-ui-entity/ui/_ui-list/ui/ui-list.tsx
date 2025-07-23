@@ -19,13 +19,14 @@ export const UIList: React.FC = () => {
     <div className={classes.container}>
       <UIMainBlock />
 
-      <UIButton />
-      <UIInput />
+      {/* Добавляем компоненты ниже */}
+      <UICheckbox />
       <UIMarquee />
       <UICardComponent />
       <UIIcons />
       <UISliderCard />
-      {/* Добавляем компоненты ниже */}
+      <UIInput />
+      <UIButton />
       <UICheckbox />
       <MainMenuMobileTest />
       <UILogo />

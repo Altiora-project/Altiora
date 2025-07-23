@@ -16,7 +16,12 @@ export const UICheckbox: React.FC = () => {
     <UIContainer
       title="Checkbox"
       description="Чекбокс со всеми стандартными props Radix UI и дополнительным props:"
-      props={[{ key: 'size', value: '("auto" | "md" | "sm") размер чекбокса: auto - в зависимости от bp; md - 40x40px; sm - 24x24px' }]}
+      props={[
+        {
+          key: 'size',
+          value: '("auto" | "md" | "sm") размер чекбокса: auto - в зависимости от bp; md - 40x40px; sm - 24x24px'
+        }
+      ]}
       components={
         <>
           <div
