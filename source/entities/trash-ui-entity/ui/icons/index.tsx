@@ -50,97 +50,97 @@ export const UIIcons: React.FC = () => {
           <div className={classes.container}>
             <div className={classes.iconsWrapper}>
               <div className={classes.icon}>
-                <Icon size="lg" icon="lineLogo" /> <span style={{ color: '#111111' }}>- lineLogo</span>
-              </div>
-              <div className={classes.icon}>
                 <Icon size="md" icon="chevronRight" />
-                <span style={{ color: '#ffffff' }}> -chevronRight</span>
+                <span> - chevronRight</span>
               </div>
               <div className={classes.icon}>
                 <Icon size="md" icon="chevronLeft" />
-                <span style={{ color: '#ffffff' }}> - chevronLeft</span>
+                <span> - chevronLeft</span>
               </div>
               <div className={classes.icon}>
                 <Icon size="md" icon="chevronDown" />
-                <span style={{ color: '#ffffff' }}> - chevronDown</span>
+                <span> - chevronDown</span>
               </div>
               <div className={classes.icon}>
                 <Icon size="md" icon="chevronUp" />
-                <span style={{ color: '#ffffff' }}> - chevronUp</span>
+                <span> - chevronUp</span>
               </div>
               <div className={classes.icon}>
                 <Icon size="lg" icon="button" />
-                <span style={{ color: '#ffffff' }}> - button</span>
+                <span> - button</span>
               </div>
               <div className={classes.icon}>
                 <Icon size="lg" icon="arrowLeft" />
-                <span style={{ color: '#ffffff' }}> - arrowLeft</span>
+                <span> - arrowLeft</span>
               </div>
               <div className={classes.icon}>
                 <Icon size="lg" icon="arrowRight" />
-                <span style={{ color: '#ffffff' }}> - arrowRight</span>
+                <span> - arrowRight</span>
               </div>
               <div className={classes.icon}>
                 <Icon size="lg" icon="arrowUp" />
-                <span style={{ color: '#ffffff' }}> - arrowUp</span>
+                <span> - arrowUp</span>
               </div>
               <div className={classes.icon}>
                 <Icon size="sm" icon="close" />
-                <span style={{ color: '#ffffff' }}> - close</span>
+                <span> - close</span>
               </div>
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', width: '200px' }}>
               <div className={classes.icon}>
                 <Icon size="md" icon="envelop" />
-                <span style={{ color: '#ffffff' }}> - envelop</span>
+                <span> - envelop</span>
               </div>
               <div className={classes.icon}>
                 <Icon size="lg" icon="phone" />
-                <span style={{ color: '#ffffff' }}>- phone</span>
+                <span>- phone</span>
               </div>
               <div className={classes.icon}>
                 <Icon size="lg" icon="wrench" />
-                <span style={{ color: '#ffffff' }}> - wrench</span>
+                <span> - wrench</span>
               </div>
               <div className={classes.icon}>
                 <Icon size="lg" icon="chartSpline" />
-                <span style={{ color: '#ffffff' }}> - chartSpline</span>
+                <span> - chartSpline</span>
               </div>
               <div className={classes.icon}>
                 <Icon size="lg" icon="star" />
-                <span style={{ color: '#ffffff' }}> - star</span>
+                <span> - star</span>
               </div>
               <div className={classes.icon}>
                 <Icon size="lg" icon="megaphone" />
-                <span style={{ color: '#ffffff' }}> - megaphone</span>
+                <span> - megaphone</span>
               </div>
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', width: '200px' }}>
               <div className={classes.icon}>
                 <Icon size="lg" icon="support" />
-                <span style={{ color: '#ffffff' }}> - support</span>
+                <span> - support</span>
               </div>
               <div className={classes.icon}>
                 <Icon size="lg" icon="mouseClick" />
-                <span style={{ color: '#ffffff' }}> - mouseClick</span>
+                <span> - mouseClick</span>
               </div>
               <div className={classes.icon}>
                 <Icon size="lg" icon="chartPie" />
-                <span style={{ color: '#ffffff' }}> - chartPie</span>
+                <span> - chartPie</span>
               </div>
               <div className={classes.icon}>
                 <Icon size="lg" icon="handshake" />
-                <span style={{ color: '#ffffff' }}> - handshake</span>
+                <span> - handshake</span>
               </div>
               <div className={classes.icon}>
                 <Icon size="lg" icon="trendingUp" />
-                <span style={{ color: '#ffffff' }}> - trendingUp</span>
+                <span> - trendingUp</span>
               </div>
               <div className={classes.icon}>
                 <Icon size="lg" icon="checkbox" />
-                <span style={{ color: '#ffffff' }}> - checkbox</span>
+                <span> - checkbox</span>
+              </div>
+              <div className={classes.icon}>
+                <Icon size="lg" icon="lineLogo" /> <span>- lineLogo</span>
               </div>
             </div>
           </div>
