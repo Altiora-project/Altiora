@@ -1,17 +1,9 @@
 import React from 'react'
 import clsx from 'clsx'
 import classes from '../styles/styles.module.scss'
+import { typeButtonProps } from '../types/types'
 
-export interface ButtonProps {
-  variant?: 'primary' | 'secondary'
-  leftIcon?: React.ReactNode
-  rightIcon?: React.ReactNode
-  children?: React.ReactNode
-  disabled?: boolean
-  onClick?: React.MouseEventHandler<HTMLButtonElement>
-}
-
-export const Button: React.FC<ButtonProps> = ({
+export const Button: React.FC<typeButtonProps> = ({
   variant = 'primary',
   leftIcon,
   rightIcon,
