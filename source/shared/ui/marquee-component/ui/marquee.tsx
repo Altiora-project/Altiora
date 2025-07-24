@@ -1,9 +1,11 @@
 'use client'
 
 import { FC } from 'react'
+
+import classes from '../styles/styles.module.scss'
 import { typeMarqueeProps } from '../types'
 import Marquee from 'react-fast-marquee'
-import classes from '../styles/styles.module.scss'
+
 import { Icon } from '@shared/ui/icon'
 
 export const MarqueeComponent: FC<typeMarqueeProps> = ({ phrases }) => {
