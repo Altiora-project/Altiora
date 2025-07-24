@@ -11,11 +11,20 @@ import { MainMenuMobileTest } from '../../main-menu-mobile-test'
 import { UIMarquee } from '../../marquee'
 import { UISliderCard } from '../../slider-card'
 import classes from '../styles/styles.module.scss'
+import { UIFormSubmitModal } from '../../form-submit-modal'
 
 export const UIList: React.FC = () => {
   return (
     <div className={classes.container}>
       <UIMainBlock />
+      <UIButton />
+      <UIInput />
+      <UIMarquee />
+      <UICardComponent />
+      <UIIcons />
+      <UICheckbox />
+      <UIFormSubmitModal />
+      {/* Добавляем компоненты ниже */}
 
       {/* Добавляем компоненты ниже */}
       <UICheckbox />

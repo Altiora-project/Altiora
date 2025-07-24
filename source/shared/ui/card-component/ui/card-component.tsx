@@ -10,13 +10,14 @@ export const CardComponent: FC<CardComponentProps> = ({
   tag,
   href = '',
   children,
+  className,
   ...otherProps
 }) => {
   if (tag === 'link') {
     return (
       <Link
         href={href ? href : '/'}
-        className={clsx(classes.container, classes[radius], classes[background])}
+        className={clsx(classes.container, classes[radius], classes[background], className)}
         {...otherProps}
       >
         {children}
@@ -25,7 +26,7 @@ export const CardComponent: FC<CardComponentProps> = ({
   }
 
   return (
-    <div className={clsx(classes.container, classes[radius], classes[background])} {...otherProps}>
+    <div className={clsx(classes.container, classes[radius], classes[background], className)} {...otherProps}>
       {children}
     </div>
   )
