@@ -1,53 +1,95 @@
 .button {
   display: inline-flex;
-  justify-content: center;
   align-items: center;
-  box-sizing: border-box;
-  padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
-  font-family: var(--font-main);
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  transition: background-color 0.2s ease-in-out;
+  font-size: 28px;
+  text-transform: uppercase;
+  border-radius: 40px;
+  padding: 0 40px;
+  border: none;
   cursor: pointer;
-
-  &:not(:disabled):active {
-    opacity: 0.7;
-    background-color: var(--color-accent-active);
-    color: var(--color-foreground);
-    transform: translateY(1px);
-  }
+  transition:
+    background 0.2s,
+    color 0.2s,
+    opacity 0.2s;
 
   &:disabled {
     cursor: not-allowed;
   }
 }
 
-.default {
-  background-color: var(--color-white);
-  border: transparent;
-
-  &:not(:disabled):hover {
-    background-color: var(--color-accent-primary);
-  }
-
-  &:disabled {
-    opacity: 0.9;
-    border-color: transparent;
+@include bp.tablet {
+  .button {
+    height: 44px;
   }
 }
 
-.fill {
-  border: 1px solid var(--foreground);
-  background-color: var(--foreground);
-  color: var(--background);
+@include bp.desktop {
+  .button {
+    height: 68px;
+  }
+}
 
-  &:not(:disabled):hover {
-    background-color: var(--background-fill-hover);
+.primary {
+  background: #fefefe;
+  color: #111;
+
+  &:hover {
+    background: #50f195;
+    color: #111;
+  }
+
+  &:focus-visible {
+    background: #59bb83;
+    color: #111;
+  }
+
+  &:active {
+    background: #111;
+    color: #e7d6c6;
   }
 
   &:disabled {
-    cursor: not-allowed;
+    background: transparent;
+    color: #2f2f2f4d;
     opacity: 0.3;
-    border-color: var(--foreground) / 0.3;
+    cursor: not-allowed;
   }
+}
+
+.secondary {
+  background: transparent;
+  color: #fefefe;
+
+  &:hover {
+    color: #50f195;
+  }
+
+  &:focus-visible {
+    color: #50f195;
+  }
+
+  &:active {
+    color: #59bb83;
+  }
+
+  &:disabled {
+    color: #2f2f2f4d;
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+}
+
+.leftIcon {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 16px;
+}
+
+.rightIcon {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 16px;
 }
