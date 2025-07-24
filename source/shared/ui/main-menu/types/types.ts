@@ -3,6 +3,6 @@ export type typeMainMenuProps = React.HTMLAttributes<HTMLDivElement> & {
 }
 
 export type typeMainMenuItem = {
-  title: string
-  rout: string
+  label: string
+  url: string
 }

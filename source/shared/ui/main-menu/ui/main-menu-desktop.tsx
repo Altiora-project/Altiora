@@ -7,8 +7,8 @@ export const MainMenuDesktop: React.FC<typeMainMenuProps> = ({ menuList, classNa
   return (
     <div className={clsx(classes.desktopMenuContainer, className)} {...otherProps}>
       {menuList.map(item => (
-        <Link href={item.rout} key={item.title} prefetch={false}>
-          {item.title}
+        <Link href={item.url} key={item.label} prefetch={false}>
+          {item.label}
         </Link>
       ))}
     </div>
