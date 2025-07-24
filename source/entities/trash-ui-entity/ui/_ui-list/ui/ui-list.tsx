@@ -10,6 +10,7 @@ import { UIMainBlock } from '../../main-block'
 import { MainMenuMobileTest } from '../../main-menu-mobile-test'
 import { UIMarquee } from '../../marquee'
 import { UISliderCard } from '../../slider-card'
+import { OrderFormTest } from '../../order-form-test'
 import classes from '../styles/styles.module.scss'
 
 export const UIList: React.FC = () => {
@@ -31,6 +32,7 @@ export const UIList: React.FC = () => {
       <MainMenuMobileTest />
       <UILogo />
       <UIFooterInfoBlock />
+      <OrderFormTest />
     </div>
   )
 }

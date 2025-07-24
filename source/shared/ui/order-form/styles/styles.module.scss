@@ -1,0 +1,77 @@
+.container {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--color-background);
+}
+
+.title {
+  color: var(--color-white);
+  font-family: var(--font-secondary);
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 2rem;
+
+  @include bp.tablet {
+    font-size: 32px;
+  }
+
+  @include bp.desktop {
+    font-size: 70px;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.errorMessage {
+  color: var(--color-error);
+  font-size: 12px;
+  margin-top: 0.25rem;
+}
+
+.checkboxGroup {
+  display: flex;
+  justify-items: center;
+/*  align-items: flex-start;
+  justify-content: center;*/
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  line-height: 1;
+  flex: 1;
+  font-family: var(--font-main);
+  color: var(--color-grey2);
+
+  @include bp.tablet {
+    font-size: 16px;
+  }
+
+  @include bp.desktop {
+    font-size: 24px;
+  }
+
+  a {
+    color: var(--color-accent-active);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--color-accent-active);
+    }
+  }
+}
+
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
+} 
