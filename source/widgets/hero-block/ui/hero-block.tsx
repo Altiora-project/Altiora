@@ -4,8 +4,8 @@ import classes from '../styles/styles.module.scss'
 import clsx from 'clsx'
 import Link from 'next/link'
 
-import { typeHeroProps } from '@shared/ui/hero-block/types/types'
-import { HeroBlockImage } from '@shared/ui/hero-block-image/ui/hero-block-image'
+import { typeHeroProps } from '@widgets/hero-block/types/types'
+import { HeroBlockImage } from '@widgets/hero-block/ui/hero-block-image'
 
 export const HeroBlock: FC<typeHeroProps> = ({ url, className, ...otherProps }) => {
   return (

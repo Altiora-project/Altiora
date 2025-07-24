@@ -3,6 +3,7 @@ import { UIButton } from '../../button'
 import { UICardComponent } from '../../card-component/card-component'
 import { UICheckbox } from '../../checkbox'
 import { UIFooterInfoBlock } from '../../footer-info-block'
+import { UIFormSubmitModal } from '../../form-submit-modal'
 import { UIIcons } from '../../icons'
 import { UIInput } from '../../input'
 import { UILogo } from '../../logo'
@@ -11,7 +12,7 @@ import { MainMenuMobileTest } from '../../main-menu-mobile-test'
 import { UIMarquee } from '../../marquee'
 import { UISliderCard } from '../../slider-card'
 import classes from '../styles/styles.module.scss'
-import { UIFormSubmitModal } from '../../form-submit-modal'
+import { UIHeroBlock } from '@entities/trash-ui-entity/ui/hero-block'
 
 export const UIList: React.FC = () => {
   return (
@@ -33,7 +34,7 @@ export const UIList: React.FC = () => {
       <UIMarquee />
       <UICardComponent />
       <UIIcons />
-
+      <UIHeroBlock />
       <UIBadge />
       <UISliderCard />
       <UIInput />

@@ -1,6 +1,6 @@
-import { UIContainer } from '@entities/trash-ui-entity/ui/ui-container'
+import { HeroBlock } from '@widgets/hero-block/ui/hero-block'
 
-import { HeroBlock } from '@shared/ui/hero-block/ui/hero-block'
+import { UIContainer } from '@entities/trash-ui-entity/ui/ui-container'
 
 export const UIHeroBlock = () => {
   return (
