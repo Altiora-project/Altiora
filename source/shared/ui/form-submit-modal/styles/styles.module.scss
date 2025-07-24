@@ -90,6 +90,19 @@
   }
 }
 
+.button {
+  &:not(:disabled):active {
+    opacity: 0.7;
+    background-color: var(--color-accent-active);
+    color: var(--color-foreground);
+    transform: translateY(1px);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
 .logoContainer {
   position: relative;
 

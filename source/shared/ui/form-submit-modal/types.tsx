@@ -1,3 +1,4 @@
 export type typeFormSubmitModalProps = {
-  buttonLink: string
+  buttonLink?: string
+  onClose?: () => void
 }

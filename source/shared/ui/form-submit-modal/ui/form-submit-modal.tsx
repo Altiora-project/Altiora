@@ -4,8 +4,12 @@ import { typeFormSubmitModalProps } from '../types'
 import Link from 'next/link'
 import classes from '../styles/styles.module.scss'
 import Image from 'next/image'
+import { Button } from '@shared/ui/button'
+import clsx from 'clsx'
 
-export const FormSubmitModal: FC<typeFormSubmitModalProps> = ({ buttonLink, ...otherProps }) => {
+export const FormSubmitModal: FC<typeFormSubmitModalProps> = ({ buttonLink, onClose, ...otherProps }) => {
+  if (buttonLink === '') buttonLink = '/'
+  console.log(buttonLink)
   return (
     <>
       <CardComponent radius="lg" background="black" tag="default" className={classes.card} {...otherProps}>
@@ -14,9 +18,17 @@ export const FormSubmitModal: FC<typeFormSubmitModalProps> = ({ buttonLink, ...o
           <p className={classes.textInfo}>
             С вами свяжутся в течение двух рабочих дней для более детального обсуждения проекта.
           </p>
-          <Link className={classes.link} href={buttonLink}>
-            вернуться к сайту
-          </Link>
+          {onClose && (
+            <Button onClick={onClose} className={clsx(classes.button, classes.link)}>
+              вернуться к сайту
+            </Button>
+          )}
+
+          {buttonLink && (
+            <Link className={classes.link} href={buttonLink}>
+              вернуться к сайту
+            </Link>
+          )}
         </div>
         <div className={classes.logoContainer}>
           <Image src="/logo.svg" width={225} height={300} alt="Логотип" className={classes.logo} />
