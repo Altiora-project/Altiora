@@ -14,7 +14,7 @@ export const HeroBlock: FC<typeHeroProps> = ({ url, className, ...otherProps }) 
         <h1>
           умные и&nbsp;<span>надежные IT&nbsp;решения</span> для&nbsp;вашей <span>компании</span>
         </h1>
-        <HeroBlockImage className={classes.image}></HeroBlockImage>
+        <HeroBlockImage className={classes.image} />
       </div>
       <Link href={url} className={classes.link}>
         Связаться с нами

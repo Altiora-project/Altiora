@@ -8,6 +8,10 @@ export const mainMenu: typeMainMenuItem[] = [
     url: routes.mainPage
   },
   {
+    label: 'Наши услуги',
+    url: routes.services
+  },
+  {
     label: 'UI',
     url: routes.ui
   },

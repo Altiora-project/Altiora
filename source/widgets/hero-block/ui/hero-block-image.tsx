@@ -8,7 +8,7 @@ export const HeroBlockImage: FC<HTMLAttributes<HTMLDivElement>> = ({ className, 
       <Image
         src={'/image/hero-logo-dt.png'}
         width={941}
-        height={660}
+        height={700}
         style={{ maxWidth: '100%', height: 'auto' }}
         alt={''}
       />

@@ -1,11 +1,35 @@
 import classes from './styles.module.scss'
 import clsx from 'clsx'
-import type { HTMLAttributes } from 'react'
+import type { FC, HTMLAttributes } from 'react'
 
-export const MainPage: React.FC<HTMLAttributes<HTMLDivElement>> = ({ className, ...otherProps }) => {
+import { Footer } from '@widgets/footer'
+import { HeroBlock } from '@widgets/hero-block'
+
+import { MarqueeComponent } from '@shared/ui/marquee-component'
+
+//TODO: убрать моки
+const phrases = [
+  'Разработка сайтов',
+  'Работа с ИИ',
+  'Разработка мобильных приложений',
+  'UX/UI',
+  'Разработка клиентских веб-сервисов',
+  'Тестирование',
+  'Разработка приложений в telegram',
+  'Техническая поддержка продуктов'
+]
+
+export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = ({ className, ...otherProps }) => {
   return (
-    <div className={clsx(classes.container, className)} {...otherProps}>
-      <h1>Main page</h1>
+    <div className={clsx(classes.wrapper, className)} {...otherProps}>
+      <div className={classes.container}>
+        <HeroBlock url={''} />
+      </div>
+      <MarqueeComponent phrases={phrases} />
+      <div className={clsx(classes.content, classes.container)}>MAIN-PAGE CONTENT</div>
+      <div className={classes.container}>
+        <Footer />
+      </div>
     </div>
   )
 }
