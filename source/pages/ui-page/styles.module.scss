@@ -2,7 +2,10 @@
   border: 1px solid var(--foreground);
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 1.5rem;
   gap: 1rem;
 
   h1 {
