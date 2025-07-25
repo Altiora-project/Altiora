@@ -7,4 +7,5 @@ export type CardComponentProps = {
   background: 'light-grey' | 'grey' | 'black' // #353735, #2F2F2F4D, #111111
   tag: 'default' | 'link' // div, link
   href?: UrlObject | string
+  className?: string
 }
