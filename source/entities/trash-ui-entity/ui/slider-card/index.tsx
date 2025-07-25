@@ -1,6 +1,6 @@
 import { UIContainer } from '../ui-container'
 
-import { SliderCard } from '@shared/ui/slider-card'
+import { SliderCard } from '@shared/ui/slider-card/ui/slider-card'
 
 export const UISliderCard: React.FC = () => {
   return (

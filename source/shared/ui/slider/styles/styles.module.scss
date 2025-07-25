@@ -1,0 +1,105 @@
+.embla_wrapper {
+  display: flex;
+  // margin-inline-start: auto;
+}
+
+.embla {
+  // TODO: исправить размер видимой области при сборе страницы
+  //   max-width: 793px;
+  margin: auto;
+  position: relative;
+  height: fit-content;
+}
+
+.emblaViewport {
+  overflow: hidden;
+  height: fit-content;
+  width: 360px;
+
+  @include bp.tablet {
+    width: 360px;
+  }
+  @include bp.desktop {
+    width: 980px;
+  }
+}
+
+.embla__container {
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+}
+
+.embla__slide {
+  flex: 0 0 320px;
+  min-width: 0;
+  padding-inline-start: 16px;
+  user-select: none;
+
+  @include bp.tablet {
+    flex: 0 0 320px;
+    height: 218px;
+    padding-inline-start: 16px;
+  }
+
+  @include bp.desktop {
+    flex: 0 0 760px;
+    height: 400px;
+    padding-inline-start: 32px;
+  }
+}
+
+.embla_buttons {
+  display: none;
+
+  @include bp.tablet {
+    display: none;
+  }
+  @include bp.desktop {
+    display: flex;
+    gap: 1px;
+    align-items: center;
+  }
+}
+
+.embla__button {
+  width: 69px;
+  height: 69px;
+  background-color: var(--color-background3);
+  -webkit-tap-highlight-color: var(--color-accent-primary);
+  -webkit-appearance: none;
+  appearance: none;
+  touch-action: manipulation;
+  display: inline-flex;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  z-index: 1;
+  border-radius: 50%;
+  color: var(--text-body);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.embla__button:disabled {
+  color: var(--detail-high-contrast);
+  display: none;
+}
+
+.embla__button__svg {
+  color: var(--color-accent-primary);
+}
+
+.embla__button__next {
+  position: absolute;
+  left: 759;
+  top: 169;
+}
+
+.embla__button__prev {
+  position: absolute;
+  top: 169;
+  left: -38;
+}

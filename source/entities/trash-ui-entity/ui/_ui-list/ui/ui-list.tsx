@@ -12,6 +12,7 @@ import { UIMarquee } from '../../marquee'
 import { UISliderCard } from '../../slider-card'
 import classes from '../styles/styles.module.scss'
 import { UIFormSubmitModal } from '../../form-submit-modal'
+import { UISlider } from '../../slider/slider'
 
 export const UIList: React.FC = () => {
   return (
@@ -24,14 +25,10 @@ export const UIList: React.FC = () => {
       <UIIcons />
       <UICheckbox />
       <UIFormSubmitModal />
-      {/* Добавляем компоненты ниже */}
-
-      {/* Добавляем компоненты ниже */}
       <UICheckbox />
       <UIMarquee />
       <UICardComponent />
       <UIIcons />
-
       <UIBadge />
       <UISliderCard />
       <UIInput />
@@ -40,6 +37,11 @@ export const UIList: React.FC = () => {
       <MainMenuMobileTest />
       <UILogo />
       <UIFooterInfoBlock />
+      <UISlider />
+
+      {/* Добавляем компоненты ниже */}
+
+      {/* Добавляем компоненты ниже */}
     </div>
   )
 }
