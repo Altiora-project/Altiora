@@ -18,7 +18,7 @@ export const UIServiceCard: React.FC = () => {
         <>
           <div
             style={{
-              padding: '30px',
+              padding: '10px',
               backgroundColor: '#1D1E1D'
             }}
           >
