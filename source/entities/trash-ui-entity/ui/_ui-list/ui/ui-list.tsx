@@ -11,6 +11,7 @@ import { UIMainBlock } from '../../main-block'
 import { MainMenuMobileTest } from '../../main-menu-mobile-test'
 import { UIMarquee } from '../../marquee'
 import { UISliderCard } from '../../slider-card'
+import { UIVideoFeature } from '../../video-feature'
 import classes from '../styles/styles.module.scss'
 import { UIHeroBlock } from '@entities/trash-ui-entity/ui/hero-block'
 
@@ -42,6 +43,7 @@ export const UIList: React.FC = () => {
       <UICheckbox />
       <MainMenuMobileTest />
       <UILogo />
+      <UIVideoFeature />
       <UIFooterInfoBlock />
     </div>
   )
