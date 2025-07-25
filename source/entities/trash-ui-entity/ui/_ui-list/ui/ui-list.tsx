@@ -12,6 +12,7 @@ import { MainMenuMobileTest } from '../../main-menu-mobile-test'
 import { UIMarquee } from '../../marquee'
 import { UIServiceCard } from '../../ServiceCard'
 import { UISliderCard } from '../../slider-card'
+import { UILinkMenu } from '../../link-menu'
 import { UIVideoFeature } from '../../video-feature'
 import classes from '../styles/styles.module.scss'
 
@@ -48,6 +49,8 @@ export const UIList: React.FC = () => {
       <UILogo />
       <UIVideoFeature />
       <UIFooterInfoBlock />
+      
+      <UILinkMenu />
     </div>
   )
 }
