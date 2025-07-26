@@ -1,6 +1,0 @@
-export { backendUrls } from './configs/backend-urls'
-export { fetchWrapper } from './fetch-wrapper'
-export type { typeApiResponseWithPagination } from './types/common-api.types'
-export type { typeApiResponse, typeBackendApiQueryParams } from './types/types'
-export type { typeApiErrorResponse } from './types/types'
-export { addQueryParamsToUrl } from './utils/add-query-params-to-url'

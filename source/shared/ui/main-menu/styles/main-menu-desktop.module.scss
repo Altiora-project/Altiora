@@ -1,9 +1,0 @@
-.desktopMenuContainer {
-  display: none;
-
-  @include bp.desktop {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-  }
-}
