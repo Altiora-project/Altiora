@@ -1,0 +1,58 @@
+name: Frontend Deploy to Stage
+
+on:
+  push:
+    branches: ci/stage-deploy
+
+env:
+  DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push frontend image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/altiora-frontend:stage
+          build-args: |
+            NEXT_PUBLIC_SITE_NAME=${{ secrets.NEXT_PUBLIC_SITE_NAME }}
+            API_URL=${{ secrets.API_URL }}
+
+      - name: Upload docker-compose.stage.yml to server
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          source: 'docker-compose.stage.yml'
+          target: '/opt/frontend'
+
+      - name: Deploy to server via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          script: |
+            export DOCKERHUB_USER=${{ secrets.DOCKERHUB_USERNAME }}
+            cd /opt/frontend
+            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/altiora-frontend:stage
+            docker compose -f docker-compose.stage.yml down
+            docker compose -f docker-compose.stage.yml up -d --remove-orphans
