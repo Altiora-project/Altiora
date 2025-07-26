@@ -27,13 +27,8 @@ export const UIList: React.FC = () => {
       <UICheckbox />
       <UIMarquee />
       <UICardComponent />
-
       <UIIcons />
-
       <UIFormSubmitModal />
-      {/* Добавляем компоненты ниже */}
-
-      {/* Добавляем компоненты ниже */}
       <UISliderCard />
       <UIInput />
       <UIButton />
@@ -52,7 +47,6 @@ export const UIList: React.FC = () => {
       <UILogo />
       <UIVideoFeature />
       <UIFooterInfoBlock />
-
       <UILinkMenu />
     </div>
   )
