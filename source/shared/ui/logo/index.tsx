@@ -4,7 +4,7 @@ import type { LogoProps } from './types'
 import clsx from 'clsx'
 import Image from 'next/image'
 
-export const Logo: React.FC<LogoProps> = ({ variant = 'long', text = 'Алтиора', className }) => {
+export const Logo: React.FC<LogoProps> = ({ variant = 'long', text, className }) => {
   const showText = variant === 'long'
 
   if (variant === 'shortOutline') {

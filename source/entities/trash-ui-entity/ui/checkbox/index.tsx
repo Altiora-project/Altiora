@@ -1,9 +1,9 @@
 'use client'
 
 import React, { useState } from 'react'
-import type { CheckedState } from '@radix-ui/react-checkbox'
 
 import { UIContainer } from '../ui-container'
+import type { CheckedState } from '@radix-ui/react-checkbox'
 
 import { Checkbox } from '@shared/ui/checkbox'
 
