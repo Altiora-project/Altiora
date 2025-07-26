@@ -2,7 +2,7 @@ name: Frontend Deploy to Stage
 
 on:
   push:
-    branches: ci/stage-deploy
+    branches: develop
 
 env:
   DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
