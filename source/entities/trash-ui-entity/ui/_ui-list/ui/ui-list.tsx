@@ -49,7 +49,7 @@ export const UIList: React.FC = () => {
       <UILogo />
       <UIVideoFeature />
       <UIFooterInfoBlock />
-      
+
       <UILinkMenu />
     </div>
   )
