@@ -1,6 +1,6 @@
 @use 'sass:math';
 
-$bg-color: oklch(255 0 0 / 0.2);
+$bg-color: rgba(47, 47, 47, 0.3); //oklch(255 0 0 / 0.2);
 $radius: 1rem;
 $big-radius: math.div($radius, 2) * 3;
 
@@ -16,7 +16,15 @@ $big-radius: math.div($radius, 2) * 3;
 
     .topContent {
       flex-shrink: 0;
-      padding: 0 2rem 1rem 1rem;
+      padding: 0 0.2rem 0.5rem 0;
+
+      @include bp.tablet {
+        padding: 0 1.625rem 1.375rem 0;
+      }
+
+      @include bp.desktop {
+        padding: 0 4.375rem 1.3rem 0;
+      }
     }
 
     .space {
@@ -29,17 +37,11 @@ $big-radius: math.div($radius, 2) * 3;
         content: '';
         position: absolute;
         bottom: 0;
-        left: -$big-radius;
-        width: $big-radius;
-        height: $big-radius;
+        left: -$radius;
+        width: $radius;
+        height: $radius;
         background-color: $bg-color;
-        mask-image: radial-gradient(
-          circle at top left,
-          transparent 0%,
-          transparent $big-radius,
-          black $big-radius,
-          black 100%
-        );
+        mask-image: radial-gradient(circle at top left, transparent 0%, transparent $radius, black $radius, black 100%);
         mask-mode: alpha;
       }
     }
@@ -47,8 +49,17 @@ $big-radius: math.div($radius, 2) * 3;
 
   .content {
     background-color: $bg-color;
-    padding: 1rem;
+    padding: 0.75rem;
+    border: 1px solid red;
     border-radius: $radius 0 $radius 0;
+
+    @include bp.tablet {
+      padding: 1.5rem;
+    }
+
+    @include bp.desktop {
+      padding: 3rem;
+    }
   }
 
   .bottomContainer {
@@ -57,9 +68,17 @@ $big-radius: math.div($radius, 2) * 3;
     position: relative;
 
     .bottomContent {
-      flex-shrink: 0;
-      padding: 1rem 1rem 0 2rem;
       position: relative;
+      flex-shrink: 0;
+      padding: 0.5rem 0 0 0.2rem;
+
+      @include bp.tablet {
+        padding: 1.375rem 0 0 1.625rem;
+      }
+
+      @include bp.desktop {
+        padding: 1.3rem 0 0 4.375rem;
+      }
     }
 
     .space {
@@ -72,16 +91,16 @@ $big-radius: math.div($radius, 2) * 3;
         content: '';
         position: absolute;
         top: 0;
-        right: -$big-radius;
-        width: $big-radius;
-        height: $big-radius;
+        right: -$radius;
+        width: $radius;
+        height: $radius;
         background-color: $bg-color;
         mask-image: radial-gradient(
-          circle at bottom right,
-          transparent 0%,
-          transparent $big-radius,
-          black $big-radius,
-          black 100%
+                        circle at bottom right,
+                        transparent 0%,
+                        transparent $radius,
+                        black $radius,
+                        black 100%
         );
         mask-mode: alpha;
       }
