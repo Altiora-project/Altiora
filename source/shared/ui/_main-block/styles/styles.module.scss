@@ -50,7 +50,6 @@ $big-radius: math.div($radius, 2) * 3;
   .content {
     background-color: $bg-color;
     padding: 0.75rem;
-    border: 1px solid red;
     border-radius: $radius 0 $radius 0;
 
     @include bp.tablet {
