@@ -96,11 +96,11 @@ $big-radius: math.div($radius, 2) * 3;
         height: $radius;
         background-color: $bg-color;
         mask-image: radial-gradient(
-                        circle at bottom right,
-                        transparent 0%,
-                        transparent $radius,
-                        black $radius,
-                        black 100%
+          circle at bottom right,
+          transparent 0%,
+          transparent $radius,
+          black $radius,
+          black 100%
         );
         mask-mode: alpha;
       }
