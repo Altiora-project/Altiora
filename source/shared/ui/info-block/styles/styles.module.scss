@@ -4,14 +4,13 @@ $bg-color: var(--color-background1);
   display: flex;
   flex-direction: column;
   gap: 12px;
+  align-items: stretch;
 
   @include bp.tablet {
     flex-direction: row;
-    gap: 16px;
   }
 
   @include bp.desktop {
-    flex-direction: row;
     gap: 32px;
   }
 }
@@ -60,16 +59,25 @@ $bg-color: var(--color-background1);
   padding: 16px 28px;
   border-radius: 40px;
   background: $bg-color;
+  height: 100%;
 }
 
 .cardWrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
   @include bp.tablet {
     width: 50%;
   }
 }
 
 .bigCard {
-  border-top-right-radius: 0;
+  flex: 1;
+
+  .cardWrapper:has(.topContainer) & {
+    border-top-right-radius: 0;
+  }
 
   .textCard {
     font-weight: 400;
@@ -81,7 +89,7 @@ $bg-color: var(--color-background1);
     padding: 24px 25px;
   }
 
-  @include bp.tablet {
+  @include bp.desktop {
     padding: 66px 45px;
   }
 }
@@ -94,17 +102,17 @@ $bg-color: var(--color-background1);
 
   @include bp.tablet {
     width: 50%;
-    gap: 16px;
   }
 
   @include bp.desktop {
-    gap: 40px;
+    gap: 32px;
   }
 }
 
 .smallCard {
   display: flex;
   align-items: center;
+  height: 100%;
 
   @include bp.tablet {
     padding: 22px 16px;
@@ -124,6 +132,7 @@ $bg-color: var(--color-background1);
 .cardContent {
   display: flex;
   flex-direction: column;
+  height: 100%;
 
   .titleCard {
     font-size: clamp(0.8125rem, 0.5735rem + 0.9804vw, 1.75rem);

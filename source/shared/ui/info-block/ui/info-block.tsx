@@ -3,14 +3,20 @@ import { InfoBlockProps } from '../types/types'
 import clsx from 'clsx'
 
 export const InfoBlock: React.FC<InfoBlockProps> = ({ title, data, ...otherProps }) => {
+  if (!data || data.length === 0) {
+    return null
+  }
+
   const [firstCard, ...otherCards] = data
   return (
     <div className={classes.blockInfo} {...otherProps}>
       <div className={classes.cardWrapper}>
-        <div className={classes.topContainer}>
-          <h3 className={classes.title}>{title}</h3>
-          <div className={classes.space}></div>
-        </div>
+        {title && (
+          <div className={classes.topContainer}>
+            <h3 className={classes.title}>{title}</h3>
+            <div className={classes.space}></div>
+          </div>
+        )}
         <div className={clsx(classes.card, classes.bigCard)}>
           {typeof firstCard === 'string' ? (
             <p className={classes.textCard}>{firstCard}</p>
