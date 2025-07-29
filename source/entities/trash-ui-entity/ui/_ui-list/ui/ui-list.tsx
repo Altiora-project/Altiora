@@ -24,17 +24,15 @@ export const UIList: React.FC = () => {
     <div className={classes.container}>
       <UIMainBlock />
 
-      <UIButton />
-      <UIInput />
+      {/* Добавляем компоненты ниже */}
+      <UICheckbox />
       <UIMarquee />
       <UICardComponent />
-
       <UIIcons />
-      <UICheckbox />
       <UIFormSubmitModal />
-      {/* Добавляем компоненты ниже */}
-
-      {/* Добавляем компоненты ниже */}
+      <UISliderCard />
+      <UIInput />
+      <UIButton />
       <UICheckbox />
       <UIMarquee />
       <UICardComponent />
@@ -50,7 +48,6 @@ export const UIList: React.FC = () => {
       <UILogo />
       <UIVideoFeature />
       <UIFooterInfoBlock />
-
       <UILinkMenu />
       <UIProductCard />
     </div>
