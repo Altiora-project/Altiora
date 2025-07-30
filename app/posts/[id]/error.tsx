@@ -1,6 +1,6 @@
 'use client'
 
-import { ErrorBlock } from '@shared/ui/error-block'
+import { ErrorBlock } from '@shared/ui/error'
 
 const ErrorPage: React.FC = () => {
   return <ErrorBlock />
