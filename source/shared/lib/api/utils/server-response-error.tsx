@@ -2,8 +2,7 @@
 
 import { usePathname } from 'next/navigation'
 import { useRouter } from 'nextjs-toploader/app'
-
-import { ErrorBlock } from '@shared/ui/error-block'
+import { ErrorCard } from '@shared/ui/error/index'
 
 export const ServerResponseError: React.FC = () => {
   const router = useRouter()
@@ -13,5 +12,5 @@ export const ServerResponseError: React.FC = () => {
     router.replace(pathname)
   }
 
-  return <ErrorBlock onReset={refreshPage} />
+  return <ErrorCard field="Что-то пошло не так" text="Давайте попробуем еще раз" onClick={refreshPage} />
 }
