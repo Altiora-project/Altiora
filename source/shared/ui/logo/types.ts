@@ -4,4 +4,5 @@ export type LogoProps = {
   variant: LogoVariant
   className?: string
   text?: string
+  darkText?: boolean
 }

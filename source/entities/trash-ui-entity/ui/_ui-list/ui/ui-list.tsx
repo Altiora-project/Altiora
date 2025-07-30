@@ -6,13 +6,14 @@ import { UIFooterInfoBlock } from '../../footer-info-block'
 import { UIFormSubmitModal } from '../../form-submit-modal'
 import { UIIcons } from '../../icons'
 import { UIInput } from '../../input'
+import { UILinkMenu } from '../../link-menu'
 import { UILogo } from '../../logo'
 import { UIMainBlock } from '../../main-block'
 import { MainMenuMobileTest } from '../../main-menu-mobile-test'
 import { UIMarquee } from '../../marquee'
+import { UIProductCard } from '../../product-card'
 import { UIServiceCard } from '../../ServiceCard'
 import { UISliderCard } from '../../slider-card'
-import { UILinkMenu } from '../../link-menu'
 import { UIVideoFeature } from '../../video-feature'
 import classes from '../styles/styles.module.scss'
 
@@ -23,17 +24,15 @@ export const UIList: React.FC = () => {
     <div className={classes.container}>
       <UIMainBlock />
 
-      <UIButton />
-      <UIInput />
+      {/* Добавляем компоненты ниже */}
+      <UICheckbox />
       <UIMarquee />
       <UICardComponent />
-
       <UIIcons />
-      <UICheckbox />
       <UIFormSubmitModal />
-      {/* Добавляем компоненты ниже */}
-
-      {/* Добавляем компоненты ниже */}
+      <UISliderCard />
+      <UIInput />
+      <UIButton />
       <UICheckbox />
       <UIMarquee />
       <UICardComponent />
@@ -49,8 +48,8 @@ export const UIList: React.FC = () => {
       <UILogo />
       <UIVideoFeature />
       <UIFooterInfoBlock />
-
       <UILinkMenu />
+      <UIProductCard />
     </div>
   )
 }

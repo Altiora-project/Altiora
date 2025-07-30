@@ -21,10 +21,10 @@ export const UIInput: React.FC = () => {
         { key: 'placeholder', value: '(string) placeholder инпута' }
       ]}
       components={
-        <>
-          <Input label="" supportingText="инпут" value="" onClear={() => {}} />
-          <Input label="" supportingText="инпут с ошибкой" value="" error onClear={() => {}} />
-        </>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+          <Input label="инпут" supportingText="подсказка" value="" onClear={() => {}} />
+          <Input label="инпут с ошибкой" supportingText="подсказка" value="" error onClear={() => {}} />
+        </div>
       }
     />
   )
