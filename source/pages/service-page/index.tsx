@@ -1,14 +1,18 @@
-import { FC, HTMLAttributes } from 'react'
+import { FC } from 'react'
 
-import classes from './styles.module.scss'
+import classes from './styles/styles.module.scss'
 import clsx from 'clsx'
 
 import { InfoBlock } from '@shared/ui/info-block'
+import { typeServiceDetailsProps } from './types/types'
 
-export const ServicePage: FC<HTMLAttributes<HTMLDivElement>> = ({ className, ...otherProps }) => {
+export const ServiceDetails: FC<typeServiceDetailsProps> = async ({ slug, className, ...otherProps }) => {
+  //TODO: тут используем сущность которая через slug получает данные из api для запрашиваемой услуги
+  // далее парсим данные и наполняем страницу
+
   return (
     <div className={clsx(classes.wrapper, className)} {...otherProps}>
-      <h1>Services page</h1>
+      <h1>{slug}</h1>
 
       <InfoBlock
         title="/почему выбирают нас"
