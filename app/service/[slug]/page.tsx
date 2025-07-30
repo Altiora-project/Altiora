@@ -1,5 +1,6 @@
-import { ServiceDetails } from '@pages/service-page'
 import { FC } from 'react'
+
+import { ServiceDetails } from '@pages/service-page'
 
 type typeServicePageProps = {
   params: Promise<{ slug: string }>
