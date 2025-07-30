@@ -51,6 +51,7 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
+            docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
             export DOCKERHUB_USER=${{ secrets.DOCKERHUB_USERNAME }}
             cd /opt/frontend
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/altiora-frontend:stage
