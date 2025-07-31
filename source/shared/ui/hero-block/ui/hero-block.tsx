@@ -8,7 +8,7 @@ import { typeHeroProps } from '@shared/ui/hero-block/types/types'
 import { HeroBlockImage } from '@shared/ui/hero-block/ui/hero-block-image'
 import { MarkdownRenderer } from '@shared/lib/markdown'
 
-export const HeroBlock: FC<typeHeroProps> = ({ link, imgUrl, title, className, ...otherProps }) => {
+export const HeroBlock: FC<typeHeroProps> = ({ imgUrl, title, className, ...otherProps }) => {
   return (
     <div className={clsx(classes.wrapper, className)} {...otherProps}>
       <div className={classes.content}>
@@ -17,7 +17,7 @@ export const HeroBlock: FC<typeHeroProps> = ({ link, imgUrl, title, className, .
         </h1>
         <HeroBlockImage className={classes.image} imgUrl={imgUrl} />
       </div>
-      <Link href={link ?? '#'} className={classes.link}>
+      <Link href={'/'} className={classes.link}>
         Связаться с нами
       </Link>
     </div>
