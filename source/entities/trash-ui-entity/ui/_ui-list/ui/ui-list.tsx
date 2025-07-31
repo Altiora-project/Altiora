@@ -15,7 +15,10 @@ import { UIProductCard } from '../../product-card'
 import { UIServiceCard } from '../../ServiceCard'
 import { UISliderCard } from '../../slider-card'
 import { UIVideoFeature } from '../../video-feature'
+import { OrderFormTest } from '../../order-form-test'
+
 import classes from '../styles/styles.module.scss'
+import { UISlider } from '../../slider/slider'
 
 import { UIHeroBlock } from '@entities/trash-ui-entity/ui/hero-block'
 
@@ -48,8 +51,14 @@ export const UIList: React.FC = () => {
       <UILogo />
       <UIVideoFeature />
       <UIFooterInfoBlock />
+      <UISlider />
+
+      {/* Добавляем компоненты ниже */}
+
+      {/* Добавляем компоненты ниже */}
       <UILinkMenu />
       <UIProductCard />
+      <OrderFormTest />
     </div>
   )
 }
