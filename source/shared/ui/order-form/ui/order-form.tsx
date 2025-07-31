@@ -50,11 +50,7 @@ export const OrderForm: React.FC<OrderFormProps> = ({ title, callback, agreement
         <MainBlock
           topContent={<h2 className={classes.title}>{title}</h2>}
           bottomContent={
-            <Button
-              type="submit"
-              variant="primary"
-              disabled={!isValid || isSubmitting}
-            >
+            <Button type="submit" variant="primary" disabled={!isValid || isSubmitting}>
               {isSubmitting ? 'Отправка...' : 'Отправить заявку'}
             </Button>
           }

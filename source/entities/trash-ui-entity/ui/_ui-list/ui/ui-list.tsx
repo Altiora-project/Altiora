@@ -18,13 +18,9 @@ import { UIVideoFeature } from '../../video-feature'
 import { OrderFormTest } from '../../order-form-test'
 
 import classes from '../styles/styles.module.scss'
-<<<<<<< HEAD
-import { UIFormSubmitModal } from '../../form-submit-modal'
 import { UISlider } from '../../slider/slider'
-=======
 
 import { UIHeroBlock } from '@entities/trash-ui-entity/ui/hero-block'
->>>>>>> develop
 
 export const UIList: React.FC = () => {
   return (
@@ -37,20 +33,14 @@ export const UIList: React.FC = () => {
       <UICardComponent />
       <UIIcons />
       <UIFormSubmitModal />
-<<<<<<< HEAD
-=======
       <UISliderCard />
       <UIInput />
       <UIButton />
->>>>>>> develop
       <UICheckbox />
       <UIMarquee />
       <UICardComponent />
       <UIIcons />
-<<<<<<< HEAD
-=======
       <UIHeroBlock />
->>>>>>> develop
       <UIBadge />
       <UISliderCard />
       <UIInput />
@@ -61,17 +51,14 @@ export const UIList: React.FC = () => {
       <UILogo />
       <UIVideoFeature />
       <UIFooterInfoBlock />
-<<<<<<< HEAD
       <UISlider />
 
       {/* Добавляем компоненты ниже */}
 
       {/* Добавляем компоненты ниже */}
-=======
       <UILinkMenu />
       <UIProductCard />
       <OrderFormTest />
->>>>>>> develop
     </div>
   )
 }
