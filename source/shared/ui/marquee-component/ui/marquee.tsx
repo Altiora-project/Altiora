@@ -7,12 +7,13 @@ import { typeMarqueeProps } from '../types'
 import Marquee from 'react-fast-marquee'
 
 import { Icon } from '@shared/ui/icon'
+import clsx from 'clsx'
 
-export const MarqueeComponent: FC<typeMarqueeProps> = ({ phrases }) => {
+export const MarqueeComponent: FC<typeMarqueeProps> = ({ phrases, ...otherProps }) => {
   return (
     <>
       {/* TODO: изменить параметр speed по необходимости */}
-      <Marquee className={classes.marquee}>
+      <Marquee className={clsx(classes.marquee, otherProps.className)}>
         {phrases.map((phrase, index) => {
           return (
             <div className={classes.phraseWrapper} key={index}>

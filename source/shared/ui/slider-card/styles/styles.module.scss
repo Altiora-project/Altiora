@@ -1,46 +1,72 @@
 .container {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 15px;
+  gap: 30px;
   border-radius: 40px;
   padding: 20px;
-  max-width: 760px;
-  min-height: 218px;
+  width: 100%;
+  max-width: 320px;
+  height: 188px;
   backdrop-filter: blur(30px);
   background: var(--color-background1);
 
   @include bp.tablet {
-    border-radius: 60px;
+    max-width: 320px;
+    border-radius: 40px;
+    height: 218px;
+    gap: 44px;
+  }
+
+  @include bp.desktop {
+    max-width: 760px;
+    height: 400px;
     padding: 60px 40px;
   }
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @include bp.tablet {
+    gap: 32px;
+  }
+}
+
 .title {
-  max-width: 100%;
   font-weight: 700;
-  font-size: clamp(0.875rem, 0.6201rem + 1.0458vw, 1.875rem);
+  font-size: 14px;
   text-transform: uppercase;
   color: var(--color-grey);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  @include bp.desktop {
+    font-size: 30px;
+  }
 }
 
 .description {
-  margin-block-start: 32px;
-  font-size: clamp(0.8125rem, 0.6373rem + 0.719vw, 1.5rem);
+  text-align: start;
+  word-break: break-all;
   color: var(--color-grey);
+  font-size: 13px;
+
+  @include bp.tablet {
+    font-size: 13px;
+  }
+  @include bp.desktop {
+    font-size: 24px;
+  }
 }
 
 .tags {
   display: flex;
   gap: 12px;
-  margin-block-start: 30px;
-
-  @include bp.tablet {
-    margin-block-start: 93px;
-  }
 }
 
 .tag {
@@ -50,12 +76,13 @@
   align-self: start;
   font-family: var(--font-secondary);
   font-weight: 700;
-  font-size: clamp(0.6875rem, 0.5441rem + 0.5882vw, 1.25rem);
+  font-size: 11px;
   text-transform: lowercase;
   text-decoration: none;
   color: var(--color-grey);
 
-  @include bp.tablet {
+  @include bp.desktop {
+    font-size: 20px;
     padding: 12px;
   }
 }
