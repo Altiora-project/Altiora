@@ -1,31 +1,24 @@
 import classes from './styles.module.scss'
 import clsx from 'clsx'
 import type { FC, HTMLAttributes } from 'react'
-
 import { Footer } from '@widgets/footer'
-import { HeroBlock } from '@widgets/hero-block'
+import { getPageDataAction } from '@entities/main-page/api/server-actions'
+import { NotFound } from '@shared/ui/not-found'
+import { HeroSection } from '@features/hero-feature'
 
-import { MarqueeComponent } from '@shared/ui/marquee-component'
+export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, ...otherProps }) => {
+  const response = await getPageDataAction()
 
-//TODO: убрать моки
-const phrases = [
-  'Разработка сайтов',
-  'Работа с ИИ',
-  'Разработка мобильных приложений',
-  'UX/UI',
-  'Разработка клиентских веб-сервисов',
-  'Тестирование',
-  'Разработка приложений в telegram',
-  'Техническая поддержка продуктов'
-]
+  if (!response) return <NotFound />
+  if ('error' in response) return <NotFound />
 
-export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = ({ className, ...otherProps }) => {
+  const pageData = response.data.data
+  const phrases = pageData.services_data.map(service => service.name)
+
   return (
     <div className={clsx(classes.wrapper, className)} {...otherProps}>
-      <div className={classes.container}>
-        <HeroBlock url={''} />
-      </div>
-      <MarqueeComponent phrases={phrases} />
+      <HeroSection title={pageData.hero_title} imgUrl={pageData.hero_image} phrases={phrases} />
+
       <div className={clsx(classes.content, classes.container)}>MAIN-PAGE CONTENT</div>
       <div className={classes.container}>
         <Footer />

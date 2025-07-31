@@ -68,10 +68,6 @@ h1 {
   text-align: left;
   line-height: 130%;
 
-  span {
-    color: var(--color-accent-primary);
-  }
-
   @include bp.tablet {
     font-size: 30px;
     line-height: 100%;
