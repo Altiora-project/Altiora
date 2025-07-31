@@ -4,7 +4,7 @@ import type { FC, HTMLAttributes } from 'react'
 import { Footer } from '@widgets/footer'
 import { getPageDataAction } from '@entities/main-page/api/server-actions'
 import { NotFound } from '@shared/ui/not-found'
-import { HeroSection } from '@features/hero-feature'
+import { HeroSection } from '@features/hero-section'
 
 export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, ...otherProps }) => {
   const response = await getPageDataAction()
