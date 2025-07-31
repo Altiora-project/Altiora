@@ -1,67 +1,72 @@
-.embla_wrapper {
+.wrapper {
+  height: 218px;
   display: flex;
-  // margin-inline-start: auto;
-}
-
-.embla {
-  // TODO: исправить размер видимой области при сборе страницы
-  //   max-width: 793px;
-  margin: auto;
-  position: relative;
-  height: fit-content;
-}
-
-.emblaViewport {
-  overflow: hidden;
-  height: fit-content;
-  width: 360px;
 
   @include bp.tablet {
-    width: 360px;
+    height: 220px;
   }
+
   @include bp.desktop {
-    width: 980px;
+    height: 400px;
   }
 }
 
-.embla__container {
+.stackContainer {
   display: flex;
   touch-action: pan-y pinch-zoom;
+  position: relative;
+  margin-bottom: 50px;
+  width: 100%;
+  height: fit-content;
 }
 
-.embla__slide {
-  flex: 0 0 320px;
-  min-width: 0;
-  padding-inline-start: 16px;
+.card {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide {
+  width: 320px;
   user-select: none;
+  transition: all 0.4s ease;
 
   @include bp.tablet {
-    flex: 0 0 320px;
+    width: 320px;
     height: 218px;
-    padding-inline-start: 16px;
   }
 
   @include bp.desktop {
-    flex: 0 0 760px;
+    width: 760px;
     height: 400px;
     padding-inline-start: 32px;
   }
 }
 
-.embla_buttons {
+.controls {
+  position: relative;
+}
+
+.buttons {
   display: none;
 
   @include bp.tablet {
     display: none;
   }
+
   @include bp.desktop {
+    position: absolute;
+    top: 169;
+    left: 10;
+    width: 760px;
     display: flex;
-    gap: 1px;
+    justify-content: space-between;
     align-items: center;
   }
 }
 
-.embla__button {
+.button {
   width: 69px;
   height: 69px;
   background-color: var(--color-background3);
@@ -83,23 +88,23 @@
   justify-content: center;
 }
 
-.embla__button:disabled {
+.button:disabled {
   color: var(--detail-high-contrast);
   display: none;
 }
 
-.embla__button__svg {
+.button__svg {
   color: var(--color-accent-primary);
 }
 
-.embla__button__next {
+.button__next {
   position: absolute;
-  left: 759;
-  top: 169;
+  top: 0;
+  right: -75;
 }
 
-.embla__button__prev {
+.button__prev {
   position: absolute;
-  top: 169;
-  left: -38;
+  top: 0;
+  left: 0;
 }

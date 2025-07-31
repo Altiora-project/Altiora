@@ -1,77 +1,83 @@
 'use client'
-
+import { useEffect, useState } from 'react'
 import type { typeSliderProps } from '../types'
 import classes from '../styles/styles.module.scss'
-// import { EmblaCarouselType, EmblaEventType } from 'embla-carousel'
 import { FC } from 'react'
-import useEmblaCarousel from 'embla-carousel-react'
-import { NextButton, PrevButton, usePrevNextButtons } from './arrow-buttons'
+import { NextButton, PrevButton } from './arrow-buttons'
+import { useSwipeable } from 'react-swipeable'
 import clsx from 'clsx'
 
 export const Slider: FC<typeSliderProps> = ({ data, options, ...otherProps }) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel(options)
-  const { prevBtnDisabled, nextBtnDisabled, onPrevButtonClick, onNextButtonClick } = usePrevNextButtons(emblaApi)
+  const cardsStack = data.length
+  const [movedInStackCount, setMovedInStackCount] = useState(0)
+  const [offset, setOffset] = useState(0)
 
-  // TODO: до- или пере-работать слайдер с учетом анимации колоды
+  useEffect(() => {
+    setOffset(window.innerWidth)
 
-  // const [rotationStates, setRotationStates] = useState<number[]>(data.map(() => 0))
-  // const [currentIndex, setCurrentIndex] = useState(0)
+    const handleResize = () => {
+      setOffset(window.innerWidth)
+    }
 
-  // // Обновляем текущий индекс при изменении слайда
-  // useEffect((): any => {
-  //   if (!emblaApi) return
+    window.addEventListener('resize', handleResize)
 
-  //   const updateIndex = () => {
-  //     setCurrentIndex(emblaApi.selectedScrollSnap())
-  //   }
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
 
-  //   emblaApi.on('select', updateIndex)
-  //   return () => emblaApi.off('select', updateIndex)
-  // }, [emblaApi])
+  let count = 15
+  const onRightMove = () => {
+    if (movedInStackCount > 0) {
+      count += 15
+      setMovedInStackCount(v => v - 1)
+    }
+  }
 
-  // const handleNextClick = useCallback(() => {
-  //   onNextButtonClick()
-
-  //   setRotationStates(prev => {
-  //     const newStates = [...prev]
-  //     // Увеличиваем поворот текущего слайда на 5°
-  //     newStates[currentIndex] += 4
-  //     // Следующему слайду задаем базовый поворот 5°
-  //     if (currentIndex + 1 < data.length) {
-  //       newStates[currentIndex + 1] = Math.max(5, newStates[currentIndex + 1])
-  //     }
-
-  //     return newStates
-  //   })
-  // }, [onNextButtonClick, currentIndex, data.length])
-
-  // const handlePrevClick = useCallback(() => {
-  //   onPrevButtonClick()
-  //   setRotationStates(prev => {
-  //     const newStates = [...prev]
-  //     // Уменьшаем поворот текущего слайда на 5°
-  //     newStates[currentIndex] = Math.max(0, newStates[currentIndex] - 5)
-  //     return newStates
-  //   })
-  // }, [onPrevButtonClick, currentIndex])
+  const onLeftMove = () => {
+    if (movedInStackCount < cardsStack - 1) {
+      count -= 15
+      setMovedInStackCount(v => v + 1)
+    }
+  }
+  const handleSwipe = useSwipeable({
+    onSwipedLeft: onLeftMove,
+    onSwipedRight: onRightMove,
+    trackMouse: true
+  })
 
   return (
-    <div className={classes.embla_wrapper} {...otherProps}>
-      <div className={classes.embla}>
-        <div className={classes.emblaViewport} ref={emblaRef}>
-          <div className={classes.embla__container}>
-            {data.map((slide, index) => (
-              <div key={index} className={clsx(classes.embla__slide)}>
-                {slide}
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className={classes.embla__controls}>
-          <div className={classes.embla_buttons}>
-            <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
-            <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
-          </div>
+    <div className={classes.wrapper} {...otherProps}>
+      <div className={classes.stackContainer} id="stack" {...handleSwipe}>
+        {data.map((slide, index) => {
+          const isInStack = index < movedInStackCount
+          let offsetX
+
+          if (offset >= 1920) {
+            offsetX = (index - movedInStackCount) * 780
+          } else {
+            offsetX = (index - movedInStackCount) * 340
+          }
+
+          const offsetDeg = (index - movedInStackCount) * cardsStack
+
+          return (
+            <div
+              id={index.toString()}
+              className={clsx(classes.card, classes.slide)}
+              key={index}
+              style={!isInStack ? { transform: `translateX(${offsetX + count}px)` } : { rotate: `${offsetDeg}deg` }}
+            >
+              {slide}
+            </div>
+          )
+        })}
+      </div>
+
+      <div className={classes.controls}>
+        <div className={classes.buttons}>
+          <PrevButton onClick={onRightMove} disabled={movedInStackCount === 0} />
+          <NextButton onClick={onLeftMove} disabled={movedInStackCount === cardsStack - 1} />
         </div>
       </div>
     </div>
