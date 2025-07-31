@@ -4,7 +4,7 @@ import type { LogoProps } from './types'
 import clsx from 'clsx'
 import Image from 'next/image'
 
-export const Logo: React.FC<LogoProps> = ({ variant = 'long', text, className }) => {
+export const Logo: React.FC<LogoProps> = ({ variant = 'long', text = 'Алтиора', darkText = false, className }) => {
   const showText = variant === 'long'
 
   if (variant === 'shortOutline') {
@@ -21,7 +21,7 @@ export const Logo: React.FC<LogoProps> = ({ variant = 'long', text, className })
         <Image src="/logo.png" alt="Логотип" fill className={styles.icon} />
       </div>
 
-      {showText && <span className={styles.text}>{text}</span>}
+      {showText && <span className={clsx(styles.text, darkText && styles['text--dark'])}>{text}</span>}
     </div>
   )
 }

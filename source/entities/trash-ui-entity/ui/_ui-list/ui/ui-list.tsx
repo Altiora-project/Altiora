@@ -3,45 +3,75 @@ import { UIButton } from '../../button'
 import { UICardComponent } from '../../card-component/card-component'
 import { UICheckbox } from '../../checkbox'
 import { UIFooterInfoBlock } from '../../footer-info-block'
+import { UIFormSubmitModal } from '../../form-submit-modal'
 import { UIIcons } from '../../icons'
 import { UIInput } from '../../input'
+import { UILinkMenu } from '../../link-menu'
 import { UILogo } from '../../logo'
 import { UIMainBlock } from '../../main-block'
 import { MainMenuMobileTest } from '../../main-menu-mobile-test'
 import { UIMarquee } from '../../marquee'
+import { UIProductCard } from '../../product-card'
+import { UIServiceCard } from '../../ServiceCard'
 import { UISliderCard } from '../../slider-card'
+import { UIVideoFeature } from '../../video-feature'
+import { OrderFormTest } from '../../order-form-test'
+
 import classes from '../styles/styles.module.scss'
+<<<<<<< HEAD
 import { UIFormSubmitModal } from '../../form-submit-modal'
 import { UISlider } from '../../slider/slider'
+=======
+
+import { UIHeroBlock } from '@entities/trash-ui-entity/ui/hero-block'
+>>>>>>> develop
 
 export const UIList: React.FC = () => {
   return (
     <div className={classes.container}>
       <UIMainBlock />
-      <UIButton />
-      <UIInput />
+
+      {/* Добавляем компоненты ниже */}
+      <UICheckbox />
       <UIMarquee />
       <UICardComponent />
       <UIIcons />
-      <UICheckbox />
       <UIFormSubmitModal />
+<<<<<<< HEAD
+=======
+      <UISliderCard />
+      <UIInput />
+      <UIButton />
+>>>>>>> develop
       <UICheckbox />
       <UIMarquee />
       <UICardComponent />
       <UIIcons />
+<<<<<<< HEAD
+=======
+      <UIHeroBlock />
+>>>>>>> develop
       <UIBadge />
       <UISliderCard />
       <UIInput />
       <UIButton />
       <UICheckbox />
+      <UIServiceCard />
       <MainMenuMobileTest />
       <UILogo />
+      <UIVideoFeature />
       <UIFooterInfoBlock />
+<<<<<<< HEAD
       <UISlider />
 
       {/* Добавляем компоненты ниже */}
 
       {/* Добавляем компоненты ниже */}
+=======
+      <UILinkMenu />
+      <UIProductCard />
+      <OrderFormTest />
+>>>>>>> develop
     </div>
   )
 }

@@ -1,0 +1,187 @@
+$duration: 0.3s;
+
+.card {
+  border-radius: 20px;
+  padding: 0 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-width: 328px;
+  min-height: 189px;
+  text-decoration: none;
+  color: #2f2f2f4d;
+
+  @include bp.tablet {
+    min-height: 278px;
+    background-color: var(--color-background1) !important;
+  }
+
+  @include bp.desktop {
+    background-color: var(--color-background) !important;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        .content {
+          background-color: var(--color-accent-primary);
+        }
+
+        .titleCard,
+        .descriptionCard {
+          color: var(--color-foreground);
+        }
+
+        .tags {
+          opacity: 0;
+          visibility: hidden;
+        }
+
+        .actionBlock {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+}
+
+.titleCard {
+  font-weight: 700;
+  font-size: clamp(0.875rem, 0.652rem + 0.915vw, 1.75rem);
+  color: var(--color-accent-primary);
+}
+
+.content {
+  border-radius: 20px;
+  padding: 16px;
+
+  @include bp.tablet {
+    padding: 24px;
+  }
+}
+
+.descriptionCard {
+  margin-block-start: 16px;
+  font-size: clamp(0.8125rem, 0.701rem + 0.4575vw, 1.25rem);
+  color: var(--color-foreground-light1);
+}
+
+.actions {
+  padding: 0 16px 16px;
+  display: flex;
+  @include bp.tablet {
+    padding: 0 24px 24px;
+  }
+  @include bp.desktop {
+    display: grid;
+    grid-template-areas: 'stack';
+    width: 100%;
+  }
+}
+
+.content,
+.actions {
+  @include bp.desktop {
+    padding: 32px 28px 38px;
+  }
+}
+
+.tags,
+.actionBlock {
+  grid-area: stack;
+  width: 100%;
+  transition:
+    opacity $duration ease-in-out,
+    visibility $duration ease-in-out;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  opacity: 1;
+  visibility: visible;
+
+  @include bp.tablet {
+    gap: 12px;
+  }
+}
+
+.tagCard {
+  border-radius: 40px;
+  padding: 4px;
+  align-self: start;
+  font-size: clamp(0.75rem, 0.5523rem + 0.4252vw, 1.0625rem);
+  text-transform: lowercase;
+  color: var(--color-foreground-light1);
+  background-color: var(--color-grey2);
+  white-space: nowrap;
+  flex-shrink: 0;
+
+  @include bp.tablet {
+    padding: 10px 16px;
+    background-color: var(--color-background1);
+  }
+
+  @include bp.desktop {
+    padding: 12px;
+  }
+}
+
+.actionBlock {
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  width: 24px;
+  height: 100%;
+  font-family: var(--font-secondary);
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--color-white);
+  cursor: pointer;
+  background: transparent;
+  transition:
+    transform $duration linear,
+    opacity $duration ease-in-out;
+
+  @include bp.tablet {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  @include bp.desktop {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 408px;
+    width: 100%;
+
+    &:hover {
+      font-family: var(--font-main);
+      font-weight: 400;
+      color: var(--color-accent-primary);
+      transform: translateX(-20px);
+
+      .icon {
+        transform: translateX(100px);
+      }
+    }
+  }
+}
+
+.icon {
+  transition: transform $duration linear;
+}
+
+.actionText {
+  display: none;
+
+  @include bp.desktop {
+    display: block;
+  }
+}

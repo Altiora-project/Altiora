@@ -1,21 +1,89 @@
 .inputWrapper {
   display: flex;
-  flex-direction: column;
   gap: 4px;
-  background: #1c1b1c;
-  border-radius: 12px;
-  padding: 24px;
-  max-width: 400px;
   margin-left: 0;
-  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.04);
+  flex-direction: column;
+}
+
+.inputContent {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-left: 0;
+  align-items: flex-start;
+}
+
+.inputContent input {
+  margin-left: 0;
+  padding-left: 0;
 }
 
 .inputLabel {
   color: #fff;
-  font-size: 20px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
+  font-family: 'drukWideCyrFont', sans-serif;
+  font-weight: 700;
   margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+@include bp.tablet {
+  .inputWrapper {
+    flex-direction: column;
+  }
+
+  .inputLabel {
+    font-size: 16px;
+  }
+  .inputContent {
+    font-size: 20px;
+  }
+  .supportingText {
+    font-size: 14px;
+  }
+
+  .inputField {
+    width: 100%;
+  }
+
+  .clearButton {
+    top: -12px;
+  }
+}
+
+@include bp.desktop {
+  .inputWrapper {
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+  }
+  .inputLabel {
+    margin-bottom: 0;
+    min-width: 479px;
+    text-align: left;
+    align-self: flex-start;
+    margin-left: 0;
+    font-size: 32px;
+  }
+  .inputContent {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .supportingText {
+    margin-top: 8px;
+    margin-left: 0;
+    white-space: normal;
+    font-size: 24px;
+  }
+
+  .inputField {
+    align-self: flex-start;
+    width: 100%;
+    font-size: 32px;
+  }
+  .clearButton {
+    top: 0;
+  }
 }
 
 .inputField {
@@ -23,11 +91,12 @@
   border: none;
   border-bottom: 3px solid #fff;
   color: #fff;
-  font-size: 24px;
-  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-family: 'manropeFont', sans-serif;
   outline: none;
   padding: 0 0 4px 0;
   transition: border-color 0.2s;
+  width: 100%;
 }
 
 .inputField:focus {
@@ -40,9 +109,11 @@
 
 .supportingText {
   color: #fff;
-  font-size: 18px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'manropeFont', sans-serif;
+  font-weight: 500;
   margin-top: 4px;
+  text-align: left;
+  align-self: flex-start;
 }
 
 .supportingText.error {

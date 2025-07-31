@@ -1,0 +1,34 @@
+# Node
+node_modules
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Build & Cache
+.cache
+.next
+dist
+out
+coverage
+
+# Logs
+*.log
+
+# Env files
+.env
+.env.*
+*.swp
+
+# System
+.DS_Store
+
+# Git
+.git
+.gitignore
+
+# Docker
+Dockerfile*
+docker-compose*
+
+# CI/CD
+.github/
