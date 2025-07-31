@@ -7,7 +7,7 @@ import { NextButton, PrevButton } from './arrow-buttons'
 import { useSwipeable } from 'react-swipeable'
 import clsx from 'clsx'
 
-export const Slider: FC<typeSliderProps> = ({ data, options, ...otherProps }) => {
+export const Slider: FC<typeSliderProps> = ({ data, ...otherProps }) => {
   const cardsStack = data.length
   const [movedInStackCount, setMovedInStackCount] = useState(0)
   const [offset, setOffset] = useState(0)

@@ -39,23 +39,14 @@ export const UISlider: FC = () => {
     />
   ]
 
-  const options: EmblaOptionsType = { align: 'start', dragFree: true, loop: false }
   return (
     <UIContainer
       title="Slider"
       description="Карточка слайдера со всеми стандартными props и дополнительными:"
-      props={[
-        { key: 'data', value: '(ReactNode[]) - принимает массив карточек для карусели' },
-        { key: 'slides', value: '(number) - количество слайдов в массиве для корректной работы библиотеки' },
-        {
-          key: 'options',
-          value:
-            '(ReactNode[]) - опции для карусели например  align: "start / center / end" - как карточки будут расположены относительно viewport,, dragFree: true / false - свободное пролистывание без фиксации контента, loop: true / false - бесконечная карусель; все опции есть по ссылке https://www.embla-carousel.com/api/options/'
-        }
-      ]}
+      props={[{ key: 'data', value: '(ReactNode[]) - принимает массив карточек для карусели' }]}
       components={
         <>
-          <Slider data={cardData} options={options} />
+          <Slider data={cardData} />
         </>
       }
     />
