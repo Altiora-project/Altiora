@@ -1,9 +1,11 @@
 'use client'
 
-import { ErrorBlock } from '@shared/ui/error'
+import { ErrorCard } from '@shared/ui/error/index'
 
 const ErrorPage: React.FC = () => {
-  return <ErrorBlock />
+  return (
+    <ErrorCard field="Что-то пошло не так" text="Давайте попробуем еще раз" onClick={() => window.location.reload()} />
+  )
 }
 
 export default ErrorPage
