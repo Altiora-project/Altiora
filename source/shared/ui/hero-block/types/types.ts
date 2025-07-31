@@ -3,5 +3,5 @@ import { HTMLAttributes, JSX } from 'react'
 export type typeHeroProps = {
   title: string
   imgUrl: string
-  url: string
+  contactLink: string
 } & HTMLAttributes<HTMLDivElement>
