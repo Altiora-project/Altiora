@@ -2,8 +2,6 @@
   max-width: 1800px;
   width: 100%;
   margin: 0 auto;
-  padding: 2rem;
-  background-color: var(--color-background);
 }
 
 .title {
@@ -11,8 +9,7 @@
   font-family: var(--font-secondary);
   font-weight: 700;
   font-size: 16px;
-  text-align: center;
-  margin-bottom: 2rem;
+  text-align: left;
 
   @include bp.tablet {
     font-size: 32px;
@@ -23,9 +20,18 @@
   }
 }
 
-.form {
+.formSection {
   display: flex;
   flex-direction: column;
+  gap: 8px;
+
+  @include bp.tablet {
+    gap: 12px;
+  }
+
+  @include bp.desktop {
+    gap: 18px;
+  }
 }
 
 .errorMessage {
@@ -37,8 +43,6 @@
 .checkboxGroup {
   display: flex;
   justify-items: center;
-  /*  align-items: flex-start;
-  justify-content: center;*/
   gap: 0.75rem;
   margin-top: 1rem;
 }
@@ -75,4 +79,17 @@
 .loading {
   opacity: 0.7;
   pointer-events: none;
+}
+
+.buttonText {
+  display: block;
+  width: 100%;
+
+  @include bp.tablet {
+    width: 100%;
+  }
+
+  @include bp.desktop {
+    width: 731px;
+  }
 }
