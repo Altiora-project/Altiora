@@ -15,6 +15,8 @@ import { UIProductCard } from '../../product-card'
 import { UIServiceCard } from '../../ServiceCard'
 import { UISliderCard } from '../../slider-card'
 import { UIVideoFeature } from '../../video-feature'
+import { OrderFormTest } from '../../order-form-test'
+
 import classes from '../styles/styles.module.scss'
 
 import { UIHeroBlock } from '@entities/trash-ui-entity/ui/hero-block'
@@ -50,6 +52,7 @@ export const UIList: React.FC = () => {
       <UIFooterInfoBlock />
       <UILinkMenu />
       <UIProductCard />
+      <OrderFormTest />
     </div>
   )
 }
