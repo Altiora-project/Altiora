@@ -50,58 +50,61 @@ export const OrderForm: React.FC<OrderFormProps> = ({ title, callback, agreement
         <MainBlock
           topContent={<h2 className={classes.title}>{title}</h2>}
           bottomContent={
-            <Button type="submit" variant="primary" disabled={!isValid || isSubmitting}>
-              {isSubmitting ? 'Отправка...' : 'Отправить заявку'}
+            <Button type="submit" variant="primary" disabled={!isValid || isSubmitting} >
+              <span className={classes.buttonText}>
+                {isSubmitting ? 'Отправка...' : 'Отправить заявку'}
+              </span>
             </Button>
           }
         >
-          <Input
-            label="Меня зовут"
-            id="name"
-            type="text"
-            placeholder="имя"
-            supportingText="ваше имя"
-            error={!!errors.name}
-            {...register('name')}
-          />
-          <Input
-            label="Я из компании"
-            id="company"
-            type="text"
-            placeholder="компания"
-            supportingText="название компании"
-            error={!!errors.company}
-            {...register('company')}
-          />
-          <Input
-            label="Детали проекта"
-            id="projectDetails"
-            placeholder="описание проекта"
-            supportingText="опишите детали проекта"
-            error={!!errors.projectDetails}
-            {...register('projectDetails')}
-          />
+          <section className={classes.formSection}>
+            <Input
+              label="Меня зовут"
+              id="name"
+              type="text"
+              placeholder="имя"
+              supportingText="ваше имя"
+              error={!!errors.name}
+              {...register('name')}
+            />
+            <Input
+              label="Я из компании"
+              id="company"
+              type="text"
+              placeholder="компания"
+              supportingText="название компании"
+              error={!!errors.company}
+              {...register('company')}
+            />
+            <Input
+              label="Детали проекта"
+              id="projectDetails"
+              placeholder="описание проекта"
+              supportingText="опишите детали проекта"
+              error={!!errors.projectDetails}
+              {...register('projectDetails')}
+            />
 
-          <Input
-            label="Телефон"
-            id="phone"
-            type="tel"
-            placeholder="+7 "
-            supportingText="ваш номер телефона"
-            error={!!errors.phone}
-            {...register('phone')}
-          />
+            <Input
+              label="Телефон"
+              id="phone"
+              type="tel"
+              placeholder="+7 "
+              supportingText="ваш номер телефона"
+              error={!!errors.phone}
+              {...register('phone')}
+            />
 
-          <Input
-            label="E-mail адрес"
-            id="email"
-            type="email"
-            placeholder="name@example.com"
-            supportingText="ваша электронная почта"
-            error={!!errors.email}
-            {...register('email')}
-          />
-
+            <Input
+              label="E-mail адрес"
+              id="email"
+              type="email"
+              placeholder="name@example.com"
+              supportingText="ваша электронная почта"
+              error={!!errors.email}
+              {...register('email')}
+            />
+          </section>
           <div className={classes.checkboxGroup}>
             <Controller
               name="agreement"
