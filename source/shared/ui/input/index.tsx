@@ -54,7 +54,7 @@ const Input: React.FC<InputProps> = ({
           {label}
         </label>
       )}
-      <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
+      <div className={styles.inputContent} style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
         <input
           ref={inputRef}
           className={`${styles.inputField} ${error ? styles.error : ''}`}
@@ -70,6 +70,7 @@ const Input: React.FC<InputProps> = ({
             type="button"
             aria-label="Очистить"
             onClick={handleClear}
+            className={styles.clearButton}
             style={{
               position: 'absolute',
               right: 0,
@@ -78,7 +79,7 @@ const Input: React.FC<InputProps> = ({
               cursor: 'pointer',
               padding: 0,
               display: 'flex',
-              alignItems: 'center',
+              alignItems: 'start',
               height: '100%'
             }}
           >
@@ -88,10 +89,10 @@ const Input: React.FC<InputProps> = ({
             </svg>
           </button>
         )}
+        {supportingText && (
+          <div className={`${styles.supportingText} ${error ? styles.error : ''}`}>{supportingText}</div>
+        )}
       </div>
-      {supportingText && (
-        <div className={`${styles.supportingText} ${error ? styles.error : ''}`}>{supportingText}</div>
-      )}
     </div>
   )
 }

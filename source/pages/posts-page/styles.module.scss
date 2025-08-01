@@ -1,6 +1,15 @@
 .container {
-  border: 1px solid var(--foreground);
-  padding: 1rem;
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 1.5rem;
+
+  @include bp.tablet {
+    padding: 2rem;
+  }
+
+  @include bp.desktop {
+  }
 
   h1 {
     font-size: 2rem;

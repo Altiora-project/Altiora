@@ -2,6 +2,7 @@
   --color-background: #111111; //фон
   --color-background1: #2f2f2f4d;
   --color-background2: #353735;
+  --color-background3: #000000;
 
   --color-foreground: #111111; //текст
   --color-foreground-light1: #cccccc;
@@ -38,9 +39,10 @@ body {
 
   main {
     width: 100%;
+    min-height: 100dvh;
     flex-grow: 1;
     margin: 0 auto;
-    display: flex;
+    //max-width: 1920px;
   }
 
   a {
@@ -66,10 +68,6 @@ h1 {
   vertical-align: bottom;
   text-align: left;
   line-height: 130%;
-
-  span {
-    color: var(--color-accent-primary);
-  }
 
   @include bp.tablet {
     font-size: 30px;
@@ -127,7 +125,6 @@ h3 {
 .container {
   margin: 0 auto;
   width: 100%;
-  max-width: 1800px;
 }
 
 * {

@@ -1,0 +1,110 @@
+.wrapper {
+  height: 218px;
+  display: flex;
+
+  @include bp.tablet {
+    height: 220px;
+  }
+
+  @include bp.desktop {
+    height: 400px;
+  }
+}
+
+.stackContainer {
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+  position: relative;
+  margin-bottom: 50px;
+  width: 100%;
+  height: fit-content;
+}
+
+.card {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide {
+  width: 320px;
+  user-select: none;
+  transition: all 0.4s ease;
+
+  @include bp.tablet {
+    width: 320px;
+    height: 218px;
+  }
+
+  @include bp.desktop {
+    width: 760px;
+    height: 400px;
+    padding-inline-start: 32px;
+  }
+}
+
+.controls {
+  position: relative;
+}
+
+.buttons {
+  display: none;
+
+  @include bp.tablet {
+    display: none;
+  }
+
+  @include bp.desktop {
+    position: absolute;
+    top: 169;
+    left: 10;
+    width: 760px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.button {
+  width: 69px;
+  height: 69px;
+  background-color: var(--color-background3);
+  -webkit-tap-highlight-color: var(--color-accent-primary);
+  -webkit-appearance: none;
+  appearance: none;
+  touch-action: manipulation;
+  display: inline-flex;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  z-index: 1;
+  border-radius: 50%;
+  color: var(--text-body);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button:disabled {
+  color: var(--detail-high-contrast);
+  display: none;
+}
+
+.button__svg {
+  color: var(--color-accent-primary);
+}
+
+.button__next {
+  position: absolute;
+  top: 0;
+  right: -75;
+}
+
+.button__prev {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

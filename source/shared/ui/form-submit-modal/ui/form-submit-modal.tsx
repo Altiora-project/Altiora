@@ -9,7 +9,6 @@ import clsx from 'clsx'
 
 export const FormSubmitModal: FC<typeFormSubmitModalProps> = ({ buttonLink, onClose, ...otherProps }) => {
   if (buttonLink === '') buttonLink = '/'
-  console.log(buttonLink)
   return (
     <>
       <CardComponent radius="lg" background="black" tag="default" className={classes.card} {...otherProps}>

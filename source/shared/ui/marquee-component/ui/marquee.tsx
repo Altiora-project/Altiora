@@ -1,16 +1,19 @@
 'use client'
 
 import { FC } from 'react'
+
+import classes from '../styles/styles.module.scss'
 import { typeMarqueeProps } from '../types'
 import Marquee from 'react-fast-marquee'
-import classes from '../styles/styles.module.scss'
-import { Icon } from '@shared/ui/icon'
 
-export const MarqueeComponent: FC<typeMarqueeProps> = ({ phrases }) => {
+import { Icon } from '@shared/ui/icon'
+import clsx from 'clsx'
+
+export const MarqueeComponent: FC<typeMarqueeProps> = ({ phrases, ...otherProps }) => {
   return (
     <>
       {/* TODO: изменить параметр speed по необходимости */}
-      <Marquee className={classes.marquee}>
+      <Marquee className={clsx(classes.marquee, otherProps.className)}>
         {phrases.map((phrase, index) => {
           return (
             <div className={classes.phraseWrapper} key={index}>

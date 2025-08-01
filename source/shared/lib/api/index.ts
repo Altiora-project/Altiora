@@ -1,4 +1,4 @@
-export { backendUrls } from './configs/backend-urls'
+export { endpoints } from './configs/backend-urls'
 export { fetchWrapper } from './fetch-wrapper'
 export type { typeApiResponseWithPagination } from './types/common-api.types'
 export type { typeApiResponse, typeBackendApiQueryParams } from './types/types'
