@@ -1,9 +1,10 @@
 import { FC } from 'react'
+
 import { UIContainer } from '../ui-container'
+import { EmblaOptionsType } from 'embla-carousel'
 
 import { Slider } from '@shared/ui/slider/ui/slider'
 import { SliderCard } from '@shared/ui/slider-card'
-import { EmblaOptionsType } from 'embla-carousel'
 
 export const UISlider: FC = () => {
   const cardData = [
