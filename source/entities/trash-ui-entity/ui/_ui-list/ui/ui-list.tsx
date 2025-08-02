@@ -2,6 +2,7 @@ import { UIBadge } from '../../badge'
 import { UIButton } from '../../button'
 import { UICardComponent } from '../../card-component/card-component'
 import { UICheckbox } from '../../checkbox'
+import { UIContactListItem } from '../../contact-list-item'
 import { UIFooterInfoBlock } from '../../footer-info-block'
 import { UIFormSubmitModal } from '../../form-submit-modal'
 import { UIIcons } from '../../icons'
@@ -18,7 +19,6 @@ import { UIVideoFeature } from '../../video-feature'
 import { OrderFormTest } from '../../order-form-test'
 
 import classes from '../styles/styles.module.scss'
-import { UISlider } from '../../slider/slider'
 
 import { UIHeroBlock } from '@entities/trash-ui-entity/ui/hero-block'
 
@@ -33,6 +33,7 @@ export const UIList: React.FC = () => {
       <UICardComponent />
       <UIIcons />
       <UIFormSubmitModal />
+      {/* Добавляем компоненты ниже */}
       <UISliderCard />
       <UIInput />
       <UIButton />
@@ -51,6 +52,7 @@ export const UIList: React.FC = () => {
       <UILogo />
       <UIVideoFeature />
       <UIFooterInfoBlock />
+      <UIContactListItem />
       <UISlider />
 
       {/* Добавляем компоненты ниже */}
