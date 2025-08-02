@@ -1,19 +1,19 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
-import clsx from 'clsx'
-import { useForm, Controller } from 'react-hook-form'
-import { yupResolver } from '@hookform/resolvers/yup'
 
-import { Input } from '@shared/ui/input'
-import { Checkbox } from '@shared/ui/checkbox'
-import { MainBlock } from '@shared/ui/_main-block'
-
-import classes from '../styles/styles.module.scss'
 import { orderFormSchema } from '../schema/validation-schema'
+import classes from '../styles/styles.module.scss'
 import type { OrderFormData, OrderFormProps } from '../types/types'
+import { yupResolver } from '@hookform/resolvers/yup'
+import clsx from 'clsx'
+import Link from 'next/link'
+import { Controller, useForm } from 'react-hook-form'
+
+import { MainBlock } from '@shared/ui/_main-block'
 import { Button } from '@shared/ui/button'
+import { Checkbox } from '@shared/ui/checkbox'
+import { Input } from '@shared/ui/input'
 
 export const OrderForm: React.FC<OrderFormProps> = ({ title, callback, agreementLink }) => {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -50,10 +50,8 @@ export const OrderForm: React.FC<OrderFormProps> = ({ title, callback, agreement
         <MainBlock
           topContent={<h2 className={classes.title}>{title}</h2>}
           bottomContent={
-            <Button type="submit" variant="primary" disabled={!isValid || isSubmitting} >
-              <span className={classes.buttonText}>
-                {isSubmitting ? 'Отправка...' : 'Отправить заявку'}
-              </span>
+            <Button type="submit" variant="primary" disabled={!isValid || isSubmitting}>
+              <span className={classes.buttonText}>{isSubmitting ? 'Отправка...' : 'Отправить заявку'}</span>
             </Button>
           }
         >

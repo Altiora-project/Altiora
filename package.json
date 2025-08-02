@@ -27,7 +27,8 @@
     "react-fast-marquee": "^1.6.5",
     "react-hook-form": "^7.61.1",
     "react-swipeable": "^7.0.2",
-    "yup": "^1.6.1"
+    "yup": "^1.6.1",
+    "zod": "^4.0.14"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

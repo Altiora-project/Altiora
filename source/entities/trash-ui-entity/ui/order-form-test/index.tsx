@@ -1,13 +1,20 @@
 'use client'
 
 import React from 'react'
-import { OrderForm, type OrderFormData } from '@shared/ui/order-form'
+
 import { UIContainer } from '../ui-container'
+
+import sendFrom from '@entities/orderFormAPI/api/send-form'
+
+import { OrderForm, type OrderFormData } from '@shared/ui/order-form'
 
 export const OrderFormTest: React.FC = () => {
   const handleSubmit = async (data: OrderFormData) => {
     // Имитация отправки данных на сервер
     console.log('Отправленные данные формы:', data)
+
+    // Здесь можно добавить логику отправки данных на сервер
+    // await sendFrom(data)
 
     // Имитация задержки сети
     await new Promise(resolve => setTimeout(resolve, 2000))
