@@ -4,5 +4,8 @@ export const routes = {
   services: '/services',
   postList: '/posts',
   post: '/posts/:id',
-  complexRout: '/complex-rout/:id/slug/:value'
+  complexRout: '/complex-rout/:id/slug/:value',
+  company: '/',
+  partners: '/',
+  contacs: '/'
 } as const

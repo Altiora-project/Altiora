@@ -4,12 +4,28 @@ import type { typeMainMenuItem } from '@shared/ui/main-menu/types/types'
 
 export const mainMenu: typeMainMenuItem[] = [
   {
-    label: 'Home',
-    url: routes.mainPage
+    label: 'Кто мы',
+    url: routes.company
   },
   {
     label: 'Наши услуги',
     url: routes.services
+  },
+  {
+    label: 'Комплексные решения',
+    url: createRoute(routes.complexRout, { id: '1', value: 'value' })
+  },
+  {
+    label: 'Партнеры',
+    url: routes.partners
+  },
+  {
+    label: 'Контакты',
+    url: routes.contacs
+  },
+  {
+    label: 'Home',
+    url: routes.mainPage
   },
   {
     label: 'UI',
@@ -18,9 +34,5 @@ export const mainMenu: typeMainMenuItem[] = [
   {
     label: 'Posts',
     url: routes.postList
-  },
-  {
-    label: 'Complex',
-    url: createRoute(routes.complexRout, { id: '1', value: 'value' })
   }
 ]
