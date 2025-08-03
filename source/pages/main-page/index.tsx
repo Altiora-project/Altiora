@@ -1,10 +1,10 @@
 import classes from './styles.module.scss'
 import clsx from 'clsx'
 import type { FC, HTMLAttributes } from 'react'
-import { Footer } from '@widgets/footer'
 import { getPageDataAction } from '@entities/main-page/api/server-actions'
 import { NotFound } from '@shared/ui/not-found'
 import { HeroSection } from '@features/hero-section'
+import { FooterSection } from '@features/footer-section'
 
 export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, ...otherProps }) => {
   const response = await getPageDataAction()
@@ -15,13 +15,47 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
   const pageData = response.data.data
   const phrases = pageData.services_data.map(service => service.name)
 
+  const contacts: {
+    type: 'address' | 'email' | 'phone'
+    title: string
+  }[] = [
+    {
+      type: 'email',
+      title: pageData.contact_email
+    },
+    {
+      type: 'phone',
+      title: pageData.contact_phone
+    },
+    {
+      type: 'address',
+      title: pageData.contact_address
+    }
+  ]
+  const documents = [
+    {
+      url: '',
+      title: 'Политика конфиденциальности'
+    },
+    {
+      url: '',
+      title: 'Согласие на обработку персональных данных'
+    }
+  ]
+  const requisites = ['г Ростов-на-Дону Будённовский пр-т 33', 'ИНН 6164143256', 'ОГРН 1236100034708', 'ОКВЭД2 62.02']
+
   return (
     <div className={clsx(classes.wrapper, className)} {...otherProps}>
       <HeroSection title={pageData.hero_title} imgUrl={pageData.hero_image} phrases={phrases} />
 
       <div className={clsx(classes.content, classes.container)}>MAIN-PAGE CONTENT</div>
       <div className={classes.container}>
-        <Footer />
+        <FooterSection
+          title={pageData.contacts_title}
+          contacts={contacts}
+          requisites={requisites}
+          documents={documents}
+        />
       </div>
     </div>
   )
