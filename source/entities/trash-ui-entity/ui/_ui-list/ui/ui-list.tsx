@@ -22,6 +22,7 @@ import classes from '../styles/styles.module.scss'
 
 
 import { UIHeroBlock } from '@entities/trash-ui-entity/ui/hero-block'
+import { UISlider } from '../../slider/slider'
 
 export const UIList: React.FC = () => {
   return (
