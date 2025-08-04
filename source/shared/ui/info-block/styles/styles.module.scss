@@ -41,6 +41,8 @@ $bg-color: var(--color-background1);
 }
 
 .cardBlock {
+  display: flex !important;
+  flex-direction: column;
   flex: 1;
 }
 
@@ -107,6 +109,7 @@ $bg-color: var(--color-background1);
 }
 
 :global([class*='cardBlock'] [class*='content']) {
+  flex: 1 !important;
   border-bottom-left-radius: 16px !important;
 }
 
