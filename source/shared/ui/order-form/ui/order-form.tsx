@@ -76,21 +76,21 @@ export const OrderForm: React.FC<OrderFormProps> = ({ title, callback, agreement
             />
             <Input
               label="Детали проекта"
-              id="projectDetails"
+              id="project_details"
               placeholder="описание проекта"
               supportingText="опишите детали проекта"
-              error={!!errors.projectDetails}
-              {...register('projectDetails')}
+              error={!!errors.project_details}
+              {...register('project_details')}
             />
 
             <Input
               label="Телефон"
-              id="phone"
+              id="phone_number"
               type="tel"
               placeholder="+7 "
               supportingText="ваш номер телефона"
-              error={!!errors.phone}
-              {...register('phone')}
+              error={!!errors.phone_number}
+              {...register('phone_number')}
             />
 
             <Input
@@ -105,9 +105,11 @@ export const OrderForm: React.FC<OrderFormProps> = ({ title, callback, agreement
           </section>
           <div className={classes.checkboxGroup}>
             <Controller
-              name="agreement"
+              name="agreed_to_terms"
               control={control}
-              render={({ field }) => <Checkbox id="agreement" checked={field.value} onCheckedChange={field.onChange} />}
+              render={({ field }) => (
+                <Checkbox id="agreement" checked={!!field.value} onCheckedChange={field.onChange} />
+              )}
             />
             <label
               htmlFor="agreement"

@@ -1,10 +1,10 @@
 export type OrderFormData = {
   name: string
   company: string
-  projectDetails: string
-  phone: string
+  project_details: string
+  phone_number: string
   email: string
-  agreement: boolean
+  agreed_to_terms: boolean
 }
 
 export type OrderFormProps = {

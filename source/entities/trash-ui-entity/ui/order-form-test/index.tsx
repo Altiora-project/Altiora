@@ -10,22 +10,7 @@ import { OrderForm, type OrderFormData } from '@shared/ui/order-form'
 
 export const OrderFormTest: React.FC = () => {
   const handleSubmit = async (data: OrderFormData) => {
-    // Имитация отправки данных на сервер
-    console.log('Отправленные данные формы:', data)
-
-    // Здесь можно добавить логику отправки данных на сервер
-    // await sendFrom(data)
-
-    // Имитация задержки сети
-    await new Promise(resolve => setTimeout(resolve, 2000))
-
-    // Здесь можно добавить реальную отправку данных
-    // await fetch('/api/order', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify(data)
-    // })
-
+    sendFrom(data)
     alert('Форма успешно отправлена!')
   }
 

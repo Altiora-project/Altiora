@@ -1,11 +1,13 @@
-import { CardComponent } from '@shared/ui/card-component'
 import { FC } from 'react'
-import { typeFormSubmitModalProps } from '../types'
-import Link from 'next/link'
+
 import classes from '../styles/styles.module.scss'
-import Image from 'next/image'
-import { Button } from '@shared/ui/button'
+import { typeFormSubmitModalProps } from '../types'
 import clsx from 'clsx'
+import Image from 'next/image'
+import Link from 'next/link'
+
+import { Button } from '@shared/ui/button'
+import { CardComponent } from '@shared/ui/card-component'
 
 export const FormSubmitModal: FC<typeFormSubmitModalProps> = ({ buttonLink, onClose, ...otherProps }) => {
   if (buttonLink === '') buttonLink = '/'
