@@ -6,14 +6,14 @@ import clsx from 'clsx'
 
 import { PostscriptumSection } from '@features/postscriptum-section'
 
-import { getServiceAction } from '@entities/service-page/api/server-action'
+import { getServiceDetailsAction } from '@entities/service-page/api/server-action'
 
 import { NotFound } from '@shared/ui/not-found'
 
 export const ServiceDetails: FC<typeServiceDetailsProps> = async ({ slug, className, ...otherProps }) => {
   //TODO: тут используем сущность которая через slug получает данные из api для запрашиваемой услуги
   // далее парсим данные и наполняем страницу
-  const response = await getServiceAction(slug)
+  const response = await getServiceDetailsAction(slug)
 
   if (!response) return <NotFound />
   if ('error' in response) return <NotFound />

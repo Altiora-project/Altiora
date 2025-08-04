@@ -8,8 +8,8 @@ export const getServicesDataAction = async (): Promise<typeApiResponse<typeServi
   return await fetchWrapper<typeServicesResponse>(url, {}, { withDebug: true })
 }
 
-export const getServiceAction = async (slug: string): Promise<typeApiResponse<typeServiceDetailsResponse>> => {
-  const url = endpoints.servicesDetails(slug)
+export const getServiceDetailsAction = async (slug: string): Promise<typeApiResponse<typeServiceDetailsResponse>> => {
+  const url = endpoints.serviceDetails(slug)
 
   return fetchWrapper<typeServiceDetailsResponse>(url, {
     responseType: 'json',
