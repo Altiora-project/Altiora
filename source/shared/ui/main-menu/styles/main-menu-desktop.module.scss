@@ -5,9 +5,9 @@
     display: flex;
     gap: 32px;
     align-items: center;
-    font-family: 'Manrope', Arial, sans-serif;
-    font-weight: 500;
-    font-size: 18px;
+    font-family: var(--font-main);
+    font-weight: 700;
+    font-size: 16px;
     color: #fefefe;
   }
 
@@ -19,10 +19,11 @@
     text-decoration: none;
     transition: color 0.2s;
     &:hover {
-      text-decoration: underline #50f195;
+      text-decoration: underline 2px var(--color-accent-primary);
+      text-underline-offset: 10px;
     }
     &:active {
-      color: #50f195;
+      color: var(--color-accent-primary);
     }
   }
 }
