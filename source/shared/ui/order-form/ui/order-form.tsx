@@ -45,8 +45,8 @@ export const OrderForm: React.FC<OrderFormProps> = ({ title, callback, agreement
     }
   }
 
-  const FormButton: FC<{}> = ({ }) => (
-    <Button type="submit" variant="primary" disabled={!isValid || isSubmitting} >
+  const FormButton: FC<{}> = ({}) => (
+    <Button type="submit" variant="primary" disabled={!isValid || isSubmitting}>
       <span className={classes.buttonText}>{isSubmitting ? 'Отправка...' : 'Отправить заявку'}</span>
     </Button>
   )
@@ -56,7 +56,11 @@ export const OrderForm: React.FC<OrderFormProps> = ({ title, callback, agreement
       <form onSubmit={handleSubmit(onSubmit)} className={classes.form}>
         <MainBlock
           topContent={<h2 className={classes.title}>{title}</h2>}
-          bottomContent={<div className={classes.buttonDesktop}><FormButton /></div>}
+          bottomContent={
+            <div className={classes.buttonDesktop}>
+              <FormButton />
+            </div>
+          }
         >
           <section className={classes.formSection}>
             <Input
@@ -135,7 +139,9 @@ export const OrderForm: React.FC<OrderFormProps> = ({ title, callback, agreement
             </label>
           </div>
         </MainBlock>
-        <div className={classes.buttonMobileTablet}><FormButton /></div>
+        <div className={classes.buttonMobileTablet}>
+          <FormButton />
+        </div>
       </form>
     </div>
   )
