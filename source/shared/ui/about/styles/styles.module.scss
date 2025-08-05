@@ -1,0 +1,319 @@
+@use 'sass:math';
+$radius: 20px;
+$big-radius: math.div($radius, 2) * 3;
+
+.container {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-direction: row;
+  flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  gap: 11px;
+  width: 100%;
+
+  @include bp.tablet {
+    gap: 24px;
+    min-height: 495px;
+    max-height: 850px;
+    flex-direction: column;
+    display: -ms-grid;
+    display: grid;
+    grid-template-areas:
+      'f f f s h h'
+      'f f f r r i'
+      'f f f x x x';
+  }
+
+  @include bp.desktop {
+    max-width: 1800px;
+    gap: 32px;
+    display: grid;
+    display: -ms-grid;
+    min-height: 858px;
+    grid-template-areas:
+      'f f f f s h h'
+      'f f f f r r i'
+      'f f f f x x x';
+  }
+}
+
+.markdown {
+  margin: 0;
+  padding: 0;
+}
+
+.containerFirst,
+.containerSecond {
+  flex-wrap: nowrap;
+}
+
+.card {
+  size: 12px;
+  font-size: 11px;
+  border-radius: 20px;
+  padding: 12px;
+
+  @include bp.tablet {
+    size: 11px;
+    padding: 20px;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: bottom;
+    font-size: clamp(0.6875rem, 0.178rem + 1.1017vw, 1.5rem);
+    padding: 20px;
+  }
+  @include bp.desktop {
+    font-size: 24px;
+    padding: 48px;
+  }
+}
+
+.firstCard {
+  display: flex;
+  flex-direction: column;
+  // justify-content: flex-start;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 27px;
+  width: 100%;
+  min-height: 340px;
+  size: 16px;
+
+  @include bp.tablet {
+    grid-area: f;
+    align-self: stretch;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 269px;
+    max-width: 500px;
+    height: 100%;
+  }
+
+  @include bp.desktop {
+    align-items: center;
+    justify-content: space-between;
+    min-width: 731px;
+    max-height: 858px;
+  }
+}
+
+.secondCard {
+  padding-inline: 10px;
+  @include bp.tablet {
+    padding-inline: 24px;
+    grid-area: s;
+    align-self: flex-start;
+  }
+}
+
+.thirdCard {
+  @include bp.tablet {
+    grid-area: h;
+  }
+}
+
+.fourthCard {
+  @include bp.tablet {
+    grid-area: r;
+  }
+}
+
+.fifthCard {
+  padding-inline: 6px;
+  @include bp.tablet {
+    padding-inline: 6px;
+    grid-area: i;
+  }
+}
+
+.thirdCard,
+.fourthCard {
+  flex-grow: 1;
+  flex-basis: 55%;
+
+  @include bp.tablet {
+    min-width: 250px;
+    min-height: 145px;
+    max-height: 250px;
+  }
+  @include bp.desktop {
+    min-width: 731px;
+    height: 264px;
+  }
+}
+
+.sixthCard {
+  width: 100%;
+  background-color: transparent;
+  @include bp.tablet {
+    grid-area: x;
+  }
+}
+
+.secondCard,
+.fifthCard {
+  flex-grow: 0;
+  color: var(--color-foreground);
+  font-weight: 700;
+  white-space: wrap;
+  font-family: var(--font-secondary);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  max-width: 94px;
+  height: 132px;
+  font-size: 20px;
+  border-radius: 40px;
+
+  @include bp.tablet {
+    flex-grow: unset;
+    min-width: 94px;
+    max-width: 274px;
+    min-height: 145px;
+    max-height: 250px;
+    font-size: clamp(1rem, -0.3326rem + 2.8814vw, 3.125rem);
+  }
+
+  @include bp.desktop {
+    width: 274px;
+    height: 265px;
+    font-size: 52px;
+  }
+}
+
+.card:last-of-type {
+  background-color: transparent;
+  height: unset;
+  padding: 0;
+}
+
+.button {
+  width: 138px;
+  height: 38px;
+  border: transparent;
+  border-radius: 40px;
+  padding-block: 12.5px;
+  padding-inline: auto;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: var(--font-secondary);
+
+  @include bp.tablet {
+    width: 233px;
+    height: 38px;
+    font-size: 11px;
+  }
+
+  @include bp.desktop {
+    width: 432px;
+    height: 68px;
+    font-size: 16px;
+    padding: 20px;
+  }
+}
+
+.logoContainer,
+.logo {
+  height: 131px;
+  width: 131px;
+  @include bp.tablet {
+    height: 207px;
+    width: 207px;
+  }
+  @include bp.desktop {
+    height: 350px;
+    width: 350px;
+  }
+}
+
+.container_radius {
+  display: block;
+  width: 100%;
+  position: relative;
+
+  .content {
+    background-color: var(--color-background1);
+    padding: 0.75rem;
+    border-radius: $radius $radius $radius 0;
+
+    @include bp.tablet {
+      padding: 1.5rem;
+    }
+
+    @include bp.desktop {
+      padding: 3rem;
+    }
+  }
+
+  .bottomContainer {
+    display: flex;
+    align-items: stretch;
+    position: relative;
+
+    .bottomContent {
+      position: relative;
+      flex-shrink: 0;
+      padding: 15px 0px 0 1.3rem;
+
+      @include bp.tablet {
+        padding: 20px 0 0 1.625rem;
+      }
+
+      @include bp.desktop {
+        padding: 1rem 2px 4px 1.5rem;
+      }
+    }
+
+    .space {
+      flex-grow: 1;
+      background-color: var(--color-background1);
+      border-radius: 0 0 $radius $radius;
+      position: relative;
+      height: 50px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: -$radius;
+        width: $radius;
+        height: $radius;
+        background-color: var(--color-background1);
+        -webkit-mask-image: radial-gradient(
+          circle at bottom right,
+          transparent 0%,
+          transparent $radius,
+          black $radius,
+          black 100%
+        );
+        mask-image: radial-gradient(
+          circle at bottom right,
+          transparent 0%,
+          transparent $radius,
+          black $radius,
+          black 100%
+        );
+        -webkit-mask-mode: alpha;
+        mask-mode: alpha;
+      }
+
+      @include bp.tablet {
+        height: 60px;
+      }
+
+      @include bp.desktop {
+        height: 89px;
+        $radius: 40px;
+      }
+    }
+  }
+}
