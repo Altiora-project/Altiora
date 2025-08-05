@@ -22,7 +22,6 @@ import { UIVideoFeature } from '../../video-feature'
 import classes from '../styles/styles.module.scss'
 
 import { UIHeroBlock } from '@entities/trash-ui-entity/ui/hero-block'
-import { UISlider } from '@entities/trash-ui-entity/ui/slider/slider'
 
 export const UIList: React.FC = () => {
   return (

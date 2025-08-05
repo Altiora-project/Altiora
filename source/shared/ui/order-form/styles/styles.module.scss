@@ -85,8 +85,8 @@
   display: none;
 
   @include bp.desktop {
-      display: flex;
-      width: 731px;
+    display: flex;
+    width: 731px;
   }
 }
 
@@ -104,5 +104,4 @@
 
 .buttonText {
   display: inline-block;
-
 }
