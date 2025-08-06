@@ -88,7 +88,7 @@ export const UIIcons: React.FC = () => {
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', width: '200px' }}>
               <div className={classes.icon}>
-                <Icon size="md" icon="envelop" />
+                <Icon size="md" icon="email" />
                 <span> - envelop</span>
               </div>
               <div className={classes.icon}>

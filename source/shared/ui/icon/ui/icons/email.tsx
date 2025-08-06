@@ -1,6 +1,6 @@
 import { typeIconProps } from '../../types'
 
-export const EnvelopIcon: React.FC<typeIconProps> = ({ size, ...otherProps }) => {
+export const EmailIcon: React.FC<typeIconProps> = ({ size, ...otherProps }) => {
   if (size === 'md') {
     return (
       <svg

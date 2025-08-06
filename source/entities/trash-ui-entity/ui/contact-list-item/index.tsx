@@ -9,8 +9,8 @@ export const UIContactListItem: React.FC = () => {
       description="Список контактов принимает пропс type: 'phone' | 'email' | 'address' и title: string"
       components={
         <div style={{ display: 'flex', flexDirection: 'column', gap: '40px', padding: '40px' }}>
-          <ContactListItem type="phone" title="+7 (989) 624 - 34 - 61" />
-          <ContactListItem type="email" title="ceo@altiora.tech" />
+          <ContactListItem linkType="phone" title="+7 (989) 624 - 34 - 61" />
+          <ContactListItem linkType="email" title="ceo@altiora.tech" />
         </div>
       }
     />

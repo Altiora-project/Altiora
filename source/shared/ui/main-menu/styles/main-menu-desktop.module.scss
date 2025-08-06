@@ -3,7 +3,34 @@
 
   @include bp.desktop {
     display: flex;
-    gap: 10px;
+    gap: 32px;
     align-items: center;
+    font-family: var(--font-main);
+    font-weight: 700;
+    font-size: 16px;
+    color: #fefefe;
   }
+
+  a {
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    color: #fefefe;
+    text-decoration: none;
+    transition: color 0.2s;
+    &:hover {
+      text-decoration: underline 2px var(--color-accent-primary);
+      text-underline-offset: 10px;
+    }
+    &:active {
+      color: var(--color-accent-primary);
+    }
+  }
+}
+
+.desktopMenuContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 108.5px;
 }
