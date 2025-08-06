@@ -1,4 +1,3 @@
 export const backendUrls = {
-  post: {
-  }
+  post: {}
 } as const
