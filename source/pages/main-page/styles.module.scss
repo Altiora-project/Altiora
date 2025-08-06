@@ -13,12 +13,13 @@
   width: 100%;
   max-width: 1800px;
   margin: 0 auto;
-  //padding: 1.5rem;
+  padding: 1.5rem;
 
   @include bp.tablet {
-    //padding: 2rem;
+    padding: 2rem;
   }
 
   @include bp.desktop {
+    padding: 0;
   }
 }
