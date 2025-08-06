@@ -35,7 +35,6 @@
         margin-top: 0;
         max-width: 890px;
       }
-
     }
   }
 }
@@ -51,9 +50,10 @@
   border-radius: 40px;
   padding: 0 40px;
   cursor: pointer;
-  transition: background 0.2s,
-  color 0.2s,
-  opacity 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    opacity 0.2s;
 
   @include bp.tablet {
     height: 44px;
