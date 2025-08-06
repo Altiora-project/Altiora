@@ -25,6 +25,7 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
     }
   })
 
+  //TODO: убрать моки когда будут данные с бека
   const contacts: {
     type: 'address' | 'email' | 'phone'
     title: string
@@ -42,7 +43,6 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
       title: pageData.contact_address
     }
   ]
-
   const documents = [
     {
       url: '',
