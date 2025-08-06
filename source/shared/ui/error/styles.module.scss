@@ -13,7 +13,6 @@
 .errorCard {
   background: #232323;
   border-radius: 2rem;
-  min-height: 100vh;
   width: 100%;
   box-sizing: border-box;
   display: flex;
@@ -40,7 +39,6 @@
 
 @include bp.mobile {
   .errorCard {
-    margin: 0 25px;
     padding: 0;
   }
   .field {
@@ -55,7 +53,6 @@
 
 @include bp.tablet {
   .errorCard {
-    margin: 0 32px;
     padding: 0;
   }
   .field {
@@ -70,7 +67,6 @@
 
 @include bp.desktop {
   .errorCard {
-    margin: 0 60px;
     padding: 215px 296px;
   }
   .field {
