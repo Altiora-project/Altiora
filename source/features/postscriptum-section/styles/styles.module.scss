@@ -1,0 +1,14 @@
+.postscriptumSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include bp.tablet {
+    gap: 24px;
+
+    button {
+      align-self: flex-start;
+      width: clamp(21.25rem, 5.7895rem + 33.2483vw, 45.6875rem);
+    }
+  }
+}

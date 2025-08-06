@@ -2,7 +2,7 @@ import { FC, SVGProps } from 'react'
 
 export type typeIconName =
   | 'lineLogo'
-  | 'envelop'
+  | 'email'
   | 'chevronRight'
   | 'chevronLeft'
   | 'chevronDown'
