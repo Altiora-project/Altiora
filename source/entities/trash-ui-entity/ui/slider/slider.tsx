@@ -10,31 +10,31 @@ export const UISlider: FC = () => {
     <SliderCard
       className={'embla__slide__number'}
       title={'Кейс'}
-      tags={[{ link: '/', title: 'tag' }]}
+      tags={[{ id: 1, name: 'tag' }]}
       description={'КейсКейсКей сКейсКейсКе йсКейсК ейсКейсКе йсКе йсКейсКейс'}
     />,
     <SliderCard
       className={'embla__slide__number'}
       title={'Кейс'}
-      tags={[{ link: '/', title: 'tag' }]}
+      tags={[{ id: 2, name: 'tag' }]}
       description={'КейсКейсКей сКейсКейсКе йсКейсК ейсКейсКе йсКе йсКейсКейс'}
     />,
     <SliderCard
       className={'embla__slide__number'}
       title={'Кейс'}
-      tags={[{ link: '/', title: 'tag' }]}
+      tags={[{ id: 3, name: 'tag' }]}
       description={'КейсКейсКей сКейсКейсКе йсКейсК ейсКейсКе йсКе йсКейсКейс'}
     />,
     <SliderCard
       className={'embla__slide__number'}
       title={'Кейс'}
-      tags={[{ link: '/', title: 'tag' }]}
+      tags={[{ id: 4, name: 'tag' }]}
       description={'КейсКейсКей сКейсКейсКе йсКейсК ейсКейсКе йсКе йсКейсКейс'}
     />,
     <SliderCard
       className={'embla__slide__number'}
       title={'Кейс'}
-      tags={[{ link: '/', title: 'tag' }]}
+      tags={[{ id: 5, title: 'tag' }]}
       description={'КейсКейсКей сКейсКейсКе йсКейсК ейсКейсКе йсКе йсКейсКейс'}
     />
   ]
