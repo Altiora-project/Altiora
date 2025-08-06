@@ -24,7 +24,7 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
       tagList: service.tags
     }
   })
-
+  console.log(services)
   const contacts: {
     type: 'address' | 'email' | 'phone'
     title: string
