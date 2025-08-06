@@ -16,10 +16,6 @@ export const mainMenu: typeMainMenuItem[] = [
     url: routes.ui
   },
   {
-    label: 'Posts',
-    url: routes.postList
-  },
-  {
     label: 'Complex',
     url: createRoute(routes.complexRout, { id: '1', value: 'value' })
   }
