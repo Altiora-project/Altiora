@@ -1,0 +1,37 @@
+.wrapper {
+  margin-top: 150px;
+}
+
+.header {
+  display: flex;
+  gap: 40px;
+
+  &Title {
+    display: flex;
+    flex-direction: column;
+    max-width: 890px;
+
+    h3 {
+      font-size: 48px;
+      font-weight: 700;
+    }
+  }
+}
+
+.link {
+  margin-top: auto;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: var(--color-background1);
+  padding: 60px 40px;
+  border-radius: 60px;
+  gap: 2rem;
+  margin-top: 96px;
+}
+
+.productCard {
+  max-width: 550px;
+}

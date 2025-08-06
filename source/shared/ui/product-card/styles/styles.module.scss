@@ -1,4 +1,4 @@
-$duration: 0.3s;
+$duration: 0.4s;
 
 .card {
   border-radius: 20px;
@@ -54,6 +54,7 @@ $duration: 0.3s;
 .content {
   border-radius: 20px;
   padding: 16px;
+  transition: all $duration ease-in-out;
 
   @include bp.tablet {
     padding: 24px;
@@ -90,9 +91,8 @@ $duration: 0.3s;
 .actionBlock {
   grid-area: stack;
   width: 100%;
-  transition:
-    opacity $duration ease-in-out,
-    visibility $duration ease-in-out;
+  transition: opacity $duration ease-in-out,
+  visibility $duration ease-in-out;
 }
 
 .tags {
@@ -144,9 +144,8 @@ $duration: 0.3s;
   color: var(--color-white);
   cursor: pointer;
   background: transparent;
-  transition:
-    transform $duration linear,
-    opacity $duration ease-in-out;
+  transition: transform $duration linear,
+  opacity $duration ease-in-out;
 
   @include bp.tablet {
     display: none;

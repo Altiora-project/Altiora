@@ -46,7 +46,7 @@ export const UISlider: FC = () => {
       props={[{ key: 'data', value: '(ReactNode[]) - принимает массив карточек для карусели' }]}
       components={
         <>
-          <Slider data={cardData} />
+          <Slider cards={cardData} />
         </>
       }
     />
