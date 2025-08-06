@@ -1,7 +1,6 @@
 import classes from './styles.module.scss'
 import clsx from 'clsx'
 import type { FC, HTMLAttributes } from 'react'
-import { Footer } from '@widgets/footer'
 import { getPageDataAction } from '@entities/main-page/api/server-actions'
 import { NotFound } from '@shared/ui/not-found'
 import { HeroSection } from '@features/hero-section'
@@ -71,7 +70,12 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
       </div>
 
       <div className={classes.container}>
-        <Footer />
+        <FooterSection
+          title={pageData.contacts_title}
+          contacts={contacts}
+          requisites={requisites}
+          documents={documents}
+        />
       </div>
     </div>
   )
