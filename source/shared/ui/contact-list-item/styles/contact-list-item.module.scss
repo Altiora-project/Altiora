@@ -4,10 +4,12 @@
   font-family: var(--font-secondary);
   font-size: 12px;
   font-weight: 700;
+  padding-top: 8px;
 
   @include bp.tablet {
     font-size: 16px;
     align-items: center;
+
   }
 
   @include bp.desktop {
@@ -22,9 +24,6 @@
   text-align: center;
   gap: 12px;
   height: 32px;
-
-  @include bp.tablet {
-  }
 
   @include bp.desktop {
     gap: 22px;
