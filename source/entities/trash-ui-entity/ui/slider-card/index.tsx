@@ -20,8 +20,8 @@ export const UISliderCard: React.FC = () => {
             title="Заголовок"
             tags={[
               {
-                link: '#',
-                title: 'тэг'
+                id: 1,
+                name: 'тэг'
               }
             ]}
             description="Краткое описание Краткое описание Краткое описание Краткое описание Краткое описание"

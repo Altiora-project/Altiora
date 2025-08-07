@@ -3,15 +3,24 @@ import { ProductCardProps } from '../types/types'
 
 import { CardComponent } from '@shared/ui/card-component'
 import { Icon } from '@shared/ui/icon'
+import { FC } from 'react'
+import clsx from 'clsx'
 
-export const ProductCard: React.FC<ProductCardProps> = ({
+export const ProductCard: FC<ProductCardProps> = ({
   title,
   description,
   actionLink,
   tagList,
-  text = 'Узнать больше'
+  text = 'Узнать больше',
+  className
 }) => (
-  <CardComponent radius="md" background="light-grey" tag="link" href={actionLink} className={styles.card}>
+  <CardComponent
+    radius="md"
+    background={'light-grey'}
+    tag="link"
+    href={actionLink}
+    className={clsx(styles.card, className)}
+  >
     <div className={styles.content}>
       <h3 className={styles.titleCard}>{title}</h3>
       <p className={styles.descriptionCard}>{description}</p>
@@ -21,7 +30,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         {tagList &&
           tagList.map((item, index) => (
             <span key={index} className={styles.tagCard}>
-              {item}
+              {item.name}
             </span>
           ))}
       </div>
