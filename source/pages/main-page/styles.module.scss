@@ -22,3 +22,16 @@
   @include bp.desktop {
   }
 }
+
+.partnersSection {
+  h2 {
+    padding-inline-start: 1.5rem;
+
+    @include bp.tablet {
+      padding-inline-start: 2rem;
+    }
+    @include bp.desktop {
+      padding-inline-start: 7.6rem;
+    }
+  }
+}

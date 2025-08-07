@@ -19,11 +19,11 @@ import { UIServiceCard } from '../../ServiceCard'
 import { UISlider } from '../../slider/slider'
 import { UISliderCard } from '../../slider-card'
 import { UIVideoFeature } from '../../video-feature'
-import { OrderFormTest } from '../../order-form-test'
 import { StartupLabMenuTest } from '../../startup-lab-menu-test'
 import classes from '../styles/styles.module.scss'
 
 import { UIHeroBlock } from '@entities/trash-ui-entity/ui/hero-block'
+import { UIPartners } from '../../partners'
 
 export const UIList: React.FC = () => {
   return (
@@ -31,6 +31,7 @@ export const UIList: React.FC = () => {
       <UIMainBlock />
 
       {/* Добавляем компоненты ниже */}
+      <UIPartners />
       <UICheckbox />
       <UIMarquee />
       <UICardComponent />
