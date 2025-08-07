@@ -91,9 +91,8 @@ $duration: 0.4s;
 .actionBlock {
   grid-area: stack;
   width: 100%;
-  transition:
-    opacity $duration ease-in-out,
-    visibility $duration ease-in-out;
+  transition: opacity $duration ease-in-out,
+  visibility $duration ease-in-out;
 }
 
 .tags {
@@ -145,9 +144,8 @@ $duration: 0.4s;
   color: var(--color-white);
   cursor: pointer;
   background: transparent;
-  transition:
-    transform $duration linear,
-    opacity $duration ease-in-out;
+  transition: transform $duration linear,
+  opacity $duration ease-in-out;
 
   @include bp.tablet {
     display: none;
