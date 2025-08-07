@@ -1,3 +1,8 @@
+body[data-scroll-locked],
+body[data-scroll-locked='1'],
+body[data-scroll-locked][style] {
+  margin-right: 0 !important;
+}
 :root {
   --color-background: #111111; //фон
   --color-background1: #2f2f2f4d;
