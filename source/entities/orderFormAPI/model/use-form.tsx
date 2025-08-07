@@ -1,4 +1,4 @@
-import { OrderForm, OrderFormSchema } from './../model/schema'
+import { OrderForm, OrderFormSchema } from './schema'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 

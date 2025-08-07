@@ -2,50 +2,35 @@
 
 import { FC, useState } from 'react'
 
-import { orderFormSchema } from '../schema/validation-schema'
 import classes from '../styles/styles.module.scss'
-import type { OrderFormData, OrderFormProps } from '../types/types'
-import { yupResolver } from '@hookform/resolvers/yup'
+import type { OrderFormData } from '../types/types'
 import clsx from 'clsx'
 import Link from 'next/link'
-import { Controller, useForm } from 'react-hook-form'
+import { Controller } from 'react-hook-form'
+
+import sendForm from '@entities/orderFormAPI/api/send-form'
+import useOrderForm from '@entities/orderFormAPI/model/use-form'
 
 import { MainBlock } from '@shared/ui/_main-block'
 import { Button } from '@shared/ui/button'
 import { Checkbox } from '@shared/ui/checkbox'
+import { FormSubmitModal } from '@shared/ui/form-submit-modal'
 import { Input } from '@shared/ui/input'
 
-export const OrderForm: React.FC<OrderFormProps> = ({ title, callback, agreementLink }) => {
-  const [isSubmitting, setIsSubmitting] = useState(false)
-
+export const OrderForm: FC = () => {
+  const [isModalOpen, setModalOpen] = useState(false)
+  const onSubmit = async (data: OrderFormData) => {
+    await sendForm(data).then(() => setModalOpen(true))
+  }
   const {
     register,
     handleSubmit,
+    setValue,
     control,
-    formState: { errors, isValid },
-    reset,
-    watch,
-    setValue
-  } = useForm<OrderFormData>({
-    resolver: yupResolver(orderFormSchema),
-    mode: 'onChange'
-  })
+    formState: { errors, isValid, isSubmitting }
+  } = useOrderForm(onSubmit)
 
-  const formValues = watch()
-
-  const onSubmit = async (data: OrderFormData) => {
-    setIsSubmitting(true)
-    try {
-      await callback(data)
-      reset()
-    } catch (error) {
-      console.error('Ошибка отправки формы:', error)
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
-
-  const FormButton: FC<{}> = ({}) => (
+  const FormButton: FC = () => (
     <Button type="submit" variant="primary" disabled={!isValid || isSubmitting}>
       <span className={classes.buttonText}>{isSubmitting ? 'Отправка...' : 'Отправить заявку'}</span>
     </Button>
@@ -53,9 +38,9 @@ export const OrderForm: React.FC<OrderFormProps> = ({ title, callback, agreement
 
   return (
     <div className={classes.container}>
-      <form onSubmit={handleSubmit(onSubmit)} className={classes.form}>
+      <form onSubmit={handleSubmit} className={classes.form}>
         <MainBlock
-          topContent={<h2 className={classes.title}>{title}</h2>}
+          topContent={<h2 className={classes.title}>{'/заказать проект'}</h2>}
           bottomContent={
             <div className={classes.buttonDesktop}>
               <FormButton />
@@ -88,9 +73,9 @@ export const OrderForm: React.FC<OrderFormProps> = ({ title, callback, agreement
               id="projectDetails"
               placeholder="описание проекта"
               supportingText="опишите детали проекта"
-              error={!!errors.projectDetails}
-              onClear={() => setValue('projectDetails', '', { shouldValidate: true })}
-              {...register('projectDetails')}
+              error={!!errors.project_details}
+              onClear={() => setValue('project_details', '', { shouldValidate: true })}
+              {...register('project_details')}
             />
 
             <Input
@@ -99,9 +84,9 @@ export const OrderForm: React.FC<OrderFormProps> = ({ title, callback, agreement
               type="tel"
               placeholder="+7 "
               supportingText="ваш номер телефона"
-              error={!!errors.phone}
-              onClear={() => setValue('phone', '', { shouldValidate: true })}
-              {...register('phone')}
+              error={!!errors.phone_number}
+              onClear={() => setValue('phone_number', '', { shouldValidate: true })}
+              {...register('phone_number')}
             />
 
             <Input
@@ -117,7 +102,7 @@ export const OrderForm: React.FC<OrderFormProps> = ({ title, callback, agreement
           </section>
           <div className={classes.checkboxGroup}>
             <Controller
-              name="agreement"
+              name="agreed_to_terms"
               control={control}
               render={({ field }) => (
                 <Checkbox id="agreement" checked={!!field.value} onCheckedChange={field.onChange} />
@@ -131,13 +116,9 @@ export const OrderForm: React.FC<OrderFormProps> = ({ title, callback, agreement
               )}
             >
               Согласен с&nbsp;
-              {agreementLink ? (
-                <Link href={agreementLink} target="_blank" rel="noopener noreferrer">
-                  &nbsp;политикой обработки персональных данных
-                </Link>
-              ) : (
-                'политикой обработки персональных данных'
-              )}
+              <Link href="/privacy-policy" target="_blank" rel="noopener noreferrer">
+                политикой обработки персональных данных
+              </Link>
             </label>
           </div>
         </MainBlock>
@@ -145,6 +126,7 @@ export const OrderForm: React.FC<OrderFormProps> = ({ title, callback, agreement
           <FormButton />
         </div>
       </form>
+      <FormSubmitModal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
     </div>
   )
 }

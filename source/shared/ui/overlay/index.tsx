@@ -6,8 +6,8 @@ type ModalOverlayProps = {
   isOpen?: boolean
 }
 
-const ModalOverlay = ({ onClose, isOpen = true }: ModalOverlayProps) => (
-  <div className={clsx(styles.overlay, styles.active && isOpen)} onClick={onClose} />
+const ModalOverlay = ({ onClose, isOpen }: ModalOverlayProps) => (
+  <div className={clsx(styles.overlay, { [styles.active]: isOpen })} onClick={onClose} />
 )
 
 export default ModalOverlay

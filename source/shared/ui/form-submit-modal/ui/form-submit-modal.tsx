@@ -42,7 +42,7 @@ export const FormSubmitModal: FC<typeFormSubmitModalProps> = ({ buttonLink, isOp
           <Image src="/logo.svg" width={225} height={300} alt="Логотип" className={classes.logo} />
         </div>
       </CardComponent>
-      <Overlay />
+      <Overlay isOpen={isOpen} onClose={onClose} />
     </>
   )
 }
