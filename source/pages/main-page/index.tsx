@@ -18,8 +18,8 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
 
   const pageData = response.data.data
 
-  if (!pageData.services_data) {
-    return <div>Данные недоступны</div>
+  if (!pageData || !pageData.services_data) {
+    return null
   }
 
   const phrases = pageData.services_data.map(service => service.name)
