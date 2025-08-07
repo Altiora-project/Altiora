@@ -13,9 +13,9 @@ export const SliderCard: React.FC<SliderCardProps> = ({ title, tags, description
       </div>
       <div className={styles.tags}>
         {tags?.map(tag => (
-          <Link href={tag.link} key={tag.title} className={styles.tag} target="_blank">
-            {`#${tag.title}`}
-          </Link>
+          <p key={tag.id} className={styles.tag}>
+            {`#${tag.name}`}
+          </p>
         ))}
       </div>
     </div>

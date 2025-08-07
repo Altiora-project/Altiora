@@ -1,0 +1,98 @@
+.wrapper {
+  margin-top: 2.5rem;
+
+  @include bp.tablet {
+    margin-top: 2.75rem;
+  }
+
+  @include bp.desktop {
+    margin-top: 9.375rem;
+  }
+}
+
+.header {
+  display: flex;
+  gap: 40px;
+
+  @include bp.tablet {
+    //gap: 0.5rem;
+  }
+
+  &Title {
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      font-size: 1rem;
+      font-family: var(--font-secondary);
+
+      @include bp.tablet {
+        margin-top: 0.5rem;
+      }
+
+      @include bp.desktop {
+        font-size: 48px;
+        margin-top: 0;
+        max-width: 890px;
+      }
+    }
+  }
+}
+
+.link {
+  display: none;
+  margin-top: auto;
+  background-color: var(--color-grey1);
+  color: var(--color-foreground);
+  font-family: 'drukWideCyrFont', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 40px;
+  padding: 0 40px;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    opacity 0.2s;
+
+  @include bp.tablet {
+    height: 44px;
+    font-size: 13px;
+  }
+
+  @include bp.desktop {
+    max-width: 400px;
+    height: 68px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.content {
+  display: grid;
+  border-radius: 60px;
+  gap: 0.5rem;
+  margin-top: 1rem;
+
+  @include bp.tablet {
+    background-color: var(--color-background);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 0;
+    margin-top: 1.5rem;
+  }
+
+  @include bp.desktop {
+    grid-template-columns: repeat(3, 1fr);
+    background-color: var(--color-background1);
+    padding: 60px 40px;
+    gap: 2rem;
+    margin-top: 96px;
+  }
+}
+
+.productCard {
+  max-width: 550px;
+}

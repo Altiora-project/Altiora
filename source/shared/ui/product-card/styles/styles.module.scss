@@ -1,4 +1,4 @@
-$duration: 0.3s;
+$duration: 0.4s;
 
 .card {
   border-radius: 20px;
@@ -54,6 +54,7 @@ $duration: 0.3s;
 .content {
   border-radius: 20px;
   padding: 16px;
+  transition: all $duration ease-in-out;
 
   @include bp.tablet {
     padding: 24px;
