@@ -125,6 +125,9 @@ export const OrderForm: FC = () => {
         <div className={classes.buttonMobileTablet}>
           <FormButton />
         </div>
+        <div className={classes.buttonMobileTablet}>
+          <FormButton />
+        </div>
       </form>
       <FormSubmitModal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
     </div>

@@ -1,0 +1,316 @@
+@use 'sass:math';
+
+$background: rgba(47, 47, 47, 0.3);
+//$background: blue;
+$radius: 2rem;
+$big-radius: math.div($radius, 2) * 3;
+
+// Миксин для псевдоэлементов скругления
+@mixin rounded-corner($position: 'top') {
+  @supports (
+    mask-image: radial-gradient(circle at top left, transparent 0%, transparent 1rem, black 1rem, black 100%)
+  ) {
+    content: '';
+    //width: 100px;
+    display: block;
+    right: 0;
+    position: absolute;
+    z-index: 100;
+    background-color: $background;
+    width: $radius;
+    height: $radius;
+
+    @if $position == 'top' {
+      top: -$radius;
+      mask-image: radial-gradient(circle at top left, transparent 0%, transparent $radius, black $radius, black 100%);
+    } @else if $position == 'inner-bottom' {
+      bottom: 0;
+      mask-image: radial-gradient(circle at top left, transparent 0%, transparent $radius, black $radius, black 100%);
+    } @else if $position == 'inner-top' {
+      top: 0;
+      right: -$radius;
+      mask-image: radial-gradient(
+        circle at bottom right,
+        transparent 0%,
+        transparent $radius,
+        black $radius,
+        black 100%
+      );
+    } @else {
+      bottom: -$radius;
+      mask-image: radial-gradient(
+        circle at bottom left,
+        transparent 0%,
+        transparent $radius,
+        black $radius,
+        black 100%
+      );
+    }
+    mask-mode: alpha;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  min-height: 400px;
+}
+
+.containerHeader {
+  display: flex;
+  gap: 0;
+  width: 100%;
+
+  h1 {
+    display: block;
+    position: relative;
+    text-transform: none;
+    color: var(--color-white-light);
+    font-family: var(--font-secondary);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 100%;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 16px;
+    padding-right: 16px;
+    color: var(--color-grey);
+
+    &::after {
+      @include rounded-corner('inner-bottom');
+    }
+
+    @include bp.tablet {
+      font-size: 32px;
+    }
+
+    @include bp.desktop {
+      font-size: 70px;
+    }
+  }
+
+  .space {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-grow: 1;
+    min-height: 1em;
+    background-color: $background;
+    border-radius: $radius $radius 0 0;
+    position: relative;
+    button {
+      margin: 12px 10px 0 0;
+      display: flex;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+
+      @include bp.tablet {
+        margin: 23px 31px 0 0;
+      }
+
+      @include bp.desktop {
+        margin: 51px 51px 0 0;
+      }
+    }
+    .closeIcon {
+      width: 12px;
+      height: 12px;
+      color: var(--color-white);
+
+      @include bp.tablet {
+        width: 22px;
+        height: 22px;
+      }
+
+      @include bp.desktop {
+        width: 22px;
+        height: 22px;
+      }
+    }
+  }
+}
+
+.containerBody {
+  display: grid;
+  align-items: stretch;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr;
+  gap: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.menuSection {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  grid-row: 1;
+  height: 100%;
+
+  @include bp.tablet {
+    gap: 10px;
+  }
+
+  @include bp.desktop {
+    gap: 20px;
+  }
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  padding: 16px 4px;
+  border-top-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+  cursor: pointer;
+  //transition: all 0.2s ease;
+  background: transparent;
+  border: none;
+  color: var(--color-white);
+  font-family: var(--font-secondary);
+  font-weight: 700;
+  font-size: 14px;
+  text-align: left;
+  height: 44px;
+  gap: 22px;
+  position: relative;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  &.active {
+    background: $background;
+    color: var(--color-accent-primary);
+  }
+
+  // Скругленность для всех пунктов меню кроме первого и последнего
+  &:not(:first-child):not(:last-child).active {
+    position: relative;
+    &::before {
+      @include rounded-corner('top');
+    }
+    &::after {
+      @include rounded-corner('bottom');
+    }
+  }
+
+  // Только нижнее скругление для первого элемента
+  &:first-child.active {
+    position: relative;
+    &::after {
+      @include rounded-corner('bottom');
+    }
+  }
+
+  // Только верхнее скругление для последнего элемента
+  &:last-child.active {
+    position: relative;
+    &::before {
+      @include rounded-corner('top');
+    }
+  }
+
+  @include bp.tablet {
+    padding: 16px 20px;
+    height: 34px;
+  }
+
+  @include bp.desktop {
+    padding: 16px 20px;
+    font-size: 20px;
+    height: 56px;
+  }
+
+  .menuItemTitle {
+    display: none;
+
+    @include bp.desktop {
+      display: inline-block;
+      width: max-content;
+      font-size: 26px;
+      font-weight: 700;
+      font-family: var(--font-main);
+      padding-right: 10px;
+    }
+  }
+}
+
+.contentSection {
+  display: flex;
+  flex-direction: column;
+  grid-row: 1;
+  height: 100%;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.contentBody {
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 0;
+  color: #fff;
+  background-color: $background;
+  border-bottom-right-radius: $radius;
+  border-top-left-radius: $radius;
+  overflow-y: auto;
+  max-height: 100%;
+
+  @include bp.tablet {
+    font-size: 18px;
+  }
+
+  @include bp.desktop {
+    font-size: 20px;
+  }
+}
+
+// Убираем верхний левый радиус у contentBody когда первый элемент меню активен
+.containerBody .menuSection:has(.menuItem:first-child.active) ~ .contentSection .contentBody {
+  border-top-left-radius: 0;
+}
+
+// Убираем нижний левый радиус у contentBody когда последний элемент меню активен
+.containerBody .menuSection:has(.menuItem:last-child.active) ~ .contentSection .contentFooter .space {
+  border-bottom-left-radius: 0;
+}
+
+.contentFooter {
+  display: flex;
+  position: relative;
+
+  .space {
+    flex-grow: 1;
+    background-color: $background;
+    border-bottom-right-radius: $radius;
+    border-bottom-left-radius: $radius;
+    position: relative;
+
+    &::after {
+      @include rounded-corner('inner-top');
+    }
+
+    @include bp.tablet {
+    }
+
+    @include bp.desktop {
+    }
+  }
+
+  .button {
+    margin: 1rem;
+    width: 206px;
+
+    @include bp.tablet {
+      width: 273px;
+    }
+
+    @include bp.desktop {
+      width: 443px;
+    }
+  }
+}

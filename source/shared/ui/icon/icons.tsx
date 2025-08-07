@@ -5,7 +5,7 @@ import { ArrowRightIcon } from './ui/icons/arrow-right'
 import { ArrowUpIcon } from './ui/icons/arrow-up'
 import { ButtonIcon } from './ui/icons/button'
 import { CloseIcon } from './ui/icons/close'
-import { EnvelopIcon } from './ui/icons/envelop '
+import { EmailIcon } from './ui/icons/email'
 import { PhoneIcon } from './ui/icons/phone'
 import { chevronLeftIcon } from './ui/icons/chevronLeft'
 import { LineLogoIcon } from './ui/icons/line-logo'
@@ -24,7 +24,7 @@ import { chevronUpIcon } from './ui/icons/chevronUp'
 
 export const ICONS: typeIconsType = {
   lineLogo: LineLogoIcon,
-  envelop: EnvelopIcon,
+  email: EmailIcon,
   chevronRight: ChevronRightIcon,
   chevronLeft: chevronLeftIcon,
   chevronDown: chevronDownIcon,

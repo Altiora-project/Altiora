@@ -1,25 +1,66 @@
 .header {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 1.875rem;
+  justify-content: space-between;
   border: 1px solid var(--foreground);
-  // margin: 0 1rem;
-  margin: 0.5rem auto 0;
+  margin: 0 25px 6px;
   color: var(--foreground);
-  width: 100%;
+  width: 93%;
   max-width: 1800px;
 
-  .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+  @include bp.tablet {
+    margin: 32px 33px;
   }
 
-  .middleSection {
-    flex-grow: 1;
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    justify-content: flex-end;
+  @include bp.desktop {
+    margin: 48px 90px 40px;
+    width: 90.5%;
   }
+
+  //добавить mobile
+}
+
+.logoSection {
+  display: flex;
+  align-items: center;
+}
+
+.menuSection {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+  justify-content: flex-end;
+}
+
+.buttonSection {
+  display: flex;
+  align-items: center;
+}
+
+.desktopMenu {
+  display: none;
+  @include bp.desktop {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+.mobileMenu {
+  display: flex;
+  @include bp.desktop {
+    display: none;
+  }
+}
+
+.buttonSection {
+  display: none;
+  @include bp.desktop {
+    display: inline-flex;
+  }
+}
+
+.desktopMenuContainer {
+  display: flex;
+  justify-content: space-between;
 }

@@ -1,27 +1,41 @@
 import React from 'react'
 import { MainMenuMobile } from '@shared/ui/main-menu'
 import type { typeMainMenuItem } from '@shared/ui/main-menu/types/types'
+import { routes } from '@shared/configs/routes'
+import { createRoute } from '@shared/configs/routes/create-rout.utils'
 
 const testMenuList: typeMainMenuItem[] = [
   {
     label: 'Кто мы',
-    url: '/'
+    url: routes.company
   },
   {
     label: 'Наши услуги',
-    url: '/services'
+    url: routes.services
   },
   {
     label: 'Комплексные решения',
-    url: '/complex-solutions'
+    url: createRoute(routes.complexRout, { id: '1', value: 'value' })
   },
   {
     label: 'Партнеры',
-    url: '/partners'
+    url: routes.partners
   },
   {
     label: 'Контакты',
-    url: '/contacts'
+    url: routes.contacs
+  },
+  {
+    label: 'Home',
+    url: routes.mainPage
+  },
+  {
+    label: 'UI',
+    url: routes.ui
+  },
+  {
+    label: 'Posts',
+    url: routes.postList
   }
 ]
 

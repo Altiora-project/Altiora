@@ -1,0 +1,15 @@
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  @include bp.tablet {
+    flex-direction: row;
+    gap: 73px;
+  }
+
+  @include bp.desktop {
+    flex-direction: column;
+    gap: 60px;
+  }
+}

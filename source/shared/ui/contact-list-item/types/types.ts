@@ -1,4 +1,4 @@
 export type contactListProps = {
-  type: 'phone' | 'email' | 'address'
+  linkType: 'phone' | 'email' | 'address'
   title: string
 }

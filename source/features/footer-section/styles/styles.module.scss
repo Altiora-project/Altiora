@@ -1,0 +1,32 @@
+.title {
+  font-size: 1rem;
+
+  @include bp.tablet {
+    font-size: 2rem;
+  }
+
+  @include bp.desktop {
+    font-size: 4.375rem;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 30px;
+
+  @include bp.tablet {
+    margin-top: 30px;
+  }
+
+  @include bp.desktop {
+    margin-top: 80px;
+    gap: 60px;
+  }
+}
+
+.separator {
+  height: 1px;
+  background: var(--color-grey2);
+}

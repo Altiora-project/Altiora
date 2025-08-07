@@ -1,30 +1,30 @@
 import { FC } from 'react'
 
 import classes from './styles/styles.module.scss'
+import { typeServiceDetailsProps } from './types/types'
 import clsx from 'clsx'
 
-import { InfoBlock } from '@shared/ui/info-block'
-import { typeServiceDetailsProps } from './types/types'
+import { PostscriptumSection } from '@features/postscriptum-section'
+import { ServiceHeroSection } from '@features/service-hero-section'
+
+import { getServiceDetailsAction } from '@entities/service-page/api/server-action'
+
+import { NotFound } from '@shared/ui/not-found'
 
 export const ServiceDetails: FC<typeServiceDetailsProps> = async ({ slug, className, ...otherProps }) => {
   //TODO: тут используем сущность которая через slug получает данные из api для запрашиваемой услуги
   // далее парсим данные и наполняем страницу
+  const response = await getServiceDetailsAction(slug)
+
+  if (!response) return <NotFound />
+  if ('error' in response) return <NotFound />
+
+  const pageData = response.data.data
 
   return (
     <div className={clsx(classes.wrapper, className)} {...otherProps}>
-      <h1>{slug}</h1>
-
-      <InfoBlock
-        title="/почему выбирают нас"
-        data={[
-          'Мы не просто создаём приложения.Мы превращаем идеи в продукты, которые хочется открывать снова и снова.Для нас важно не только, как это работает, но и что чувствует пользователь. Мы верим в силу хорошего дизайна и точной инженерии. И всегда стремимся сделать лучше, чем вчера',
-          'Прозрачный процесс  и чёткие сроки',
-          'Команда, которая действительно вовлечена в результат',
-          'Глубокий UX-фокус и внимание к деталям',
-          'Опыт в fintech, healthtech, e-commerce и других отраслях'
-        ]}
-        style={{ marginBlockStart: '40px' }}
-      />
+      <ServiceHeroSection pageData={pageData} />
+      <PostscriptumSection pageData={pageData} />
     </div>
   )
 }
