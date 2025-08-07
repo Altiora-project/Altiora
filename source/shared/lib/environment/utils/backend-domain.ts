@@ -1,5 +1,4 @@
-// const backendDomain = process.env.API_URL
-const backendDomain = process.env.NEXT_PUBLIC_API_URL
+const backendDomain = process.env.API_URL
 
 if (!backendDomain) {
   throw new Error('[ ERROR ] Backend domain is not defined')
