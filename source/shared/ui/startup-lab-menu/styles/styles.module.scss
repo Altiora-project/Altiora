@@ -7,7 +7,9 @@ $big-radius: math.div($radius, 2) * 3;
 
 // Миксин для псевдоэлементов скругления
 @mixin rounded-corner($position: 'top') {
-  @supports (mask-image: radial-gradient(circle at top left, transparent 0%, transparent 1rem, black 1rem, black 100%)) {
+  @supports (
+    mask-image: radial-gradient(circle at top left, transparent 0%, transparent 1rem, black 1rem, black 100%)
+  ) {
     content: '';
     //width: 100px;
     display: block;
@@ -17,24 +19,13 @@ $big-radius: math.div($radius, 2) * 3;
     background-color: $background;
     width: $radius;
     height: $radius;
-    
+
     @if $position == 'top' {
       top: -$radius;
-      mask-image: radial-gradient(
-        circle at top left, 
-        transparent 0%, 
-        transparent $radius, 
-        black $radius, 
-        black 100%);
+      mask-image: radial-gradient(circle at top left, transparent 0%, transparent $radius, black $radius, black 100%);
     } @else if $position == 'inner-bottom' {
       bottom: 0;
-      mask-image: radial-gradient(
-        circle at top left,
-        transparent 0%,
-        transparent $radius,
-        black $radius,
-        black 100%
-      );
+      mask-image: radial-gradient(circle at top left, transparent 0%, transparent $radius, black $radius, black 100%);
     } @else if $position == 'inner-top' {
       top: 0;
       right: -$radius;
@@ -91,7 +82,6 @@ $big-radius: math.div($radius, 2) * 3;
       @include rounded-corner('inner-bottom');
     }
 
-
     @include bp.tablet {
       font-size: 32px;
     }
@@ -121,7 +111,7 @@ $big-radius: math.div($radius, 2) * 3;
         margin: 23px 31px 0 0;
       }
 
-      @include bp.desktop { 
+      @include bp.desktop {
         margin: 51px 51px 0 0;
       }
     }
@@ -135,7 +125,7 @@ $big-radius: math.div($radius, 2) * 3;
         height: 22px;
       }
 
-      @include bp.desktop { 
+      @include bp.desktop {
         width: 22px;
         height: 22px;
       }
@@ -153,7 +143,6 @@ $big-radius: math.div($radius, 2) * 3;
   height: 100%;
 }
 
-
 .menuSection {
   display: flex;
   flex-direction: column;
@@ -168,7 +157,7 @@ $big-radius: math.div($radius, 2) * 3;
   @include bp.desktop {
     gap: 20px;
   }
-}  
+}
 
 .menuItem {
   display: flex;
@@ -200,7 +189,7 @@ $big-radius: math.div($radius, 2) * 3;
 
   // Скругленность для всех пунктов меню кроме первого и последнего
   &:not(:first-child):not(:last-child).active {
-    position: relative; 
+    position: relative;
     &::before {
       @include rounded-corner('top');
     }
@@ -211,7 +200,7 @@ $big-radius: math.div($radius, 2) * 3;
 
   // Только нижнее скругление для первого элемента
   &:first-child.active {
-    position: relative; 
+    position: relative;
     &::after {
       @include rounded-corner('bottom');
     }
@@ -219,7 +208,7 @@ $big-radius: math.div($radius, 2) * 3;
 
   // Только верхнее скругление для последнего элемента
   &:last-child.active {
-    position: relative; 
+    position: relative;
     &::before {
       @include rounded-corner('top');
     }
@@ -238,7 +227,7 @@ $big-radius: math.div($radius, 2) * 3;
 
   .menuItemTitle {
     display: none;
-  
+
     @include bp.desktop {
       display: inline-block;
       width: max-content;
@@ -247,7 +236,7 @@ $big-radius: math.div($radius, 2) * 3;
       font-family: var(--font-main);
       padding-right: 10px;
     }
-  }   
+  }
 }
 
 .contentSection {
@@ -290,7 +279,6 @@ $big-radius: math.div($radius, 2) * 3;
   border-bottom-left-radius: 0;
 }
 
-
 .contentFooter {
   display: flex;
   position: relative;
@@ -325,7 +313,4 @@ $big-radius: math.div($radius, 2) * 3;
       width: 443px;
     }
   }
-
 }
-
-

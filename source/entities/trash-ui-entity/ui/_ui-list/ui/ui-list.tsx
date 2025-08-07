@@ -19,7 +19,6 @@ import { UIServiceCard } from '../../ServiceCard'
 import { UISlider } from '../../slider/slider'
 import { UISliderCard } from '../../slider-card'
 import { UIVideoFeature } from '../../video-feature'
-import { OrderFormTest } from '../../order-form-test'
 import { StartupLabMenuTest } from '../../startup-lab-menu-test'
 import classes from '../styles/styles.module.scss'
 
