@@ -5,6 +5,7 @@ import { typeServiceDetailsProps } from './types/types'
 import clsx from 'clsx'
 
 import { PostscriptumSection } from '@features/postscriptum-section'
+import { ServiceHeroSection } from '@features/service-hero-section'
 
 import { getServiceDetailsAction } from '@entities/service-page/api/server-action'
 
@@ -22,8 +23,7 @@ export const ServiceDetails: FC<typeServiceDetailsProps> = async ({ slug, classN
 
   return (
     <div className={clsx(classes.wrapper, className)} {...otherProps}>
-      <h1>{slug}</h1>
-
+      <ServiceHeroSection pageData={pageData} />
       <PostscriptumSection pageData={pageData} />
     </div>
   )
