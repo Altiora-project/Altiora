@@ -13,13 +13,13 @@ export const orderFormSchema = yup.object({
     .min(2, 'Название компании должно содержать минимум 2 символа')
     .max(100, 'Название компании не должно превышать 100 символов'),
 
-  project_details: yup
+  projectDetails: yup
     .string()
     .required('Пожалуйста, опишите детали проекта')
     .min(10, 'Описание проекта должно содержать минимум 10 символов')
     .max(1000, 'Описание проекта не должно превышать 1000 символов'),
 
-  phone_number: yup
+  phone: yup
     .string()
     .required('Пожалуйста, введите номер телефона')
     .matches(
@@ -29,7 +29,7 @@ export const orderFormSchema = yup.object({
 
   email: yup.string().required('Пожалуйста, введите email').email('Введите корректный email адрес'),
 
-  agreed_to_terms: yup
+  agreement: yup
     .boolean()
     .required('Необходимо согласие с политикой обработки персональных данных')
     .oneOf([true], 'Необходимо согласие с политикой обработки персональных данных')

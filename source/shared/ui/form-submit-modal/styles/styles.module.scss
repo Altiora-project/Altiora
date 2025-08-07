@@ -1,8 +1,21 @@
 .card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  visibility: hidden;
   padding: 32px;
   min-height: 292px;
   justify-content: center;
   align-items: center;
+  transition: all 0.3s ease;
+  transform: translate(-50%, -50%) scale(0.8);
+
+  &__open {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+  }
 
   @include bp.tablet {
     display: flex;

@@ -6,6 +6,7 @@ import { UIContactListItem } from '../../contact-list-item'
 import { UIFooterInfoBlock } from '../../footer-info-block'
 import { UIFormSubmitModal } from '../../form-submit-modal'
 import { UIIcons } from '../../icons'
+import { UIInfoBlock } from '../../info-block'
 import { UIInput } from '../../input'
 import { UILinkMenu } from '../../link-menu'
 import { UILogo } from '../../logo'
@@ -61,6 +62,7 @@ export const UIList: React.FC = () => {
       <UILinkMenu />
       <UIProductCard />
       <OrderFormTest />
+      <UIInfoBlock />
     </div>
   )
 }

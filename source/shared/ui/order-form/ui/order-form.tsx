@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { FC, useState } from 'react'
 
 import { orderFormSchema } from '../schema/validation-schema'
 import classes from '../styles/styles.module.scss'
@@ -24,7 +24,8 @@ export const OrderForm: React.FC<OrderFormProps> = ({ title, callback, agreement
     control,
     formState: { errors, isValid },
     reset,
-    watch
+    watch,
+    setValue
   } = useForm<OrderFormData>({
     resolver: yupResolver(orderFormSchema),
     mode: 'onChange'
@@ -44,15 +45,21 @@ export const OrderForm: React.FC<OrderFormProps> = ({ title, callback, agreement
     }
   }
 
+  const FormButton: FC<{}> = ({}) => (
+    <Button type="submit" variant="primary" disabled={!isValid || isSubmitting}>
+      <span className={classes.buttonText}>{isSubmitting ? 'Отправка...' : 'Отправить заявку'}</span>
+    </Button>
+  )
+
   return (
     <div className={classes.container}>
       <form onSubmit={handleSubmit(onSubmit)} className={classes.form}>
         <MainBlock
           topContent={<h2 className={classes.title}>{title}</h2>}
           bottomContent={
-            <Button type="submit" variant="primary" disabled={!isValid || isSubmitting}>
-              <span className={classes.buttonText}>{isSubmitting ? 'Отправка...' : 'Отправить заявку'}</span>
-            </Button>
+            <div className={classes.buttonDesktop}>
+              <FormButton />
+            </div>
           }
         >
           <section className={classes.formSection}>
@@ -63,6 +70,7 @@ export const OrderForm: React.FC<OrderFormProps> = ({ title, callback, agreement
               placeholder="имя"
               supportingText="ваше имя"
               error={!!errors.name}
+              onClear={() => setValue('name', '', { shouldValidate: true })}
               {...register('name')}
             />
             <Input
@@ -72,25 +80,28 @@ export const OrderForm: React.FC<OrderFormProps> = ({ title, callback, agreement
               placeholder="компания"
               supportingText="название компании"
               error={!!errors.company}
+              onClear={() => setValue('company', '', { shouldValidate: true })}
               {...register('company')}
             />
             <Input
               label="Детали проекта"
-              id="project_details"
+              id="projectDetails"
               placeholder="описание проекта"
               supportingText="опишите детали проекта"
-              error={!!errors.project_details}
-              {...register('project_details')}
+              error={!!errors.projectDetails}
+              onClear={() => setValue('projectDetails', '', { shouldValidate: true })}
+              {...register('projectDetails')}
             />
 
             <Input
               label="Телефон"
-              id="phone_number"
+              id="phone"
               type="tel"
               placeholder="+7 "
               supportingText="ваш номер телефона"
-              error={!!errors.phone_number}
-              {...register('phone_number')}
+              error={!!errors.phone}
+              onClear={() => setValue('phone', '', { shouldValidate: true })}
+              {...register('phone')}
             />
 
             <Input
@@ -100,12 +111,13 @@ export const OrderForm: React.FC<OrderFormProps> = ({ title, callback, agreement
               placeholder="name@example.com"
               supportingText="ваша электронная почта"
               error={!!errors.email}
+              onClear={() => setValue('email', '', { shouldValidate: true })}
               {...register('email')}
             />
           </section>
           <div className={classes.checkboxGroup}>
             <Controller
-              name="agreed_to_terms"
+              name="agreement"
               control={control}
               render={({ field }) => (
                 <Checkbox id="agreement" checked={!!field.value} onCheckedChange={field.onChange} />
@@ -129,6 +141,9 @@ export const OrderForm: React.FC<OrderFormProps> = ({ title, callback, agreement
             </label>
           </div>
         </MainBlock>
+        <div className={classes.buttonMobileTablet}>
+          <FormButton />
+        </div>
       </form>
     </div>
   )
