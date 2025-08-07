@@ -1,4 +1,3 @@
-@import '../../app/styles/bp.scss';
 .header {
   display: flex;
   align-items: center;
@@ -9,11 +8,11 @@
   width: 93%;
   max-width: 1800px;
 
-  @include tablet {
+  @include bp.tablet {
     margin: 32px 33px;
   }
 
-  @include desktop {
+  @include bp.desktop {
     margin: 48px 90px 40px;
     width: 90.5%;
   }
@@ -40,7 +39,7 @@
 
 .desktopMenu {
   display: none;
-  @include desktop {
+  @include bp.desktop {
     display: flex;
     align-items: center;
     width: 100%;
@@ -49,14 +48,14 @@
 
 .mobileMenu {
   display: flex;
-  @include desktop {
+  @include bp.desktop {
     display: none;
   }
 }
 
 .buttonSection {
   display: none;
-  @include desktop {
+  @include bp.desktop {
     display: inline-flex;
   }
 }
