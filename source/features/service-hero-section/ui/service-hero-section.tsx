@@ -19,12 +19,12 @@ export const ServiceHeroSection: React.FC<{ pageData: ServiceDelails }> = ({ pag
           ))}
         </div>
         <Slider
-          data={pageData.case_studies.map((caseStudy, index) => (
+          cards={pageData.case_studies.map((caseStudy, index) => (
             <SliderCard
               key={index}
               title={caseStudy.name}
               description={caseStudy.info}
-              tags={caseStudy.tags?.map(tag => ({ link: `#${tag.name}`, title: tag.name }))}
+              tags={caseStudy.tags?.map((tag, index) => ({ id: index, name: tag.name }))}
             />
           ))}
         />
