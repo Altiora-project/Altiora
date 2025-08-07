@@ -1,9 +1,11 @@
 import { OrderForm } from '../model/schema'
+import { typeRequestResponse } from '../types'
 
 import { fetchWrapper } from '@shared/lib/api'
+import { endpoints } from '@shared/lib/api/configs/backend-urls'
 
 const sendForm = async (data: OrderForm): Promise<void> => {
-  await fetchWrapper('/project-request/', {
+  await fetchWrapper<typeRequestResponse>(endpoints.sendRequest, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)

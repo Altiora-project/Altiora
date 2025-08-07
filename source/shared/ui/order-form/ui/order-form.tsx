@@ -8,7 +8,7 @@ import clsx from 'clsx'
 import Link from 'next/link'
 import { Controller } from 'react-hook-form'
 
-import sendForm from '@entities/orderFormAPI/api/send-form'
+import sendForm from '@entities/orderFormAPI/api/server-actions'
 import useOrderForm from '@entities/orderFormAPI/model/use-form'
 
 import { MainBlock } from '@shared/ui/_main-block'
@@ -122,9 +122,6 @@ export const OrderForm: FC = () => {
             </label>
           </div>
         </MainBlock>
-        <div className={classes.buttonMobileTablet}>
-          <FormButton />
-        </div>
         <div className={classes.buttonMobileTablet}>
           <FormButton />
         </div>

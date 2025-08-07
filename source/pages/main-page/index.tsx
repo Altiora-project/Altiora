@@ -9,6 +9,7 @@ import { ServicesPromoBlock } from '@features/services-promo-block'
 import { getPageDataAction } from '@entities/main-page/api/server-actions'
 
 import { NotFound } from '@shared/ui/not-found'
+import { OrderForm } from '@shared/ui/order-form'
 
 export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, ...otherProps }) => {
   const response = await getPageDataAction()
@@ -17,10 +18,6 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
   if ('error' in response) return <NotFound />
 
   const pageData = response.data.data
-
-  if (!pageData || !pageData.services_data) {
-    return null
-  }
 
   const phrases = pageData.services_data.map(service => service.name)
   const services = pageData.services_data.map((service, index) => {
@@ -71,9 +68,13 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
       <div className={clsx(classes.content, classes.container)}>
         <ServicesPromoBlock
           title={pageData.services_section_title}
-          slides={pageData.case_studies_data}
+          slides={Array.isArray(pageData.case_studies_data) ? pageData.case_studies_data : []}
           services={services}
         />
+      </div>
+
+      <div className={classes.container}>
+        <OrderForm />
       </div>
 
       <div className={classes.container}>
