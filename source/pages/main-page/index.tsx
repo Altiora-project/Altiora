@@ -6,7 +6,7 @@ import { NotFound } from '@shared/ui/not-found'
 import { HeroSection } from '@features/hero-section'
 import { FooterSection } from '@features/footer-section'
 import { GetPartners } from '@features/partners/partners'
-// import { ServicesPromoBlock } from '@features/services-promo-block'
+import { ServicesPromoBlock } from '@features/services-promo-block'
 
 export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, ...otherProps }) => {
   const response = await getPageDataAction()
@@ -62,19 +62,16 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
     <div className={clsx(classes.wrapper, className)} {...otherProps}>
       <HeroSection title={pageData.hero_title} imgUrl={pageData.hero_image} phrases={phrases} />
 
-      <div className={clsx(classes.content, classes.container)}>MAIN PAGE CONTENT</div>
-
-      <section className={classes.partnersSection}>
-        <GetPartners header={pageData.partners_section_title} partners={pageData.partners_data} />
-      </section>
-      {/* <div className={clsx(classes.content, classes.container)}>
+      <div className={clsx(classes.content, classes.container)}>
         <ServicesPromoBlock
           title={pageData.services_section_title}
           slides={pageData.case_studies_data}
           services={services}
         />
-      </div> */}
-
+      </div>
+      <div className={classes.partnersSection}>
+        <GetPartners header={pageData.partners_section_title} partners={pageData.partners_data} />
+      </div>
       <div className={classes.container}>
         <FooterSection
           title={pageData.contacts_title}
