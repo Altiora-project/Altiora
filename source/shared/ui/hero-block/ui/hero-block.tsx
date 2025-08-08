@@ -12,9 +12,7 @@ export const HeroBlock: FC<typeHeroProps> = ({ contactLink, imgUrl, title, class
   return (
     <div className={clsx(classes.wrapper, className)} {...otherProps}>
       <div className={classes.content}>
-        <h1>
-          <MarkdownRenderer content={title} />
-        </h1>
+        <MarkdownRenderer content={title} />
         <HeroBlockImage className={classes.image} imgUrl={imgUrl} />
       </div>
       <Link href={contactLink} className={classes.link}>
