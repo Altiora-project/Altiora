@@ -5,9 +5,10 @@ import Link from 'next/link'
 import { SliderCard } from '@shared/ui/slider-card'
 import { Slider } from '@shared/ui/slider'
 import { ProductCard } from '@shared/ui/product-card'
+import { routes } from '@shared/configs/routes'
 
 export const ServicesPromoBlock: FC<typeServicesPromoBlockProps> = ({ title, slides, services }) => {
-  const sliderCards = slides.map((card, index) => {
+  const sliderCards = slides?.map((card, index) => {
     return <SliderCard key={index} title={card.name} description={card.info} tags={card.tags} />
   })
 
@@ -17,7 +18,7 @@ export const ServicesPromoBlock: FC<typeServicesPromoBlockProps> = ({ title, sli
         key={index}
         title={service.title}
         description={service.description}
-        actionLink={service.actionLink}
+        actionLink={`${routes.services}/${service.slug}`}
         tagList={service.tagList}
         className={classes.productCard}
       />

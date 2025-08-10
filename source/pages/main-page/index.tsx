@@ -3,6 +3,7 @@ import clsx from 'clsx'
 import type { FC, HTMLAttributes } from 'react'
 
 import { FooterSection } from '@features/footer-section'
+import { GetPartners } from '@features/partners/partners'
 import { HeroSection } from '@features/hero-section'
 import { ServicesPromoBlock } from '@features/services-promo-block'
 
@@ -14,14 +15,21 @@ import { OrderForm } from '@shared/ui/order-form'
 export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, ...otherProps }) => {
   const response = await getPageDataAction()
 
-  if (!response) return <NotFound />
-  if ('error' in response) return <NotFound />
+  if (!response || 'error' in response || !response.data?.data) {
+    return <NotFound />
+  }
 
   const pageData = response.data.data
 
+  if (!pageData?.services_data || !pageData.hero_title || !pageData.hero_image || !pageData.case_studies_data) {
+    return <NotFound />
+  }
+
   const phrases = pageData.services_data.map(service => service.name)
-  const services = pageData.services_data.map((service, index) => {
+  const services = pageData.services_data.map(service => {
     return {
+      id: service.id,
+      slug: service.slug,
       title: service.name,
       description: service.info,
       actionLink: 'string',
@@ -59,7 +67,7 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
   ]
   const requisites = ['г Ростов-на-Дону Будённовский пр-т 33', 'ИНН 6164143256', 'ОГРН 1236100034708', 'ОКВЭД2 62.02']
 
-  console.log(pageData.services_data)
+  // console.log(pageData.services_data)
 
   return (
     <div className={clsx(classes.wrapper, className)} {...otherProps}>
@@ -72,7 +80,9 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
           services={services}
         />
       </div>
-
+      <div className={classes.partnersSection}>
+        <GetPartners header={pageData.partners_section_title} partners={pageData.partners_data} />
+      </div>
       <div className={classes.container}>
         <OrderForm />
       </div>

@@ -9,6 +9,8 @@ type typeSliderCard = {
 }
 
 type typeProductCard = {
+  id: number
+  slug: string
   title: string
   description: string
   actionLink: string
