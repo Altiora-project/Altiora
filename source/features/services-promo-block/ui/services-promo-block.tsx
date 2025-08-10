@@ -7,7 +7,7 @@ import { Slider } from '@shared/ui/slider'
 import { ProductCard } from '@shared/ui/product-card'
 
 export const ServicesPromoBlock: FC<typeServicesPromoBlockProps> = ({ title, slides, services }) => {
-  const sliderCards = slides.map((card, index) => {
+  const sliderCards = slides?.map((card, index) => {
     return <SliderCard key={index} title={card.name} description={card.info} tags={card.tags} />
   })
 
