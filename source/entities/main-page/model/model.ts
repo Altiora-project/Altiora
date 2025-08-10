@@ -7,6 +7,7 @@ interface Service {
   id: number
   number: number
   name: string
+  slug: string
   info: string
   tags: Array<Tag>
 }
