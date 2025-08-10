@@ -81,15 +81,27 @@
   pointer-events: none;
 }
 
-.buttonText {
-  display: block;
-  width: 100%;
-
-  @include bp.tablet {
-    width: 100%;
-  }
+.buttonDesktop {
+  display: none;
 
   @include bp.desktop {
+    display: flex;
     width: 731px;
   }
+}
+
+.buttonMobileTablet {
+  margin-left: 24px;
+  margin-right: 24px;
+  display: flex;
+  align-items: stretch;
+  flex-shrink: 1;
+
+  @include bp.desktop {
+    display: none;
+  }
+}
+
+.buttonText {
+  display: inline-block;
 }

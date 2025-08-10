@@ -1,0 +1,80 @@
+.errorCard :global(button),
+.errorCard :global(a),
+.errorCard .button {
+  background: #50f195;
+  color: #111;
+  border: none;
+}
+.errorCard :global(button:hover),
+.errorCard :global(a:hover),
+.errorCard .button:hover {
+  background: #38e07d;
+}
+.errorCard {
+  background: #232323;
+  border-radius: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+}
+
+.field {
+  font-family: 'drukWideCyrFont', sans-serif;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.text {
+  color: #fff;
+  text-align: center;
+  font-family: 'Manrope', sans-serif;
+}
+
+@include bp.mobile {
+  .errorCard {
+    padding: 0;
+  }
+  .field {
+    font-size: 24px;
+    margin-bottom: 28px;
+  }
+  .text {
+    font-size: 16px;
+    margin-bottom: 52px;
+  }
+}
+
+@include bp.tablet {
+  .errorCard {
+    padding: 0;
+  }
+  .field {
+    font-size: 30px;
+    margin-bottom: 23px;
+  }
+  .text {
+    font-size: 16px;
+    margin-bottom: 49px;
+  }
+}
+
+@include bp.desktop {
+  .errorCard {
+    padding: 215px 296px;
+  }
+  .field {
+    font-size: 64px;
+    margin-bottom: 48px;
+  }
+  .text {
+    font-size: 24px;
+    margin-bottom: 56px;
+  }
+}

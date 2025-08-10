@@ -1,17 +1,29 @@
 import classes from './styles.module.scss'
 import type { typeHeaderProps } from './types'
-
-import { siteName } from '@shared/lib/environment/public'
+import { Logo } from '@shared/ui/logo'
 import { MainMenuDesktop, MainMenuMobile } from '@shared/ui/main-menu'
+import { Button } from '@shared/ui/button'
 
 export const Header: React.FC<typeHeaderProps> = ({ menuList }) => {
   return (
     <header className={classes.header}>
-      <span className={classes.logo}>{siteName}</span>
-
-      <div className={classes.middleSection}>
-        {menuList && <MainMenuDesktop menuList={menuList} />}
-        {menuList && <MainMenuMobile menuList={menuList} />}
+      <div className={classes.logoSection}>
+        <Logo variant="long" className={classes.logo} />
+      </div>
+      <div className={classes.menuSection}>
+        {menuList && (
+          <nav className={classes.desktopMenu} aria-label="Главное меню">
+            <MainMenuDesktop menuList={menuList} />
+          </nav>
+        )}
+        {menuList && (
+          <nav className={classes.mobileMenu} aria-label="Главное меню">
+            <MainMenuMobile menuList={menuList} />
+          </nav>
+        )}
+      </div>
+      <div className={classes.buttonSection}>
+        <Button variant="primary">Связаться с нами</Button>
       </div>
     </header>
   )

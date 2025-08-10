@@ -1,4 +1,4 @@
-$duration: 0.3s;
+$duration: 0.4s;
 
 .card {
   border-radius: 20px;
@@ -54,6 +54,7 @@ $duration: 0.3s;
 .content {
   border-radius: 20px;
   padding: 16px;
+  transition: all $duration ease-in-out;
 
   @include bp.tablet {
     padding: 24px;
@@ -136,7 +137,7 @@ $duration: 0.3s;
   gap: 8px;
   width: 24px;
   height: 100%;
-  font-family: var(--font-secondary);
+  font-family: var(--font-secondary), serif;
   font-weight: 700;
   font-size: 16px;
   text-decoration: none;
@@ -162,7 +163,6 @@ $duration: 0.3s;
     width: 100%;
 
     &:hover {
-      font-family: var(--font-main);
       font-weight: 400;
       color: var(--color-accent-primary);
       transform: translateX(-20px);

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { FC, useState } from 'react'
 import Link from 'next/link'
 import clsx from 'clsx'
 import { useForm, Controller } from 'react-hook-form'
@@ -24,7 +24,8 @@ export const OrderForm: React.FC<OrderFormProps> = ({ title, callback, agreement
     control,
     formState: { errors, isValid },
     reset,
-    watch
+    watch,
+    setValue
   } = useForm<OrderFormData>({
     resolver: yupResolver(orderFormSchema),
     mode: 'onChange'
@@ -44,15 +45,21 @@ export const OrderForm: React.FC<OrderFormProps> = ({ title, callback, agreement
     }
   }
 
+  const FormButton: FC<{}> = ({}) => (
+    <Button type="submit" variant="primary" disabled={!isValid || isSubmitting}>
+      <span className={classes.buttonText}>{isSubmitting ? 'Отправка...' : 'Отправить заявку'}</span>
+    </Button>
+  )
+
   return (
     <div className={classes.container}>
       <form onSubmit={handleSubmit(onSubmit)} className={classes.form}>
         <MainBlock
           topContent={<h2 className={classes.title}>{title}</h2>}
           bottomContent={
-            <Button type="submit" variant="primary" disabled={!isValid || isSubmitting}>
-              <span className={classes.buttonText}>{isSubmitting ? 'Отправка...' : 'Отправить заявку'}</span>
-            </Button>
+            <div className={classes.buttonDesktop}>
+              <FormButton />
+            </div>
           }
         >
           <section className={classes.formSection}>
@@ -63,6 +70,7 @@ export const OrderForm: React.FC<OrderFormProps> = ({ title, callback, agreement
               placeholder="имя"
               supportingText="ваше имя"
               error={!!errors.name}
+              onClear={() => setValue('name', '', { shouldValidate: true })}
               {...register('name')}
             />
             <Input
@@ -72,6 +80,7 @@ export const OrderForm: React.FC<OrderFormProps> = ({ title, callback, agreement
               placeholder="компания"
               supportingText="название компании"
               error={!!errors.company}
+              onClear={() => setValue('company', '', { shouldValidate: true })}
               {...register('company')}
             />
             <Input
@@ -80,6 +89,7 @@ export const OrderForm: React.FC<OrderFormProps> = ({ title, callback, agreement
               placeholder="описание проекта"
               supportingText="опишите детали проекта"
               error={!!errors.projectDetails}
+              onClear={() => setValue('projectDetails', '', { shouldValidate: true })}
               {...register('projectDetails')}
             />
 
@@ -90,6 +100,7 @@ export const OrderForm: React.FC<OrderFormProps> = ({ title, callback, agreement
               placeholder="+7 "
               supportingText="ваш номер телефона"
               error={!!errors.phone}
+              onClear={() => setValue('phone', '', { shouldValidate: true })}
               {...register('phone')}
             />
 
@@ -100,6 +111,7 @@ export const OrderForm: React.FC<OrderFormProps> = ({ title, callback, agreement
               placeholder="name@example.com"
               supportingText="ваша электронная почта"
               error={!!errors.email}
+              onClear={() => setValue('email', '', { shouldValidate: true })}
               {...register('email')}
             />
           </section>
@@ -127,6 +139,9 @@ export const OrderForm: React.FC<OrderFormProps> = ({ title, callback, agreement
             </label>
           </div>
         </MainBlock>
+        <div className={classes.buttonMobileTablet}>
+          <FormButton />
+        </div>
       </form>
     </div>
   )

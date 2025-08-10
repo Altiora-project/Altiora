@@ -20,5 +20,23 @@
   }
 
   @include bp.desktop {
+    padding: 0;
+  }
+}
+
+.partnersSection {
+  h1 {
+    padding-inline-start: 1.5rem;
+    display: inline-block;
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+
+    @include bp.tablet {
+      padding-inline-start: 4rem;
+    }
+    @include bp.desktop {
+      padding-inline-start: 3rem;
+    }
   }
 }

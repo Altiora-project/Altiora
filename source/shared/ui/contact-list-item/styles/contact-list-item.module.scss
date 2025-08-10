@@ -1,39 +1,39 @@
-
 .linkText {
-    color: var(--color-white);
-    font-family: var(--font-secondary);
-    font-size: 12px;
-    font-weight: 700;
-    padding-top: 8px;
-    
-    @include bp.tablet {
-        font-size: 16px;
-    }
+  display: flex;
+  color: var(--color-white);
+  font-family: var(--font-secondary);
+  font-size: 12px;
+  font-weight: 700;
+  padding-top: 8px;
 
-    @include bp.desktop {
-        font-size: 36px;
-        padding: 0;
-    }
+  @include bp.tablet {
+    font-size: 16px;
+    align-items: center;
+  }
+
+  @include bp.desktop {
+    font-size: 36px;
+    padding: 0;
+  }
 }
 
 .container {
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    gap: 12px;
-    height: 32px;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  gap: 12px;
+  height: 32px;
 
-    @include bp.desktop {
-        gap: 22px;
-        height: 44px;
-    }
+  @include bp.desktop {
+    gap: 22px;
+    height: 44px;
+  }
 }
 
 .icon {
-    color: var(--color-accent-primary);
-    max-width: 32px;
-    @include bp.desktop {
-        max-width: 44px;
-    }
+  color: var(--color-accent-primary);
+  max-width: 32px;
+  @include bp.desktop {
+    max-width: 44px;
+  }
 }
-

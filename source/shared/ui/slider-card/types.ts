@@ -1,4 +1,4 @@
-type TagsProps = { link: string; title: string }
+type TagsProps = { id: number; name: string }
 
 export interface SliderCardProps extends React.HTMLAttributes<HTMLDivElement> {
   title?: string

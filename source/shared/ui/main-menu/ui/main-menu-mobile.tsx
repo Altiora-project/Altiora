@@ -13,11 +13,13 @@ export const MainMenuMobile: React.FC<typeMainMenuProps> = ({ menuList }) => {
 
       <DropdownMenu.Portal>
         <DropdownMenu.Content className={classes.menuContainer} align="end" side="bottom">
-          {menuList.map((item, cnt) => (
-            <DropdownMenu.Item className={classes.link} key={cnt} asChild>
-              <Link href={item.url}>{item.label}</Link>
-            </DropdownMenu.Item>
-          ))}
+          {menuList
+            .filter(item => typeof item.url === 'string')
+            .map((item, cnt) => (
+              <DropdownMenu.Item className={classes.link} key={cnt} asChild>
+                <Link href={item.url as string}>{item.label}</Link>
+              </DropdownMenu.Item>
+            ))}
         </DropdownMenu.Content>
       </DropdownMenu.Portal>
     </DropdownMenu.Root>

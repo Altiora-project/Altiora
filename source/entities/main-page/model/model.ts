@@ -5,7 +5,7 @@ interface Tag {
 
 interface Service {
   id: number
-  number: 32767
+  number: number
   name: string
   info: string
   tags: Array<Tag>
@@ -16,6 +16,13 @@ interface Partner {
   name: string
   logo: string
   website: string
+}
+
+interface Studies {
+  id: number
+  name: string
+  info: string
+  tags: Array<Tag>
 }
 
 export interface MainPage {
@@ -41,11 +48,13 @@ export interface MainPage {
   partners_data: Array<Partner>
   services_data: Array<Service>
   order_section_title: string
+  case_studies_data: Array<Studies>
   contacts_title: string
   contact_address: string
   contact_phone: string
   contact_email: string
 }
+
 // {
 //   // Hero Block
 //   hero_title: string

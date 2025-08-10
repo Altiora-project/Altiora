@@ -3,24 +3,32 @@ import { contactListProps } from '../types/types'
 import Link from 'next/link'
 
 import { Icon } from '@shared/ui/icon'
+import { typeIconsType } from '@shared/ui/icon/types'
 
-export const ContactListItem: React.FC<contactListProps> = ({ type, title }) => {
+const getLink = (title: string, type?: 'phone' | 'email' | 'address'): string => {
   switch (type) {
-    case 'phone':
-      return (
-        <Link href={`tel:${title}`} className={styles.container}>
-          <Icon icon="phone" className={styles.icon} size="auto" />
-          <div className={styles.linkText}>{title}</div>
-        </Link>
-      )
     case 'email':
-      return (
-        <Link href={`mailto:${title}`} className={styles.container}>
-          <Icon icon="envelop" className={styles.icon} size="auto" />
+      return `mailto:${title}`
+    case 'phone':
+      return `tel:${title}`
+    default:
+      return title
+  }
+}
+
+export const ContactListItem: React.FC<contactListProps> = ({ title, linkType }) => {
+  const link = getLink(title, linkType)
+
+  return (
+    <>
+      {!(linkType === 'address') ? (
+        <Link href={link} className={styles.container}>
+          <Icon icon={linkType} className={styles.icon} size="auto" />
           <div className={styles.linkText}>{title}</div>
         </Link>
-      )
-    case 'address':
-      return <div className={styles.linkText}>{title}</div>
-  }
+      ) : title ? (
+        <div className={styles.linkText}>{title}</div>
+      ) : null}
+    </>
+  )
 }

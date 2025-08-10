@@ -1,12 +1,12 @@
 .wrapper {
   height: 218px;
-  display: flex;
 
   @include bp.tablet {
     height: 220px;
   }
 
   @include bp.desktop {
+    display: flex;
     height: 400px;
   }
 }
