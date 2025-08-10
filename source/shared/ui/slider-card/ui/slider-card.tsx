@@ -5,7 +5,7 @@ import styles from '../styles/styles.module.scss'
 import { SliderCardProps } from '../types'
 import Link from 'next/link'
 
-export const SliderCard: React.FC<SliderCardProps> = ({ title, tags, description }) => {
+export const SliderCard: React.FC<SliderCardProps> = ({ title, description, tags }) => {
   return (
     <CardComponent radius="lg" tag="default" background="grey" className={styles.container}>
       <div className={styles.content}>

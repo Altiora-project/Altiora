@@ -23,6 +23,7 @@ import { StartupLabMenuTest } from '../../startup-lab-menu-test'
 import classes from '../styles/styles.module.scss'
 
 import { UIHeroBlock } from '@entities/trash-ui-entity/ui/hero-block'
+import { UIPartners } from '../../partners'
 
 export const UIList: React.FC = () => {
   return (
@@ -30,6 +31,7 @@ export const UIList: React.FC = () => {
       <UIMainBlock />
 
       {/* Добавляем компоненты ниже */}
+      <UIPartners />
       <UICheckbox />
       <UIMarquee />
       <UICardComponent />
