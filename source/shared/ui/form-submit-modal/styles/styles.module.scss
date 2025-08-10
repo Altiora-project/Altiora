@@ -3,6 +3,7 @@
   min-height: 292px;
   justify-content: center;
   align-items: center;
+  background-color: var(--color-background) !important;
 
   @include bp.tablet {
     display: flex;
@@ -125,10 +126,12 @@
   position: relative;
 
   @include bp.tablet {
+    align-self: center;
     order: -1;
   }
 
   @include bp.desktop {
+    // align-self: flex-end;
     order: 1;
   }
 }

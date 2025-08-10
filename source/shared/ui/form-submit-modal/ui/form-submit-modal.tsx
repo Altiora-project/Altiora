@@ -11,7 +11,7 @@ export const FormSubmitModal: FC<typeFormSubmitModalProps> = ({ buttonLink, onCl
   if (buttonLink === '') buttonLink = '/'
   return (
     <>
-      <CardComponent radius="lg" background="black" tag="default" className={classes.card} {...otherProps}>
+      <CardComponent radius="lg" background="none" tag="default" className={classes.card} {...otherProps}>
         <div className={classes.container}>
           <p className={classes.textInfo}>Ваша заявка принята!</p>
           <p className={classes.textInfo}>

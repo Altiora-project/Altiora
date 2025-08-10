@@ -24,14 +24,22 @@ export const UIFormSubmitModal: React.FC = () => {
         }
       ]}
       components={
-        <div style={{ backgroundColor: '#ffffff4b', padding: '10px', display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
+        <div
+          style={{
+            backgroundColor: '#ffffff4b',
+            padding: '10px',
+            display: 'flex',
+            gap: '20px',
+            flexWrap: 'wrap'
+          }}
+        >
           <FormSubmitModal
             onClose={() => {
               rout.push('/')
             }}
           />
 
-          <FormSubmitModal buttonLink="/ui" />
+          {/* <FormSubmitModal buttonLink="/ui" /> */}
         </div>
       }
     />
