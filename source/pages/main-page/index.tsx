@@ -61,6 +61,8 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
   ]
   const requisites = ['г Ростов-на-Дону Будённовский пр-т 33', 'ИНН 6164143256', 'ОГРН 1236100034708', 'ОКВЭД2 62.02']
 
+  // console.log(pageData.services_data)
+
   return (
     <div className={clsx(classes.wrapper, className)} {...otherProps}>
       <HeroSection title={pageData.hero_title} imgUrl={pageData.hero_image} phrases={phrases} />
