@@ -24,6 +24,8 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
   const phrases = pageData.services_data.map(service => service.name)
   const services = pageData.services_data.map(service => {
     return {
+      id: service.id,
+      slug: service.slug,
       title: service.name,
       description: service.info,
       actionLink: 'string',
