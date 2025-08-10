@@ -68,7 +68,7 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
       <div className={clsx(classes.content, classes.container)}>
         <ServicesPromoBlock
           title={pageData.services_section_title}
-          slides={pageData.case_studies_data}
+          slides={Array.isArray(pageData.case_studies_data) ? pageData.case_studies_data : []}
           services={services}
         />
       </div>
