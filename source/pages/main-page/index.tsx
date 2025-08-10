@@ -74,7 +74,6 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
           services={services}
         />
       </div>
-
       <div className={classes.partnersSection}>
         <GetPartners header={pageData.partners_section_title} partners={pageData.partners_data} />
       </div>
