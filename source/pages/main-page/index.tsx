@@ -1,11 +1,15 @@
 import classes from './styles.module.scss'
 import clsx from 'clsx'
 import type { FC, HTMLAttributes } from 'react'
-import { getPageDataAction } from '@entities/main-page/api/server-actions'
-import { NotFound } from '@shared/ui/not-found'
-import { HeroSection } from '@features/hero-section'
+
 import { FooterSection } from '@features/footer-section'
+import { HeroSection } from '@features/hero-section'
 import { ServicesPromoBlock } from '@features/services-promo-block'
+
+import { getPageDataAction } from '@entities/main-page/api/server-actions'
+import ServiceCards from '@entities/service-cards'
+
+import { NotFound } from '@shared/ui/not-found'
 
 export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, ...otherProps }) => {
   const response = await getPageDataAction()
@@ -67,6 +71,10 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
           slides={pageData.case_studies_data}
           services={services}
         />
+      </div>
+
+      <div className={clsx(classes.content, classes.container)}>
+        <ServiceCards />
       </div>
 
       <div className={classes.container}>
