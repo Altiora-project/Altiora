@@ -1,9 +1,12 @@
-import '@app/styles/globals.scss'
 import { FC } from 'react'
+
+import '@app/styles/globals.scss'
 import type { Metadata } from 'next'
 import NextTopLoader from 'nextjs-toploader'
+
 import { mainMenu } from '@app/configs/main-menu.config'
 import { drukWideCyrFont, manropeFont } from '@app/fonts'
+
 import { Header } from '@widgets/header'
 
 export const metadata: Metadata = {

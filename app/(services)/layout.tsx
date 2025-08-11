@@ -1,11 +1,14 @@
-import '@app/styles/globals.scss'
 import { FC, PropsWithChildren } from 'react'
-import { drukWideCyrFont, manropeFont } from '@app/fonts'
-import NextTopLoader from 'nextjs-toploader'
-import { Header } from '@widgets/header'
-import { mainMenu } from '@app/configs/main-menu.config'
+
+import '@app/styles/globals.scss'
 import clsx from 'clsx'
 import type { Metadata } from 'next'
+import NextTopLoader from 'nextjs-toploader'
+
+import { mainMenu } from '@app/configs/main-menu.config'
+import { drukWideCyrFont, manropeFont } from '@app/fonts'
+
+import { Header } from '@widgets/header'
 
 export const metadata: Metadata = {
   title: 'Nextjs project',

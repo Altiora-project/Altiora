@@ -7,8 +7,9 @@
   @include bp.desktop {
     background-image: url('/image/main-top.png'), url('/image/main-bottom.png');
     background-repeat: no-repeat, no-repeat;
-    background-position: 100% 30%,
-    120% 90%;
+    background-position:
+      100% 30%,
+      120% 90%;
   }
 }
 
