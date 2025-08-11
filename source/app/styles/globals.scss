@@ -3,6 +3,7 @@ body[data-scroll-locked='1'],
 body[data-scroll-locked][style] {
   margin-right: 0 !important;
 }
+
 :root {
   --color-background: #111111; //фон
   --color-background1: #2f2f2f4d;
@@ -60,6 +61,16 @@ body {
     &:hover {
       text-decoration-color: var(--foreground);
     }
+  }
+}
+
+.bg {
+  @include bp.desktop {
+    background-image: url('/image/service-bg-top.png'), url('/image/service-bg-bottom.png');
+    background-repeat: no-repeat, no-repeat;
+    background-position:
+      100% 0,
+      0 100%;
   }
 }
 
