@@ -13,20 +13,20 @@ export const CardComponent: FC<CardComponentProps> = ({
   className,
   ...otherProps
 }) => {
+  const cardClasses = clsx(classes.container, classes[radius], classes[background], classes.noiseEffect, className)
+
   if (tag === 'link') {
     return (
-      <Link
-        href={href ? href : '/'}
-        className={clsx(classes.container, classes[radius], classes[background], className)}
-        {...otherProps}
-      >
-        {children}
-      </Link>
+      <div className={cardClasses} {...otherProps}>
+        <Link href={href ? href : '/'} {...otherProps}>
+          {children}
+        </Link>
+      </div>
     )
   }
 
   return (
-    <div className={clsx(classes.container, classes[radius], classes[background], className)} {...otherProps}>
+    <div className={cardClasses} {...otherProps}>
       {children}
     </div>
   )

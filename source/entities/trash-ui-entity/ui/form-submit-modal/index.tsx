@@ -30,7 +30,7 @@ export const UIFormSubmitModal: React.FC = () => {
             padding: '10px',
             display: 'flex',
             gap: '20px',
-            flexWrap: 'nowrap'
+            flexWrap: 'wrap'
           }}
         >
           <FormSubmitModal

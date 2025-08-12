@@ -6,11 +6,17 @@
   max-width: 1800px;
   margin: 0 auto;
   padding: 1.5rem;
+  background-image: url('/image/service-top-mobile.png'), url('/image/service-bottom-mobile.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position:
+    100% 7%,
+    0 90%;
 
   @include bp.tablet {
     padding: 2rem;
   }
 
   @include bp.desktop {
+    background-image: none;
   }
 }
