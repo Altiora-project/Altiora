@@ -32,6 +32,8 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
     }
   })
 
+  console.log('ABOUT TEXT DATA' + pageData.about_text)
+
   //TODO: убрать моки когда будут данные с бека
   const contacts: {
     type: 'address' | 'email' | 'phone'

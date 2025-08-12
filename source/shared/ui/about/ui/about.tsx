@@ -7,7 +7,10 @@ import clsx from 'clsx'
 import { Button } from '@shared/ui/button'
 import { typeAboutDataProps } from '../types'
 import Image from 'next/image'
-import { MarkdownRenderer } from '@shared/lib/markdown'
+// import { MarkdownRenderer } from '@shared/lib/markdown'
+import ReactMarkdown from 'react-markdown'
+import rehypeRaw from 'rehype-raw'
+import remarkGfm from 'remark-gfm'
 
 export const About: FC<typeAboutDataProps> = ({ data }) => {
   //   const { about, years, products, projects, percent, offer } = data
@@ -32,13 +35,16 @@ export const About: FC<typeAboutDataProps> = ({ data }) => {
   return (
     <div className={classes.container}>
       <CardComponent
-        radius={'lg'}
+        radius={'md'}
         background={'grey'}
         tag={'default'}
         className={clsx(classes.card, classes.firstCard)}
       >
-        <MarkdownRenderer content={title} />
-        {/* <div>{about}</div> */}
+        <div className={classes.cardContent}>
+          <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
+            {title}
+          </ReactMarkdown>
+        </div>
         <div className={classes.logoContainer}>
           <Image src="/logo.svg" width={131} height={131} alt="Логотип" className={classes.logo} />
         </div>
@@ -46,48 +52,60 @@ export const About: FC<typeAboutDataProps> = ({ data }) => {
       </CardComponent>
 
       <CardComponent
-        radius={'lg'}
+        radius={'md'}
         background={'primary'}
         tag={'default'}
         className={clsx(classes.card, classes.secondCard)}
       >
-        <MarkdownRenderer content={hightlight1} className={classes.markdown} />
+        5+ лет
       </CardComponent>
 
       <CardComponent
-        radius={'lg'}
+        radius={'md'}
         background={'grey'}
         tag={'default'}
         className={clsx(classes.card, classes.thirdCard)}
       >
-        <MarkdownRenderer content={text} />
+        <div className={classes.cardContent}>
+          <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
+            {text}
+          </ReactMarkdown>
+        </div>
+
         {/* {products} */}
       </CardComponent>
 
       <CardComponent
-        radius={'lg'}
+        radius={'md'}
         background={'grey'}
         tag={'default'}
         className={clsx(classes.card, classes.fourthCard)}
       >
-        <MarkdownRenderer content={text} />
+        <div className={classes.cardContent}>
+          <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
+            {text}
+          </ReactMarkdown>
+        </div>
         {/* {projects} */}
       </CardComponent>
 
       <CardComponent
-        radius={'lg'}
+        radius={'md'}
         background={'primary'}
         tag={'default'}
         className={clsx(classes.card, classes.fifthCard)}
       >
-        {/* <MarkdownRenderer content={hightlight2} /> */}
         100 %
       </CardComponent>
 
       <div className={clsx(classes.container_radius, classes.sixthCard)}>
         <div className={classes.content}>
-          <CardComponent radius={'lg'} background={'grey'} tag={'default'} className={clsx(classes.card)}>
-            <MarkdownRenderer content={text} />
+          <CardComponent radius={'md'} background={'grey'} tag={'default'} className={clsx(classes.card)}>
+            <div className={classes.cardContent}>
+              <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
+                {text}
+              </ReactMarkdown>
+            </div>
             {/* {offer} */}
           </CardComponent>
         </div>
