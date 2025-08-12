@@ -2,7 +2,7 @@ $duration: 0.4s;
 
 .card {
   border-radius: 20px;
-  padding: 0 !important;
+  padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -11,14 +11,15 @@ $duration: 0.4s;
   min-height: 189px;
   text-decoration: none;
   color: #2f2f2f4d;
+  background-color: var(--color-background4);
 
   @include bp.tablet {
     min-height: 278px;
-    background-color: var(--color-background1) !important;
+    background-color: var(--color-background1);
   }
 
   @include bp.desktop {
-    background-color: var(--color-background) !important;
+    background-color: var(--color-background);
 
     @media (hover: hover) and (pointer: fine) {
       &:hover {

@@ -1,6 +1,6 @@
 'use client'
 
-import { ErrorCard } from '@shared/ui/error/index'
+import { ErrorCard } from '@shared/ui/error'
 
 const ErrorPage: React.FC = () => {
   return (

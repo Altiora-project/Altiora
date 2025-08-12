@@ -43,7 +43,6 @@ export const UIList: React.FC = () => {
       <UIButton />
       <UICheckbox />
       <UIMarquee />
-      <UICardComponent />
       <UIIcons />
       <UIHeroBlock />
       <UIBadge />

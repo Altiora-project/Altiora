@@ -1,21 +1,34 @@
 'use client'
 
-import { FC, useEffect, useState } from 'react'
+import { FC, useEffect, useMemo, useState } from 'react'
 
 import moreIcon from './moreIcon.svg'
 import styles from './styles.module.scss'
 import Image from 'next/image'
 
-import { getVideoDataAction, typeVideoFeatureResponse } from '@entities/video'
+import { getVideoDataAction, videoData } from '@entities/video'
 
 const VideoFeature: FC = () => {
-  const isFile = /\.(mp4|webm|ogg|mkv|flv|m4v|mov|wmv|mpg|mpeg)$/i.test(data.video)
-  const Tag = isFile ? 'video' : 'iframe'
-  const [data, setData] = useState<typeVideoFeatureResponse>()
+  const [data, setData] = useState<videoData>()
 
   useEffect(() => {
-    getVideoDataAction().then(res => setData(res.data))
+    // getVideoDataAction().then(res => {
+    //   if ('data' in res) setData(res.data.data)
+    // })
+
+    // TEMP
+    fetch('https://d3462337-77f3-4977-bb62-55e280a4892a.mock.pstmn.io/video-feature')
+      .then(res => res.json())
+      .then(res => setData(res.data))
   }, [])
+
+  const isFile = useMemo(
+    () => (data?.video ? /\.(mp4|webm|ogg|mkv|flv|m4v|mov|wmv|mpg|mpeg)$/i.test(data!.video) : false),
+    [data]
+  )
+  const Tag = isFile ? 'video' : 'iframe'
+
+  if (!data) return null
 
   return (
     <div className={styles.container}>
@@ -42,13 +55,14 @@ const VideoFeature: FC = () => {
           <p>{data.more}</p>
           <Image className={styles.more__icon} src={moreIcon} alt="more" />
         </div>
-        {Object.values(data.links).map(link => (
-          <p className={styles.more__link} key={link[0]}>
-            <a target="_blank" href={link[1]}>
-              {link[0]}
-            </a>
-          </p>
-        ))}
+        {data.links &&
+          Object.values(data.links).map(link => (
+            <p className={styles.more__link} key={link[0]}>
+              <a target="_blank" href={link[1]}>
+                {link[0]}
+              </a>
+            </p>
+          ))}
       </div>
     </div>
   )

@@ -16,6 +16,7 @@ export const endpoints = {
   postDetails: (id: string) => createRoute('/posts/:id', { id }),
   mainPromo: '/home-page-content/',
   services: '/services/',
+  sendRequest: '/project-request/',
   videoFeature: '/video-feature/',
   serviceDetails: (slug: string) => createRoute('/services/:slug', { slug })
 } as const

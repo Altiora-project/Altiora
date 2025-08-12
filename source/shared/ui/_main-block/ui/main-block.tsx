@@ -10,7 +10,7 @@ export const MainBlock: React.FC<typeMainBlockProps> = ({
   ...otherProps
 }) => {
   return (
-    <div className={clsx(classes.container, className)} {...otherProps}>
+    <div className={clsx(classes.container, classes.noise, className)} {...otherProps}>
       {topContent && (
         <div className={classes.topContainer}>
           <div className={classes.topContent}>{topContent}</div>

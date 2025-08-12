@@ -1,4 +1,4 @@
 import getVideoDataAction from './api/server-actions'
-import typeVideoFeatureResponse from './types'
+import { typeVideoFeatureResponse, videoData } from './types'
 
-export { getVideoDataAction, type typeVideoFeatureResponse }
+export { getVideoDataAction, type typeVideoFeatureResponse, type videoData }

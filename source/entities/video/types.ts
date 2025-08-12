@@ -1,4 +1,4 @@
-type videoData<T = string> = {
+export type videoData<T = string> = {
   title: T
   description?: T
   video: T
@@ -8,10 +8,8 @@ type videoData<T = string> = {
   }
 }
 
-type typeVideoFeatureResponse = {
+export type typeVideoFeatureResponse = {
   success: boolean
   message: string
   data: videoData
 }
-
-export default typeVideoFeatureResponse

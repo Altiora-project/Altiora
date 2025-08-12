@@ -70,26 +70,31 @@
   }
 }
 
+.contentCard {
+  margin-top: 1rem;
+  @include bp.tablet {
+    margin-top: 1.5rem;
+    padding: 0;
+  }
+  @include bp.desktop {
+    margin-top: 96px;
+    padding: 60px 40px;
+  }
+}
+
 .content {
   display: grid;
   border-radius: 60px;
   gap: 0.5rem;
-  margin-top: 1rem;
 
   @include bp.tablet {
-    background-color: var(--color-background);
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
-    padding: 0;
-    margin-top: 1.5rem;
   }
 
   @include bp.desktop {
     grid-template-columns: repeat(3, 1fr);
-    background-color: var(--color-background1);
-    padding: 60px 40px;
     gap: 2rem;
-    margin-top: 96px;
   }
 }
 

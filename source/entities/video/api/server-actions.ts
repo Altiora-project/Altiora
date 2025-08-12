@@ -1,4 +1,4 @@
-import typeVideoFeatureResponse from '../types'
+import { typeVideoFeatureResponse } from '../types'
 
 import { endpoints, fetchWrapper, typeApiResponse } from '@shared/lib/api'
 
