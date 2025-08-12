@@ -1,6 +1,6 @@
 @use 'sass:math';
 
-$bg-color: rgba(47, 47, 47, 0.3); //oklch(255 0 0 / 0.2);
+$bg-color: rgba(47, 47, 47, 0.3);
 $radius: 1rem;
 $big-radius: math.div($radius, 2) * 3;
 
@@ -33,16 +33,26 @@ $big-radius: math.div($radius, 2) * 3;
       border-radius: $radius $radius 0 0;
       position: relative;
 
-      &::before {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: -$radius;
-        width: $radius;
-        height: $radius;
-        background-color: $bg-color;
-        mask-image: radial-gradient(circle at top left, transparent 0%, transparent $radius, black $radius, black 100%);
-        mask-mode: alpha;
+      @supports (
+        mask-image: radial-gradient(circle at top left, transparent 0%, transparent $radius, black $radius, black 100%)
+      ) {
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: -$radius;
+          width: $radius;
+          height: $radius;
+          background-color: $bg-color;
+          mask-image: radial-gradient(
+            circle at top left,
+            transparent 0%,
+            transparent $radius,
+            black $radius,
+            black 100%
+          );
+          mask-mode: alpha;
+        }
       }
     }
   }
@@ -86,22 +96,32 @@ $big-radius: math.div($radius, 2) * 3;
       border-radius: 0 0 $radius $radius;
       position: relative;
 
-      &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: -$radius;
-        width: $radius;
-        height: $radius;
-        background-color: $bg-color;
+      @supports (
         mask-image: radial-gradient(
-          circle at bottom right,
-          transparent 0%,
-          transparent $radius,
-          black $radius,
-          black 100%
-        );
-        mask-mode: alpha;
+            circle at bottom right,
+            transparent 0%,
+            transparent $radius,
+            black $radius,
+            black 100%
+          )
+      ) {
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: -$radius;
+          width: $radius;
+          height: $radius;
+          background-color: $bg-color;
+          mask-image: radial-gradient(
+            circle at bottom right,
+            transparent 0%,
+            transparent $radius,
+            black $radius,
+            black 100%
+          );
+          mask-mode: alpha;
+        }
       }
     }
   }
