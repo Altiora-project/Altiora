@@ -12,7 +12,7 @@ import { CardComponent } from '@shared/ui/card-component'
 export const HeroBlock: FC<typeHeroProps> = ({ contactLink, imgUrl, title, className, ...otherProps }) => {
   return (
     <CardComponent
-      radius="lg"
+      radius="md"
       tag="default"
       background="grey"
       className={clsx(classes.wrapper, className)}
