@@ -30,7 +30,10 @@
     "react-swipeable": "^7.0.2",
     "rehype-raw": "^7.0.0",
     "remark-gfm": "^4.0.1",
-    "yup": "^1.6.1"
+    "react-hook-form": "^7.61.1",
+    "react-swipeable": "^7.0.2",
+    "yup": "^1.6.1",
+    "zod": "^4.0.14"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
