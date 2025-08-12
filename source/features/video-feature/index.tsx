@@ -1,6 +1,6 @@
 'use client'
 
-import { FC, useEffect, useMemo, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 
 import moreIcon from './moreIcon.svg'
 import styles from './styles.module.scss'
@@ -10,22 +10,25 @@ import { getVideoDataAction, videoData } from '@entities/video'
 
 const VideoFeature: FC = () => {
   const [data, setData] = useState<videoData>()
+  const [isFile, setIsFile] = useState(false)
 
   useEffect(() => {
     // getVideoDataAction().then(res => {
-    //   if ('data' in res) setData(res.data.data)
+    //   if ('data' in res) {
+    //     setData(res.data.data)
+    //     setIsFile(/\.(mp4|webm|ogg|mkv|flv|m4v|mov|wmv|mpg|mpeg)$/i.test(res.data.data.video))
+    //   }
     // })
 
     // TEMP
     fetch('https://d3462337-77f3-4977-bb62-55e280a4892a.mock.pstmn.io/video-feature')
       .then(res => res.json())
-      .then(res => setData(res.data))
+      .then(res => {
+        setData(res)
+        setIsFile(/\.(mp4|webm|ogg|mkv|flv|m4v|mov|wmv|mpg|mpeg)$/i.test(res.video))
+      })
   }, [])
 
-  const isFile = useMemo(
-    () => (data?.video ? /\.(mp4|webm|ogg|mkv|flv|m4v|mov|wmv|mpg|mpeg)$/i.test(data!.video) : false),
-    [data]
-  )
   const Tag = isFile ? 'video' : 'iframe'
 
   if (!data) return null
