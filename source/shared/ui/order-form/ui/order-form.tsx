@@ -8,7 +8,7 @@ import clsx from 'clsx'
 import Link from 'next/link'
 import { Controller } from 'react-hook-form'
 
-import sendForm from '@entities/orderFormAPI/api/server-actions'
+import sendFormDataAction from '@entities/orderFormAPI/api/server-actions'
 import useOrderForm from '@entities/orderFormAPI/model/use-form'
 
 import { MainBlock } from '@shared/ui/_main-block'
@@ -20,7 +20,7 @@ import { Input } from '@shared/ui/input'
 export const OrderForm: FC = () => {
   const [isModalOpen, setModalOpen] = useState(false)
   const onSubmit = async (data: OrderFormData) => {
-    await sendForm(data).then(() => setModalOpen(true))
+    await sendFormDataAction(data).then(() => setModalOpen(true))
   }
   const {
     register,
