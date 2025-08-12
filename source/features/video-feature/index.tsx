@@ -1,13 +1,22 @@
-import { FC } from 'react'
+'use client'
 
-import data from './data'
+import { FC, useEffect, useState } from 'react'
+
 import moreIcon from './moreIcon.svg'
 import styles from './styles.module.scss'
 import Image from 'next/image'
 
+import { getVideoDataAction, typeVideoFeatureResponse } from '@entities/video'
+
 const VideoFeature: FC = () => {
   const isFile = /\.(mp4|webm|ogg|mkv|flv|m4v|mov|wmv|mpg|mpeg)$/i.test(data.video)
   const Tag = isFile ? 'video' : 'iframe'
+  const [data, setData] = useState<typeVideoFeatureResponse>()
+
+  useEffect(() => {
+    getVideoDataAction().then(res => setData(res.data))
+  }, [])
+
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>{data.title}</h2>
