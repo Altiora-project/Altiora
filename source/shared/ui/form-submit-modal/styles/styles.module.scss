@@ -139,10 +139,12 @@
   position: relative;
 
   @include bp.tablet {
+    align-self: center;
     order: -1;
   }
 
   @include bp.desktop {
+    // align-self: flex-end;
     order: 1;
   }
 }
