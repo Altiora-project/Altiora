@@ -1,8 +1,9 @@
 @use 'sass:math';
 
-$bg-color: rgba(47, 47, 47, 0.3); //oklch(255 0 0 / 0.2);
+$bg-color: rgba(47, 47, 47, 0.3);
 $radius: 1rem;
 $big-radius: math.div($radius, 2) * 3;
+$bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 760" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%" height="100%" filter="url(%23noise)" opacity="0.15"/%3E%3C/svg%3E');
 
 .container {
   display: block;
@@ -17,7 +18,6 @@ $big-radius: math.div($radius, 2) * 3;
     .topContent {
       flex-shrink: 0;
       padding: 0 0.2rem 0.5rem 0;
-
       @include bp.tablet {
         padding: 0 1.625rem 1.375rem 0;
       }
@@ -33,16 +33,30 @@ $big-radius: math.div($radius, 2) * 3;
       border-radius: $radius $radius 0 0;
       position: relative;
 
-      &::before {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: -$radius;
-        width: $radius;
-        height: $radius;
-        background-color: $bg-color;
-        mask-image: radial-gradient(circle at top left, transparent 0%, transparent $radius, black $radius, black 100%);
-        mask-mode: alpha;
+      background-image: $bg-image;
+      @supports (
+        mask-image: radial-gradient(circle at top left, transparent 0%, transparent $radius, black $radius, black 100%)
+      ) {
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: -$radius;
+          width: $radius;
+          height: $radius;
+          background-color: $bg-color;
+
+          background-image: $bg-image;
+          background-repeat: repeat;
+          mask-image: radial-gradient(
+            circle at top left,
+            transparent 0%,
+            transparent $radius,
+            black $radius,
+            black 100%
+          );
+          mask-mode: alpha;
+        }
       }
     }
   }
@@ -52,6 +66,7 @@ $big-radius: math.div($radius, 2) * 3;
     padding: 0.75rem;
     border-radius: $radius 0 $radius 0;
 
+    background-image: $bg-image;
     @include bp.tablet {
       padding: 1.5rem;
     }
@@ -86,6 +101,8 @@ $big-radius: math.div($radius, 2) * 3;
       border-radius: 0 0 $radius $radius;
       position: relative;
 
+      background-image: $bg-image;
+
       &::after {
         content: '';
         position: absolute;
@@ -94,14 +111,35 @@ $big-radius: math.div($radius, 2) * 3;
         width: $radius;
         height: $radius;
         background-color: $bg-color;
-        mask-image: radial-gradient(
-          circle at bottom right,
-          transparent 0%,
-          transparent $radius,
-          black $radius,
-          black 100%
-        );
-        mask-mode: alpha;
+
+        background-image: $bg-image;
+        @supports (
+          mask-image: radial-gradient(
+              circle at bottom right,
+              transparent 0%,
+              transparent $radius,
+              black $radius,
+              black 100%
+            )
+        ) {
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -$radius;
+            width: $radius;
+            height: $radius;
+            background-color: $bg-color;
+            mask-image: radial-gradient(
+              circle at bottom right,
+              transparent 0%,
+              transparent $radius,
+              black $radius,
+              black 100%
+            );
+            mask-mode: alpha;
+          }
+        }
       }
     }
   }

@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './styles.module.scss'
 import { Button } from '@shared/ui/button'
+import { CardComponent } from '../card-component'
 
 type DivProps = Omit<React.HTMLAttributes<HTMLDivElement>, 'children' | 'onClick'>
 
@@ -28,7 +29,7 @@ type ErrorCardProps = ErrorCardLinkProps | ErrorCardButtonProps | ErrorCardNoBut
 
 export const ErrorCard: React.FC<ErrorCardProps> = ({ text, field, link, onClick, ...divProps }) => {
   return (
-    <div className={styles.errorCard} {...divProps}>
+    <CardComponent radius="lg" tag="default" background="grey" className={styles.errorCard} {...divProps}>
       {field && <div className={styles.field}>{field}</div>}
       <div className={styles.text}>{text}</div>
       {link ? (
@@ -36,6 +37,6 @@ export const ErrorCard: React.FC<ErrorCardProps> = ({ text, field, link, onClick
       ) : onClick ? (
         <Button onClick={onClick}>Перезагрузить страницу</Button>
       ) : null}
-    </div>
+    </CardComponent>
   )
 }
