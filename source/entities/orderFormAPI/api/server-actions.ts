@@ -1,11 +1,10 @@
 'use server'
 import { OrderForm } from '../model/schema'
 import { typeRequestResponse } from '../types'
-
 import { fetchWrapper } from '@shared/lib/api'
 import { endpoints } from '@shared/lib/api/configs/backend-urls'
 
-const sendForm = async (data: OrderForm): Promise<void> => {
+const sendFormDataAction = async (data: OrderForm): Promise<void> => {
   await fetchWrapper<typeRequestResponse>(endpoints.sendRequest, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -13,4 +12,4 @@ const sendForm = async (data: OrderForm): Promise<void> => {
   })
 }
 
-export default sendForm
+export default sendFormDataAction
