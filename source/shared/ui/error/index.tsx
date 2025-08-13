@@ -29,14 +29,16 @@ type ErrorCardProps = ErrorCardLinkProps | ErrorCardButtonProps | ErrorCardNoBut
 
 export const ErrorCard: React.FC<ErrorCardProps> = ({ text, field, link, onClick, ...divProps }) => {
   return (
-    <CardComponent radius="lg" tag="default" background="grey" className={styles.errorCard} {...divProps}>
+    <div className={styles.errorCard} {...divProps}>
       {field && <div className={styles.field}>{field}</div>}
       <div className={styles.text}>{text}</div>
       {link ? (
         <a href={link} className={styles.button} tabIndex={0}></a>
       ) : onClick ? (
-        <Button onClick={onClick}>Перезагрузить страницу</Button>
+        <Button style={{ zIndex: '1' }} onClick={onClick}>
+          Перезагрузить страницу
+        </Button>
       ) : null}
-    </CardComponent>
+    </div>
   )
 }

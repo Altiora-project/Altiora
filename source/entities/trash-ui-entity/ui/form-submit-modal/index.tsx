@@ -26,7 +26,6 @@ export const UIFormSubmitModal: React.FC = () => {
       components={
         <div
           style={{
-            backgroundColor: '#ffffff4b',
             padding: '10px',
             display: 'flex',
             gap: '20px',

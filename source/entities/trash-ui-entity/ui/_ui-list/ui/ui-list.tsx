@@ -25,6 +25,7 @@ import classes from '../styles/styles.module.scss'
 import { UIHeroBlock } from '@entities/trash-ui-entity/ui/hero-block'
 import { UIAbout } from '../../about'
 import { UIPartners } from '../../partners'
+import React from 'react'
 
 export const UIList: React.FC = () => {
   return (
