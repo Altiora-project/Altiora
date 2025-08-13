@@ -21,7 +21,7 @@
 .grey {
   position: relative;
   overflow: hidden;
-  z-index: -1111;
+  z-index: -1;
 
   &::before {
     content: '';
@@ -90,4 +90,8 @@
 .none {
   background-color: transparent;
   background-image: none;
+}
+
+.primary {
+  background-color: var(--color-accent-primary);
 }

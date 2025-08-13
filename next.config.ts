@@ -1,6 +1,7 @@
-import { imageHost } from '@shared/lib/environment/public'
 import type { NextConfig } from 'next'
 import path from 'node:path'
+
+import { imageHost } from '@shared/lib/environment/public'
 
 const nextConfig: NextConfig = {
   sassOptions: {
