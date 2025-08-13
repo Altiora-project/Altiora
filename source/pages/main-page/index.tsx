@@ -2,11 +2,12 @@ import classes from './styles.module.scss'
 import clsx from 'clsx'
 import type { FC, HTMLAttributes } from 'react'
 import { FooterSection } from '@features/footer-section'
-import { GetPartners } from '@features/partners/partners'
 import { HeroSection } from '@features/hero-section'
+import { GetPartners } from '@features/partners/partners'
 import { ServicesPromoBlock } from '@features/services-promo-block'
 
 import { getPageDataAction } from '@entities/main-page/api/server-actions'
+import ServiceCards from '@entities/service-cards'
 
 import { NotFound } from '@shared/ui/not-found'
 import { OrderForm } from '@shared/ui/order-form'
@@ -82,6 +83,10 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
           slides={Array.isArray(pageData.case_studies_data) ? pageData.case_studies_data : []}
           services={services}
         />
+      </div>
+
+      <div className={clsx(classes.content, classes.container)}>
+        <ServiceCards />
       </div>
       <div className={classes.partnersSection}>
         <GetPartners header={pageData.partners_section_title} partners={pageData.partners_data} />
