@@ -11,6 +11,7 @@ import { getPageDataAction } from '@entities/main-page/api/server-actions'
 
 import { NotFound } from '@shared/ui/not-found'
 import { OrderForm } from '@shared/ui/order-form'
+import { StartupLab } from '@features/startup-lab-section'
 
 export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, ...otherProps }) => {
   const response = await getPageDataAction()
@@ -42,19 +43,19 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
     type: 'address' | 'email' | 'phone'
     title: string
   }[] = [
-    {
-      type: 'email',
-      title: pageData.contact_email
-    },
-    {
-      type: 'phone',
-      title: pageData.contact_phone
-    },
-    {
-      type: 'address',
-      title: pageData.contact_address
-    }
-  ]
+      {
+        type: 'email',
+        title: pageData.contact_email
+      },
+      {
+        type: 'phone',
+        title: pageData.contact_phone
+      },
+      {
+        type: 'address',
+        title: pageData.contact_address
+      }
+    ]
   const documents = [
     {
       url: '',
@@ -80,6 +81,23 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
           services={services}
         />
       </div>
+      <div className={classes.container}>
+        <StartupLab
+          info1={pageData.lab_description}
+          cards={pageData.labcart_data
+            .sort((a, b) => a.id - b.id)
+            .map(card => {
+              return {
+                imageLink: process.env.NEXT_PUBLIC_IMAGE_HOST + card.image,
+                title: card.title,
+                info: card.description
+              }
+            })}
+          info2={pageData.lab_description_ps}
+          contactURL="/contact"
+        />
+      </div>
+
       <div className={classes.partnersSection}>
         <GetPartners header={pageData.partners_section_title} partners={pageData.partners_data} />
       </div>

@@ -26,6 +26,13 @@ interface Studies {
   tags: Array<Tag>
 }
 
+interface LabCart {
+  id: number
+  title: string
+  image: string
+  description: string
+}
+
 export interface MainPage {
   meta_title: string
   meta_description: string
@@ -39,6 +46,8 @@ export interface MainPage {
   services_section_title: string
   lab_title: string
   lab_description: string
+  lab_description_ps: string
+  labcart_data: Array<LabCart>
   dig_title: string
   dig_description: string
   tokenization_title: string

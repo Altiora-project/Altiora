@@ -2,7 +2,7 @@
 
 $background: rgba(47, 47, 47, 0.3);
 //$background: blue;
-$radius: 2rem;
+$radius: 1rem;
 $big-radius: math.div($radius, 2) * 3;
 
 // Миксин для псевдоэлементов скругления
@@ -55,13 +55,22 @@ $big-radius: math.div($radius, 2) * 3;
   flex-direction: column;
   gap: 0;
   width: 100%;
-  min-height: 400px;
+
+  @include bp.tablet {
+    padding: 0px;
+  }
+
+  @include bp.desktop {
+    padding: 5px;
+  }
 }
 
 .containerHeader {
   display: flex;
   gap: 0;
   width: 100%;
+  border: none;
+
 
   h1 {
     display: block;
@@ -135,20 +144,17 @@ $big-radius: math.div($radius, 2) * 3;
 
 .containerBody {
   display: grid;
-  align-items: stretch;
   grid-template-columns: auto 1fr;
-  grid-template-rows: 1fr;
   gap: 0;
   width: 100%;
-  height: 100%;
+  border: none;
 }
 
 .menuSection {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  grid-row: 1;
-  height: 100%;
+  border: none;
 
   @include bp.tablet {
     gap: 10px;
@@ -162,7 +168,7 @@ $big-radius: math.div($radius, 2) * 3;
 .menuItem {
   display: flex;
   align-items: center;
-  padding: 16px 4px;
+  padding: 16px 8px 16px 4px;
   border-top-left-radius: $radius;
   border-bottom-left-radius: $radius;
   cursor: pointer;
@@ -177,6 +183,7 @@ $big-radius: math.div($radius, 2) * 3;
   height: 44px;
   gap: 22px;
   position: relative;
+  //border: solid 1px red;
 
   &:hover {
     background: rgba(255, 255, 255, 0.05);
@@ -223,6 +230,7 @@ $big-radius: math.div($radius, 2) * 3;
     padding: 16px 20px;
     font-size: 20px;
     height: 56px;
+    gap: 10px;
   }
 
   .menuItemTitle {
@@ -237,35 +245,40 @@ $big-radius: math.div($radius, 2) * 3;
       padding-right: 10px;
     }
   }
+
+  .menuItemNumber {
+      display: inline-block;
+
+      @include bp.desktop {
+        width: 52px;
+      }
+  }
 }
 
 .contentSection {
   display: flex;
   flex-direction: column;
-  grid-row: 1;
-  height: 100%;
-  max-height: 100%;
   overflow: hidden;
 }
 
 .contentBody {
   display: flex;
-  flex-grow: 1;
-  flex-shrink: 0;
-  flex-basis: 0;
   color: #fff;
   background-color: $background;
   border-bottom-right-radius: $radius;
   border-top-left-radius: $radius;
   overflow-y: auto;
-  max-height: 100%;
+  padding: 20px;
+  flex: 1;
 
   @include bp.tablet {
     font-size: 18px;
+    padding: 16px 32px 27px 24px;
   }
 
   @include bp.desktop {
     font-size: 20px;
+    padding: 36px;
   }
 }
 
@@ -302,8 +315,9 @@ $big-radius: math.div($radius, 2) * 3;
   }
 
   .button {
-    margin: 1rem;
-    width: 206px;
+    margin: 0.5rem;
+    width: 246px;
+    padding: 12px 0;
 
     @include bp.tablet {
       width: 273px;

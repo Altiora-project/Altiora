@@ -40,7 +40,7 @@ export const StartupLabMenu: React.FC<StartupLabMenuProps> = ({ data, link, ...p
               onClick={() => handleMenuItemClick(index)}
               type="button"
             >
-              <span>{`#${index + 1}`}</span>
+              <span className={classes.menuItemNumber}>{`#${index + 1}`}</span>
               <span className={classes.menuItemTitle}>{`${item.title}`}</span>
             </button>
           ))}
@@ -52,11 +52,9 @@ export const StartupLabMenu: React.FC<StartupLabMenuProps> = ({ data, link, ...p
           <div className={classes.contentFooter}>
             <div className={classes.space} />
             {link && (
-              <div className={classes.button}>
-                <Button variant="primary" onClick={() => window.open(link, '_blank')}>
-                  Заказать проект
-                </Button>
-              </div>
+              <Button className={classes.button} variant="primary" onClick={() => window.open(link, '_blank')}>
+                Запустить стартап
+              </Button>
             )}
           </div>
         </div>
