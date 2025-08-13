@@ -1,3 +1,5 @@
+'use server'
+
 import { typeServiceCardsResponse } from '../types'
 
 import { fetchWrapper, typeApiResponse } from '@shared/lib/api'
