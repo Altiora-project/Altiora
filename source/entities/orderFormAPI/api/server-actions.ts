@@ -1,3 +1,4 @@
+'use server'
 import { OrderForm } from '../model/schema'
 import { typeRequestResponse } from '../types'
 
