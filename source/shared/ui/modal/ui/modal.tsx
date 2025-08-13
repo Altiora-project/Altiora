@@ -7,22 +7,18 @@ import * as Dialog from '@radix-ui/react-dialog'
 import { Icon } from '@shared/ui/icon'
 import clsx from 'clsx'
 
-export const Modal: React.FC<typeModalProps> = ({
-  isOpen,
-  setIsOpen,
-  title,
-  children,
-  withCloseButton,
-}) => {
+export const Modal: React.FC<typeModalProps> = ({ isOpen, setIsOpen, title, children, withCloseButton }) => {
   return (
     <Dialog.Root open={isOpen} onOpenChange={setIsOpen}>
       <Dialog.Portal>
         <Dialog.Overlay className={classes.overlay} />
         <Dialog.Content className={classes.container}>
           {/* Кнопка закрытия поверх контента */}
-          {withCloseButton && <Dialog.Close className={classes.closeButton}>
-            <Icon name="close" icon="close" className={classes.closeIcon} />
-          </Dialog.Close>}
+          {withCloseButton && (
+            <Dialog.Close className={classes.closeButton}>
+              <Icon name="close" icon="close" className={classes.closeIcon} />
+            </Dialog.Close>
+          )}
 
           {/* Скрытый заголовок для accessibility */}
           <Dialog.Title className={classes.displayNone}>{title}</Dialog.Title>

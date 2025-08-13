@@ -43,19 +43,19 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
     type: 'address' | 'email' | 'phone'
     title: string
   }[] = [
-      {
-        type: 'email',
-        title: pageData.contact_email
-      },
-      {
-        type: 'phone',
-        title: pageData.contact_phone
-      },
-      {
-        type: 'address',
-        title: pageData.contact_address
-      }
-    ]
+    {
+      type: 'email',
+      title: pageData.contact_email
+    },
+    {
+      type: 'phone',
+      title: pageData.contact_phone
+    },
+    {
+      type: 'address',
+      title: pageData.contact_address
+    }
+  ]
   const documents = [
     {
       url: '',

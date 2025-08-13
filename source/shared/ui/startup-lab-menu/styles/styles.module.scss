@@ -71,7 +71,6 @@ $big-radius: math.div($radius, 2) * 3;
   width: 100%;
   border: none;
 
-
   h1 {
     display: block;
     position: relative;
@@ -247,11 +246,11 @@ $big-radius: math.div($radius, 2) * 3;
   }
 
   .menuItemNumber {
-      display: inline-block;
+    display: inline-block;
 
-      @include bp.desktop {
-        width: 52px;
-      }
+    @include bp.desktop {
+      width: 52px;
+    }
   }
 }
 
