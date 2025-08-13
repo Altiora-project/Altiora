@@ -1,7 +1,6 @@
 import classes from './styles.module.scss'
 import clsx from 'clsx'
 import type { FC, HTMLAttributes } from 'react'
-
 import { FooterSection } from '@features/footer-section'
 import { GetPartners } from '@features/partners/partners'
 import { HeroSection } from '@features/hero-section'
@@ -11,6 +10,7 @@ import { getPageDataAction } from '@entities/main-page/api/server-actions'
 
 import { NotFound } from '@shared/ui/not-found'
 import { OrderForm } from '@shared/ui/order-form'
+import { GetAbout } from '@features/about'
 
 export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, ...otherProps }) => {
   const response = await getPageDataAction()
@@ -36,6 +36,8 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
       tagList: service.tags
     }
   })
+
+  console.log('ABOUT TEXT DATA' + pageData.about_text)
 
   //TODO: убрать моки когда будут данные с бека
   const contacts: {
@@ -74,6 +76,7 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
       <HeroSection title={pageData.hero_title} imgUrl={pageData.hero_image} phrases={phrases} />
 
       <div className={clsx(classes.content, classes.container)}>
+        <GetAbout data={[pageData.about_title, pageData.about_text, pageData.highlight_1, pageData.highlight_2]} />
         <ServicesPromoBlock
           title={pageData.services_section_title}
           slides={Array.isArray(pageData.case_studies_data) ? pageData.case_studies_data : []}

@@ -91,6 +91,7 @@
   text-transform: uppercase;
   text-align: center;
   text-decoration: none;
+
   &:not(:disabled):hover {
     background-color: var(--color-accent-primary);
   }
