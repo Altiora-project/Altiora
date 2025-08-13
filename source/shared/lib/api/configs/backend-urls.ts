@@ -17,5 +17,6 @@ export const endpoints = {
   serviceCards: '/service-cards',
   mainPromo: '/home-page-content/',
   services: '/services/',
+  sendRequest: '/project-request/',
   serviceDetails: (slug: string) => createRoute('/services/:slug', { slug })
 } as const

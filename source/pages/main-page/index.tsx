@@ -11,6 +11,7 @@ import { getPageDataAction } from '@entities/main-page/api/server-actions'
 import ServiceCards from '@entities/service-cards'
 
 import { NotFound } from '@shared/ui/not-found'
+import { OrderForm } from '@shared/ui/order-form'
 
 export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, ...otherProps }) => {
   const response = await getPageDataAction()
@@ -87,6 +88,10 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
       <div className={classes.partnersSection}>
         <GetPartners header={pageData.partners_section_title} partners={pageData.partners_data} />
       </div>
+      <div className={classes.container}>
+        <OrderForm />
+      </div>
+
       <div className={classes.container}>
         <FooterSection
           title={pageData.contacts_title}

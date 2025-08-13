@@ -14,13 +14,7 @@ export const ProductCard: FC<ProductCardProps> = ({
   text = 'Узнать больше',
   className
 }) => (
-  <CardComponent
-    radius="md"
-    background={'light-grey'}
-    tag="link"
-    href={actionLink}
-    className={clsx(styles.card, className)}
-  >
+  <CardComponent radius="md" background={'none'} tag="link" href={actionLink} className={clsx(styles.card, className)}>
     <div className={styles.content}>
       <h3 className={styles.titleCard}>{title}</h3>
       <p className={styles.descriptionCard}>{description}</p>
