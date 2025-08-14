@@ -18,7 +18,6 @@ const RootLayout: FC<React.PropsWithChildren & { modal: React.ReactNode }> = ({ 
   return (
     <html lang="en">
       <body className={`${manropeFont.variable} ${drukWideCyrFont.variable}`}>
-        <h2>TEST</h2>
         <NextTopLoader color="#000000" shadow={false} showSpinner={false} />
         <Header menuList={mainMenu} />
         <main>{children}</main>
