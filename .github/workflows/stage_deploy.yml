@@ -2,7 +2,7 @@ name: Frontend Deploy to Stage
 
 on:
   push:
-    branches: ci/stage-fix
+    branches: develop
 
 env:
   DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
@@ -55,11 +55,11 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
+            docker image prune -af || true
+            docker system prune -f || true
             docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
             export DOCKERHUB_USER=${{ secrets.DOCKERHUB_USERNAME }}
             cd /opt/frontend
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/altiora-frontend:stage
             docker compose -f docker-compose.stage.yml down
-            docker image prune -af || true
-            docker system prune -f || true
             docker compose -f docker-compose.stage.yml up -d --remove-orphans --force-recreate
