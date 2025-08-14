@@ -11,6 +11,12 @@ interface ServiceCardProps extends React.HTMLAttributes<HTMLDivElement> {
 const ServiceCard: FC<ServiceCardProps> = ({ icon, title, text, ...other }) => {
   return (
     <div className={styles.card} {...other}>
+      {/* svg link */}
+      {/* {icon && (
+        <div className={styles.icon}>
+          <img src={icon} alt="" />
+        </div>
+      )} */}
       {icon && <div className={styles.icon}>{icon}</div>}
       <div className={styles.content}>
         <h3 className={styles.title}>{title}</h3>

@@ -1,3 +1,5 @@
+'use server'
+
 import { fetchWrapper, typeApiResponse } from '@shared/lib/api'
 import { endpoints } from '@shared/lib/api/configs/backend-urls'
 import { typeMainPageResponse } from '../types'

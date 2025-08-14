@@ -20,6 +20,21 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+
+  position: relative;
+  overflow: hidden;
+  z-index: -11;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml,<svg viewBox="0 0 500 800" xmlns="http://www.w3.org/2000/svg"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)"/></svg>');
+    opacity: 0.2; // Adjust noise intensity
+  }
 }
 
 .field {
@@ -29,6 +44,7 @@
   text-align: center;
   letter-spacing: 0.02em;
   text-transform: uppercase;
+  z-index: 2;
 }
 
 .text {
@@ -40,6 +56,7 @@
 @include bp.mobile {
   .errorCard {
     padding: 0;
+    z-index: 3;
   }
   .field {
     font-size: 24px;
@@ -54,6 +71,7 @@
 @include bp.tablet {
   .errorCard {
     padding: 0;
+    z-index: 3;
   }
   .field {
     font-size: 30px;
@@ -68,6 +86,7 @@
 @include bp.desktop {
   .errorCard {
     padding: 215px 296px;
+    z-index: 3;
   }
   .field {
     font-size: 64px;
