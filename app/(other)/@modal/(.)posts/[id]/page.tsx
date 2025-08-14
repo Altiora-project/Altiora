@@ -23,7 +23,7 @@ const PostPage: React.FC = () => {
   const { data, isLoading, error } = useGetPost(id)
 
   return (
-    <Modal title={data?.title ?? ' '} description="Hello" isOpen={true} setIsOpen={handleGoBack} withCloseButton={true}>
+    <Modal title={data?.title ?? ' '} isOpen={true} setIsOpen={handleGoBack} withCloseButton={true}>
       {data && <p>{data.body}</p>}
 
       {isLoading && <Loader />}

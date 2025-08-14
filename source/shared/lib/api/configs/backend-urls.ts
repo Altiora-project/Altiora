@@ -18,5 +18,6 @@ export const endpoints = {
   mainPromo: '/home-page-content/',
   services: '/services/',
   sendRequest: '/project-request/',
-  serviceDetails: (slug: string) => createRoute('/services/:slug', { slug })
+  serviceDetails: (slug: string) => createRoute('/services/:slug', { slug }),
+  technologies: '/technologies/'
 } as const
