@@ -1,3 +1,5 @@
+'use server'
+
 import { typeServiceDetailsResponse, typeServicesResponse } from '../types'
 
 import { fetchWrapper, typeApiResponse } from '@shared/lib/api'
