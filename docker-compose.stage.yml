@@ -1,9 +1,10 @@
 services:
   frontend:
-    image: ${DOCKERHUB_USER}/altiora-frontend:stage
+    image: ${DOCKERHUB_USER}/altiora-frontend:${IMAGE_TAG:-stage}
     container_name: altiora_frontend
     restart: always
     ports:
       - '127.0.0.1:3000:3000'
     env_file:
       - .env
+    pull_policy: always

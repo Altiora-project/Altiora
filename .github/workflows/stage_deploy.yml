@@ -2,10 +2,11 @@ name: Frontend Deploy to Stage
 
 on:
   push:
-    branches: develop
+    branches: ci/stage-fix
 
 env:
   DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+  IMAGE_TAG: ${{ github.sha }}
 
 jobs:
   deploy:
@@ -30,7 +31,11 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/altiora-frontend:stage
+          tags: |
+            ${{ secrets.DOCKERHUB_USERNAME }}/altiora-frontend:stage
+            ${{ secrets.DOCKERHUB_USERNAME }}/altiora-frontend:${{ env.IMAGE_TAG }}
+          no-cache: true
+          pull: true
           build-args: |
             NEXT_PUBLIC_SITE_NAME=${{ secrets.NEXT_PUBLIC_SITE_NAME }}
             NEXT_PUBLIC_IMAGE_HOST=${{ secrets.NEXT_PUBLIC_IMAGE_HOST }}
@@ -55,7 +60,8 @@ jobs:
           script: |
             docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
             export DOCKERHUB_USER=${{ secrets.DOCKERHUB_USERNAME }}
+            export IMAGE_TAG=${{ env.IMAGE_TAG }}
             cd /opt/frontend
-            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/altiora-frontend:stage
+            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/altiora-frontend:${IMAGE_TAG}
             docker compose -f docker-compose.stage.yml down
-            docker compose -f docker-compose.stage.yml up -d --remove-orphans
+            docker compose -f docker-compose.stage.yml up -d --remove-orphans --force-recreate
