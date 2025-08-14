@@ -6,7 +6,6 @@ on:
 
 env:
   DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-  IMAGE_TAG: ${{ github.sha }}
 
 jobs:
   deploy:
@@ -31,9 +30,7 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/altiora-frontend:stage
-            ${{ secrets.DOCKERHUB_USERNAME }}/altiora-frontend:${{ env.IMAGE_TAG }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/altiora-frontend:stage
           no-cache: true
           pull: true
           build-args: |
@@ -60,8 +57,9 @@ jobs:
           script: |
             docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
             export DOCKERHUB_USER=${{ secrets.DOCKERHUB_USERNAME }}
-            export IMAGE_TAG=${{ env.IMAGE_TAG }}
             cd /opt/frontend
-            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/altiora-frontend:${IMAGE_TAG}
+            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/altiora-frontend:stage
             docker compose -f docker-compose.stage.yml down
+            docker image prune -af || true
+            docker system prune -f || true
             docker compose -f docker-compose.stage.yml up -d --remove-orphans --force-recreate
