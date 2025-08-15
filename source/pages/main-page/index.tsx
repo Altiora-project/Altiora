@@ -5,6 +5,7 @@ import { FooterSection } from '@features/footer-section'
 import { HeroSection } from '@features/hero-section'
 import { GetPartners } from '@features/partners/partners'
 import { ServicesPromoBlock } from '@features/services-promo-block'
+import VideoFeature from '@features/video-feature'
 
 import { getPageDataAction } from '@entities/main-page/api/server-actions'
 import ServiceCards from '@entities/service-cards'
@@ -104,6 +105,9 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
 
       <div className={clsx(classes.content, classes.container)}>
         <ServiceCards />
+      </div>
+      <div className={clsx(classes.content, classes.container)}>
+        <VideoFeature />
       </div>
       <div className={classes.partnersSection}>
         <GetPartners header={pageData.partners_section_title} partners={pageData.partners_data} />
