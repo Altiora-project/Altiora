@@ -39,7 +39,7 @@ const ServiceCards = () => {
   return (
     <div className={styles.container} id="services">
       <MainBlock
-        topContent={<h2>{text.title}</h2>}
+        topContent={<h2 id="digital">{text.title}</h2>}
         bottomContent={
           !isTablet && (
             <Button className={clsx(styles.button, styles.notTablet)}>
