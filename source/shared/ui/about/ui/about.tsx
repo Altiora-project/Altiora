@@ -122,7 +122,6 @@ export const About: FC<typeAboutDataProps> = ({ data }) => {
               Первая консультация с аудитом проекта —
               <span className={clsx(classes.primaryText, offset <= 740 ? '' : classes.bold)}> бесплатно</span>
             </span>
-            <br />
             <span className={clsx(classes.whiteText, classes.titleFontSmall, classes.normal)}>
               Оставьте заявку до 30 сентября — получите тариф «Старт» c 15% скидкой
             </span>
