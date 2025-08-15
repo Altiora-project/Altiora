@@ -83,12 +83,12 @@
     border-radius: 4px;
 
     @include bp.tablet {
-      right: 1rem;
+      right: 2rem;
     }
 
     @include bp.desktop {
       top: 1rem;
-      right: 1rem;
+      right: 2rem;
     }
 
     &:hover {
@@ -98,16 +98,16 @@
 }
 
 .closeIcon {
-  width: 22px;
-  height: 22px;
+  width: 13px;
+  height: 13px;
 
   @include bp.tablet {
-    width: 44px;
-    height: 44px;
+    width: 22px;
+    height: 22px;
   }
 
   @include bp.desktop {
-    width: 44px;
-    height: 44px;
+    width: 22px;
+    height: 22px;
   }
 }

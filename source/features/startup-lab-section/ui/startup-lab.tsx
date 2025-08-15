@@ -13,6 +13,7 @@ import classes from '../styles/styles.module.scss'
 import clsx from 'clsx'
 import { StartupLabMenu } from '@shared/ui/startup-lab-menu'
 import { handleTechnologiesClick as handleTechnologiesClickAction } from '../api/server-actions'
+import { MarkdownRenderer } from '@shared/lib/markdown'
 
 export const StartupLab: React.FC<StartupLabProps> = ({ info1, cards, info2, contactURL }) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -90,7 +91,7 @@ export const StartupLab: React.FC<StartupLabProps> = ({ info1, cards, info2, con
       <Modal isOpen={isModalOpen} setIsOpen={setIsModalOpen} title={title} withCloseButton={true}>
         <div
           className={classes.modalContent}
-          //style={{ padding: '20px', maxHeight: '70vh', overflow: 'auto' }}
+        //style={{ padding: '20px', maxHeight: '70vh', overflow: 'auto' }}
         >
           {isLoading ? (
             <div>Загрузка данных...</div>
@@ -102,9 +103,9 @@ export const StartupLab: React.FC<StartupLabProps> = ({ info1, cards, info2, con
                   title: el.name,
                   content: (
                     <section className={classes.tabContent}>
-                      <p>{el.primary_info}</p>
+                      <MarkdownRenderer content={el.primary_info} />
                       {el.image && <img src={el.image} />}
-                      {el.secondary_info && <p>{el.secondary_info}</p>}
+                      {el.secondary_info && <MarkdownRenderer content={el.secondary_info} />}
                     </section>
                   )
                 }
