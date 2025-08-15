@@ -91,7 +91,7 @@ export const StartupLab: React.FC<StartupLabProps> = ({ info1, cards, info2, con
       <Modal isOpen={isModalOpen} setIsOpen={setIsModalOpen} title={title} withCloseButton={true}>
         <div
           className={classes.modalContent}
-        //style={{ padding: '20px', maxHeight: '70vh', overflow: 'auto' }}
+          //style={{ padding: '20px', maxHeight: '70vh', overflow: 'auto' }}
         >
           {isLoading ? (
             <div>Загрузка данных...</div>
