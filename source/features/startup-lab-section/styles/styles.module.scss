@@ -1,0 +1,200 @@
+.title {
+  font-size: 16px;
+  font-family: var(--font-secondary);
+  font-weight: 700;
+  color: var(--color-grey);
+  padding-bottom: 2px;
+
+  @include bp.tablet {
+    font-size: 32px;
+    text-transform: lowercase;
+    padding-right: 14px;
+  }
+
+  @include bp.desktop {
+    font-size: 70px;
+    padding-right: 14px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  padding: 12px 12px 17px 12px;
+
+  @include bp.tablet {
+    gap: 24px;
+    padding: 26px 24px 0 24px;
+  }
+
+  @include bp.desktop {
+    gap: 40px;
+    padding: 48px 48px 17px 48px;
+  }
+}
+
+.infoText {
+  font-size: 12px;
+  font-family: var(--font-main);
+  white-space: pre-line;
+  font-weight: 400;
+  color: var(--color-grey);
+
+  @include bp.tablet {
+    font-size: 16px;
+  }
+
+  @include bp.desktop {
+    font-size: 32px;
+  }
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.cardsTitle {
+  font-size: 15px;
+  font-weight: 700;
+  font-family: var(--font-main);
+  color: var(--color-accent-primary);
+  text-transform: none;
+  padding: 10px 0;
+
+  @include bp.tablet {
+    font-size: 16px;
+    padding: 24px 0;
+  }
+
+  @include bp.desktop {
+    font-size: 40px;
+    padding: 42px 0 38px 0;
+  }
+}
+
+.cardsContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  width: 100%;
+
+  @include bp.tablet {
+    gap: 24px;
+  }
+
+  @include bp.desktop {
+    grid-template-columns: repeat(auto-fit, minmax(552px, 1fr));
+    gap: 24px;
+  }
+}
+
+.cardIcon {
+  width: 100%;
+  height: 100%;
+}
+
+.bottomAsMain {
+  display: flex;
+
+  @include bp.tablet {
+    display: none;
+  }
+
+  @include bp.desktop {
+    display: flex;
+  }
+}
+
+.bottomAsFooter {
+  display: none;
+
+  @include bp.tablet {
+    display: flex;
+  }
+
+  @include bp.desktop {
+    display: none;
+  }
+}
+
+.bottomContent {
+  justify-content: center;
+  gap: 4px;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @include bp.tablet {
+    gap: 24px;
+  }
+
+  @include bp.desktop {
+    gap: 24px;
+  }
+}
+
+.bottomButton {
+  padding: 12px 17px;
+  font-size: 11px;
+
+  @include bp.tablet {
+    padding: 14px 49px;
+    width: calc(50% - 13px);
+    font-size: 13px;
+  }
+
+  @include bp.desktop {
+    padding: 24px 40px;
+    width: 367px;
+    font-size: 16px;
+  }
+}
+
+.buttonFullText {
+  display: none;
+
+  @include bp.tablet {
+    display: inline;
+  }
+
+  @include bp.desktop {
+    display: inline;
+  }
+}
+
+.modalContent {
+  background-color: rgba(47, 47, 47, 0.3);
+  height: calc(100dvh - 48px);
+  width: calc(100dvw - 10px);
+  overflow: auto;
+
+  @include bp.tablet {
+    height: calc(100dvh - 92px);
+    width: calc(100dvw - 64px);
+  }
+
+  @include bp.desktop {
+    height: calc(100dvh - 4rem);
+    width: calc(100dvw - 4rem);
+  }
+}
+
+.tabContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  & img {
+    max-height: 40vh;
+    object-fit: contain;
+    max-width: 100%;
+  }
+}
+
+.tabContentImage {
+  width: 100%;
+  height: 100%;
+}

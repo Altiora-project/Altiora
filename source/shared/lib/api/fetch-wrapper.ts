@@ -1,3 +1,5 @@
+'use server'
+
 import { getDefaultApiHeaders } from './configs/default-headers.config'
 import type { typeApiResponse, typeResponseType } from './types/types'
 
@@ -27,7 +29,7 @@ export const fetchWrapper = async <T>(
 
     const defaultApiHeaders = await getDefaultApiHeaders()
 
-    const backendUrl = `${backendDomain}${endpoint}`
+    const backendUrl = `${backendDomain()}${endpoint}`
 
     if (mode?.withDebug) console.log('[ DEBUG ]', { info: 'backendUrl', data: backendUrl })
 

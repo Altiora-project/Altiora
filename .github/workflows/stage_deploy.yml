@@ -31,9 +31,12 @@ jobs:
           file: Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/altiora-frontend:stage
+          no-cache: true
+          pull: true
           build-args: |
             NEXT_PUBLIC_SITE_NAME=${{ secrets.NEXT_PUBLIC_SITE_NAME }}
-            NEXT_PUBLIC_IMAGE_HOST=$ {{ secrets.NEXT_PUBLIC_IMAGE_HOST }}
+            NEXT_PUBLIC_IMAGE_HOST=${{ secrets.NEXT_PUBLIC_IMAGE_HOST }}
+            NEXT_PUBLIC_API_URL=${{ secrets.NEXT_PUBLIC_API_URL }}
             API_URL=${{ secrets.API_URL }}
 
       - name: Upload docker-compose.stage.yml to server
@@ -52,9 +55,11 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
+            docker image prune -af || true
+            docker system prune -f || true
             docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
             export DOCKERHUB_USER=${{ secrets.DOCKERHUB_USERNAME }}
             cd /opt/frontend
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/altiora-frontend:stage
             docker compose -f docker-compose.stage.yml down
-            docker compose -f docker-compose.stage.yml up -d --remove-orphans
+            docker compose -f docker-compose.stage.yml up -d --remove-orphans --force-recreate

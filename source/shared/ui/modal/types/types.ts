@@ -4,6 +4,7 @@ export type typeModalProps = {
   setIsOpen?: (value: boolean) => void
   withCloseButton?: boolean
   title: React.ReactNode
-  description?: React.ReactNode
+  //titleHidden?: boolean;
+  //description?: React.ReactNode
   children: React.ReactNode
 }

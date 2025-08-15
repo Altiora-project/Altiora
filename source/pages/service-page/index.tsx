@@ -3,11 +3,14 @@ import { FC } from 'react'
 import classes from './styles/styles.module.scss'
 import { typeServiceDetailsProps } from './types/types'
 import clsx from 'clsx'
+
 import { PostscriptumSection } from '@features/postscriptum-section'
 import { ServiceHeroSection } from '@features/service-hero-section'
-import { getServiceDetailsAction } from '@entities/service-page/api/server-action'
-import { NotFound } from '@shared/ui/not-found'
 import { ServiceInformation } from '@features/service-information'
+
+import { getServiceDetailsAction } from '@entities/service-page/api/server-action'
+
+import { NotFound } from '@shared/ui/not-found'
 
 export const ServiceDetails: FC<typeServiceDetailsProps> = async ({ slug, className, ...otherProps }) => {
   //TODO: тут используем сущность которая через slug получает данные из api для запрашиваемой услуги

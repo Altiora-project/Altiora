@@ -12,6 +12,7 @@ import ServiceCards from '@entities/service-cards'
 
 import { NotFound } from '@shared/ui/not-found'
 import { OrderForm } from '@shared/ui/order-form'
+import { StartupLab } from '@features/startup-lab-section'
 import { GetAbout } from '@features/about'
 
 export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, ...otherProps }) => {
@@ -83,6 +84,22 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
           title={pageData.services_section_title}
           slides={Array.isArray(pageData.case_studies_data) ? pageData.case_studies_data : []}
           services={services}
+        />
+      </div>
+      <div className={classes.container}>
+        <StartupLab
+          info1={pageData.lab_description}
+          cards={pageData.labcart_data
+            .sort((a, b) => a.id - b.id)
+            .map(card => {
+              return {
+                imageLink: process.env.NEXT_PUBLIC_IMAGE_HOST + card.image,
+                title: card.title,
+                info: card.description
+              }
+            })}
+          info2={pageData.lab_description_ps}
+          contactURL="/contact"
         />
       </div>
 

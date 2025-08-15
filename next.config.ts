@@ -1,8 +1,6 @@
 import type { NextConfig } from 'next'
 import path from 'node:path'
 
-import { imageHost } from '@shared/lib/environment/public'
-
 const nextConfig: NextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'source/app/styles')],
@@ -12,7 +10,20 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'http',
-        hostname: imageHost,
+        hostname: process.env.NEXT_PUBLIC_IMAGE_HOST ?? '*',
+        pathname: '/media/**/*'
+      },
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '3006',
+        pathname: '/media/**/*'
+      },
+      // TODO: remove it
+      {
+        protocol: 'http',
+        hostname: '192.168.50.151',
+        port: '3006',
         pathname: '/media/**/*'
       }
     ]
