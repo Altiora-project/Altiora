@@ -127,5 +127,5 @@ export const StartupLab: React.FC<StartupLabProps> = ({ info1, cards, info2, con
                                     {JSON.stringify(technologiesData, null, 2)}
                                 </pre>
                             </div>
-                        ) 
+                        )
  */

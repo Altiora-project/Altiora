@@ -9,7 +9,6 @@ type typeServicePageProps = {
 const ServicesPage: FC<typeServicePageProps> = async ({ params }) => {
   const { slug } = await params
 
-  console.log('**************slug', slug)
   return <ServiceDetails className="container" slug={slug} />
 }
 

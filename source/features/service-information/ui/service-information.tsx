@@ -11,4 +11,3 @@ export const ServiceInformation: FC<typeServiceInformationProps> = ({ content, c
     </div>
   )
 }
-;``
