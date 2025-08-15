@@ -2,49 +2,57 @@
   //width: 100vw;
   display: flex;
   flex-direction: column;
+  align-items: center;
   min-height: 100vh;
 
   @include bp.desktop {
     background-image: url('/image/main-top.png'), url('/image/main-bottom.png');
     background-repeat: no-repeat, no-repeat;
     background-position:
-      100% 30%,
+      100% 20%,
       120% 90%;
   }
 }
 
 .content {
   flex-grow: 1;
+  max-width: 1800px;
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  max-width: 1920px;
-  margin: 0 auto;
-  padding: 1.5rem;
+
+  gap: 40px;
+  padding: 25px;
 
   @include bp.tablet {
-    padding: 2rem;
+    gap: 44px;
+    padding: 29px;
+    max-width: 1500px;
+    box-sizing: border-box;
   }
-
   @include bp.desktop {
-    padding: 0;
+    box-sizing: content-box;
+
+    max-width: 1800px;
+    gap: 96px;
+    padding: 60px;
   }
 }
 
 .partnersSection {
+  width: 100vw !important ;
+
   h1 {
-    padding-inline-start: 1.5rem;
     display: inline-block;
-    width: 100%;
-    max-width: 1800px;
+    // max-width: 1800px;
     margin: 0 auto;
 
     @include bp.tablet {
-      padding-inline-start: 4rem;
     }
     @include bp.desktop {
-      padding-inline-start: 3rem;
     }
   }
 }

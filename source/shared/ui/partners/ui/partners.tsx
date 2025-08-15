@@ -6,7 +6,8 @@ import clsx from 'clsx'
 import Link from 'next/link'
 
 export const Partners: FC<typePartnersProps> = ({ partners }) => {
-  const displayPartners = partners.length <= 5 ? [...partners, ...partners, ...partners] : partners // если объект данных меньше 5 данные дублируются для корректного отображения
+  const displayPartners =
+    partners.length <= 5 ? [...partners, ...partners, ...partners, ...partners, ...partners] : partners // если объект данных меньше 5 данные дублируются для корректного отображения
   return (
     <div className={classes.container}>
       {[1, 2].map(item => {
