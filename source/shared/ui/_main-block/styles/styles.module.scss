@@ -110,8 +110,6 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 600" xmlns="http://w
       background-color: var(--color-background1);
       border-radius: 0 0 $radius $radius;
       position: relative;
-      background-color: var(--color-background1);
-
       background-image: $bg-image;
 
       &::after {

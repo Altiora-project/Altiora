@@ -1,7 +1,9 @@
+import { FC } from 'react'
+
+import classes from '../styles/styles.module.scss'
+
 import { HeroBlock } from '@shared/ui/hero-block'
 import { MarqueeComponent } from '@shared/ui/marquee-component'
-import { FC } from 'react'
-import classes from '../styles/styles.module.scss'
 
 type typeHeroSectionProps = {
   title: string
