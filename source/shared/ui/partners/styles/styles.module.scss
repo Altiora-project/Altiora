@@ -1,9 +1,15 @@
 .container {
   margin-block-start: 24px;
+  width: 110vw !important ;
+  margin-inline-start: -28px;
+  // width: 100%;
 
-  width: 100%;
   @include bp.desktop {
     margin-block-start: 30px;
+  }
+  @include bp.desktop {
+    width: 140vw !important ;
+    margin-inline-start: -10%;
   }
 }
 

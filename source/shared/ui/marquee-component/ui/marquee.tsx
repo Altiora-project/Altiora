@@ -13,7 +13,7 @@ export const MarqueeComponent: FC<typeMarqueeProps> = ({ phrases, ...otherProps 
   return (
     <>
       {/* TODO: изменить параметр speed по необходимости */}
-      <Marquee className={clsx(classes.marquee, otherProps.className)}>
+      <Marquee className={clsx(classes.marquee)} {...otherProps}>
         {phrases.map((phrase, index) => {
           return (
             <div className={classes.phraseWrapper} key={index}>
