@@ -1,11 +1,11 @@
 import classes from '../styles/styles.module.scss'
 
-import { ServiceDelails } from '@entities/service-page/model/model'
+import { ServiceDelails as ServiceDetails } from '@entities/service-page/model/model'
 
 import { Slider } from '@shared/ui/slider'
 import { SliderCard } from '@shared/ui/slider-card'
 
-export const ServiceHeroSection: React.FC<{ pageData: ServiceDelails }> = ({ pageData }) => {
+export const ServiceHeroSection: React.FC<{ pageData: ServiceDetails }> = ({ pageData }) => {
   return (
     <div>
       <h1 className={classes.title}>{pageData.name}</h1>

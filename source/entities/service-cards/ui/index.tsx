@@ -18,12 +18,10 @@ const ServiceCards = () => {
   const [isTablet, setIsTablet] = useState(false)
 
   useEffect(() => {
-    setIsTablet(744 <= window.innerWidth && window.innerWidth < 1920)
-  }, [])
-
-  useEffect(() => {
     //getServiceCardsDataAction().then(res => setData(('data' in res && res.data.cards) || []))
     // TEST
+    setIsTablet(744 <= window.innerWidth && window.innerWidth < 1920)
+
     fetch('https://d3462337-77f3-4977-bb62-55e280a4892a.mock.pstmn.io/service-cards')
       .then(res => res.json())
       .then(res => {
