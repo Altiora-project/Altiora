@@ -75,7 +75,14 @@ export const StartupLab: React.FC<StartupLabProps> = ({ info1, cards, info2, con
 
   return (
     <>
-      <MainBlock topContent={<h2 className={classes.title}>{title}</h2>} bottomContent={renderBottomContent(true)}>
+      <MainBlock
+        topContent={
+          <h2 className={classes.title} id="laboratory">
+            {title}
+          </h2>
+        }
+        bottomContent={renderBottomContent(true)}
+      >
         <div className={classes.content}>
           <p className={classes.infoText}>{info1}</p>
           <div className={classes.cards}>
