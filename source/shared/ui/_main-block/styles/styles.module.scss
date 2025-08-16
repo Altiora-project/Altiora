@@ -18,21 +18,21 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 600" xmlns="http://w
     clip-path: polygon(0% 100%, 100% 0%, 100% 100%);
 
     @supports (
-          mask-image: radial-gradient(
-              circle at top left,
-              transparent 0%,
-              transparent $pseudoRadius,
-              black $pseudoRadius,
-              black 100%
-            )
-        ) {
+      mask-image: radial-gradient(
+          circle at top left,
+          transparent 0%,
+          transparent $pseudoRadius,
+          black $pseudoRadius,
+          black 100%
+        )
+    ) {
       clip-path: none;
       mask-image: radial-gradient(
-                      circle at top left,
-                      transparent 0%,
-                      transparent $pseudoRadius,
-                      black $pseudoRadius,
-                      black 100%
+        circle at top left,
+        transparent 0%,
+        transparent $pseudoRadius,
+        black $pseudoRadius,
+        black 100%
       );
       mask-mode: alpha;
     }
@@ -53,21 +53,21 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 600" xmlns="http://w
     clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
 
     @supports (
-          mask-image: radial-gradient(
-              circle at bottom right,
-              transparent 0%,
-              transparent $pseudoRadius,
-              black $pseudoRadius,
-              black 100%
-            )
-        ) {
+      mask-image: radial-gradient(
+          circle at bottom right,
+          transparent 0%,
+          transparent $pseudoRadius,
+          black $pseudoRadius,
+          black 100%
+        )
+    ) {
       clip-path: none;
       mask-image: radial-gradient(
-                      circle at bottom right,
-                      transparent 0%,
-                      transparent $pseudoRadius,
-                      black $pseudoRadius,
-                      black 100%
+        circle at bottom right,
+        transparent 0%,
+        transparent $pseudoRadius,
+        black $pseudoRadius,
+        black 100%
       );
       mask-mode: alpha;
     }
@@ -109,12 +109,12 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 600" xmlns="http://w
       @include pseudoBefore(1rem);
 
       @include bp.tablet {
-        @include pseudoBefore(2rem)
+        @include pseudoBefore(2rem);
       }
 
       @include bp.desktop {
         border-radius: 3rem 3rem 0 0;
-        @include pseudoBefore(3rem)
+        @include pseudoBefore(3rem);
       }
     }
   }
@@ -165,12 +165,12 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 600" xmlns="http://w
       @include pseudoAfter(1rem);
 
       @include bp.tablet {
-        @include pseudoAfter(2rem)
+        @include pseudoAfter(2rem);
       }
 
       @include bp.desktop {
         border-radius: 0 0 3rem 3rem;
-        @include pseudoAfter(3rem)
+        @include pseudoAfter(3rem);
       }
     }
   }
