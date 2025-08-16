@@ -24,9 +24,7 @@ export const FooterSection: FC<typeFooterSectionProps> = props => {
   const { title, contacts, documents, requisites } = props
   return (
     <>
-      <h1 className={classes.title} id="contacts">
-        {title}
-      </h1>
+      <h1 className={classes.title}>{title}</h1>
       <div className={classes.wrapper}>
         <Contacts contacts={contacts} />
         <div className={classes.separator} />

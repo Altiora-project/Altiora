@@ -46,7 +46,7 @@ export const About: FC<typeAboutDataProps> = ({ data }) => {
         tag={'default'}
         className={clsx(classes.card, classes.firstCard)}
       >
-        <div className={classes.firstCardContent} id="company">
+        <div className={classes.firstCardContent}>
           <div className={clsx(classes.whiteText, classes.titleFontMedium)}>
             <span className={clsx(classes.primaryText, classes.bold, classes.titleFontBig, classes.fontSecondary)}>
               Будущее

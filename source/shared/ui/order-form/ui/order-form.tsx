@@ -40,11 +40,7 @@ export const OrderForm: FC = () => {
     <div className={classes.container}>
       <form onSubmit={handleSubmit} className={classes.form}>
         <MainBlock
-          topContent={
-            <h2 className={classes.title} id="form">
-              {'/заказать проект'}
-            </h2>
-          }
+          topContent={<h2 className={classes.title}>{'/заказать проект'}</h2>}
           bottomContent={
             <div className={classes.buttonDesktop}>
               <FormButton />

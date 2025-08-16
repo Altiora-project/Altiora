@@ -15,9 +15,9 @@ export const mainMenu: typeMainMenuItem[] = [
     label: 'Комплексные решения',
     url: createRoute(routes.complexRout, { id: '1', value: 'value' }),
     children: [
-      { label: 'Лаборатория стартапов', url: routes.laboratory },
-      { label: 'Токенизация активов', url: routes.tokenization },
-      { label: 'Digital маркетинг', url: routes.digital }
+      { label: 'Лаборатория стартапов', url: routes.partners },
+      { label: 'Токенизация активов', url: routes.partners },
+      { label: 'Digital маркетинг', url: routes.partners }
     ]
   },
   {
@@ -35,5 +35,9 @@ export const mainMenu: typeMainMenuItem[] = [
   {
     label: 'UI',
     url: routes.ui
+  },
+  {
+    label: 'Posts',
+    url: routes.postList
   }
 ]

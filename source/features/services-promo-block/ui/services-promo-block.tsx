@@ -46,7 +46,7 @@ export const ServicesPromoBlock: FC<typeServicesPromoBlockProps> = ({ title, sli
 
   return (
     <>
-      <div className={classes.wrapper} id="services">
+      <div className={classes.wrapper}>
         <div className={classes.header}>
           <div className={classes.headerTitle}>
             <h2>{title}</h2>

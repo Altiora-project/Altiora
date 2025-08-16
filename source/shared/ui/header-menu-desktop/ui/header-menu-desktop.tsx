@@ -19,7 +19,7 @@ export const HeaderMenuDesktop: React.FC<HeaderMenuDesktopProps> = ({ children, 
       </DropdownMenu.Trigger>
       <DropdownMenu.Content className={clsx(styles.content)}>
         {children.map(item => (
-          <DropdownMenu.Item key={item.label} className={clsx(styles.menuItemContainer)} asChild>
+          <DropdownMenu.Item key={item.label} className={clsx(styles.menuItemContainer)}>
             <Link href={item.url} className={clsx(styles.menuItem)}>
               {item.label}
             </Link>
