@@ -32,10 +32,6 @@ const testMenuList: typeMainMenuItem[] = [
   {
     label: 'UI',
     url: routes.ui
-  },
-  {
-    label: 'Posts',
-    url: routes.postList
   }
 ]
 

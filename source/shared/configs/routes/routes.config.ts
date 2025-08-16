@@ -1,11 +1,12 @@
 export const routes = {
   mainPage: '/',
   ui: '/ui',
-  services: '/services',
-  postList: '/posts',
-  post: '/posts/:id',
+  services: '/#services',
   complexRout: '/complex-rout/:id/slug/:value',
-  company: '/',
-  partners: '/',
-  contacs: '/'
+  company: '/#company',
+  partners: '/#partners',
+  contacs: '/#contacts',
+  digital: '/#digital',
+  tokenization: '/#tokenization',
+  laboratory: '/#laboratory'
 } as const

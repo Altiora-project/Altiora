@@ -25,7 +25,9 @@ export const Header: React.FC<typeHeaderProps> = ({ menuList }) => {
         )}
       </div>
       <div className={classes.buttonSection}>
-        <Button variant="primary">Связаться с нами</Button>
+        <a href="#form">
+          <Button variant="primary">Связаться с нами</Button>
+        </a>
       </div>
     </header>
   )
