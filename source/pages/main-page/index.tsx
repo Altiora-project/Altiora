@@ -14,6 +14,7 @@ import { NotFound } from '@shared/ui/not-found'
 import { OrderForm } from '@shared/ui/order-form'
 import { StartupLab } from '@features/startup-lab-section'
 import { GetAbout } from '@features/about'
+import { imageHost } from '@shared/lib/environment/public'
 
 export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, ...otherProps }) => {
   const response = await getPageDataAction()
@@ -23,10 +24,9 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
   }
 
   const pageData = response.data.data
-
-  if (!pageData?.services_data || !pageData.hero_title || !pageData.hero_image || !pageData.case_studies_data) {
-    return <NotFound />
-  }
+  // if (!pageData?.services_data || !pageData.hero_title || !pageData.hero_image || !pageData.case_studies_data) {
+  //   return <NotFound />
+  // }
 
   const phrases = pageData.services_data.map(service => service.name)
   const services = pageData.services_data.map(service => {
@@ -39,8 +39,6 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
       tagList: service.tags
     }
   })
-
-  console.log('ABOUT TEXT DATA' + pageData.about_text)
 
   //TODO: убрать моки когда будут данные с бека
   const contacts: {
@@ -70,8 +68,8 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
       title: 'Согласие на обработку персональных данных'
     }
   ]
-  const requisites = ['г Ростов-на-Дону Будённовский пр-т 33', 'ИНН 6164143256', 'ОГРН 1236100034708', 'ОКВЭД2 62.02']
-
+  // const requisites = ['г Ростов-на-Дону Будённовский пр-т 33', 'ИНН 6164143256', 'ОГРН 1236100034708', 'ОКВЭД2 62.02']
+  const requisites = [pageData.contact_address, 'ИНН 6164143256', 'ОГРН 1236100034708', 'ОКВЭД2 62.02']
   // console.log(pageData.services_data)
 
   return (
@@ -94,7 +92,7 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
               .sort((a, b) => a.id - b.id)
               .map(card => {
                 return {
-                  imageLink: process.env.NEXT_PUBLIC_IMAGE_HOST + card.image,
+                  imageLink: imageHost + card.image,
                   title: card.title,
                   info: card.description
                 }

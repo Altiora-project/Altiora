@@ -11,7 +11,6 @@ export const Header: React.FC<typeHeaderProps> = ({ menuList }) => {
       <div className={classes.logoSection}>
         <Logo variant="long" className={classes.logo} />
       </div>
-      test data
       <div className={classes.menuSection}>
         {menuList && (
           <nav className={classes.desktopMenu} aria-label="Главное меню">
