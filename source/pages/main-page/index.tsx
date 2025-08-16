@@ -80,47 +80,39 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
 
       <div className={clsx(classes.container)}>
         <GetAbout data={[pageData.about_title, pageData.about_text, pageData.highlight_1, pageData.highlight_2]} />
-      <div className={clsx(classes.content, classes.container)} id="services">
-        <ServicesPromoBlock
-          title={pageData.services_section_title}
-          slides={Array.isArray(pageData.case_studies_data) ? pageData.case_studies_data : []}
-          services={services}
-        />
-      </div>
+        <div className={classes.content}>
+          <ServicesPromoBlock
+            title={pageData.services_section_title}
+            slides={Array.isArray(pageData.case_studies_data) ? pageData.case_studies_data : []}
+            services={services}
+          />
+        </div>
+        <div className={classes.content}>
+          <StartupLab
+            info1={pageData.lab_description}
+            cards={pageData.labcart_data
+              .sort((a, b) => a.id - b.id)
+              .map(card => {
+                return {
+                  imageLink: process.env.NEXT_PUBLIC_IMAGE_HOST + card.image,
+                  title: card.title,
+                  info: card.description
+                }
+              })}
+            info2={pageData.lab_description_ps}
+            contactURL="/contact"
+          />
+        </div>
+        <div className={classes.content}>
+          <ServiceCards />
+        </div>
+        <div className={classes.content}>
+          <VideoFeature />
+        </div>
 
-      <div className={clsx(classes.content, classes.container)} id="laboratory">
-        <StartupLab
-          info1={pageData?.lab_description}
-          cards={
-            Array.isArray(pageData?.labcart_data)
-              ? [...pageData.labcart_data]
-                  .sort((a, b) => a.id - b.id)
-                  .map(card => ({
-                    imageLink: process.env.NEXT_PUBLIC_IMAGE_HOST + card.image,
-                    title: card.title,
-                    info: card.description
-                  }))
-              : []
-          }
-          info2={pageData?.lab_description_ps}
-          contactURL="/contact"
-        />
-      </div>
-
-      <div className={clsx(classes.content, classes.container)} id="digital">
-        <ServiceCards />
-      </div>
-
-      <div className={clsx(classes.content, classes.container)} id="tokenization">
-        <VideoFeature />
-      </div>
-
-      <div className={clsx(classes.content, classes.partnersSection)} id="partners">
-        <GetPartners header={pageData.partners_section_title} partners={pageData.partners_data} />
-      </div>
-
-      <div className={classes.container} id="form">
-
+        <div className={clsx(classes.content, classes.partnersSection)}>
+          <GetPartners header={pageData.partners_section_title} partners={pageData.partners_data} />
+        </div>
         <OrderForm />
       </div>
 

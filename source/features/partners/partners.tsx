@@ -5,7 +5,7 @@ import { FC } from 'react'
 export const GetPartners: FC<typePartnersProps & { header?: string }> = ({ partners, header }) => {
   return (
     <>
-      <div id="partners">
+      <div>
         <h1>{header}</h1>
       </div>
 
