@@ -45,3 +45,4 @@ next-env.d.ts
 
 #rest-api
 api.http
+openapi.yaml

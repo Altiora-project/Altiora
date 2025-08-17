@@ -1,37 +1,47 @@
 import classes from '../styles/styles.module.scss'
-import { Footer } from '@widgets/footer'
-import { FC } from 'react'
 import { Contacts } from '@shared/ui/contacts-list/ui/contacts-list'
+import { getSiteSettingsAction } from '@entities/footer'
+import { FooterInfoBlock } from '@shared/ui/footer-info-block'
+import { typeContact, typeDocument } from '@widgets/footer/types'
 
-type contact = {
-  type: 'address' | 'email' | 'phone'
-  title: string
-}
+export const FooterSection = async () => {
+  const response = await getSiteSettingsAction()
 
-type document = {
-  url: string
-  title: string
-}
+  if (!response || 'error' in response) {
+    return null
+  }
 
-type typeFooterSectionProps = {
-  title: string
-  contacts: contact[]
-  documents: document[]
-  requisites: string[]
-}
+  const { requisites, email, phone, address } = response.data.data
+  const contacts: Array<typeContact> = [
+    {
+      type: 'email',
+      title: email
+    },
+    {
+      type: 'phone',
+      title: phone
+    },
+    {
+      type: 'address',
+      title: address
+    }
+  ]
+  const documents: typeDocument[] = [
+    {
+      url: '',
+      title: 'Политика конфиденциальности'
+    },
+    {
+      url: '',
+      title: 'Согласие на обработку персональных данных'
+    }
+  ]
 
-export const FooterSection: FC<typeFooterSectionProps> = props => {
-  const { title, contacts, documents, requisites } = props
   return (
-    <>
-      <h1 className={classes.title} id="contacts">
-        {title}
-      </h1>
-      <div className={classes.wrapper}>
-        <Contacts contacts={contacts} />
-        <div className={classes.separator} />
-        <Footer addressData={requisites} linkList={documents} />
-      </div>
-    </>
+    <div className={classes.wrapper}>
+      <Contacts contacts={contacts} />
+      <div className={classes.separator} />
+      <FooterInfoBlock className={classes.footer} addressDetails={[address, requisites]} linkList={documents} />
+    </div>
   )
 }

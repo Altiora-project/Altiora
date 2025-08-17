@@ -1,14 +1,15 @@
 import classes from './styles.module.scss'
 
-import { FooterInfoBlock } from '@shared/ui/footer-info-block'
+import { FooterSection } from '@features/footer-section'
 
-type typeFooterProps = {
-  addressData: string[]
-  linkList: Array<{
-    url: string
-    title: string
-  }>
-}
-export const Footer: React.FC<typeFooterProps> = ({ addressData, linkList }) => {
-  return <FooterInfoBlock className={classes.footer} addressData={addressData} linkList={linkList} />
+export const Footer = () => {
+  const title = 'Контакты'
+  return (
+    <>
+      <h1 className={classes.title} id="contacts">
+        {`/${title}`}
+      </h1>
+      <FooterSection />
+    </>
+  )
 }
