@@ -45,19 +45,19 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
     type: 'address' | 'email' | 'phone'
     title: string
   }[] = [
-    {
-      type: 'email',
-      title: pageData.contact_email
-    },
-    {
-      type: 'phone',
-      title: pageData.contact_phone
-    },
-    {
-      type: 'address',
-      title: pageData.contact_address
-    }
-  ]
+      {
+        type: 'email',
+        title: pageData.contact_email
+      },
+      {
+        type: 'phone',
+        title: pageData.contact_phone
+      },
+      {
+        type: 'address',
+        title: pageData.contact_address
+      }
+    ]
   const documents = [
     {
       url: '',
@@ -92,12 +92,12 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
             cards={
               Array.isArray(pageData?.labcart_data)
                 ? [...pageData.labcart_data]
-                    .sort((a, b) => a.id - b.id)
-                    .map(card => ({
-                      imageLink: process.env.NEXT_PUBLIC_IMAGE_HOST + card.image,
-                      title: card.title,
-                      info: card.description
-                    }))
+                  .sort((a, b) => a.id - b.id)
+                  .map(card => ({
+                    imageLink: card.image,
+                    title: card.title,
+                    info: card.description
+                  }))
                 : []
             }
             info2={pageData?.lab_description_ps}
