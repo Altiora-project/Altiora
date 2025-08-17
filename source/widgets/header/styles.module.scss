@@ -3,18 +3,19 @@
   align-items: center;
   justify-content: space-between;
   border: 1px solid var(--foreground);
-  margin: 0 auto; //0 25px 6px;
+  margin: 0 auto;
   color: var(--foreground);
   width: 100%;
-  max-width: 1800px;
+  padding: 1rem 1.5rem 0.5rem;
 
   @include bp.tablet {
-    //margin: 32px 33px;
+    padding: 1.5rem 2rem;
   }
 
   @include bp.desktop {
+    max-width: 1800px;
     margin: 50px auto;
-    //width: 90.5%;
+    padding: 0;
   }
 
   //добавить mobile
