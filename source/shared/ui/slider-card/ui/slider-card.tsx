@@ -1,13 +1,14 @@
-'use client'
+// 'use client'
 
-import { CardComponent } from '@shared/ui/card-component'
 import styles from '../styles/styles.module.scss'
 import { SliderCardProps } from '../types'
-import Link from 'next/link'
+
+import { CardComponent } from '@shared/ui/card-component'
+// import Link from 'next/link'
 
 export const SliderCard: React.FC<SliderCardProps> = ({ title, description, tags }) => {
   return (
-    <CardComponent radius="lg" tag="default" background="grey" className={styles.container}>
+    <CardComponent radius={'lg'} tag={'default'} background={'grey'} className={styles.container}>
       <div className={styles.content}>
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.description}>{description}</p>

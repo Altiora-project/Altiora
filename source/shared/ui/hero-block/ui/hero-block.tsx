@@ -4,17 +4,17 @@ import classes from '../styles/styles.module.scss'
 import clsx from 'clsx'
 import Link from 'next/link'
 
-import { typeHeroProps } from '@shared/ui/hero-block/types/types'
-import { HeroBlockImage } from '@shared/ui/hero-block/ui/hero-block-image'
 import { MarkdownRenderer } from '@shared/lib/markdown'
 import { CardComponent } from '@shared/ui/card-component'
+import { typeHeroProps } from '@shared/ui/hero-block/types/types'
+import { HeroBlockImage } from '@shared/ui/hero-block/ui/hero-block-image'
 
 export const HeroBlock: FC<typeHeroProps> = ({ contactLink, imgUrl, title, className, ...otherProps }) => {
   return (
     <CardComponent
       radius="md"
-      tag="default"
-      background="grey"
+      tag={'default'}
+      background={'grey'}
       className={clsx(classes.wrapper, className)}
       {...otherProps}
     >

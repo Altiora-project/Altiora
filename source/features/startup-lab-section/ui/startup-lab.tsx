@@ -1,19 +1,22 @@
 'use client'
 
 import React, { useState } from 'react'
-import Link from 'next/link'
+
 import { MainBlock } from '../../../shared/ui/_main-block/ui/main-block'
-import ServiceCard from '../../../shared/ui/service-card'
 import { Button } from '../../../shared/ui/button/ui/button'
 import { Modal } from '../../../shared/ui/modal'
-import { StartupLabProps } from '../types/types'
-import { typeTechnologiesResponse } from '@entities/technologies'
-import { typeApiResponse } from '@shared/lib/api/types/types'
-import classes from '../styles/styles.module.scss'
-import clsx from 'clsx'
-import { StartupLabMenu } from '@shared/ui/startup-lab-menu'
+import ServiceCard from '../../../shared/ui/service-card'
 import { handleTechnologiesClick as handleTechnologiesClickAction } from '../api/server-actions'
+import classes from '../styles/styles.module.scss'
+import { StartupLabProps } from '../types/types'
+import clsx from 'clsx'
+import Link from 'next/link'
+
+import { typeTechnologiesResponse } from '@entities/technologies'
+
+import { typeApiResponse } from '@shared/lib/api/types/types'
 import { MarkdownRenderer } from '@shared/lib/markdown'
+import { StartupLabMenu } from '@shared/ui/startup-lab-menu'
 
 export const StartupLab: React.FC<StartupLabProps> = ({ info1, cards, info2, contactURL }) => {
   const [isModalOpen, setIsModalOpen] = useState(false)

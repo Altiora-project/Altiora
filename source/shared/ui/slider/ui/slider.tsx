@@ -1,11 +1,12 @@
 'use client'
 import { useEffect, useState } from 'react'
-import type { typeSliderProps } from '../types'
-import classes from '../styles/styles.module.scss'
 import { FC } from 'react'
+
+import classes from '../styles/styles.module.scss'
+import type { typeSliderProps } from '../types'
 import { NextButton, PrevButton } from './arrow-buttons'
-import { useSwipeable } from 'react-swipeable'
 import clsx from 'clsx'
+import { useSwipeable } from 'react-swipeable'
 
 export const Slider: FC<typeSliderProps> = ({ cards, ...otherProps }) => {
   const cardsStack = cards.length
