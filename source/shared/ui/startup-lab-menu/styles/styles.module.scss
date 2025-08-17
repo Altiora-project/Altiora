@@ -253,7 +253,7 @@ $big-radius: math.div($radius, 2) * 3;
   border-top-left-radius: $radius;
   overflow-y: auto;
   padding: 20px;
-  flex: 1;
+  //flex: 1;
 
   @include bp.tablet {
     font-size: 18px;
