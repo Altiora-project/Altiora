@@ -16,6 +16,9 @@ import ServiceCard from '@shared/ui/service-card'
 const ServiceCards = () => {
   const [data, setData] = useState<typeServiceCard[]>([])
   const [isTablet, setIsTablet] = useState(false)
+  const handleClick = () => {
+    document.getElementById('form')?.scrollIntoView({ behavior: 'smooth' })
+  }
 
   useEffect(() => {
     //getServiceCardsDataAction().then(res => setData(('data' in res && res.data.cards) || []))
@@ -40,7 +43,7 @@ const ServiceCards = () => {
         topContent={<h2 id="digital">{text.title}</h2>}
         bottomContent={
           !isTablet && (
-            <Button className={clsx(styles.button, styles.notTablet)}>
+            <Button className={clsx(styles.button, styles.notTablet)} onClick={handleClick}>
               {
                 <>
                   <span className={styles.long}>{text.button[1]}</span>
