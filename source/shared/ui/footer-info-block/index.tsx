@@ -5,12 +5,12 @@ import { FooterInfoBlockProps } from './types'
 import clsx from 'clsx'
 import Link from 'next/link'
 
-export const FooterInfoBlock: React.FC<FooterInfoBlockProps> = ({ addressData, linkList }) => {
+export const FooterInfoBlock: React.FC<FooterInfoBlockProps> = ({ addressDetails, linkList }) => {
   const currentYear = new Date().getFullYear()
   return (
     <div className={styles.container}>
       <div className={styles.addressBlock}>
-        {addressData?.map((item, index) => (
+        {addressDetails?.map((item, index) => (
           <p key={index} className={styles.text}>
             {item}
           </p>
