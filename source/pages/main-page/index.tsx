@@ -1,17 +1,21 @@
 import classes from './styles.module.scss'
 import clsx from 'clsx'
 import type { FC, HTMLAttributes } from 'react'
+
+import { Footer } from '@widgets/footer'
+
+import { GetAbout } from '@features/about'
 import { HeroSection } from '@features/hero-section'
 import { GetPartners } from '@features/partners/partners'
 import { ServicesPromoBlock } from '@features/services-promo-block'
+import { StartupLab } from '@features/startup-lab-section'
 import VideoFeature from '@features/video-feature'
+
 import { getPageDataAction } from '@entities/main-page/api/server-actions'
 import ServiceCards from '@entities/service-cards'
+
 import { NotFound } from '@shared/ui/not-found'
 import { OrderForm } from '@shared/ui/order-form'
-import { StartupLab } from '@features/startup-lab-section'
-import { GetAbout } from '@features/about'
-import { Footer } from '@widgets/footer'
 
 export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, ...otherProps }) => {
   const response = await getPageDataAction()

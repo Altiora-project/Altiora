@@ -1,12 +1,12 @@
 .wrapper {
-  margin-top: 2.5rem;
+  //margin-top: 2.5rem;
 
   @include bp.tablet {
-    margin-top: 2.75rem;
+    //margin-top: 2.75rem;
   }
 
   @include bp.desktop {
-    margin-top: 9.375rem;
+    //margin-top: 9.375rem;
   }
 }
 
