@@ -43,7 +43,7 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
 
       <div className={clsx(classes.container)}>
         <GetAbout data={[pageData.about_title, pageData.about_text, pageData.highlight_1, pageData.highlight_2]} />
-        <div className={clsx(classes.content, classes.container)} id="services">
+        <div className={clsx(classes.content)} id="services">
           <ServicesPromoBlock
             title={pageData.services_section_title}
             slides={Array.isArray(pageData.case_studies_data) ? pageData.case_studies_data : []}
@@ -51,7 +51,7 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
           />
         </div>
 
-        <div className={clsx(classes.content, classes.container)} id="laboratory">
+        <div className={clsx(classes.content)} id="laboratory">
           <StartupLab
             info1={pageData?.lab_description}
             cards={
@@ -70,11 +70,11 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
           />
         </div>
 
-        <div className={clsx(classes.content, classes.container)} id="digital">
+        <div className={clsx(classes.content)} id="digital">
           <ServiceCards />
         </div>
 
-        <div className={clsx(classes.content, classes.container)} id="tokenization">
+        <div className={clsx(classes.content)} id="tokenization">
           <VideoFeature />
         </div>
 
@@ -82,7 +82,7 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
           <GetPartners header={pageData.partners_section_title} partners={pageData.partners_data} />
         </div>
 
-        <div className={classes.container} id="form">
+        <div id="form">
           <OrderForm />
         </div>
 
