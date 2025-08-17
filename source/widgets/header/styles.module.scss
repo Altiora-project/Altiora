@@ -15,24 +15,10 @@
   @include bp.desktop {
     max-width: 1800px;
     margin: 50px auto;
+    padding: 0;
   }
 
   //добавить mobile
-}
-
-.container {
-  width: 100%;
-  max-width: 1800px;
-  margin: 0 auto;
-  padding: 0 1.5rem 0;
-
-  @include bp.tablet {
-    padding: 0 2rem 0;
-  }
-
-  @include bp.desktop {
-    padding: 0;
-  }
 }
 
 .logoSection {
