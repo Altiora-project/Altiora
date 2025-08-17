@@ -1,14 +1,18 @@
 'use client'
 
-import classes from '../styles/styles.module.scss'
 import { FC, useEffect, useState } from 'react'
-import { typeServicesPromoBlockProps } from '@features/services-promo-block/types/types'
+
+import classes from '../styles/styles.module.scss'
 import Link from 'next/link'
-import { SliderCard } from '@shared/ui/slider-card'
-import { Slider } from '@shared/ui/slider'
-import { ProductCard } from '@shared/ui/product-card'
-import { CardComponent } from '@shared/ui/card-component'
+
+import { typeServicesPromoBlockProps } from '@features/services-promo-block/types/types'
+
 import { routes } from '@shared/configs/routes'
+import { CardComponent } from '@shared/ui/card-component'
+// import { CardComponent } from '@shared/ui/card-component'
+import { ProductCard } from '@shared/ui/product-card'
+import { Slider } from '@shared/ui/slider'
+import { SliderCard } from '@shared/ui/slider-card'
 
 export const ServicesPromoBlock: FC<typeServicesPromoBlockProps> = ({ title, slides, services }) => {
   const sliderCards = slides?.map((card, index) => {
@@ -58,6 +62,7 @@ export const ServicesPromoBlock: FC<typeServicesPromoBlockProps> = ({ title, sli
           <Slider cards={sliderCards} />
         </div>
       </div>
+
       <CardComponent
         radius="lg"
         tag="default"

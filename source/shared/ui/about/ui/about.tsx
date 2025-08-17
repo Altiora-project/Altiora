@@ -1,12 +1,14 @@
 'use client'
 
-import { CardComponent } from '@shared/ui/card-component'
 import { FC, useEffect, useState } from 'react'
+
 import classes from '../styles/styles.module.scss'
-import clsx from 'clsx'
-import { Button } from '@shared/ui/button'
 import { typeAboutDataProps } from '../types'
+import clsx from 'clsx'
 import Image from 'next/image'
+
+import { Button } from '@shared/ui/button'
+import { CardComponent } from '@shared/ui/card-component'
 // import { MarkdownRenderer } from '@shared/lib/markdown'
 // import ReactMarkdown from 'react-markdown'
 // import rehypeRaw from 'rehype-raw'
