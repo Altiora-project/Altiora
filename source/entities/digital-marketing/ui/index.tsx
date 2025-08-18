@@ -1,6 +1,6 @@
 'use client'
 
-import { FC, useEffect, useState } from 'react'
+import { FC } from 'react'
 
 import * as text from './data'
 import styles from './styles.module.scss'
@@ -13,26 +13,6 @@ import { Button } from '@shared/ui/button'
 import ServiceCard from '@shared/ui/service-card'
 
 const DigitalMarketing: FC<typeDigitalMarketingProps> = ({ cards }) => {
-  // const [data, setData] = useState<typeServiceCard[]>([])
-  const [isTablet, setIsTablet] = useState(false)
-
-  useEffect(() => {
-    //getServiceCardsDataAction().then(res => setData(('data' in res && res.data.cards) || []))
-    // TEST
-    setIsTablet(744 <= window.innerWidth && window.innerWidth < 1920)
-
-    // fetch('https://d3462337-77f3-4977-bb62-55e280a4892a.mock.pstmn.io/service-cards')
-    //   .then(res => res.json())
-    //   .then(res => {
-    //     const data = res.data.map((item: typeServiceCard & { icon: TrustedHTML }) => ({
-    //       ...item,
-    //       icon: <div dangerouslySetInnerHTML={{ __html: item.icon }} />
-    //     }))
-    //     setData(data)
-    //   })
-    // // TEST
-  }, [])
-
   const labsCards = cards
     .sort((a, b) => a.id - b.id)
     .filter(card => card.id > 3)
@@ -43,43 +23,36 @@ const DigitalMarketing: FC<typeDigitalMarketingProps> = ({ cards }) => {
       info: card.description
     }))
 
+  const bottomContent = () => {
+    return (
+      <Button className={styles.button}>
+        <span className={styles.long}>{text.button[1]}</span>
+        <span className={styles.short}>{text.button[0]}</span>
+      </Button>
+    )
+  }
+
   return (
     <div className={styles.container} id="services">
       <MainBlock
         topContent={<h2 id="digital">{text.title}</h2>}
-        bottomContent={
-          !isTablet && (
-            <Button className={clsx(styles.button, styles.notTablet)}>
-              {
-                <>
-                  <span className={styles.long}>{text.button[1]}</span>
-                  <span className={styles.short}>{text.button[0]}</span>
-                </>
-              }
-            </Button>
-          )
-        }
-        className={styles.block}
+        bottomContent={bottomContent()}
+        bottomStyles={styles.bottomContainer}
       >
         <div className={styles.description}>
-          {
-            <>
-              <span className={styles.short}>{text.description}</span>
-              <span className={styles.long}>{text.descriptionLong}</span>
-            </>
-          }
+          <span className={styles.short}>{text.description}</span>
+          <span className={styles.long}>{text.descriptionLong}</span>
         </div>
         <h3 className={styles.title}>{text.subTitle}</h3>
         <div className={styles.cards}>
           {labsCards?.map(item => (
             <ServiceCard key={item.id} icon={item.imageLink} title={item.title} text={item.info} />
           ))}
-          {isTablet && <div className={styles.subtext}>{text.subText}</div>}
-          {isTablet && (
-            <Button className={clsx(styles.button, styles.notTablet)}>
-              <span className={styles.long}>{text.button[1]}</span>
-            </Button>
-          )}
+
+          <div className={clsx(styles.subtext, styles.subContent)}>{text.subText}</div>
+          <Button className={clsx(styles.button, styles.subContent)}>
+            <span className={styles.long}>{text.button[1]}</span>
+          </Button>
         </div>
       </MainBlock>
     </div>

@@ -14,7 +14,14 @@ const ServiceCard: FC<ServiceCardProps> = ({ icon, title, text, ...otherProps })
   return (
     <div className={styles.card} {...otherProps}>
       {icon && (
-        <Image src={icon} width={100} height={100} alt={title ?? 'alt'} style={{ maxWidth: '80px', height: 'auto' }} />
+        <Image
+          className={styles.icon}
+          src={icon}
+          width={100}
+          height={100}
+          alt={title ?? 'alt'}
+          // style={{ maxWidth: '80px', height: 'auto' }}
+        />
       )}
       <div className={styles.content}>
         <h3 className={styles.title}>{title}</h3>

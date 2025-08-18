@@ -57,7 +57,7 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
 
         <div className={clsx(classes.content)} id="laboratory">
           <StartupLab
-            cardCount={4}
+            cardCount={3}
             cards={pageData?.labcart_data}
             info1={pageData?.lab_description}
             info2={pageData?.lab_description_ps}
