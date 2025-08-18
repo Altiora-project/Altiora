@@ -12,10 +12,10 @@ import { StartupLab } from '@features/startup-lab-section'
 import VideoFeature from '@features/video-feature'
 
 import { getPageDataAction } from '@entities/main-page/api/server-actions'
-import ServiceCards from '@entities/service-cards'
 
 import { NotFound } from '@shared/ui/not-found'
 import { OrderForm } from '@shared/ui/order-form'
+import DigitalMarketing from '@entities/digital-marketing'
 
 export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, ...otherProps }) => {
   const response = await getPageDataAction()
@@ -66,7 +66,7 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
         </div>
 
         <div className={clsx(classes.content)} id="digital">
-          <ServiceCards />
+          <DigitalMarketing cards={pageData?.labcart_data} />
         </div>
 
         <div className={clsx(classes.content)} id="tokenization">

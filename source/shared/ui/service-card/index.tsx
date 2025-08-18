@@ -1,9 +1,11 @@
 import { FC, ReactNode } from 'react'
 
 import styles from './styles.module.scss'
+import Image from 'next/image'
 
 interface ServiceCardProps extends React.HTMLAttributes<HTMLDivElement> {
-  icon?: ReactNode
+  id?: string
+  icon?: string
   title?: string
   text?: ReactNode
 }
@@ -11,13 +13,7 @@ interface ServiceCardProps extends React.HTMLAttributes<HTMLDivElement> {
 const ServiceCard: FC<ServiceCardProps> = ({ icon, title, text, ...otherProps }) => {
   return (
     <div className={styles.card} {...otherProps}>
-      {/* svg link */}
-      {/* {icon && (
-        <div className={styles.icon}>
-          <img src={icon} alt="" />
-        </div>
-      )} */}
-      {icon && <div className={styles.icon}>{icon}</div>}
+      {icon && <Image src={icon} width={100} height={100} alt={title ?? 'alt'} />}
       <div className={styles.content}>
         <h3 className={styles.title}>{title}</h3>
         <div className={styles.text}>{text}</div>

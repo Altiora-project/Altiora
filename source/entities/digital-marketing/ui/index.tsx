@@ -1,20 +1,19 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 
 import * as text from './data'
 import styles from './styles.module.scss'
 import clsx from 'clsx'
 
-// import getServiceCardsDataAction from '@entities/service-cards/api/server-actions'
-import { typeServiceCard } from '@entities/service-cards/types'
+import { typeDigitalMarketingProps } from '@entities/digital-marketing/types'
 
 import { MainBlock } from '@shared/ui/_main-block'
 import { Button } from '@shared/ui/button'
 import ServiceCard from '@shared/ui/service-card'
 
-const ServiceCards = () => {
-  const [data, setData] = useState<typeServiceCard[]>([])
+const DigitalMarketing: FC<typeDigitalMarketingProps> = ({ cards }) => {
+  // const [data, setData] = useState<typeServiceCard[]>([])
   const [isTablet, setIsTablet] = useState(false)
 
   useEffect(() => {
@@ -22,17 +21,27 @@ const ServiceCards = () => {
     // TEST
     setIsTablet(744 <= window.innerWidth && window.innerWidth < 1920)
 
-    fetch('https://d3462337-77f3-4977-bb62-55e280a4892a.mock.pstmn.io/service-cards')
-      .then(res => res.json())
-      .then(res => {
-        const data = res.data.map((item: typeServiceCard & { icon: TrustedHTML }) => ({
-          ...item,
-          icon: <div dangerouslySetInnerHTML={{ __html: item.icon }} />
-        }))
-        setData(data)
-      })
-    // TEST
+    // fetch('https://d3462337-77f3-4977-bb62-55e280a4892a.mock.pstmn.io/service-cards')
+    //   .then(res => res.json())
+    //   .then(res => {
+    //     const data = res.data.map((item: typeServiceCard & { icon: TrustedHTML }) => ({
+    //       ...item,
+    //       icon: <div dangerouslySetInnerHTML={{ __html: item.icon }} />
+    //     }))
+    //     setData(data)
+    //   })
+    // // TEST
   }, [])
+
+  const labsCards = cards
+    .sort((a, b) => a.id - b.id)
+    .filter(card => card.id > 3)
+    .map(card => ({
+      id: card.id,
+      imageLink: 'http://' + process.env.NEXT_PUBLIC_IMAGE_HOST + card.image,
+      title: card.title,
+      info: card.description
+    }))
 
   return (
     <div className={styles.container} id="services">
@@ -62,8 +71,8 @@ const ServiceCards = () => {
         </div>
         <h3 className={styles.title}>{text.subTitle}</h3>
         <div className={styles.cards}>
-          {data?.map(item => (
-            <ServiceCard key={item.id} {...item} />
+          {labsCards?.map(item => (
+            <ServiceCard key={item.id} icon={item.imageLink} title={item.title} text={item.info} />
           ))}
           {isTablet && <div className={styles.subtext}>{text.subText}</div>}
           {isTablet && (
@@ -77,4 +86,4 @@ const ServiceCards = () => {
   )
 }
 
-export default ServiceCards
+export default DigitalMarketing
