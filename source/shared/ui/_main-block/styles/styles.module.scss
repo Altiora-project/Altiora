@@ -1,10 +1,8 @@
 @use 'sass:math';
 
-//$radius: 1rem;
-//$big-radius: math.div($radius, 2) * 3;
 $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 600" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%" height="100%" filter="url(%23noise)" opacity="0.15"/%3E%3C/svg%3E');
 
-@mixin pseudoBefore($pseudoRadius) {
+@mixin pseudoTop($pseudoRadius) {
   &::before {
     content: '';
     position: absolute;
@@ -14,7 +12,6 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 600" xmlns="http://w
     height: $pseudoRadius;
     background-color: var(--color-background1);
     background-image: $bg-image;
-
     clip-path: polygon(0% 100%, 100% 0%, 100% 100%);
 
     @supports (
@@ -37,9 +34,73 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 600" xmlns="http://w
       mask-mode: alpha;
     }
   }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -$pseudoRadius;
+    right: 0;
+    width: $pseudoRadius;
+    height: $pseudoRadius;
+    background-color: var(--color-background1);
+    background-image: $bg-image;
+    clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
+
+    @supports (
+      mask-image: radial-gradient(
+          circle at bottom left,
+          transparent 0%,
+          transparent $pseudoRadius,
+          black $pseudoRadius,
+          black 100%
+        )
+    ) {
+      clip-path: none;
+      mask-image: radial-gradient(
+        circle at bottom left,
+        transparent 0%,
+        transparent $pseudoRadius,
+        black $pseudoRadius,
+        black 100%
+      );
+      mask-mode: alpha;
+    }
+  }
 }
 
-@mixin pseudoAfter($pseudoRadius) {
+@mixin pseudoBottom($pseudoRadius) {
+  &::before {
+    content: '';
+    position: absolute;
+    top: -$pseudoRadius;
+    left: 0;
+    width: $pseudoRadius;
+    height: $pseudoRadius;
+    background-color: var(--color-background1);
+    background-image: $bg-image;
+    clip-path: polygon(0% 100%, 100% 0%, 100% 100%);
+
+    @supports (
+      mask-image: radial-gradient(
+          circle at top right,
+          transparent 0%,
+          transparent $pseudoRadius,
+          black $pseudoRadius,
+          black 100%
+        )
+    ) {
+      clip-path: none;
+      mask-image: radial-gradient(
+        circle at top right,
+        transparent 0%,
+        transparent $pseudoRadius,
+        black $pseudoRadius,
+        black 100%
+      );
+      mask-mode: alpha;
+    }
+  }
+
   &::after {
     content: '';
     position: absolute;
@@ -49,7 +110,6 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 600" xmlns="http://w
     height: $pseudoRadius;
     background-color: var(--color-background1);
     background-image: $bg-image;
-
     clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
 
     @supports (
@@ -106,15 +166,15 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 600" xmlns="http://w
       background-image: $bg-image;
       background-clip: content-box;
 
-      @include pseudoBefore(1rem);
+      @include pseudoTop(1.5rem);
 
       @include bp.tablet {
-        @include pseudoBefore(2rem);
+        @include pseudoTop(2.5rem);
       }
 
       @include bp.desktop {
         border-radius: 3rem 3rem 0 0;
-        @include pseudoBefore(3rem);
+        @include pseudoTop(3rem);
       }
     }
   }
@@ -122,15 +182,16 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 600" xmlns="http://w
   .content {
     background-color: var(--color-background1);
     padding: 0.75rem;
-    border-radius: 1.5rem 0 1.5rem 0;
+    border-radius: 1.5rem;
     background-image: $bg-image;
 
     @include bp.tablet {
+      border-radius: 2.5rem;
       padding: 1.5rem;
     }
 
     @include bp.desktop {
-      border-radius: 3rem 0 3rem 0;
+      border-radius: 3rem;
       padding: 3rem;
     }
   }
@@ -162,15 +223,15 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 600" xmlns="http://w
       position: relative;
       background-image: $bg-image;
 
-      @include pseudoAfter(1rem);
+      @include pseudoBottom(1.5rem);
 
       @include bp.tablet {
-        @include pseudoAfter(2rem);
+        @include pseudoBottom(2.5rem);
       }
 
       @include bp.desktop {
         border-radius: 0 0 3rem 3rem;
-        @include pseudoAfter(3rem);
+        @include pseudoBottom(3rem);
       }
     }
   }
