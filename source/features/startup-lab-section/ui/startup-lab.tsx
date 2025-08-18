@@ -18,10 +18,19 @@ import { typeApiResponse } from '@shared/lib/api/types/types'
 import { MarkdownRenderer } from '@shared/lib/markdown'
 import { StartupLabMenu } from '@shared/ui/startup-lab-menu'
 
-export const StartupLab: React.FC<StartupLabProps> = ({ info1, cards, info2, contactURL }) => {
+export const StartupLab: React.FC<StartupLabProps> = ({ cards, cardCount, info1, info2, contactURL }) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [technologiesData, setTechnologiesData] = useState<typeApiResponse<typeTechnologiesResponse> | null>(null)
   const [isLoading, setIsLoading] = useState(false)
+
+  const labsCards = cards
+    .sort((a, b) => a.id - b.id)
+    .filter(card => card.id < cardCount)
+    .map(card => ({
+      imageLink: 'http://' + process.env.NEXT_PUBLIC_IMAGE_HOST + card.image,
+      title: card.title,
+      info: card.description
+    }))
 
   // Функция для загрузки технологий
   const handleTechnologiesClick = async () => {
@@ -41,7 +50,7 @@ export const StartupLab: React.FC<StartupLabProps> = ({ info1, cards, info2, con
     //console.log('renderCards', 'cards', cards);
     return (
       <div className={classes.cardsContainer}>
-        {cards?.map((card, index) => (
+        {labsCards?.map((card, index) => (
           <ServiceCard
             key={index}
             icon={<img src={card.imageLink} className={classes.cardIcon} alt={card.title} />}
