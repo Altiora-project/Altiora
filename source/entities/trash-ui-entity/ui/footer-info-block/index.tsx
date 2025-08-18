@@ -16,7 +16,7 @@ export const UIFooterInfoBlock: React.FC = () => {
       ]}
       components={
         <FooterInfoBlock
-          addressData={[
+          addressDetails={[
             'г Ростов-на-Дону Будённовский пр-т 33',
             'ИНН 6164143256',
             'ОГРН 1236100034708',

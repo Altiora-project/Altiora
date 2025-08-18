@@ -1,24 +1,36 @@
 'use client'
 
 import React, { useState } from 'react'
-import Link from 'next/link'
-import { MainBlock } from '../../../shared/ui/_main-block/ui/main-block'
-import ServiceCard from '../../../shared/ui/service-card'
-import { Button } from '../../../shared/ui/button/ui/button'
-import { Modal } from '../../../shared/ui/modal'
-import { StartupLabProps } from '../types/types'
-import { typeTechnologiesResponse } from '@entities/technologies'
-import { typeApiResponse } from '@shared/lib/api/types/types'
-import classes from '../styles/styles.module.scss'
-import clsx from 'clsx'
-import { StartupLabMenu } from '@shared/ui/startup-lab-menu'
-import { handleTechnologiesClick as handleTechnologiesClickAction } from '../api/server-actions'
-import { MarkdownRenderer } from '@shared/lib/markdown'
 
-export const StartupLab: React.FC<StartupLabProps> = ({ info1, cards, info2, contactURL }) => {
+import ServiceCard from '../../../shared/ui/service-card'
+import { handleTechnologiesClick as handleTechnologiesClickAction } from '../api/server-actions'
+import classes from '../styles/styles.module.scss'
+import { StartupLabProps } from '../types/types'
+import clsx from 'clsx'
+import Link from 'next/link'
+
+import { typeTechnologiesResponse } from '@entities/technologies'
+
+import { typeApiResponse } from '@shared/lib/api/types/types'
+import { MarkdownRenderer } from '@shared/lib/markdown'
+import { MainBlock } from '@shared/ui/_main-block'
+import { Button } from '@shared/ui/button'
+import { Modal } from '@shared/ui/modal'
+import { StartupLabMenu } from '@shared/ui/startup-lab-menu'
+
+export const StartupLab: React.FC<StartupLabProps> = ({ cards, cardCount, info1, info2, contactURL }) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [technologiesData, setTechnologiesData] = useState<typeApiResponse<typeTechnologiesResponse> | null>(null)
   const [isLoading, setIsLoading] = useState(false)
+
+  const labsCards = cards
+    .sort((a, b) => a.id - b.id)
+    .filter(card => card.id < cardCount)
+    .map(card => ({
+      imageLink: 'http://' + process.env.NEXT_PUBLIC_IMAGE_HOST + card.image,
+      title: card.title,
+      info: card.description
+    }))
 
   // Функция для загрузки технологий
   const handleTechnologiesClick = async () => {
@@ -38,7 +50,7 @@ export const StartupLab: React.FC<StartupLabProps> = ({ info1, cards, info2, con
     //console.log('renderCards', 'cards', cards);
     return (
       <div className={classes.cardsContainer}>
-        {cards?.map((card, index) => (
+        {labsCards?.map((card, index) => (
           <ServiceCard
             key={index}
             icon={<img src={card.imageLink} className={classes.cardIcon} alt={card.title} />}

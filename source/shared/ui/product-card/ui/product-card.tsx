@@ -1,10 +1,11 @@
+import { FC } from 'react'
+
 import styles from '../styles/styles.module.scss'
 import { ProductCardProps } from '../types/types'
+import clsx from 'clsx'
 
 import { CardComponent } from '@shared/ui/card-component'
 import { Icon } from '@shared/ui/icon'
-import { FC } from 'react'
-import clsx from 'clsx'
 
 export const ProductCard: FC<ProductCardProps> = ({
   title,
@@ -14,7 +15,13 @@ export const ProductCard: FC<ProductCardProps> = ({
   text = 'Узнать больше',
   className
 }) => (
-  <CardComponent radius="md" background={'none'} tag="link" href={actionLink} className={clsx(styles.card, className)}>
+  <CardComponent
+    radius={'md'}
+    background={'black'}
+    tag="link"
+    href={actionLink}
+    className={clsx(styles.card, className)}
+  >
     <div className={styles.content}>
       <h3 className={styles.titleCard}>{title}</h3>
       <p className={styles.descriptionCard}>{description}</p>

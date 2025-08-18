@@ -5,6 +5,5 @@ import { endpoints } from '@shared/lib/api/configs/backend-urls'
 import { typeMainPageResponse } from '../types'
 
 export const getPageDataAction = async (): Promise<typeApiResponse<typeMainPageResponse>> => {
-  const url = endpoints.homePageContent
-  return await fetchWrapper<typeMainPageResponse>(url, {}, { withDebug: true })
+  return await fetchWrapper<typeMainPageResponse>(endpoints.homePageContent)
 }

@@ -2,8 +2,9 @@ import classes from './styles.module.scss'
 import clsx from 'clsx'
 import type { FC, HTMLAttributes } from 'react'
 
+import { Footer } from '@widgets/footer'
+
 import { GetAbout } from '@features/about'
-import { FooterSection } from '@features/footer-section'
 import { HeroSection } from '@features/hero-section'
 import { GetPartners } from '@features/partners/partners'
 import { ServicesPromoBlock } from '@features/services-promo-block'
@@ -41,45 +42,13 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
     }
   })
 
-  //TODO: убрать моки когда будут данные с бека
-  const contacts: {
-    type: 'address' | 'email' | 'phone'
-    title: string
-  }[] = [
-    {
-      type: 'email',
-      title: pageData.contact_email
-    },
-    {
-      type: 'phone',
-      title: pageData.contact_phone
-    },
-    {
-      type: 'address',
-      title: pageData.contact_address
-    }
-  ]
-  const documents = [
-    {
-      url: '',
-      title: 'Политика конфиденциальности'
-    },
-    {
-      url: '',
-      title: 'Согласие на обработку персональных данных'
-    }
-  ]
-  // const requisites = ['г Ростов-на-Дону Будённовский пр-т 33', 'ИНН 6164143256', 'ОГРН 1236100034708', 'ОКВЭД2 62.02']
-  const requisites = [pageData.contact_address, 'ИНН 6164143256', 'ОГРН 1236100034708', 'ОКВЭД2 62.02']
-  // console.log(pageData.services_data)
-
   return (
     <div className={clsx(classes.wrapper, className)} {...otherProps}>
       <HeroSection title={pageData.hero_title} imgUrl={pageData.hero_image} phrases={phrases} />
 
       <div className={clsx(classes.container)}>
         <GetAbout data={[pageData.about_title, pageData.about_text, pageData.highlight_1, pageData.highlight_2]} />
-        <div className={clsx(classes.content, classes.container)} id="services">
+        <div className={clsx(classes.content)} id="services">
           <ServicesPromoBlock
             title={pageData.services_section_title}
             slides={Array.isArray(pageData.case_studies_data) ? pageData.case_studies_data : []}
@@ -87,29 +56,19 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
           />
         </div>
 
-        <div className={clsx(classes.content, classes.container)} id="laboratory">
+        <div className={clsx(classes.content)} id="laboratory">
           <StartupLab
+            cardCount={4}
+            cards={pageData?.labcart_data}
             info1={pageData?.lab_description}
-            cards={
-              Array.isArray(pageData?.labcart_data)
-                ? [...pageData.labcart_data]
-                    .sort((a, b) => a.id - b.id)
-                    .map(card => ({
-                      imageLink: process.env.NEXT_PUBLIC_IMAGE_HOST + card.image,
-                      title: card.title,
-                      info: card.description
-                    }))
-                : []
-            }
             info2={pageData?.lab_description_ps}
-            contactURL="/contact"
+            contactURL="#form"
           />
         </div>
 
-        <div className={clsx(classes.content, classes.container)} id="digital">
+        <div className={clsx(classes.content)} id="digital">
           <ServiceCards />
         </div>
-
         <div className={clsx(classes.content, classes.container)} id="tokenization">
           <VideoFeature
             title={pageData.tokenization_title}
@@ -123,7 +82,7 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
           <GetPartners header={pageData.partners_section_title} partners={pageData.partners_data} />
         </div>
 
-        <div className={classes.container} id="form">
+        <div id="form">
           <OrderForm />
         </div>
 
@@ -160,12 +119,7 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
       </div> */}
 
         <div className={classes.container}>
-          <FooterSection
-            title={pageData.contacts_title}
-            contacts={contacts}
-            requisites={requisites}
-            documents={documents}
-          />
+          <Footer />
         </div>
       </div>
     </div>
