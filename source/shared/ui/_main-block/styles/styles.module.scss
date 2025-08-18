@@ -166,15 +166,16 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 600" xmlns="http://w
       background-image: $bg-image;
       background-clip: content-box;
 
-      @include pseudoTop(1.5rem);
+      @include pseudoTop(1rem);
 
       @include bp.tablet {
-        @include pseudoTop(2.5rem);
+        @include pseudoTop(1.5rem);
+        border-radius: 2.5rem 2.5rem 0 0;
       }
 
       @include bp.desktop {
-        border-radius: 3rem 3rem 0 0;
         @include pseudoTop(3rem);
+        border-radius: 3rem 3rem 0 0;
       }
     }
   }
@@ -182,11 +183,11 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 600" xmlns="http://w
   .content {
     background-color: var(--color-background1);
     padding: 0.75rem;
-    border-radius: 1.5rem;
+    border-radius: 1.5rem 1rem 1.5rem 1.5rem;
     background-image: $bg-image;
 
     @include bp.tablet {
-      border-radius: 2.5rem;
+      border-radius: 2.5rem 1.5rem 2.5rem 2.5rem;
       padding: 1.5rem;
     }
 
@@ -230,8 +231,8 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 600" xmlns="http://w
       }
 
       @include bp.desktop {
-        border-radius: 0 0 3rem 3rem;
         @include pseudoBottom(3rem);
+        border-radius: 0 0 3rem 3rem;
       }
     }
   }
