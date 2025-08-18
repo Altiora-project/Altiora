@@ -1,3 +1,22 @@
+.bottomContainer {
+  display: none;
+  visibility: hidden;
+}
+
+@include bp.tablet {
+  .bottomContainer {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+@include bp.desktop {
+  .bottomContainer {
+    display: block;
+    visibility: initial;
+  }
+}
+
 .title {
   font-size: 16px;
   font-family: var(--font-secondary);

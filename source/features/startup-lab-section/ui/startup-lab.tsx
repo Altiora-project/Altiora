@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { FC, useState } from 'react'
 
 import ServiceCard from '../../../shared/ui/service-card'
 import { handleTechnologiesClick as handleTechnologiesClickAction } from '../api/server-actions'
@@ -18,14 +18,14 @@ import { Button } from '@shared/ui/button'
 import { Modal } from '@shared/ui/modal'
 import { StartupLabMenu } from '@shared/ui/startup-lab-menu'
 
-export const StartupLab: React.FC<StartupLabProps> = ({ cards, cardCount, info1, info2, contactURL }) => {
+export const StartupLab: FC<StartupLabProps> = ({ cards, cardCount, info1, info2, contactURL }) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [technologiesData, setTechnologiesData] = useState<typeApiResponse<typeTechnologiesResponse> | null>(null)
   const [isLoading, setIsLoading] = useState(false)
 
   const labsCards = cards
     .sort((a, b) => a.id - b.id)
-    .filter(card => card.id < cardCount)
+    .filter(card => card.id <= cardCount)
     .map(card => ({
       imageLink: 'http://' + process.env.NEXT_PUBLIC_IMAGE_HOST + card.image,
       title: card.title,
@@ -47,16 +47,10 @@ export const StartupLab: React.FC<StartupLabProps> = ({ cards, cardCount, info1,
   }
 
   const renderCards = () => {
-    //console.log('renderCards', 'cards', cards);
     return (
       <div className={classes.cardsContainer}>
         {labsCards?.map((card, index) => (
-          <ServiceCard
-            key={index}
-            icon={<img src={card.imageLink} className={classes.cardIcon} alt={card.title} />}
-            title={card.title}
-            text={card.info}
-          />
+          <ServiceCard key={index} icon={card.imageLink} title={card.title} text={card.info} />
         ))}
       </div>
     )
@@ -88,6 +82,7 @@ export const StartupLab: React.FC<StartupLabProps> = ({ cards, cardCount, info1,
   return (
     <>
       <MainBlock
+        bottomStyles={classes.bottomContainer}
         topContent={
           <h2 className={classes.title} id="laboratory">
             {title}
