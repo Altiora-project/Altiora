@@ -22,16 +22,14 @@
   flex-direction: column;
   gap: 15px;
   width: 100%;
-  padding: 12px 12px 17px 12px;
+  padding: 0;
 
   @include bp.tablet {
     gap: 24px;
-    padding: 26px 24px 0 24px;
   }
 
   @include bp.desktop {
     gap: 40px;
-    padding: 48px 48px 17px 48px;
   }
 }
 

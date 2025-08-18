@@ -31,8 +31,8 @@ export const OrderForm: FC = () => {
   } = useOrderForm(onSubmit)
 
   const FormButton: FC = () => (
-    <Button type="submit" variant="primary" disabled={!isValid || isSubmitting}>
-      <span className={classes.buttonText}>{isSubmitting ? 'Отправка...' : 'Отправить заявку'}</span>
+    <Button type="submit" variant="tertiary" disabled={!isValid || isSubmitting} className={classes.button}>
+      <span className={classes.buttonText}>{isSubmitting ? 'Отправка...' : 'Связаться с нами'}</span>
     </Button>
   )
 

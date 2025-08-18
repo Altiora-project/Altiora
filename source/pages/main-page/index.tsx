@@ -61,16 +61,16 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
             cards={
               Array.isArray(pageData?.labcart_data)
                 ? [...pageData.labcart_data]
-                    .sort((a, b) => a.id - b.id)
-                    .map(card => ({
-                      imageLink: 'http://' + process.env.NEXT_PUBLIC_IMAGE_HOST + card.image,
-                      title: card.title,
-                      info: card.description
-                    }))
+                  .sort((a, b) => a.id - b.id)
+                  .map(card => ({
+                    imageLink: 'http://' + process.env.NEXT_PUBLIC_IMAGE_HOST + card.image,
+                    title: card.title,
+                    info: card.description
+                  }))
                 : []
             }
             info2={pageData?.lab_description_ps}
-            contactURL="/contact"
+            contactURL="#form"
           />
         </div>
 
