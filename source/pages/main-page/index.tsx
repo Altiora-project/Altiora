@@ -57,18 +57,9 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
 
         <div className={clsx(classes.content)} id="laboratory">
           <StartupLab
+            cardCount={4}
+            cards={pageData?.labcart_data}
             info1={pageData?.lab_description}
-            cards={
-              Array.isArray(pageData?.labcart_data)
-                ? [...pageData.labcart_data]
-                  .sort((a, b) => a.id - b.id)
-                  .map(card => ({
-                    imageLink: 'http://' + process.env.NEXT_PUBLIC_IMAGE_HOST + card.image,
-                    title: card.title,
-                    info: card.description
-                  }))
-                : []
-            }
             info2={pageData?.lab_description_ps}
             contactURL="#form"
           />
