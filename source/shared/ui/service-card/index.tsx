@@ -4,16 +4,19 @@ import styles from './styles.module.scss'
 import Image from 'next/image'
 
 interface ServiceCardProps extends React.HTMLAttributes<HTMLDivElement> {
-  id?: string
   icon?: string
-  title?: string
+  title: string
   text?: ReactNode
 }
 
 const ServiceCard: FC<ServiceCardProps> = ({ icon, title, text, ...otherProps }) => {
   return (
     <div className={styles.card} {...otherProps}>
-      {icon && <Image className={styles.icon} src={icon} width={100} height={100} alt={title ?? 'alt'} />}
+      {icon && (
+        <div className={styles.icon}>
+          <Image src={icon} alt={title} fill sizes="100%" />
+        </div>
+      )}
       <div className={styles.content}>
         <h3 className={styles.title}>{title}</h3>
         <div className={styles.text}>{text}</div>

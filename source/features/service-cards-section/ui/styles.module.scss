@@ -1,5 +1,6 @@
 .cards {
   display: grid;
+  grid-template-columns: 1, 316px;
   gap: 8px;
 }
 
@@ -29,17 +30,7 @@
   display: none;
 }
 
-.subContent {
-  display: none;
-  visibility: hidden;
-}
-
 @include bp.tablet {
-  .bottomContainer {
-    display: none;
-    visibility: hidden;
-  }
-
   .cards {
     gap: 24px;
   }
@@ -77,11 +68,6 @@
 }
 
 @include bp.desktop {
-  .bottomContainer {
-    display: block;
-    visibility: initial;
-  }
-
   .cards {
     grid-template-columns: repeat(3, 552px);
     margin-block-end: 35px;
@@ -98,11 +84,6 @@
     font-size: 40px;
     font-weight: 400;
     block-size: 125px;
-  }
-
-  .subContent {
-    display: none;
-    visibility: hidden;
   }
 
   .button {

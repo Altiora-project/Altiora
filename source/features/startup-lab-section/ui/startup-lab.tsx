@@ -23,7 +23,7 @@ export const StartupLab: FC<StartupLabProps> = ({ cards, cardCount, info1, info2
   const [technologiesData, setTechnologiesData] = useState<typeApiResponse<typeTechnologiesResponse> | null>(null)
   const [isLoading, setIsLoading] = useState(false)
 
-  const labsCards = cards
+  const labsCards = (cards || [])
     .sort((a, b) => a.id - b.id)
     .filter(card => card.id <= cardCount)
     .map(card => ({

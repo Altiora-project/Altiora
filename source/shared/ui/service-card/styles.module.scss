@@ -29,8 +29,16 @@
 }
 
 .icon {
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
   width: 40px;
   height: 40px;
+  border-radius: 100px;
+  padding: 10px;
+  background-color: #50f195;
 }
 
 @include bp.tablet {

@@ -2,32 +2,27 @@
 
 import { FC, useEffect, useState } from 'react'
 
+import data from './data'
 import moreIcon from './moreIcon.svg'
 import styles from './styles.module.scss'
 import Image from 'next/image'
 
-import { getVideoDataAction, videoData } from '@entities/video'
+export type videoData<T = string> = {
+  title: T
+  description?: T
+  video: T
+  more?: T
+  links?: {
+    [key: string]: T[]
+  }
+}
 
-const VideoFeature: FC = () => {
-  const [data, setData] = useState<videoData>()
+const VideoFeature: FC<videoData> = ({ title, description, video }) => {
   const [isFile, setIsFile] = useState(false)
 
   useEffect(() => {
-    // getVideoDataAction().then(res => {
-    //   if ('data' in res) {
-    //     setData(res.data.data)
-    //     setIsFile(/\.(mp4|webm|ogg|mkv|flv|m4v|mov|wmv|mpg|mpeg)$/i.test(res.data.data.video))
-    //   }
-    // })
-
-    // TEMP
-    fetch('https://d3462337-77f3-4977-bb62-55e280a4892a.mock.pstmn.io/video-feature')
-      .then(res => res.json())
-      .then(res => {
-        setData(res)
-        setIsFile(/\.(mp4|webm|ogg|mkv|flv|m4v|mov|wmv|mpg|mpeg)$/i.test(res.video))
-      })
-  }, [])
+    setIsFile(/\.(mp4|webm|ogg|mkv|flv|m4v|mov|wmv|mpg|mpeg)$/i.test(video))
+  }, [video])
 
   const Tag = isFile ? 'video' : 'iframe'
 
@@ -35,8 +30,8 @@ const VideoFeature: FC = () => {
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>{data.title}</h2>
-      <p className={styles.description}>{data.description}</p>
+      <h2 className={styles.title}>{title}</h2>
+      <p className={styles.description}>{description}</p>
       <div className={styles.video}>
         <div className={styles.video__wrapper}>
           <span className={styles.video__title}>
@@ -45,7 +40,7 @@ const VideoFeature: FC = () => {
         </div>
         <Tag
           className={styles.video__player}
-          src={data.video}
+          src={video}
           {...(!isFile && {
             allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
           })}

@@ -37,7 +37,7 @@ export const OrderForm: FC = () => {
   )
 
   return (
-    <div className={classes.container}>
+    <div className={classes.container} id="form">
       <form onSubmit={handleSubmit} className={classes.form}>
         <MainBlock
           topContent={

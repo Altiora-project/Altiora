@@ -7,6 +7,7 @@ import { Footer } from '@widgets/footer'
 import { GetAbout } from '@features/about'
 import { HeroSection } from '@features/hero-section'
 import { GetPartners } from '@features/partners/partners'
+import ServiceCards from '@features/service-cards-section'
 import { ServicesPromoBlock } from '@features/services-promo-block'
 import { StartupLab } from '@features/startup-lab-section'
 import VideoFeature from '@features/video-feature'
@@ -15,7 +16,6 @@ import { getPageDataAction } from '@entities/main-page/api/server-actions'
 
 import { NotFound } from '@shared/ui/not-found'
 import { OrderForm } from '@shared/ui/order-form'
-import DigitalMarketing from '@entities/digital-marketing'
 
 export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, ...otherProps }) => {
   const response = await getPageDataAction()
@@ -66,11 +66,19 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
         </div>
 
         <div className={clsx(classes.content)} id="digital">
-          <DigitalMarketing cards={pageData?.labcart_data} />
+          <ServiceCards
+            title={pageData?.dig_title}
+            description={pageData?.dig_description}
+            cards={pageData?.labcart_data}
+          />
         </div>
-
-        <div className={clsx(classes.content)} id="tokenization">
-          <VideoFeature />
+        <div className={clsx(classes.content, classes.container)} id="tokenization">
+          <VideoFeature
+            title={pageData.tokenization_title}
+            description={pageData.tokenization_description}
+            video={pageData.tokenization_video_url}
+            more={pageData.tokenization_links}
+          />
         </div>
 
         <div className={clsx(classes.content, classes.partnersSection)} id="partners">
