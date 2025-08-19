@@ -102,11 +102,10 @@ $radius-block-desktop: 3rem;
       @include bp.tablet {
         @include rounded-corner('inner-bottom', $radius-block-tablet);
       }
-  
+
       @include bp.desktop {
         @include rounded-corner('inner-bottom', $radius-block-desktop);
       }
-  
     }
 
     @include bp.tablet {
@@ -348,7 +347,6 @@ $radius-block-desktop: 3rem;
         @include rounded-corner('inner-top', $radius-block-desktop);
       }
     }
-
   }
 
   .button {
