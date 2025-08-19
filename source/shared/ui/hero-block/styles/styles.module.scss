@@ -7,6 +7,7 @@
   background-color: var(--color-background1);
   padding: 12px 12px 24px;
   transition: all 0.3s ease;
+  background-image: var(--noise-img);
 
   @include bp.tablet {
     padding: 24px;
