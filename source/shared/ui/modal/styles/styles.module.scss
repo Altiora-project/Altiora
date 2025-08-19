@@ -13,7 +13,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: calc(100dvw - 0.1rem);
+  max-width: min(calc(100dvw - 0.1rem), 1800px);
   max-height: calc(100dvh - 0.1rem);
   background-color: var(--color-background);
   min-width: 150px;
@@ -88,7 +88,7 @@
 
     @include bp.desktop {
       top: 1rem;
-      right: 2rem;
+      right: 3rem;
     }
 
     &:hover {
