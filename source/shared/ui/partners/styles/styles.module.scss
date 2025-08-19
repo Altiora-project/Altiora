@@ -45,12 +45,15 @@
   color: var(--color-white);
   font-size: 14px;
   flex-shrink: 0;
-  white-space: nowrap;
+  // white-space: nowrap;
+  text-align: center;
+  line-height: 98%;
 
   @include bp.tablet {
     height: 38px;
     margin-inline-start: 24px;
   }
+
   @include bp.desktop {
     width: 275px;
     height: 64px;
@@ -59,6 +62,8 @@
 }
 
 .linkData {
+  width: 100%;
+  height: auto;
   text-decoration: none;
 }
 
@@ -83,5 +88,11 @@
 
   @include bp.desktop {
     margin-block-start: 32px;
+  }
+}
+
+.name {
+  @include bp.desktop {
+    font-size: 12px;
   }
 }
