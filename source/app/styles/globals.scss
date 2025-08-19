@@ -156,3 +156,19 @@ h3 {
 a {
   color: inherit;
 }
+
+:root {
+  --radius-block: 1rem;
+}
+
+@include bp.tablet {
+  :root {
+    --radius-block: 2.5rem;
+  }
+}
+
+@include bp.desktop {
+  :root {
+    --radius-block: 3rem;
+  }
+}
