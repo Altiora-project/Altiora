@@ -19,9 +19,12 @@
     text-decoration: none;
     transition: color 0.2s;
     &:hover {
-      text-decoration: underline 2px var(--color-accent-primary);
+      text-decoration-line: underline;
+      text-decoration-color: var(--color-accent-primary);
+      text-decoration-thickness: 2px;
       text-underline-offset: 10px;
     }
+
     &:active {
       color: var(--color-accent-primary);
     }
