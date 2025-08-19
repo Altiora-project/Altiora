@@ -5,19 +5,12 @@ import clsx from 'clsx'
 import Link from 'next/link'
 
 import { MarkdownRenderer } from '@shared/lib/markdown'
-import { CardComponent } from '@shared/ui/card-component'
 import { typeHeroProps } from '@shared/ui/hero-block/types/types'
 import { HeroBlockImage } from '@shared/ui/hero-block/ui/hero-block-image'
 
 export const HeroBlock: FC<typeHeroProps> = ({ contactLink, imgUrl, title, className, ...otherProps }) => {
   return (
-    <CardComponent
-      radius="md"
-      tag={'default'}
-      background={'grey'}
-      className={clsx(classes.wrapper, className)}
-      {...otherProps}
-    >
+    <div className={clsx(classes.wrapper, className)} {...otherProps}>
       <div className={classes.content}>
         <MarkdownRenderer content={title} />
         <HeroBlockImage className={classes.image} imgUrl={imgUrl} />
@@ -25,6 +18,6 @@ export const HeroBlock: FC<typeHeroProps> = ({ contactLink, imgUrl, title, class
       <Link href={contactLink} className={classes.link}>
         Связаться с нами
       </Link>
-    </CardComponent>
+    </div>
   )
 }

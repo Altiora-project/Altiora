@@ -7,6 +7,7 @@
   background-color: var(--color-background1);
   padding: 12px 12px 24px;
   transition: all 0.3s ease;
+  background-image: var(--noise-img);
 
   @include bp.tablet {
     padding: 24px;
@@ -24,7 +25,6 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  z-index: 3;
 
   @include bp.tablet {
     flex-direction: row;
@@ -41,7 +41,7 @@
   h1 {
     padding-bottom: 0;
     padding-left: 0.5rem;
-    font-size: 1.75rem; //clamp(1.75rem, 1.176rem + 2.353vi, 4rem);
+    font-size: 1.75rem;
 
     @include bp.tablet {
       padding-left: 0;
@@ -52,7 +52,7 @@
     @include bp.desktop {
       max-width: 688px;
       margin-top: 0;
-      line-height: 130%; /* 83.2px */
+      line-height: 130%;
       font-size: 4rem;
     }
   }
@@ -91,6 +91,7 @@
   transform: scale(1);
 
   @include bp.desktop {
+    display: none;
     opacity: 0;
     pointer-events: none;
     transform: scale(0.95);
