@@ -7,8 +7,6 @@ import moreIcon from './moreIcon.svg'
 import styles from './styles.module.scss'
 import Image from 'next/image'
 
-import { MarkdownRenderer } from '@shared/lib/markdown'
-
 export type videoData<T = string> = {
   title: T
   description?: T

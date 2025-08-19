@@ -13,7 +13,18 @@ import { MainBlock } from '@shared/ui/_main-block'
 import { Button } from '@shared/ui/button'
 import ServiceCard from '@shared/ui/service-card'
 
-const ServiceCards = () => {
+interface serviceCardsProps {
+  title: string
+  description: string
+  cards: {
+    id: number
+    title: string
+    image: string
+    description: string
+  }[]
+}
+
+const ServiceCards: React.FC<serviceCardsProps> = ({ title, description, cards }) => {
   const [data, setData] = useState<typeServiceCard[]>([])
   const [isTablet, setIsTablet] = useState(false)
   const handleClick = () => {
@@ -21,26 +32,21 @@ const ServiceCards = () => {
   }
 
   useEffect(() => {
-    //getServiceCardsDataAction().then(res => setData(('data' in res && res.data.cards) || []))
-    // TEST
     setIsTablet(744 <= window.innerWidth && window.innerWidth < 1920)
-
-    fetch('https://d3462337-77f3-4977-bb62-55e280a4892a.mock.pstmn.io/service-cards')
-      .then(res => res.json())
-      .then(res => {
-        const data = res.data.map((item: typeServiceCard & { icon: TrustedHTML }) => ({
-          ...item,
-          icon: <div dangerouslySetInnerHTML={{ __html: item.icon }} />
-        }))
-        setData(data)
-      })
-    // TEST
-  }, [])
+    setData(
+      cards.splice(0, 6).map(item => ({
+        id: item.id.toString(),
+        title: item.title,
+        text: item.description,
+        icon: 'http://' + process.env.NEXT_PUBLIC_IMAGE_HOST + item.image
+      }))
+    )
+  }, [cards])
 
   return (
     <div className={styles.container} id="services">
       <MainBlock
-        topContent={<h2 id="digital">{text.title}</h2>}
+        topContent={<h2 id="digital">{title}</h2>}
         bottomContent={
           !isTablet && (
             <Button className={clsx(styles.button, styles.notTablet)} onClick={handleClick}>
@@ -55,14 +61,7 @@ const ServiceCards = () => {
         }
         className={styles.block}
       >
-        <div className={styles.description}>
-          {
-            <>
-              <span className={styles.short}>{text.description}</span>
-              <span className={styles.long}>{text.descriptionLong}</span>
-            </>
-          }
-        </div>
+        <div className={styles.description}>{description}</div>
         <h3 className={styles.title}>{text.subTitle}</h3>
         <div className={styles.cards}>
           {data?.map(item => (

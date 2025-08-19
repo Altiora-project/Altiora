@@ -23,7 +23,7 @@ export const StartupLab: React.FC<StartupLabProps> = ({ cards, cardCount, info1,
   const [technologiesData, setTechnologiesData] = useState<typeApiResponse<typeTechnologiesResponse> | null>(null)
   const [isLoading, setIsLoading] = useState(false)
 
-  const labsCards = cards
+  const labsCards = (cards || [])
     .sort((a, b) => a.id - b.id)
     .filter(card => card.id < cardCount)
     .map(card => ({
@@ -47,16 +47,10 @@ export const StartupLab: React.FC<StartupLabProps> = ({ cards, cardCount, info1,
   }
 
   const renderCards = () => {
-    //console.log('renderCards', 'cards', cards);
     return (
       <div className={classes.cardsContainer}>
         {labsCards?.map((card, index) => (
-          <ServiceCard
-            key={index}
-            icon={<img src={card.imageLink} className={classes.cardIcon} alt={card.title} />}
-            title={card.title}
-            text={card.info}
-          />
+          <ServiceCard key={index} icon={card.imageLink} title={card.title} text={card.info} />
         ))}
       </div>
     )

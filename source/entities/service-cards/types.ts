@@ -2,8 +2,8 @@ import { ReactNode } from 'react'
 
 export type typeServiceCard = {
   id: string
-  icon?: ReactNode
-  title?: string
+  icon?: string
+  title: string
   text?: ReactNode
 }
 

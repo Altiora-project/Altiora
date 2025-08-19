@@ -29,6 +29,7 @@
 }
 
 .icon {
+  position: relative;
   display: flex;
   flex-shrink: 0;
   justify-content: center;
@@ -38,11 +39,6 @@
   border-radius: 100px;
   padding: 10px;
   background-color: #50f195;
-
-  svg {
-    width: 100%;
-    height: 100%;
-  }
 }
 
 @include bp.tablet {

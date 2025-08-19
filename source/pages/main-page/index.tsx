@@ -67,7 +67,11 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
         </div>
 
         <div className={clsx(classes.content)} id="digital">
-          <ServiceCards />
+          <ServiceCards
+            title={pageData?.dig_title}
+            description={pageData?.dig_description}
+            cards={pageData?.labcart_data}
+          />
         </div>
         <div className={clsx(classes.content, classes.container)} id="tokenization">
           <VideoFeature
