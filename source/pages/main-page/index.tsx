@@ -7,14 +7,13 @@ import { Footer } from '@widgets/footer'
 import { GetAbout } from '@features/about'
 import { HeroSection } from '@features/hero-section'
 import { GetPartners } from '@features/partners/partners'
+import ServiceCards from '@features/service-cards-section'
 import { ServicesPromoBlock } from '@features/services-promo-block'
 import { StartupLab } from '@features/startup-lab-section'
 import VideoFeature from '@features/video-feature'
 
 import { getPageDataAction } from '@entities/main-page/api/server-actions'
-import ServiceCards from '@entities/service-cards'
 
-import { imageHost } from '@shared/lib/environment/public'
 import { NotFound } from '@shared/ui/not-found'
 import { OrderForm } from '@shared/ui/order-form'
 
@@ -58,7 +57,7 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
 
         <div className={clsx(classes.content)} id="laboratory">
           <StartupLab
-            cardCount={4}
+            cardCount={3}
             cards={pageData?.labcart_data}
             info1={pageData?.lab_description}
             info2={pageData?.lab_description_ps}

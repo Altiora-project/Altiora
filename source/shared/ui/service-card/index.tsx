@@ -14,7 +14,7 @@ const ServiceCard: FC<ServiceCardProps> = ({ icon, title, text, ...otherProps })
     <div className={styles.card} {...otherProps}>
       {icon && (
         <div className={styles.icon}>
-          <Image src={icon} alt={title} fill />
+          <Image src={icon} alt={title} fill sizes="100%" />
         </div>
       )}
       <div className={styles.content}>

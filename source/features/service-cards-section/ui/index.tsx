@@ -6,9 +6,6 @@ import * as text from './data'
 import styles from './styles.module.scss'
 import clsx from 'clsx'
 
-// import getServiceCardsDataAction from '@entities/service-cards/api/server-actions'
-import { typeServiceCard } from '@entities/service-cards/types'
-
 import { MainBlock } from '@shared/ui/_main-block'
 import { Button } from '@shared/ui/button'
 import ServiceCard from '@shared/ui/service-card'
@@ -24,24 +21,22 @@ interface serviceCardsProps {
   }[]
 }
 
-const ServiceCards: React.FC<serviceCardsProps> = ({ title, description, cards }) => {
-  const [data, setData] = useState<typeServiceCard[]>([])
+const ServiceCardsSection: React.FC<serviceCardsProps> = ({ title, description, cards }) => {
   const [isTablet, setIsTablet] = useState(false)
   const handleClick = () => {
     document.getElementById('form')?.scrollIntoView({ behavior: 'smooth' })
   }
 
+  const data = cards.slice(0, 6).map(item => ({
+    id: item.id.toString(),
+    title: item.title,
+    text: item.description,
+    icon: 'http://' + process.env.NEXT_PUBLIC_IMAGE_HOST + item.image
+  }))
+
   useEffect(() => {
-    setIsTablet(744 <= window.innerWidth && window.innerWidth < 1920)
-    setData(
-      cards.splice(0, 6).map(item => ({
-        id: item.id.toString(),
-        title: item.title,
-        text: item.description,
-        icon: 'http://' + process.env.NEXT_PUBLIC_IMAGE_HOST + item.image
-      }))
-    )
-  }, [cards])
+    setIsTablet(481 <= window.innerWidth && window.innerWidth < 1025)
+  }, [])
 
   return (
     <div className={styles.container} id="services">
@@ -79,4 +74,4 @@ const ServiceCards: React.FC<serviceCardsProps> = ({ title, description, cards }
   )
 }
 
-export default ServiceCards
+export default ServiceCardsSection

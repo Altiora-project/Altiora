@@ -5,7 +5,7 @@
   border-radius: 40px;
   padding: 16px 16px 20px;
   background-color: #353735;
-  inline-size: 100%;
+  width: 100%;
   min-block-size: 149px;
 }
 
@@ -58,7 +58,7 @@
   .icon {
     width: 80px;
     height: 80px;
-    padding: 16px;
+    //padding: 16px;
   }
 
   .title {
@@ -79,16 +79,18 @@
     align-items: flex-start;
     gap: 40px;
     padding: 32px 32px 48px;
-    min-block-size: 296px;
+    //min-block-size: 296px;
   }
 
   .icon {
-    padding: 20px;
+    //  width: 80px;
+    //height: 80px;
+    //padding: 20px;
   }
 
   .content {
     gap: 12px;
-    min-inline-size: 488px;
+    //min-inline-size: 488px;
   }
 
   .title {
