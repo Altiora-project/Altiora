@@ -81,38 +81,6 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
           <OrderForm />
         </div>
 
-        {/* <div className={classes.contentContainer}>  TODO: убрать, если код выше не сломается
-        <div className={classes.container}>
-          <StartupLab
-            info1={pageData.lab_description}
-            cards={pageData.labcart_data
-              .sort((a, b) => a.id - b.id)
-              .map(card => {
-                return {
-                  imageLink: process.env.NEXT_PUBLIC_IMAGE_HOST + card.image,
-                  title: card.title,
-                  info: card.description
-                }
-              })}
-            info2={pageData.lab_description_ps}
-            contactURL="/contact"
-          />
-        </div>
-
-        <div className={clsx(classes.content, classes.container)}>
-          <ServiceCards />
-        </div>
-        <div className={clsx(classes.content, classes.container)}>
-          <VideoFeature />
-        </div>
-        <div className={clsx(classes.content, classes.partnersSection)}>
-          <GetPartners header={pageData.partners_section_title} partners={pageData.partners_data} />
-        </div>
-        <div className={classes.container}>
-          <OrderForm />
-        </div>
-      </div> */}
-
         <div className={classes.container}>
           <Footer />
         </div>
