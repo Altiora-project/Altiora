@@ -99,7 +99,7 @@ export const About: FC<typeAboutDataProps> = ({ data }) => {
         tag={'default'}
         className={clsx(classes.card, classes.fourthCard)}
       >
-        <div className={clsx(classes.greyText, classes.titleFontNormal)}>
+        <div className={clsx(classes.greyText, classes.titleFontNormal, classes.light)}>
           <span className={clsx(classes.whiteText, classes.normal)}>Каждый проект</span> мы{' '}
           <span>ведем от концепции до масштабирования</span>, используя гибкие методологии и проверенные технологические
           решения, чтобы достичь результата в согласованные сроки{' '}
@@ -113,7 +113,7 @@ export const About: FC<typeAboutDataProps> = ({ data }) => {
         tag={'default'}
         className={clsx(classes.card, classes.fifthCard)}
       >
-        100 %
+        {offset < 485 ? '100 %' : '100%'}
       </CardComponent>
 
       <div className={clsx(classes.container_radius, classes.sixthCard)}>
@@ -134,7 +134,7 @@ export const About: FC<typeAboutDataProps> = ({ data }) => {
           <div className={classes.bottomContent}>
             <div>
               <Button disabled={false} onClick={() => {}} className={classes.button}>
-                {offset < 1920 ? 'связаться' : 'связаться с нами'}
+                {offset < 1919 ? 'связаться' : 'связаться с нами'}
               </Button>
             </div>
           </div>

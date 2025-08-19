@@ -487,6 +487,7 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://w
   align-self: flex-start;
   width: 98%;
   font-size: 16px;
+  margin-block-end: 4px;
 
   @include bp.tablet {
     font-size: 12px;
@@ -495,7 +496,7 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://w
   }
 
   @include bp.desktop {
-    width: 70%;
+    width: 7%;
     font-size: 24px;
   }
 }
