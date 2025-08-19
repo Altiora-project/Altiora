@@ -13,7 +13,7 @@ import { Button } from '@shared/ui/button'
 import ServiceCard from '@shared/ui/service-card'
 
 const DigitalMarketing: FC<typeDigitalMarketingProps> = ({ cards }) => {
-  const labsCards = cards
+  const labsCards = (cards ?? [])
     .sort((a, b) => a.id - b.id)
     .filter(card => card.id > 3)
     .map(card => ({
