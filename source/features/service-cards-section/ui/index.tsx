@@ -27,7 +27,7 @@ const ServiceCardsSection: React.FC<serviceCardsProps> = ({ title, description, 
     document.getElementById('form')?.scrollIntoView({ behavior: 'smooth' })
   }
 
-  const data = (cards || []).slice(0, 6).map(item => ({
+  const data = (cards || []).slice(3).map(item => ({
     id: item.id.toString(),
     title: item.title,
     text: item.description,
