@@ -12,7 +12,7 @@ import { HeroBlockImage } from '@shared/ui/hero-block/ui/hero-block-image'
 export const HeroBlock: FC<typeHeroProps> = ({ contactLink, imgUrl, title, className, ...otherProps }) => {
   return (
     <CardComponent
-      radius="md"
+      radius="lg"
       tag={'default'}
       background={'grey'}
       className={clsx(classes.wrapper, className)}
