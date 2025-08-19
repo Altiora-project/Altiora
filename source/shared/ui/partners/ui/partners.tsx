@@ -22,7 +22,12 @@ export const Partners: FC<typePartnersProps> = ({ partners }) => {
             {displayPartners.map(phrase => {
               return (
                 <div className={classes.dataContainer}>
-                  <Link key={phrase.id} href={phrase.website} className={classes.linkData}>
+                  <Link
+                    key={phrase.id}
+                    href={phrase.website}
+                    className={clsx(classes.linkData, phrase.name.length >= 11 ? classes.name : '')}
+                    target="_blank"
+                  >
                     {phrase.logo ? (
                       <img src={phrase.logo} className={classes.img} alt={phrase.name} />
                     ) : (
