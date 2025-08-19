@@ -27,13 +27,5 @@ export const mainMenu: typeMainMenuItem[] = [
   {
     label: 'Контакты',
     url: routes.contacs
-  },
-  {
-    label: 'Home',
-    url: routes.mainPage
-  },
-  {
-    label: 'UI',
-    url: routes.ui
   }
 ]
