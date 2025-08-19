@@ -26,6 +26,13 @@
   color: #fefefe;
   font-weight: 400;
   font-size: 13px;
+
+  @include bp.tablet {
+    font-size: 16px;
+  }
+  @include bp.desktop {
+    font-size: 20px;
+  }
 }
 
 .icon {
@@ -66,11 +73,6 @@
     font-size: 16px;
     text-transform: none;
   }
-
-  .text {
-    font-weight: 400;
-    font-size: 16px;
-  }
 }
 
 @include bp.desktop {
@@ -95,9 +97,5 @@
 
   .title {
     font-size: 28px;
-  }
-
-  .text {
-    font-size: 20px;
   }
 }
