@@ -9,7 +9,6 @@ import { typeServicesPromoBlockProps } from '@features/services-promo-block/type
 
 import { routes } from '@shared/configs/routes'
 import { CardComponent } from '@shared/ui/card-component'
-// import { CardComponent } from '@shared/ui/card-component'
 import { ProductCard } from '@shared/ui/product-card'
 import { Slider } from '@shared/ui/slider'
 import { SliderCard } from '@shared/ui/slider-card'
