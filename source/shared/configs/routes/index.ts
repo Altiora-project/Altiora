@@ -1,3 +1,3 @@
-export { createRoute } from './create-rout.utils'
 export { routes } from './routes.config'
-export type { typeRouts } from './types'
+export { createRoute, createAppRoute } from './create-rout.utils'
+export type { typeRouts, ExtractRouteParams } from './types'
