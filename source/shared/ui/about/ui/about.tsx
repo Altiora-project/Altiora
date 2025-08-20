@@ -16,7 +16,6 @@ import { CardComponent } from '@shared/ui/card-component'
 
 export const About: FC<typeAboutDataProps> = ({ data }) => {
   //заглушка
-  console.log(data)
   // TODO: заменить хардкод на маркдауны(!!!)
   //    <div className={classes.cardContent}>
   //   <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>

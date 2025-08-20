@@ -1,11 +1,7 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-type ExtractRouteParams<T extends string> = T extends `${infer _Start}:${infer Param}/${infer Rest}`
-  ? { [K in Param | keyof ExtractRouteParams<`/${Rest}`>]: string }
-  : T extends `${infer _Start}:${infer Param}`
-    ? { [K in Param]: string }
-    : Record<never, never>
-/* eslint-enable @typescript-eslint/no-unused-vars */
+import { routes } from './routes.config'
+import { ExtractRouteParams } from './types'
 
+// базовый хелпер для любых роутов
 export const createRoute = <T extends string>(
   url: T,
   params: ExtractRouteParams<T>,
@@ -26,4 +22,39 @@ export const createRoute = <T extends string>(
   }
 
   return result
+}
+
+type AppRoutes = typeof routes
+
+export const createAppRoute = <T extends keyof AppRoutes, U extends AppRoutes[T]>(
+  routeKey: T,
+  options?: {
+    params?: ExtractRouteParams<U>
+    query?: Record<string, string>
+    anchor?: string
+  }
+): string => {
+  const { params = {} as ExtractRouteParams<U>, query, anchor } = options || {}
+
+  // главная страница с якорем
+  if (routeKey === 'mainPage') {
+    let result = routes.mainPage
+
+    if (anchor) {
+      result += `#${anchor}`
+    }
+
+    if (query && Object.keys(query).length > 0) {
+      const queryString = Object.entries(query)
+        .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
+        .join('&')
+
+      result += (result.includes('?') ? '&' : '?') + queryString
+    }
+
+    return result
+  }
+
+  // для остальных роутов — используем стандартный createRoute
+  return createRoute(routes[routeKey], params, query)
 }

@@ -68,11 +68,11 @@ export const StartupLab: FC<StartupLabProps> = ({ cards, cardCount, info1, info2
           {isLoading ? 'Загрузка...' : 'Подробнее'}
         </Button>
 
-        <Button variant="primary" className={classes.bottomButton}>
-          <Link href={contactURL}>
+        <Link href={contactURL}>
+          <Button variant="primary" className={classes.bottomButton}>
             Связаться<span className={classes.buttonFullText}> с нами</span>
-          </Link>
-        </Button>
+          </Button>
+        </Link>
       </div>
     )
   }

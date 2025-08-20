@@ -1,31 +1,21 @@
-import { routes } from '@shared/configs/routes'
-import { createRoute } from '@shared/configs/routes/create-rout.utils'
 import type { typeMainMenuItem } from '@shared/ui/main-menu/types/types'
+import { routes } from '@shared/configs/routes'
+import { getMenuUrl } from '@shared/configs/routes/menu.utils'
+
+const isMainPage = true
 
 export const mainMenu: typeMainMenuItem[] = [
-  {
-    label: 'Кто мы',
-    url: routes.company
-  },
-  {
-    label: 'Наши услуги',
-    url: routes.services
-  },
+  { label: 'Кто мы', url: getMenuUrl('Компания', routes.company, isMainPage) },
+  { label: 'Наши услуги', url: getMenuUrl('Услуги', routes.services, isMainPage) },
   {
     label: 'Комплексные решения',
-    url: createRoute(routes.complexRout, { id: '1', value: 'value' }),
+    url: routes.complexRout,
     children: [
-      { label: 'Лаборатория стартапов', url: routes.laboratory },
-      { label: 'Токенизация активов', url: routes.tokenization },
-      { label: 'Digital маркетинг', url: routes.digital }
+      { label: 'Лаборатория стартапов', url: getMenuUrl('Лаборатория стартапов', routes.laboratory, isMainPage) },
+      { label: 'Токенизация активов', url: getMenuUrl('Токенизация активов', routes.tokenization, isMainPage) },
+      { label: 'Digital маркетинг', url: getMenuUrl('Digital маркетинг', routes.digital, isMainPage) }
     ]
   },
-  {
-    label: 'Партнеры',
-    url: routes.partners
-  },
-  {
-    label: 'Контакты',
-    url: routes.contacs
-  }
+  { label: 'Партнеры', url: getMenuUrl('Партнеры', routes.partners, isMainPage) },
+  { label: 'Контакты', url: getMenuUrl('Контакты', routes.contacs, isMainPage) }
 ]
