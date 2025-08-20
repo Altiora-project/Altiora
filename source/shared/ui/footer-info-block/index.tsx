@@ -7,6 +7,7 @@ import Link from 'next/link'
 
 export const FooterInfoBlock: React.FC<FooterInfoBlockProps> = ({ addressDetails, linkList }) => {
   const currentYear = new Date().getFullYear()
+  console.log('LINKS LIST: ' + linkList[0].url)
   return (
     <div className={styles.container}>
       <div className={styles.addressBlock}>

@@ -46,7 +46,10 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
       <HeroSection title={pageData.hero_title} imgUrl={pageData.hero_image} phrases={phrases} />
 
       <div className={clsx(classes.container)}>
-        <GetAbout data={[pageData.about_title, pageData.about_text, pageData.highlight_1, pageData.highlight_2]} />
+        <GetAbout
+          data={[pageData.about_title, pageData.about_text, pageData.highlight_1, pageData.highlight_2]}
+          id="about"
+        />
         <div className={clsx(classes.content)} id="services">
           <ServicesPromoBlock
             title={pageData.services_section_title}
