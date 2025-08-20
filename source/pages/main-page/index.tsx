@@ -29,7 +29,7 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
   //   return <NotFound />
   // }
 
-  const phrases = pageData.services_data.map(service => service.name)
+  // const phrases = pageData.services_data.map(service => service.name)
 
   const services = pageData.services_data.map(service => {
     return {
@@ -44,7 +44,7 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
 
   return (
     <div className={clsx(classes.wrapper, className)} {...otherProps}>
-      <HeroSection title={pageData.hero_title} imgUrl={pageData.hero_image} phrases={phrases} />
+      <HeroSection title={pageData.hero_title} imgUrl={pageData.hero_image} phrases={pageData.services_running_line} />
 
       <div className={clsx(classes.container)}>
         <GetAbout data={[pageData.about_title, pageData.about_text, pageData.highlight_1, pageData.highlight_2]} />
