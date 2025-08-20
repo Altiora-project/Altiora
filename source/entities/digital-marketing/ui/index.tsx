@@ -5,6 +5,7 @@ import { FC } from 'react'
 import * as text from './data'
 import styles from './styles.module.scss'
 import clsx from 'clsx'
+import Link from 'next/link'
 
 import { typeDigitalMarketingProps } from '@entities/digital-marketing/types'
 
@@ -25,10 +26,12 @@ const DigitalMarketing: FC<typeDigitalMarketingProps> = ({ cards }) => {
 
   const bottomContent = () => {
     return (
-      <Button className={styles.button}>
-        <span className={styles.long}>{text.button[1]}</span>
-        <span className={styles.short}>{text.button[0]}</span>
-      </Button>
+      <Link href="#form">
+        <Button className={styles.button}>
+          <span className={styles.long}>{text.button[1]}</span>
+          <span className={styles.short}>{text.button[0]}</span>
+        </Button>
+      </Link>
     )
   }
 
@@ -50,9 +53,11 @@ const DigitalMarketing: FC<typeDigitalMarketingProps> = ({ cards }) => {
           ))}
 
           <div className={clsx(styles.subtext, styles.hidden)}>{text.subText}</div>
-          <Button className={clsx(styles.button, styles.hidden)}>
-            <span className={styles.long}>{text.button[1]}</span>
-          </Button>
+          <Link href="#form">
+            <Button className={clsx(styles.button, styles.hidden)}>
+              <span className={styles.long}>{text.button[1]}</span>
+            </Button>
+          </Link>
         </div>
       </MainBlock>
     </div>

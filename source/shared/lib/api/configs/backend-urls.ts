@@ -14,11 +14,9 @@ import { createRoute } from '@shared/configs/routes'
 export const endpoints = {
   postList: '/posts',
   postDetails: (id: string) => createRoute('/posts/:id', { id }),
-  serviceCards: '/service-cards',
   homePageContent: '/home-page-content/',
   services: '/services/',
   sendRequest: '/project-request/',
-  videoFeature: '/video-feature/',
   serviceDetails: (slug: string) => createRoute('/services/:slug', { slug }),
   siteSettings: '/site-settings/',
   technologies: '/technologies/'

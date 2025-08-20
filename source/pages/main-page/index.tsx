@@ -11,11 +11,11 @@ import { ServicesPromoBlock } from '@features/services-promo-block'
 import { StartupLab } from '@features/startup-lab-section'
 import VideoFeature from '@features/video-feature'
 
+import DigitalMarketing from '@entities/digital-marketing'
 import { getPageDataAction } from '@entities/main-page/api/server-actions'
 
 import { NotFound } from '@shared/ui/not-found'
 import { OrderForm } from '@shared/ui/order-form'
-import DigitalMarketing from '@entities/digital-marketing'
 
 export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, ...otherProps }) => {
   const response = await getPageDataAction()
