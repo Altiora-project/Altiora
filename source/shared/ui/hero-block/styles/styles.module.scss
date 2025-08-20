@@ -5,6 +5,7 @@
   width: 100%;
   border-radius: 1.25rem;
   background-color: var(--color-background1);
+  background-image: var(--noise-img);
   padding: 12px 12px 24px;
   transition: all 0.3s ease;
   background-image: var(--noise-img);
@@ -17,6 +18,7 @@
     width: 100%;
     border-radius: 2.5rem;
     padding: 48px 48px 0;
+    border-radius: 2.5rem;
   }
 }
 
