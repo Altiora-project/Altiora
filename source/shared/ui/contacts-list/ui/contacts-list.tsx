@@ -1,7 +1,9 @@
-import classes from '../styles/styles.module.scss'
-import { ContactListItem } from '@shared/ui/contact-list-item'
 import { FC, HTMLAttributes } from 'react'
+
+import classes from '../styles/styles.module.scss'
 import clsx from 'clsx'
+
+import { ContactListItem } from '@shared/ui/contact-list-item'
 
 type typeContactsProps = {
   contacts: { type: 'address' | 'email' | 'phone'; title: string }[]

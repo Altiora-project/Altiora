@@ -3,7 +3,6 @@ import { contactListProps } from '../types/types'
 import Link from 'next/link'
 
 import { Icon } from '@shared/ui/icon'
-import { typeIconsType } from '@shared/ui/icon/types'
 
 const getLink = (title: string, type?: 'phone' | 'email' | 'address'): string => {
   switch (type) {
@@ -21,7 +20,7 @@ export const ContactListItem: React.FC<contactListProps> = ({ title, linkType })
 
   return (
     <>
-      {!(linkType === 'address') ? (
+      {linkType !== 'address' ? (
         <Link href={link} className={styles.container}>
           <Icon icon={linkType} className={styles.icon} size="auto" />
           <div className={styles.linkText}>{title}</div>

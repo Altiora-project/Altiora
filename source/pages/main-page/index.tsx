@@ -73,6 +73,7 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
         <div className={clsx(classes.content)} id="digital">
           <DigitalMarketing cards={pageData?.labcart_data} />
         </div>
+
         <div className={clsx(classes.content, classes.container)} id="tokenization">
           <VideoFeature
             title={pageData.tokenization_title}
@@ -90,9 +91,7 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
           <OrderForm />
         </div>
 
-        <div className={classes.container}>
-          <Footer />
-        </div>
+        <Footer title={pageData.contacts_title} />
       </div>
     </div>
   )
