@@ -125,14 +125,13 @@ $radius-block-desktop: 3rem;
     min-height: 1em;
     background-color: $background;
     background-image: $bg-image;
-
+    position: relative;
     border-radius: 1rem 1rem 0 0;
 
     @include bp.desktop {
       border-radius: 3rem 3rem 0 0;
     }
 
-    position: relative;
     button {
       margin: 12px 10px 0 0;
       display: flex;
@@ -179,15 +178,10 @@ $radius-block-desktop: 3rem;
   align-items: center;
   padding: 16px 8px 16px 4px;
   border-radius: $radius-menu 0 0 $radius-menu;
-
-  @include bp.desktop {
-    border-radius: $radius-menu-desktop 0 0 $radius-menu-desktop;
-  }
-
   //border-top-left-radius: $radius-menu;
   //border-bottom-left-radius: $radius-menu;
-  cursor: pointer;
   //transition: all 0.2s ease;
+  cursor: pointer;
   background: transparent;
   border: none;
   color: var(--color-white);
@@ -199,6 +193,10 @@ $radius-block-desktop: 3rem;
   gap: 22px;
   position: relative;
   //border: solid 1px red;
+
+  @include bp.desktop {
+    border-radius: $radius-menu-desktop 0 0 $radius-menu-desktop;
+  }
 
   &:hover {
     color: var(--color-accent-primary);
@@ -214,12 +212,14 @@ $radius-block-desktop: 3rem;
   // Скругленность для всех пунктов меню кроме первого и последнего
   &:not(:first-child):not(:last-child).active {
     position: relative;
+
     &::before {
       @include rounded-corner('top', $radius-menu);
       @include bp.desktop {
         @include rounded-corner('top', $radius-menu-desktop);
       }
     }
+
     &::after {
       @include rounded-corner('bottom', $radius-menu);
       @include bp.desktop {
@@ -231,6 +231,7 @@ $radius-block-desktop: 3rem;
   // Только нижнее скругление для первого элемента
   &:first-child.active {
     position: relative;
+
     &::after {
       @include rounded-corner('bottom', $radius-menu);
       @include bp.desktop {
@@ -242,6 +243,7 @@ $radius-block-desktop: 3rem;
   // Только верхнее скругление для последнего элемента
   &:last-child.active {
     position: relative;
+
     &::before {
       @include rounded-corner('top', $radius-menu);
       @include bp.desktop {
@@ -295,7 +297,6 @@ $radius-block-desktop: 3rem;
   color: #fff;
   background-color: $background;
   background-image: $bg-image;
-
   border-bottom-right-radius: var(--radius-block);
   border-top-left-radius: var(--radius-block);
   overflow-y: auto;
