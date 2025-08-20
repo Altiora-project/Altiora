@@ -1,15 +1,18 @@
+import { FC } from 'react'
+
 import classes from './styles.module.scss'
+
+import { typeFooterProps } from '@pages/main-page/types'
 
 import { FooterSection } from '@features/footer-section'
 
-export const Footer = () => {
-  const title = 'Контакты'
+export const Footer: FC<typeFooterProps> = ({ title, className, ...otherProps }) => {
   return (
-    <>
-      <h1 className={classes.title} id="contacts">
-        {`/${title}`}
-      </h1>
+    <div className={className} {...otherProps}>
+      <h2 className={classes.title} id="contacts">
+        {title}
+      </h2>
       <FooterSection />
-    </>
+    </div>
   )
 }

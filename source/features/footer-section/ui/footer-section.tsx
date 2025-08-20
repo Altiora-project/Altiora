@@ -1,8 +1,11 @@
 import classes from '../styles/styles.module.scss'
-import { Contacts } from '@shared/ui/contacts-list/ui/contacts-list'
-import { getSiteSettingsAction } from '@entities/footer'
-import { FooterInfoBlock } from '@shared/ui/footer-info-block'
+
 import { typeContact, typeDocument } from '@widgets/footer/types'
+
+import { getSiteSettingsAction } from '@entities/footer'
+
+import { Contacts } from '@shared/ui/contacts-list/ui/contacts-list'
+import { FooterInfoBlock } from '@shared/ui/footer-info-block'
 
 export const FooterSection = async () => {
   const response = await getSiteSettingsAction()
@@ -12,20 +15,18 @@ export const FooterSection = async () => {
   }
 
   const { requisites, email, phone, address } = response.data.data
+
   const contacts: Array<typeContact> = [
-    {
-      type: 'email',
-      title: email
-    },
     {
       type: 'phone',
       title: phone
     },
     {
-      type: 'address',
-      title: address
+      type: 'email',
+      title: email
     }
   ]
+
   const documents: typeDocument[] = [
     {
       url: '',
