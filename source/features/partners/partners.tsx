@@ -6,7 +6,7 @@ export const GetPartners: FC<typePartnersProps & { header?: string }> = ({ partn
   return (
     <>
       <div id="partners">
-        <h1>{header}</h1>
+        <h2>{header}</h2>
       </div>
 
       <Partners partners={partners} />

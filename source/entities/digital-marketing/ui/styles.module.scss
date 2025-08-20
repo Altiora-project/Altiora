@@ -6,6 +6,7 @@
 .description {
   font-size: 12px;
   white-space: pre-line;
+  color: var(--color-grey);
 }
 
 .title {
@@ -57,6 +58,7 @@
 
   .description {
     font-size: 16px;
+    color: var(--color-white);
   }
 
   .button {
@@ -102,6 +104,7 @@
     font-weight: 400;
     white-space: initial;
     inline-size: 1432px;
+    color: var(--color-grey);
   }
 
   .title {
