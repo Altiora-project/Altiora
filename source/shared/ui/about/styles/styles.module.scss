@@ -80,9 +80,11 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://w
 .cardContent {
   font-size: 12px !important;
   line-height: 120%;
+
   @include bp.tablet {
     font-size: clamp(0.6875rem, 0.178rem + 1.1017vw, 1.5rem) !important;
   }
+
   @include bp.desktop {
     font-size: 24px !important;
   }
@@ -112,6 +114,7 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://w
     vertical-align: bottom;
     font-size: clamp(0.6875rem, 0.178rem + 1.1017vw, 1.5rem);
   }
+
   @include bp.desktop {
     -webkit-border-radius: 40px;
     -moz-border-radius: 40px;
@@ -194,6 +197,7 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://w
 
 .secondCard {
   padding-inline: 10px;
+
   @include bp.tablet {
     padding-inline: 24px;
     -ms-grid-row: 1;
@@ -207,6 +211,7 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://w
 
 .thirdCard {
   line-height: 60%;
+
   @include bp.tablet {
     -ms-grid-row: 1;
     -ms-grid-column: 5;
@@ -226,6 +231,7 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://w
 
 .fifthCard {
   padding-inline: 6px;
+
   @include bp.tablet {
     padding-inline: 6px;
     -ms-grid-row: 2;
@@ -249,6 +255,7 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://w
     min-height: 145px;
     max-height: 250px;
   }
+
   @include bp.desktop {
     min-width: 731px;
     height: 264px;
@@ -258,12 +265,14 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://w
 .sixthCard {
   width: 100%;
   background-color: transparent;
+
   @include bp.tablet {
     -ms-grid-row: 3;
     -ms-grid-column: 4;
     -ms-grid-column-span: 3;
     grid-area: x;
   }
+
   @include bp.desktop {
     min-width: 731px;
   }
@@ -353,10 +362,12 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://w
   z-index: 3;
   height: 131px;
   width: 131px;
+
   @include bp.tablet {
     height: 207px;
     width: 207px;
   }
+
   @include bp.desktop {
     height: 350px;
     width: 350px;
@@ -372,9 +383,9 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://w
     background-image: $bg-image;
     background-color: var(--color-background1);
     padding: 0.75rem;
+    border-radius: 20px 20px 20px 0;
     -webkit-border-radius: 20px 20px 20px 0;
     -moz-border-radius: 20px 20px 20px 0;
-    border-radius: 20px 20px 20px 0;
 
     @include bp.tablet {
       padding: 20px 20px 10px 20px;
@@ -382,9 +393,9 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://w
 
     @include bp.desktop {
       padding: 48px 48px 30px 48px;
+      border-radius: 40px 40px 40px 0;
       -webkit-border-radius: 40px 40px 40px 0;
       -moz-border-radius: 40px 40px 40px 0;
-      border-radius: 40px 40px 40px 0;
     }
   }
 
@@ -392,11 +403,11 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://w
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: stretch;
-    -ms-flex-align: stretch;
     align-items: stretch;
     position: relative;
     height: max-content;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
 
     .bottomContent {
       position: relative;
@@ -415,28 +426,15 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://w
     }
 
     .space {
-      -webkit-flex-grow: 1;
-      -ms-flex-positive: 1;
-      flex-grow: 1;
-      -webkit-border-radius: 0 0 30px 20px;
-      -moz-border-radius: 0 0 30px 20px;
-      border-radius: 0 0 30px 20px;
-
-      @include bp.tablet {
-        -webkit-border-radius: 0 0 30px 40px;
-        -moz-border-radius: 0 0 30px 40px;
-        border-radius: 0 0 30px 40px;
-      }
-
-      @include bp.desktop {
-        -webkit-border-radius: 0 0 30px 20px;
-        -moz-border-radius: 0 0 30px 20px;
-        border-radius: 0 0 30px 20px;
-      }
-
-      position: relative;
       background-color: var(--color-background1);
       background-image: $bg-image;
+      border-radius: 0 0 30px 20px;
+      position: relative;
+      flex-grow: 1;
+      -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+      -webkit-border-radius: 0 0 30px 20px;
+      -moz-border-radius: 0 0 30px 20px;
 
       &::after {
         content: '';
@@ -447,9 +445,8 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://w
         height: $radius;
         background-color: var(--color-background1);
         background-image: $bg-image;
-
-        -webkit-clip-path: polygon(0% 0%, 200% 0%, 0% 100%);
         clip-path: polygon(0% 0%, 200% 0%, 0% 100%);
+        -webkit-clip-path: polygon(0% 0%, 200% 0%, 0% 100%);
 
         @supports (
           (
@@ -492,6 +489,18 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://w
           mask-mode: alpha;
         }
       }
+
+      @include bp.tablet {
+        border-radius: 0 0 30px 40px;
+        -webkit-border-radius: 0 0 30px 40px;
+        -moz-border-radius: 0 0 30px 40px;
+      }
+
+      @include bp.desktop {
+        border-radius: 0 0 30px 20px;
+        -webkit-border-radius: 0 0 30px 20px;
+        -moz-border-radius: 0 0 30px 20px;
+      }
     }
   }
 }
@@ -532,7 +541,6 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://w
 
 .whiteText {
   color: var(--color-grey);
-
   line-height: 100%;
 
   @include bp.tablet {
@@ -560,6 +568,7 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://w
 .greyText {
   color: var(--color-grey2);
   line-height: 130%;
+
   @include bp.tablet {
   }
 
@@ -617,6 +626,7 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://w
 
 .titleFontNormal {
   font-size: 12px;
+
   @include bp.tablet {
     font-size: 11px;
   }

@@ -28,8 +28,13 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
   // if (!pageData?.services_data || !pageData.hero_title || !pageData.hero_image || !pageData.case_studies_data) {
   //   return <NotFound />
   // }
+  const labCards = Array.isArray(pageData?.labcart_data) ? pageData?.labcart_data : []
 
-  // const phrases = pageData.services_data.map(service => service.name)
+  const slides = Array.isArray(pageData.case_studies_data) ? pageData?.case_studies_data : []
+
+  const aboutData = [pageData.about_title, pageData.about_text, pageData.highlight_1, pageData.highlight_2]
+
+  const phrases = Array.isArray(pageData.services_running_line) ? pageData.services_running_line : [] //services_data.map(service => service.name)
 
   const services = pageData.services_data.map(service => {
     return {
@@ -44,25 +49,21 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
 
   return (
     <div className={clsx(classes.wrapper, className)} {...otherProps}>
-      <HeroSection title={pageData.hero_title} imgUrl={pageData.hero_image} phrases={pageData.services_running_line} />
+      <HeroSection title={pageData.hero_title} imgUrl={pageData.hero_image} phrases={phrases} />
 
       <div className={clsx(classes.container)}>
         <div id="company">
-          <GetAbout data={[pageData.about_title, pageData.about_text, pageData.highlight_1, pageData.highlight_2]} />
+          <GetAbout data={aboutData} />
         </div>
 
         <div className={clsx(classes.content)} id="services">
-          <ServicesPromoBlock
-            title={pageData.services_section_title}
-            slides={Array.isArray(pageData.case_studies_data) ? pageData.case_studies_data : []}
-            services={services}
-          />
+          <ServicesPromoBlock title={pageData.services_section_title} slides={slides} services={services} />
         </div>
 
         <div className={clsx(classes.content)} id="laboratory">
           <StartupLab
             cardCount={3}
-            cards={pageData?.labcart_data}
+            cards={labCards}
             info1={pageData?.lab_description}
             info2={pageData?.lab_description_ps}
             contactURL="#form"
