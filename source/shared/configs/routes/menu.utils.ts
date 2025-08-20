@@ -1,11 +1,12 @@
 import { routes, createAppRoute } from '@shared/configs/routes'
 
 type AnchorMap = {
-  [key: string]: { page: 'mainPage' | 'other'; anchor?: string; url?: string; useAnchorOnMain?: boolean }
+  [key: string]: { page?: 'mainPage' | 'other'; anchor?: string; url?: string; useAnchorOnMain?: boolean }
 }
 
 // Настраиваем пункты меню
 const anchors: AnchorMap = {
+  Компания: { page: 'mainPage', anchor: 'company' }, // якорь на главной
   Партнеры: { page: 'mainPage', anchor: 'partners' },
   Контакты: { page: 'mainPage', anchor: 'contacts' },
   Услуги: { page: 'other', url: routes.services, useAnchorOnMain: true, anchor: 'services' },

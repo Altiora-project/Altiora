@@ -5,7 +5,7 @@ import { getMenuUrl } from '@shared/configs/routes/menu.utils'
 const isMainPage = true
 
 export const mainMenu: typeMainMenuItem[] = [
-  { label: 'Кто мы', url: getMenuUrl('Кто мы', routes.company, isMainPage) },
+  { label: 'Кто мы', url: getMenuUrl('Компания', routes.company, isMainPage) },
   { label: 'Наши услуги', url: getMenuUrl('Услуги', routes.services, isMainPage) },
   {
     label: 'Комплексные решения',
