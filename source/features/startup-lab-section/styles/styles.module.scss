@@ -34,16 +34,16 @@
 .content {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 0;
   width: 100%;
   padding: 0;
 
   @include bp.tablet {
-    gap: 24px;
+    gap: 0;
   }
 
   @include bp.desktop {
-    gap: 40px;
+    gap: 0;
   }
 }
 
@@ -71,15 +71,15 @@
 
 .cardsTitle {
   font-size: 15px;
-  font-weight: 700;
-  font-family: var(--font-main);
+  font-weight: 400;
+  font-family: var(--font-main); 
   color: var(--color-accent-primary);
   text-transform: none;
-  padding: 10px 0;
+  padding: 25px 0 10px 0;
 
   @include bp.tablet {
     font-size: 16px;
-    padding: 24px 0;
+    padding: 24px 0 24px 0;
   }
 
   @include bp.desktop {
@@ -93,14 +93,18 @@
   grid-template-columns: 1fr;
   gap: 8px;
   width: 100%;
+  padding-bottom: 15px;
+
 
   @include bp.tablet {
     gap: 24px;
+    padding-bottom: 24px;
   }
 
   @include bp.desktop {
     grid-template-columns: repeat(auto-fit, minmax(552px, 1fr));
     gap: 24px;
+    padding-bottom: 32px;
   }
 }
 
