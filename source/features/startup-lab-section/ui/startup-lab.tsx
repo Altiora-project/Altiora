@@ -70,7 +70,7 @@ export const StartupLab: FC<StartupLabProps> = ({ cards, cardCount, info1, info2
 
         <Link href={contactURL}>
           <Button variant="primary" className={classes.bottomButton}>
-            Связаться<span className={classes.buttonFullText}> с нами</span>
+            Связаться с нами
           </Button>
         </Link>
       </div>
