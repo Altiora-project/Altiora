@@ -106,8 +106,20 @@
 
 .button {
   width: 100%;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 .buttonText {
   display: inline-block;
+  font-size: 11px;
+  text-transform: uppercase;
+
+  @include bp.tablet {
+    font-size: 13px;
+  }
+
+  @include bp.desktop {
+    font-size: 16px;
+  }
 }

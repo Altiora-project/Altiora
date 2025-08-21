@@ -52,10 +52,11 @@
     color: #e7d6c6;
   }
 
-  &:disabled {
+  &:disabled { 
     background: #666666;
-    color: #2f2f2f4d;
-    opacity: 0.3;
+    color: rgba(47, 47, 47, 0.3);
+
+    //opacity: 0.3;
     cursor: not-allowed;
   }
 }
