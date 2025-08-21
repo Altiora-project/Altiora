@@ -8,5 +8,6 @@ export const routes = {
   contacs: '/contacts',
   digital: '/digital',
   tokenization: '/tokenization',
-  laboratory: '/laboratory'
+  laboratory: '/laboratory',
+  error: '/error'
 } as const
