@@ -132,9 +132,11 @@ export const About: FC<typeAboutDataProps> = ({ data }) => {
           <div className={classes.space}></div>
           <div className={classes.bottomContent}>
             <div>
-              <Button disabled={false} onClick={() => {}} className={classes.button}>
-                {offset < 1919 ? 'связаться' : 'связаться с нами'}
-              </Button>
+              <a href="/#form">
+                <Button disabled={false} onClick={() => {}} className={classes.button}>
+                  {offset < 1919 ? 'связаться' : 'связаться с нами'}
+                </Button>
+              </a>
             </div>
           </div>
         </div>
