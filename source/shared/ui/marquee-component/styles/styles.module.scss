@@ -10,16 +10,19 @@
   text-transform: uppercase;
   color: var(--color-foreground);
   margin-top: 2.5rem;
+  margin-bottom: 150px;
 
   @include bp.tablet {
     height: 48px;
     margin-top: 2.375rem;
+    margin-bottom: 60px;
   }
 
   @include bp.desktop {
     font-size: 16px;
     height: 72px;
     margin-top: 2rem;
+    margin-bottom: 40px;
   }
 }
 

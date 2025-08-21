@@ -48,7 +48,6 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://w
   }
 
   @include bp.desktop {
-    margin-block-start: 150px;
     max-width: 1800px;
     -webkit-gap: 32px;
     -ms-gap: 32px;
