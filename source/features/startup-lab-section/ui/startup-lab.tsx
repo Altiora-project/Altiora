@@ -91,12 +91,12 @@ export const StartupLab: FC<StartupLabProps> = ({ cards, cardCount, info1, info2
         bottomContent={renderBottomContent(true)}
       >
         <div className={classes.content}>
-          <p className={classes.infoText}>{info1}</p>
+          <MarkdownRenderer className={classes.markdown} content={info1} />
           <div className={classes.cards}>
             <h3 className={classes.cardsTitle}>Что мы предлагаем:</h3>
             {renderCards()}
           </div>
-          <p className={classes.infoText}>{info2}</p>
+          <MarkdownRenderer className={classes.markdown} content={info2} />
           {renderBottomContent(false)}
         </div>
       </MainBlock>
@@ -105,7 +105,7 @@ export const StartupLab: FC<StartupLabProps> = ({ cards, cardCount, info1, info2
       <Modal isOpen={isModalOpen} setIsOpen={setIsModalOpen} title={title} withCloseButton={true}>
         <div
           className={classes.modalContent}
-          //style={{ padding: '20px', maxHeight: '70vh', overflow: 'auto' }}
+        //style={{ padding: '20px', maxHeight: '70vh', overflow: 'auto' }}
         >
           {isLoading ? (
             <div>Загрузка данных...</div>
