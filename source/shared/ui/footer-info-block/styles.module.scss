@@ -35,9 +35,3 @@
     gap: 20px;
   }
 }
-
-.year {
-  @include bp.desktop {
-    display: none;
-  }
-}
