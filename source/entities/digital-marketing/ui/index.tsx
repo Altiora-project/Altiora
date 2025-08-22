@@ -36,9 +36,9 @@ const DigitalMarketing: FC<typeDigitalMarketingProps> = ({ cards }) => {
   }
 
   return (
-    <div className={styles.container} id="services">
+    <div className={styles.container} id={'digital'}>
       <MainBlock
-        topContent={<h2 id="digital">{text.title}</h2>}
+        topContent={<h2>{text.title}</h2>}
         bottomContent={bottomContent()}
         bottomStyles={styles.bottomContainer}
       >

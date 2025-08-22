@@ -21,7 +21,7 @@ export const ServiceDetails: FC<typeServiceDetailsProps> = async ({ slug, classN
   if ('error' in response) return <NotFound />
 
   const pageData = response.data.data
-  console.log('pageData>>>>>>>>', pageData)
+
   const content = pageData.content
 
   return (

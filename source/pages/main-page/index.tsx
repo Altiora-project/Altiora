@@ -51,45 +51,38 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
     <div className={clsx(classes.wrapper, className)} {...otherProps}>
       <HeroSection title={pageData.hero_title} imgUrl={pageData.hero_image} phrases={phrases} />
 
-      <div className={clsx(classes.container)}>
-        <div id="company">
-          <GetAbout data={aboutData} />
-        </div>
+      <div className={'container'}>
+        <GetAbout data={aboutData} />
 
-        <div className={clsx(classes.content)} id="services">
-          <ServicesPromoBlock title={pageData.services_section_title} slides={slides} services={services} />
-        </div>
+        <ServicesPromoBlock
+          title={pageData.services_section_title}
+          slides={slides}
+          services={services}
+          id={'services'}
+        />
 
-        <div className={clsx(classes.content)} id="laboratory">
-          <StartupLab
-            cardCount={3}
-            cards={labCards}
-            info1={pageData?.lab_description}
-            info2={pageData?.lab_description_ps}
-            contactURL="#form"
-          />
-        </div>
+        <StartupLab
+          cardCount={3}
+          cards={labCards}
+          info1={pageData?.lab_description}
+          info2={pageData?.lab_description_ps}
+          contactURL="#form"
+        />
 
-        <div className={clsx(classes.content)} id="digital">
-          <DigitalMarketing cards={pageData?.labcart_data} />
-        </div>
+        <DigitalMarketing cards={pageData?.labcart_data} />
 
-        <div className={clsx(classes.content, classes.container)} id="tokenization">
-          <VideoFeature
-            title={pageData.tokenization_title}
-            description={pageData.tokenization_description}
-            video={pageData.tokenization_video_url}
-            more={pageData.tokenization_links}
-          />
-        </div>
+        <VideoFeature
+          title={pageData.tokenization_title}
+          description={pageData.tokenization_description}
+          video={pageData.tokenization_video_url}
+          more={pageData.tokenization_links}
+        />
+      </div>
 
-        <div className={clsx(classes.content, classes.partnersSection)} id="partners">
-          <GetPartners header={pageData.partners_section_title} partners={pageData.partners_data} />
-        </div>
+      <GetPartners header={pageData.partners_section_title} partners={pageData.partners_data} />
 
-        <div id="form">
-          <OrderForm />
-        </div>
+      <div className={'container'}>
+        <OrderForm />
 
         <Footer title={pageData.contacts_title} />
       </div>

@@ -31,7 +31,21 @@
 }
 
 .bottomContainer {
+  position: relative;
   display: block;
+  visibility: visible;
+
+  @include bp.tablet {
+    position: absolute !important;
+    display: none;
+    visibility: hidden;
+  }
+
+  @include bp.desktop {
+    position: relative !important;
+    display: block;
+    visibility: visible;
+  }
 }
 
 .hidden {
@@ -40,11 +54,6 @@
 }
 
 @include bp.tablet {
-  .bottomContainer {
-    display: none;
-    visibility: hidden;
-  }
-
   .cards {
     gap: 24px;
   }
@@ -89,14 +98,15 @@
 }
 
 @include bp.desktop {
-  .bottomContainer {
-    display: block;
-    visibility: initial;
-  }
+  // .bottomContainer {
+  //   position: relative;
+  //   display: block;
+  //   visibility: initial;
+  // }
 
   .cards {
     grid-template-columns: repeat(3, 552px);
-    margin-block-end: 35px;
+    // margin-block-end: 35px;
   }
 
   .description {

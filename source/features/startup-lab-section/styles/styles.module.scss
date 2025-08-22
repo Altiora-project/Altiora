@@ -1,14 +1,18 @@
-@include bp.tablet {
-  .bottomContainer {
+.bottomContainer {
+  position: relative;
+  display: block;
+  visibility: visible;
+
+  @include bp.tablet {
+    position: absolute !important;
     display: none;
     visibility: hidden;
   }
-}
 
-@include bp.desktop {
-  .bottomContainer {
+  @include bp.desktop {
+    position: relative !important;
     display: block;
-    visibility: initial;
+    visibility: visible;
   }
 }
 

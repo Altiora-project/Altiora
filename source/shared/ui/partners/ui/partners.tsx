@@ -1,9 +1,10 @@
 import { FC } from 'react'
+
 import classes from '../styles/styles.module.scss'
 import { typePartnersProps } from '../types'
-import Marquee from 'react-fast-marquee'
 import clsx from 'clsx'
 import Link from 'next/link'
+import Marquee from 'react-fast-marquee'
 
 export const Partners: FC<typePartnersProps> = ({ partners }) => {
   const displayPartners =
@@ -19,9 +20,9 @@ export const Partners: FC<typePartnersProps> = ({ partners }) => {
             className={clsx(classes.marquee, item % 2 === 0 ? classes.marqueeLeft : classes.marqueeRight)}
             direction={item % 2 === 0 ? 'left' : 'right'}
           >
-            {displayPartners.map(phrase => {
+            {displayPartners.map((phrase, index) => {
               return (
-                <div className={classes.dataContainer}>
+                <div className={classes.dataContainer} key={index}>
                   <Link
                     key={phrase.id}
                     href={phrase.website}

@@ -58,11 +58,7 @@ const Input: React.FC<InputProps> = ({
       <div className={styles.inputContent} style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
         <input
           ref={inputRef}
-          className={
-            clsx(styles.inputField,
-              error && styles.error,
-              inputValue && !error && styles.valid
-            )}
+          className={clsx(styles.inputField, error && styles.error, inputValue && !error && styles.valid)}
           type={type}
           name={name}
           placeholder={placeholder}
