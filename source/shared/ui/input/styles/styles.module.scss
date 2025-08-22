@@ -107,6 +107,11 @@
   border-bottom: 3px solid #e15d5d;
 }
 
+.inputField.valid {
+  border-bottom: 3px solid #5de19c;
+}
+
+
 .supportingText {
   color: #fff;
   font-family: 'manropeFont', sans-serif;
@@ -119,6 +124,16 @@
 .supportingText.error {
   color: #e15d5d;
 }
+
+.clearButton {
+  display: none;
+}
+
+// Показываем кнопку только когда input в фокусе
+.inputContent:focus-within .clearButton {
+  display: flex;
+}
+
 
 /* Стили для автозаполнения */
 .inputField:-webkit-autofill,
