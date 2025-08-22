@@ -97,7 +97,7 @@ export const OrderForm: FC = () => {
               label="E-mail адрес"
               id="email"
               type="email"
-              placeholder="name@example.com"
+              placeholder="name@example.ru"
               supportingText="ваша электронная почта"
               error={!!errors.email}
               onClear={() => setValue('email', '', { shouldValidate: true })}
