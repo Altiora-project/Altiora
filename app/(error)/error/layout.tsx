@@ -14,17 +14,15 @@ export const metadata: Metadata = {
   description: 'Страница ошибки'
 }
 
-const ErrorLayout: FC<PropsWithChildren> = ({ children }) => {
-  return (
-    <html lang="en">
-      <body className={clsx(`${manropeFont.variable} ${drukWideCyrFont.variable}`, 'bg')}>
-        <NextTopLoader color="#000000" shadow={false} showSpinner={false} />
-        <Header menuList={mainMenu} />
-        <main>{children}</main>
-        <Footer title="Контакты" className="footer" />
-      </body>
-    </html>
-  )
-}
+const ErrorLayout: FC<PropsWithChildren> = ({ children }) => (
+  <html lang="en">
+    <body className={clsx(`${manropeFont.variable} ${drukWideCyrFont.variable}`, 'bg')}>
+      <NextTopLoader color="#000000" shadow={false} showSpinner={false} />
+      <Header menuList={mainMenu} />
+      <main>{children}</main>
+      <Footer title="Контакты" className="footer" />
+    </body>
+  </html>
+)
 
 export default ErrorLayout
