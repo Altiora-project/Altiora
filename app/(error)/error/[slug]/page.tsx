@@ -1,18 +1,13 @@
 'use client'
 
-import { FC } from 'react'
 import { ErrorCard } from '@shared/ui/error'
 
-type ErrorSlugPageProps = {
-  params: { slug: string }
+export default function ErrorSlugPage({ params }: { params: { slug: string } }) {
+  return (
+    <ErrorCard
+      field="Что-то пошло не так"
+      text={`Ошибка: ${params.slug}. Давайте попробуем еще раз`}
+      onClick={() => window.location.reload()}
+    />
+  )
 }
-
-const ErrorSlugPage: FC<ErrorSlugPageProps> = ({ params }) => (
-  <ErrorCard
-    field="Что-то пошло не так"
-    text={`Ошибка: ${params.slug}. Давайте попробуем еще раз`}
-    onClick={() => window.location.reload()}
-  />
-)
-
-export default ErrorSlugPage

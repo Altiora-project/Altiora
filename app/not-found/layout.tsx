@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren } from 'react'
+import { PropsWithChildren } from 'react'
 import '@app/styles/globals.scss'
 import type { Metadata } from 'next'
 import NextTopLoader from 'nextjs-toploader'
@@ -14,15 +14,15 @@ export const metadata: Metadata = {
   description: 'Страница не найдена'
 }
 
-const NotFoundLayout: FC<PropsWithChildren> = ({ children }) => (
-  <html lang="en">
-    <body className={clsx(`${manropeFont.variable} ${drukWideCyrFont.variable}`, 'bg')}>
-      <NextTopLoader color="#000000" shadow={false} showSpinner={false} />
-      <Header menuList={mainMenu} />
-      <main>{children}</main>
-      <Footer title="Контакты" className="footer" />
-    </body>
-  </html>
-)
-
-export default NotFoundLayout
+export default function NotFoundLayout({ children }: PropsWithChildren) {
+  return (
+    <html lang="en">
+      <body className={clsx(`${manropeFont.variable} ${drukWideCyrFont.variable}`, 'bg')}>
+        <NextTopLoader color="#000000" shadow={false} showSpinner={false} />
+        <Header menuList={mainMenu} />
+        <main>{children}</main>
+        <Footer title="Контакты" className="footer" />
+      </body>
+    </html>
+  )
+}
