@@ -18,7 +18,15 @@ import { Button } from '@shared/ui/button'
 import { Modal } from '@shared/ui/modal'
 import { StartupLabMenu } from '@shared/ui/startup-lab-menu'
 
-export const StartupLab: FC<StartupLabProps> = ({ cards, cardCount, info1, info2, contactURL }) => {
+export const StartupLab: FC<StartupLabProps> = ({
+  cards,
+  cardCount,
+  info1,
+  info2,
+  contactURL,
+  className,
+  ...otherProps
+}) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [technologiesData, setTechnologiesData] = useState<typeApiResponse<typeTechnologiesResponse> | null>(null)
   const [isLoading, setIsLoading] = useState(false)
@@ -80,14 +88,10 @@ export const StartupLab: FC<StartupLabProps> = ({ cards, cardCount, info1, info2
   const title = '/лаборатория стартапов'
 
   return (
-    <>
+    <div className={className} id={'laboratory'} {...otherProps}>
       <MainBlock
         bottomStyles={classes.bottomContainer}
-        topContent={
-          <h2 className={classes.title} id="laboratory">
-            {title}
-          </h2>
-        }
+        topContent={<h2 className={classes.title}>{title}</h2>}
         bottomContent={renderBottomContent(true)}
       >
         <div className={classes.content}>
@@ -130,7 +134,7 @@ export const StartupLab: FC<StartupLabProps> = ({ cards, cardCount, info1, info2
           )}
         </div>
       </Modal>
-    </>
+    </div>
   )
 }
 

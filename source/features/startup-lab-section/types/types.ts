@@ -1,6 +1,8 @@
 // import { typeTechnologiesResponse } from '@entities/technologies'
 // import { typeApiResponse } from '@shared/lib/api/types/types'
 
+import { HTMLAttributes } from 'react'
+
 export interface StartupLabCard {
   imageLink: string
   title: string
@@ -14,7 +16,7 @@ interface LabCard {
   description: string
 }
 
-export interface StartupLabProps {
+export interface StartupLabProps extends HTMLAttributes<HTMLDivElement> {
   info1: string
   cards: LabCard[] //StartupLabCard[]
   cardCount: number

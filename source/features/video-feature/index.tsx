@@ -1,10 +1,11 @@
 'use client'
 
-import { FC, useEffect, useState } from 'react'
+import { FC, HTMLAttributes, useEffect, useState } from 'react'
 
 import data from './data'
 import moreIcon from './moreIcon.svg'
 import styles from './styles.module.scss'
+import clsx from 'clsx'
 import Image from 'next/image'
 
 export type videoData<T = string> = {
@@ -15,9 +16,9 @@ export type videoData<T = string> = {
   links?: {
     [key: string]: T[]
   }
-}
+} & HTMLAttributes<HTMLDivElement>
 
-const VideoFeature: FC<videoData> = ({ title, description, video }) => {
+const VideoFeature: FC<videoData> = ({ title, description, video, className, ...otherProps }) => {
   const [isFile, setIsFile] = useState(false)
 
   useEffect(() => {
@@ -29,7 +30,7 @@ const VideoFeature: FC<videoData> = ({ title, description, video }) => {
   if (!data) return null
 
   return (
-    <div className={styles.container}>
+    <div id="tokenization" className={clsx(styles.container, className)} {...otherProps}>
       <h2 className={styles.title}>{title}</h2>
       <p className={styles.description}>{description}</p>
       <div className={styles.video}>
