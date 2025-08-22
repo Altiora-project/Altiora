@@ -8,6 +8,7 @@ import { mainMenu } from '@app/configs/main-menu.config'
 import { drukWideCyrFont, manropeFont } from '@app/fonts'
 
 import { Header } from '@widgets/header'
+import { RedirectAfterReload } from '@shared/ui/redirect-after-reload/RedirectAfterReload'
 
 export const metadata: Metadata = {
   title: 'Nextjs project',
@@ -22,6 +23,7 @@ const RootLayout: FC<React.PropsWithChildren & { modal: React.ReactNode }> = ({ 
         <Header menuList={mainMenu} />
         <main>{children}</main>
         {modal}
+        <RedirectAfterReload />
       </body>
     </html>
   )

@@ -21,7 +21,7 @@ export default function ErrorLayout({ children }: PropsWithChildren) {
     <html lang="en">
       <body className={clsx(`${manropeFont.variable} ${drukWideCyrFont.variable}`, 'bg')}>
         <NextTopLoader color="#000000" shadow={false} showSpinner={false} />
-        <Header menuList={mainMenu} />
+        <Header menuList={mainMenu} isErrorPage />
         <main>{children}</main>
         <Footer title="Контакты" className="footer" />
       </body>
