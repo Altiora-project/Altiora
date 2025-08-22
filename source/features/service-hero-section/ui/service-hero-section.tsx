@@ -12,11 +12,13 @@ export const ServiceHeroSection: React.FC<{ pageData: ServiceDetails }> = ({ pag
       <div className={classes.heroSection}>
         <div className={classes.heroSection__info}>
           <p className={classes.heroSection__description}>{pageData.info}</p>
-          {pageData.tags?.map((tag, index) => (
-            <div className={classes.heroSection__tags} key={index}>
-              <span className={classes.heroSection__tag}>{tag.name}</span>
-            </div>
-          ))}
+          <div className={classes.heroSection__tags}>
+            {pageData.tags?.map((tag, index) => (
+              <span key={index} className={classes.heroSection__tag}>
+                {tag.name}
+              </span>
+            ))}
+          </div>
         </div>
         <Slider
           cards={pageData.case_studies.map((caseStudy, index) => (
