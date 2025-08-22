@@ -2,7 +2,13 @@
 
 import { ErrorCard } from '@shared/ui/error'
 
-export default function ErrorSlugPage({ params }: { params: { slug: string } }) {
+type ErrorSlugPageProps = {
+  params: {
+    slug: string
+  }
+}
+
+export default function ErrorSlugPage({ params }: ErrorSlugPageProps) {
   return (
     <ErrorCard
       field="Что-то пошло не так"

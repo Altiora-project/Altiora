@@ -1,13 +1,15 @@
 import { PropsWithChildren } from 'react'
+
 import '@app/styles/globals.scss'
+import clsx from 'clsx'
 import type { Metadata } from 'next'
 import NextTopLoader from 'nextjs-toploader'
-import clsx from 'clsx'
 
 import { mainMenu } from '@app/configs/main-menu.config'
 import { drukWideCyrFont, manropeFont } from '@app/fonts'
-import { Header } from '@widgets/header'
+
 import { Footer } from '@widgets/footer'
+import { Header } from '@widgets/header'
 
 export const metadata: Metadata = {
   title: 'Error | Nextjs project',
