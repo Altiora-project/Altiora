@@ -1,12 +1,12 @@
 import { FC } from 'react'
-
-import '@app/styles/globals.scss'
 import type { Metadata } from 'next'
 import NextTopLoader from 'nextjs-toploader'
 
+import '@app/styles/globals.scss'
+
 import { mainMenu } from '@app/configs/main-menu.config'
 import { drukWideCyrFont, manropeFont } from '@app/fonts'
-
+import { RedirectAfterReload } from '@shared/ui/redirect-after-reload/RedirectAfterReload'
 import { Header } from '@widgets/header'
 
 export const metadata: Metadata = {
@@ -22,6 +22,7 @@ const RootLayout: FC<React.PropsWithChildren & { modal: React.ReactNode }> = ({ 
         <Header menuList={mainMenu} />
         <main>{children}</main>
         {modal}
+        <RedirectAfterReload />
       </body>
     </html>
   )

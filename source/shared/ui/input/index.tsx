@@ -2,6 +2,7 @@
 
 import React, { InputHTMLAttributes, useRef } from 'react'
 import styles from './styles/styles.module.scss'
+import clsx from 'clsx'
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   error?: boolean
@@ -57,7 +58,11 @@ const Input: React.FC<InputProps> = ({
       <div className={styles.inputContent} style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
         <input
           ref={inputRef}
-          className={`${styles.inputField} ${error ? styles.error : ''}`}
+          className={
+            clsx(styles.inputField,
+              error && styles.error,
+              inputValue && !error && styles.valid
+            )}
           type={type}
           name={name}
           placeholder={placeholder}
@@ -78,7 +83,6 @@ const Input: React.FC<InputProps> = ({
               border: 'none',
               cursor: 'pointer',
               padding: 0,
-              display: 'flex',
               alignItems: 'start',
               height: '100%'
             }}
