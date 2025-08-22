@@ -21,6 +21,7 @@ $bg-color: var(--color-background1);
   color: var(--color-accent-primary);
   font-weight: 700;
   margin: 0;
+  text-transform: lowercase;
 }
 
 .card {
@@ -111,10 +112,5 @@ $bg-color: var(--color-background1);
 .cardBlock {
   :global([class*='content']) {
     flex: 1 !important;
-    border-bottom-left-radius: 16px !important;
-  }
-
-  :global([class*='topContent']) {
-    padding-bottom: 12px !important;
   }
 }
