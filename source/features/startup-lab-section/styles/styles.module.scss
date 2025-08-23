@@ -135,7 +135,6 @@
 .bottomAsFooter {
   display: none;
 
-
   @include bp.tablet {
     display: grid;
     width: 100%;
