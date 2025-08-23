@@ -89,6 +89,29 @@
   }
 }
 
+.secondary-black {
+  background: var(--color-background);
+  color: #fefefe;
+
+  &:hover {
+    color: #50f195;
+  }
+
+  &:focus-visible {
+    color: #50f195;
+  }
+
+  &:active {
+    color: #59bb83;
+  }
+
+  &:disabled {
+    color: #2f2f2f4d;
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+}
+
 .tertiary {
   background: #666666;
   color: #fefefe;
