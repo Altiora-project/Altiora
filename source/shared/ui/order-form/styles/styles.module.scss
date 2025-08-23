@@ -93,8 +93,7 @@
 }
 
 .buttonMobileTablet {
-  margin-left: 24px;
-  margin-right: 24px;
+  margin: 16px auto 8px;
   display: flex;
   align-items: stretch;
   flex-shrink: 1;
@@ -121,5 +120,20 @@
 
   @include bp.desktop {
     font-size: 16px;
+  }
+}
+
+.bottomStyles {
+  display: none;
+  visibility: hidden;
+
+  @include bp.tablet {
+    display: none;
+    visibility: hidden;
+  }
+
+  @include bp.desktop {
+    display: flex;
+    visibility: visible;
   }
 }
