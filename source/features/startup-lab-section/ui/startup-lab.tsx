@@ -68,17 +68,17 @@ export const StartupLab: FC<StartupLabProps> = ({
     return (
       <div className={clsx(classes.bottomContent, asMain ? classes.bottomAsMain : classes.bottomAsFooter)}>
         <Button
-          variant="secondary"
+          variant={asMain ? "secondary" : "secondary-black"}
           onClick={handleTechnologiesClick}
           disabled={isLoading}
-          className={classes.bottomButton}
+          className={clsx(classes.bottomButton, !asMain && classes.bottomButtonAsFooter)}
         >
           {isLoading ? 'Загрузка...' : 'Подробнее'}
         </Button>
 
-        <Link href={contactURL}>
-          <Button variant="primary" className={classes.bottomButton}>
-            Связаться с нами
+        <Link href={contactURL} className={clsx(!asMain && classes.bottomButtonAsFooter)}>
+          <Button variant="primary" className={clsx(classes.bottomButton, !asMain && classes.bottomSubButtonAsFooter)}>
+            Связаться&nbsp;<span> с нами</span>
           </Button>
         </Link>
       </div>
@@ -109,7 +109,7 @@ export const StartupLab: FC<StartupLabProps> = ({
       <Modal isOpen={isModalOpen} setIsOpen={setIsModalOpen} title={title} withCloseButton={true}>
         <div
           className={classes.modalContent}
-          //style={{ padding: '20px', maxHeight: '70vh', overflow: 'auto' }}
+        //style={{ padding: '20px', maxHeight: '70vh', overflow: 'auto' }}
         >
           {isLoading ? (
             <div>Загрузка данных...</div>
