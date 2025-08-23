@@ -56,6 +56,7 @@ $radius-block-desktop: 3rem;
         black 100%
       );
     }
+
     mask-mode: alpha;
   }
 }
@@ -65,6 +66,7 @@ $radius-block-desktop: 3rem;
   flex-direction: column;
   gap: 0;
   width: min(100%, 1800px);
+  background-color: var(--color-background);
 
   @include bp.tablet {
     padding: 0px;
@@ -215,6 +217,7 @@ $radius-block-desktop: 3rem;
 
     &::before {
       @include rounded-corner('top', $radius-menu);
+
       @include bp.desktop {
         @include rounded-corner('top', $radius-menu-desktop);
       }
@@ -222,6 +225,7 @@ $radius-block-desktop: 3rem;
 
     &::after {
       @include rounded-corner('bottom', $radius-menu);
+
       @include bp.desktop {
         @include rounded-corner('bottom', $radius-menu-desktop);
       }
@@ -234,6 +238,7 @@ $radius-block-desktop: 3rem;
 
     &::after {
       @include rounded-corner('bottom', $radius-menu);
+
       @include bp.desktop {
         @include rounded-corner('bottom', $radius-menu-desktop);
       }
@@ -246,6 +251,7 @@ $radius-block-desktop: 3rem;
 
     &::before {
       @include rounded-corner('top', $radius-menu);
+
       @include bp.desktop {
         @include rounded-corner('top', $radius-menu-desktop);
       }
