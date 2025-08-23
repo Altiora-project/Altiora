@@ -50,6 +50,7 @@ $duration: 0.4s;
   font-weight: 700;
   font-size: clamp(0.875rem, 0.652rem + 0.915vw, 1.75rem);
   color: var(--color-accent-primary);
+  text-transform: initial;
 }
 
 .content {
