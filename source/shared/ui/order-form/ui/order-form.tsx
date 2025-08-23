@@ -45,6 +45,7 @@ export const OrderForm: FC = () => {
               {'/заказать проект'}
             </h2>
           }
+          bottomStyles={classes.bottomStyles}
           bottomContent={
             <div className={classes.buttonDesktop}>
               <FormButton />
@@ -124,10 +125,10 @@ export const OrderForm: FC = () => {
               </Link>
             </label>
           </div>
+          <div className={classes.buttonMobileTablet}>
+            <FormButton />
+          </div>
         </MainBlock>
-        <div className={classes.buttonMobileTablet}>
-          <FormButton />
-        </div>
       </form>
       <FormSubmitModal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
     </div>
