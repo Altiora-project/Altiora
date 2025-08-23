@@ -48,8 +48,13 @@
   }
 
   &:active {
-    background: #111;
-    color: #e7d6c6;
+    background: var(--color-accent-primary);
+    color: var(--color-foreground);
+
+    @include bp.desktop {
+      background: var(--color-background);
+      color: var(--color-white-pressesd);
+    }
   }
 
   &:disabled {
