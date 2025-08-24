@@ -100,11 +100,14 @@
     background-color: var(--color-accent-primary);
   }
 
-  &:not(:disabled):active {
-    opacity: 0.7;
-    background-color: var(--color-accent-active);
+  &:active {
+    background: var(--color-accent-primary);
     color: var(--color-foreground);
-    transform: translateY(1px);
+
+    @include bp.desktop {
+      background: var(--color-background);
+      color: var(--color-white-pressesd);
+    }
   }
 
   @include bp.tablet {
@@ -128,17 +131,21 @@
     background-color: var(--color-accent-primary);
   }
 
-  &:not(:disabled):active {
-    opacity: 0.7;
-    background-color: var(--color-accent-active);
+  &:active {
+    background: var(--color-accent-primary);
     color: var(--color-foreground);
-    transform: translateY(1px);
+
+    @include bp.desktop {
+      background: var(--color-background);
+      color: var(--color-white-pressesd);
+    }
   }
 
   &:disabled {
     cursor: not-allowed;
   }
 }
+
 
 .logoContainer {
   position: relative;
