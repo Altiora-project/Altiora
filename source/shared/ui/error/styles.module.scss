@@ -5,95 +5,48 @@
   color: #111;
   border: none;
 }
+
 .errorCard :global(button:hover),
 .errorCard :global(a:hover),
 .errorCard .button:hover {
   background: #38e07d;
 }
+
 .errorCard {
-  background: #232323;
-  border-radius: 2rem;
-  width: 100%;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  gap: clamp(1rem, 0.083rem + 3.056vi, 3.75rem);
+  background-color: #232323;
+  border-radius: 2rem;
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  box-sizing: border-box;
   align-items: center;
   justify-content: center;
   box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
-
-  position: relative;
-  overflow: hidden;
-  z-index: -11;
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('data:image/svg+xml,<svg viewBox="0 0 500 800" xmlns="http://www.w3.org/2000/svg"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)"/></svg>');
-    opacity: 0.2; // Adjust noise intensity
-  }
+  background-image: var(--noise-img);
+  padding: clamp(1rem, -0.125rem + 3.75vi, 4.375rem);
 }
 
 .field {
+  font-size: clamp(1.5rem, 0.667rem + 2.778vi, 4rem);
   font-family: 'drukWideCyrFont', sans-serif;
   font-weight: 700;
   color: #fff;
   text-align: center;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  z-index: 2;
 }
 
 .text {
+  font-size: clamp(1rem, 0.833rem + 0.556vi, 1.5rem);
   color: #fff;
   text-align: center;
   font-family: 'Manrope', sans-serif;
 }
 
-@include bp.mobile {
-  .errorCard {
-    padding: 0;
-    z-index: 3;
-  }
-  .field {
-    font-size: 24px;
-    margin-bottom: 28px;
-  }
-  .text {
-    font-size: 16px;
-    margin-bottom: 52px;
-  }
-}
-
-@include bp.tablet {
-  .errorCard {
-    padding: 0;
-    z-index: 3;
-  }
-  .field {
-    font-size: 30px;
-    margin-bottom: 23px;
-  }
-  .text {
-    font-size: 16px;
-    margin-bottom: 49px;
-  }
-}
-
-@include bp.desktop {
-  .errorCard {
-    padding: 215px 296px;
-    z-index: 3;
-  }
-  .field {
-    font-size: 64px;
-    margin-bottom: 48px;
-  }
-  .text {
-    font-size: 24px;
-    margin-bottom: 56px;
-  }
+.buttons {
+  display: flex;
+  gap: 5rem;
 }

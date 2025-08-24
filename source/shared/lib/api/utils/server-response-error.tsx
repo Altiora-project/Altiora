@@ -12,5 +12,5 @@ export const ServerResponseError: React.FC = () => {
     router.replace(pathname)
   }
 
-  return <ErrorCard field="Что-то пошло не так" text="Давайте попробуем еще раз" onClick={refreshPage} />
+  return <ErrorCard field="Что-то пошло не так" text="Давайте попробуем еще раз" onBackClick={refreshPage} />
 }

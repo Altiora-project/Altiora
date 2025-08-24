@@ -1,10 +1,20 @@
 'use client'
 
+import { FC } from 'react'
+
+import { useRouter } from 'next/navigation'
+
 import { ErrorCard } from '@shared/ui/error'
 
-const ErrorPage: React.FC = () => {
+const ErrorPage: FC<{ error: Error; reset: () => void }> = ({ error, reset }) => {
+  const router = useRouter()
   return (
-    <ErrorCard field="Что-то пошло не так" text="Давайте попробуем еще раз" onClick={() => window.location.reload()} />
+    <ErrorCard
+      field={`Что-то пошло не\u00A0так`}
+      text={`Ошибка ${error.message}. Давайте попробуем еще раз`}
+      onBackClick={() => router.back()}
+      onReloadClick={() => reset()}
+    />
   )
 }
 
