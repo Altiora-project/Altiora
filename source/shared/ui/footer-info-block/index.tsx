@@ -1,5 +1,6 @@
 'use client'
 
+import { routes } from '@shared/configs/routes'
 import styles from './styles.module.scss'
 import { FooterInfoBlockProps } from './types'
 import clsx from 'clsx'
@@ -7,7 +8,7 @@ import Link from 'next/link'
 
 export const FooterInfoBlock: React.FC<FooterInfoBlockProps> = ({ addressDetails, linkList }) => {
   const currentYear = new Date().getFullYear()
-  console.log('LINKS LIST: ' + linkList[0].url)
+
   return (
     <div className={styles.container}>
       <div className={styles.addressBlock}>
@@ -19,7 +20,7 @@ export const FooterInfoBlock: React.FC<FooterInfoBlockProps> = ({ addressDetails
       </div>
       <div className={styles.linkBlock}>
         {linkList?.map((link, index) => (
-          <Link href={link.url} key={index} className={styles.text} target="_blank">
+          <Link href={routes.policies(link.slug)} key={index} className={styles.text} target="_blank">
             {link.title}
           </Link>
         ))}

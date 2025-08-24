@@ -6,9 +6,11 @@ import { getSiteSettingsAction } from '@entities/footer'
 
 import { Contacts } from '@shared/ui/contacts-list/ui/contacts-list'
 import { FooterInfoBlock } from '@shared/ui/footer-info-block'
+import { getPoliciesApi } from '@entities/policies/api/get-policies'
 
 export const FooterSection = async () => {
   const response = await getSiteSettingsAction()
+  const policies = await getPoliciesApi()
 
   if (!response || 'error' in response) {
     return null
@@ -29,12 +31,12 @@ export const FooterSection = async () => {
 
   const documents: typeDocument[] = [
     {
-      url: '',
-      title: 'Политика конфиденциальности'
+      slug: policies.data[1].slug,
+      title: policies.data[1].title
     },
     {
-      url: '',
-      title: 'Согласие на обработку персональных данных'
+      slug: policies.data[0].slug,
+      title: policies.data[0].title
     }
   ]
 

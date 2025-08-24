@@ -4,6 +4,6 @@ export type typeContact = {
 }
 
 export type typeDocument = {
-  url: string
+  slug: string
   title: string
 }
