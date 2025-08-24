@@ -1,22 +1,6 @@
-.wrapper {
-  //margin-top: 2.5rem;
-
-  @include bp.tablet {
-    //margin-top: 2.75rem;
-  }
-
-  @include bp.desktop {
-    //margin-top: 9.375rem;
-  }
-}
-
 .header {
   display: flex;
   gap: 40px;
-
-  @include bp.tablet {
-    //gap: 0.5rem;
-  }
 
   &Title {
     display: flex;
@@ -51,6 +35,7 @@
   border-radius: 40px;
   padding: 0 40px;
   cursor: pointer;
+  text-decoration: none;
   transition:
     background 0.2s,
     color 0.2s,
@@ -68,6 +53,26 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  &:hover {
+    background: #50f195;
+    color: #111;
+  }
+
+  &:focus-visible {
+    background: #59bb83;
+    color: #111;
+  }
+
+  &:active {
+    background: var(--color-accent-primary);
+    color: var(--color-foreground);
+
+    @include bp.desktop {
+      background: var(--color-background);
+      color: var(--color-white-pressesd);
+    }
   }
 }
 
