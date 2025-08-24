@@ -19,5 +19,7 @@ export const endpoints = {
   sendRequest: '/project-request/',
   serviceDetails: (slug: string) => createRoute('/services/:slug', { slug }),
   siteSettings: '/site-settings/',
-  technologies: '/technologies/'
+  technologies: '/technologies/',
+  policies: '/policies/',
+  policiesBySlug: (slug: string) => createRoute('/policies/:slug', { slug })
 } as const

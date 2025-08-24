@@ -1,3 +1,5 @@
+import { createRoute } from './create-rout.utils'
+
 export const routes = {
   mainPage: '/',
   ui: '/ui',
@@ -8,5 +10,6 @@ export const routes = {
   contacs: '/contacts',
   digital: '/digital',
   tokenization: '/tokenization',
-  laboratory: '/laboratory'
+  laboratory: '/laboratory',
+  policies: (slug: string) => createRoute('/policies/:slug/', { slug })
 } as const
