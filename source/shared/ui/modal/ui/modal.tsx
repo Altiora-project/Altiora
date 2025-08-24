@@ -1,11 +1,10 @@
 'use client'
 
-import { VisuallyHidden } from 'radix-ui'
 import classes from '../styles/styles.module.scss'
 import type { typeModalProps } from '../types/types'
 import * as Dialog from '@radix-ui/react-dialog'
+
 import { Icon } from '@shared/ui/icon'
-import clsx from 'clsx'
 
 export const Modal: React.FC<typeModalProps> = ({ isOpen, setIsOpen, title, children, withCloseButton }) => {
   return (

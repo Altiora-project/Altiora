@@ -1,5 +1,7 @@
 import { FC } from 'react'
+
 import classes from './styles.module.scss'
+
 import { Partners } from '@shared/ui/partners'
 import { typePartnersProps } from '@shared/ui/partners/types'
 

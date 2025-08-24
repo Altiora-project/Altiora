@@ -51,8 +51,6 @@ const DigitalMarketing: FC<typeDigitalMarketingProps> = ({ cards }) => {
           {labsCards?.map(item => (
             <ServiceCard key={item.id} icon={item.imageLink} title={item.title} text={item.info} />
           ))}
-
-          <div className={clsx(styles.subtext, styles.hidden)}>{text.subText}</div>
           <Link href="#form">
             <Button className={clsx(styles.button, styles.hidden)}>
               <span className={styles.long}>{text.button[1]}</span>
