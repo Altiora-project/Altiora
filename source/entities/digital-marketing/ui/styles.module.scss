@@ -1,11 +1,10 @@
 .cards {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 8px;
 }
 
 .description {
-  font-size: 12px;
-  white-space: pre-line;
   color: var(--color-grey);
 }
 
@@ -66,7 +65,6 @@
   }
 
   .description {
-    font-size: 16px;
     color: var(--color-white);
   }
 
@@ -93,22 +91,13 @@
 }
 
 @include bp.desktop {
-  // .bottomContainer {
-  //   position: relative;
-  //   display: block;
-  //   visibility: initial;
-  // }
-
   .cards {
-    grid-template-columns: repeat(3, 552px);
-    // margin-block-end: 35px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(552px, 1fr));
   }
 
   .description {
-    font-size: 32px;
     font-weight: 400;
-    white-space: initial;
-    inline-size: 1432px;
     color: var(--color-grey);
   }
 
@@ -130,5 +119,26 @@
       font-size: 16px;
       font-weight: 700;
     }
+  }
+}
+
+.markdownBody {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-weight: 400;
+  color: var(--color-grey);
+
+  & p {
+    font-size: clamp(0.75rem, 0.333rem + 1.389vi, 2rem);
+    line-height: 1;
+  }
+
+  @include bp.tablet {
+    gap: 18px;
+  }
+
+  @include bp.desktop {
+    gap: 24px;
   }
 }

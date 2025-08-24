@@ -42,17 +42,14 @@ body {
   font-family: var(--font-main), serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
   display: flex;
   flex-direction: column;
-  //gap: 1rem;
 
   main {
     width: 100%;
     min-height: 100dvh;
     flex-grow: 1;
     margin: 0 auto;
-    //max-width: 1920px;
   }
 
   a {
@@ -71,23 +68,21 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  width: 100%;
   gap: 40px;
-  padding: 0 1.5rem;
+  width: 100%;
+  max-width: 1800px;
   margin: 0 auto;
+  padding: 0 1.5rem;
 
   @include bp.tablet {
     gap: 60px;
     padding: 0 2rem;
-    // max-width: 1500px;
     box-sizing: border-box;
   }
 
   @include bp.desktop {
-    box-sizing: content-box;
-    max-width: 1800px;
     gap: 150px;
-    padding: 0 3.75rem;
+    padding: 0;
   }
 }
 

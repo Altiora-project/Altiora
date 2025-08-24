@@ -13,7 +13,7 @@
   display: flex;
   flex-direction: column;
   gap: 7px;
-  min-inline-size: 284px;
+  //min-inline-size: 284px;
 }
 
 .title {
@@ -59,7 +59,7 @@
 
   .content {
     gap: 11px;
-    min-inline-size: 468px;
+    //min-inline-size: 468px;
   }
 
   .icon {
@@ -80,8 +80,8 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 40px;
-    padding: 32px 32px 48px;
-    //min-block-size: 296px;
+    //padding: 32px 32px 48px;
+    min-block-size: 296px;
   }
 
   .icon {

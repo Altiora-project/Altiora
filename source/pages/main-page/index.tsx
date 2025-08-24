@@ -69,7 +69,7 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
           contactURL="#form"
         />
 
-        <DigitalMarketing cards={pageData?.labcart_data} />
+        <DigitalMarketing cards={pageData?.labcart_data} description={pageData.dig_description} />
 
         <VideoFeature
           title={pageData.tokenization_title}

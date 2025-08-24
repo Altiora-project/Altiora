@@ -22,4 +22,5 @@ export type typeServiceCardsResponse = {
 
 export type typeDigitalMarketingProps = {
   cards: LabCard[]
+  description: string
 } & HTMLAttributes<HTMLDivElement>

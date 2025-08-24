@@ -9,11 +9,12 @@ import Link from 'next/link'
 
 import { typeDigitalMarketingProps } from '@entities/digital-marketing/types'
 
+import { MarkdownRenderer } from '@shared/lib/markdown'
 import { MainBlock } from '@shared/ui/_main-block'
 import { Button } from '@shared/ui/button'
 import ServiceCard from '@shared/ui/service-card'
 
-const DigitalMarketing: FC<typeDigitalMarketingProps> = ({ cards }) => {
+const DigitalMarketing: FC<typeDigitalMarketingProps> = ({ cards, description }) => {
   const labsCards = (cards ?? [])
     .sort((a, b) => a.id - b.id)
     .filter(card => card.id > 3)
@@ -43,8 +44,7 @@ const DigitalMarketing: FC<typeDigitalMarketingProps> = ({ cards }) => {
         bottomStyles={styles.bottomContainer}
       >
         <div className={styles.description}>
-          <span className={styles.short}>{text.description}</span>
-          <span className={styles.long}>{text.descriptionLong}</span>
+          <MarkdownRenderer className={styles.markdownBody} content={description} />
         </div>
         <h3 className={styles.title}>{text.subTitle}</h3>
         <div className={styles.cards}>
