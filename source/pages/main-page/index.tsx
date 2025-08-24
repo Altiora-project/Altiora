@@ -1,5 +1,6 @@
 import classes from './styles.module.scss'
 import clsx from 'clsx'
+import { notFound } from 'next/navigation'
 import type { FC, HTMLAttributes } from 'react'
 
 import { Footer } from '@widgets/footer'
@@ -14,15 +15,14 @@ import VideoFeature from '@features/video-feature'
 import DigitalMarketing from '@entities/digital-marketing'
 import { getPageDataAction } from '@entities/main-page/api/server-actions'
 
-import { NotFound } from '@shared/ui/not-found'
 import { OrderForm } from '@shared/ui/order-form'
 
 export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, ...otherProps }) => {
   const response = await getPageDataAction()
 
-  if (!response || 'error' in response || !response.data?.data) {
-    return <NotFound />
-  }
+  if (!response || 'error' in response) throw new Error(response.error.message)
+
+  if (!response.data?.data) return notFound()
 
   const pageData = response.data.data
   // if (!pageData?.services_data || !pageData.hero_title || !pageData.hero_image || !pageData.case_studies_data) {
@@ -34,7 +34,7 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
 
   const aboutData = [pageData.about_title, pageData.about_text, pageData.highlight_1, pageData.highlight_2]
 
-  const phrases = Array.isArray(pageData.services_running_line) ? pageData.services_running_line : [] //services_data.map(service => service.name)
+  const phrases = Array.isArray(pageData.services_running_line) ? pageData.services_running_line : []
 
   const services = pageData.services_data.map(service => {
     return {

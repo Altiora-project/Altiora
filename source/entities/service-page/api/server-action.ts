@@ -12,7 +12,7 @@ export const getServicesDataAction = async (): Promise<typeApiResponse<typeServi
 
 export const getServiceDetailsAction = async (slug: string): Promise<typeApiResponse<typeServiceDetailsResponse>> => {
   const url = endpoints.serviceDetails(slug)
-  console.log('url>>>>>>>>', url)
+
   return fetchWrapper<typeServiceDetailsResponse>(url, {
     responseType: 'json',
     method: 'GET',

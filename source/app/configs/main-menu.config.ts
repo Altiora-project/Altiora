@@ -1,6 +1,6 @@
-import type { typeMainMenuItem } from '@shared/ui/main-menu/types/types'
 import { routes } from '@shared/configs/routes'
 import { getMenuUrl } from '@shared/configs/routes/menu.utils'
+import type { typeMainMenuItem } from '@shared/ui/main-menu/types/types'
 
 const isMainPage = true
 

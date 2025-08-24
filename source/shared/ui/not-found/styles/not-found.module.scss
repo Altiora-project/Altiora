@@ -1,7 +1,66 @@
 .notFoundContainer {
-  flex-grow: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  color: #fff;
+  background-color: #232323;
+  border-radius: 2rem;
+  background-image: var(--noise-img);
+  padding: clamp(1.5rem, 0.455rem + 3.485vi, 4.375rem);
+
+  @include bp.tablet {
+    gap: 34px;
+    width: calc(100% - 3rem);
+  }
+
+  @include bp.desktop {
+    max-width: 1800px;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 64px;
+  }
+}
+
+.errorCode {
+  flex-grow: 1;
+  font-size: clamp(5.625rem, -0.511rem + 20.455vi, 25rem);
+  line-height: 1;
+  text-align: center;
+}
+
+.title {
+  font-size: clamp(1rem, 0.972rem + 1.69vi, 3rem);
+  text-wrap: auto;
+  text-align: center;
+  font-weight: 400;
+  //margin-top: 0;
+
+  @include bp.desktop {
+    align-items: start;
+    text-align: left;
+  }
+}
+
+.textSection {
+  display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'Manrope', sans-serif;
+  gap: 20px;
+
+  @include bp.desktop {
+    gap: 60px;
+    align-items: start;
+    text-align: left;
+  }
+}
+
+.description {
+  line-height: 1.3;
+  font-size: clamp(1rem, 0.727rem + 0.909vi, 1.75rem); //1rem;
 }
