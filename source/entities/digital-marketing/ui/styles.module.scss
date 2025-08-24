@@ -71,7 +71,7 @@
   }
 
   .button {
-    min-inline-size: 632px;
+    inline-size: 100%;
 
     span {
       font-size: 13px;
@@ -89,11 +89,6 @@
   .hidden {
     display: block;
     visibility: initial;
-  }
-
-  .subtext {
-    white-space: pre-line;
-    line-height: 1.1;
   }
 }
 
