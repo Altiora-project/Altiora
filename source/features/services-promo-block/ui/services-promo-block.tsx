@@ -42,7 +42,6 @@ export const ServicesPromoBlock: FC<typeServicesPromoBlockProps> = ({ title, sli
         description={service.description}
         actionLink={`${routes.services}/${service.slug}`}
         tagList={service.tagList}
-        className={classes.productCard}
       />
     )
   })

@@ -14,7 +14,7 @@ type typeHeroSectionProps = {
 export const HeroSection: FC<typeHeroSectionProps> = ({ title, imgUrl, phrases, ...otherProps }) => {
   return (
     <>
-      <div className={classes.container} {...otherProps}>
+      <div className={'container'} {...otherProps}>
         <HeroBlock title={title} imgUrl={imgUrl} contactLink={'/#form'} />
       </div>
       <MarqueeComponent phrases={phrases} />

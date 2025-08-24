@@ -72,15 +72,11 @@
 }
 
 .contentCard {
-  // margin-top: 1rem;s
-
   @include bp.tablet {
-    // margin-top: 1.5rem;
     padding: 0;
   }
 
   @include bp.desktop {
-    // margin-top: 96px;
     padding: 60px 40px;
     border-radius: 40px;
     background-color: var(--color-background1);
@@ -94,16 +90,11 @@
   gap: 0.5rem;
 
   @include bp.tablet {
-    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
 
   @include bp.desktop {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(552px, 1fr));
     gap: 2rem;
   }
-}
-
-.productCard {
-  max-width: 550px;
 }
