@@ -234,7 +234,8 @@
   gap: 12px;
 
   & img {
-    max-height: 40vh;
+    padding: 12px;
+    max-height: 50vh;
     object-fit: contain;
     max-width: 100%;
   }
