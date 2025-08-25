@@ -20,9 +20,7 @@ import { OrderForm } from '@shared/ui/order-form'
 export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, ...otherProps }) => {
   const response = await getPageDataAction()
 
-  if (!response || 'error' in response) throw new Error(response.error.message)
-
-  if (!response.data?.data) return notFound()
+  if (!response || 'error' in response || !response.data.data) notFound()
 
   const pageData = response.data.data
   // if (!pageData?.services_data || !pageData.hero_title || !pageData.hero_image || !pageData.case_studies_data) {

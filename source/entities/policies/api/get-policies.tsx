@@ -1,7 +1,8 @@
 'use server'
 
-import { endpoints, fetchWrapper } from '@shared/lib/api'
 import { typePoliciesApi, typePoliciesSlugApi } from '../model/types'
+
+import { endpoints, fetchWrapper } from '@shared/lib/api'
 
 export const getPoliciesApi = async (): Promise<typePoliciesApi> => {
   const response = await fetchWrapper<typePoliciesApi>(endpoints.policies)

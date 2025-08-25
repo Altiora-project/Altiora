@@ -1,9 +1,9 @@
-'use server'
-import { Policies } from '@shared/ui/policies'
-import clsx from 'clsx'
-import type { FC, HTMLAttributes } from 'react'
-import { getPoliciesBySlugApi } from '@entities/policies/api/get-policies'
 import { notFound } from 'next/navigation'
+import type { FC, HTMLAttributes } from 'react'
+
+import { getPoliciesBySlugApi } from '@entities/policies/api/get-policies'
+
+import { Policies } from '@shared/ui/policies'
 
 export const PoliciesPage: FC<HTMLAttributes<HTMLDivElement> & { params: Promise<{ slug: string }> }> = async ({
   params,
@@ -13,7 +13,7 @@ export const PoliciesPage: FC<HTMLAttributes<HTMLDivElement> & { params: Promise
   const { slug } = await params
 
   const response = await getPoliciesBySlugApi(slug)
-  if (!response.data) return notFound()
+  if (!response.data) notFound()
 
   return (
     <div className={className} {...otherProps}>
