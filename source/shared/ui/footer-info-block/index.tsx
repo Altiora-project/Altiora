@@ -1,6 +1,6 @@
 'use client'
 
-import { routes } from '@shared/configs/routes'
+import { createRoute, routes } from '@shared/configs/routes'
 import styles from './styles.module.scss'
 import { FooterInfoBlockProps } from './types'
 import clsx from 'clsx'
@@ -20,7 +20,12 @@ export const FooterInfoBlock: React.FC<FooterInfoBlockProps> = ({ addressDetails
       </div>
       <div className={styles.linkBlock}>
         {linkList?.map((link, index) => (
-          <Link href={routes.policies(link.slug)} key={index} className={styles.text} target="_blank">
+          <Link
+            href={createRoute(routes.policiesBySlug, { slug: link.slug })}
+            key={index}
+            className={styles.text}
+            target="_blank"
+          >
             {link.title}
           </Link>
         ))}

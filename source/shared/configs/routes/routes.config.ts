@@ -11,5 +11,6 @@ export const routes = {
   digital: '/digital',
   tokenization: '/tokenization',
   laboratory: '/laboratory',
-  policies: (slug: string) => createRoute('/policies/:slug/', { slug })
+  policies: '/policies/',
+  policiesBySlug: '/policies/:slug/'
 } as const

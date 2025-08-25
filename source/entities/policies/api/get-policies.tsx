@@ -2,7 +2,7 @@ import { endpoints, fetchWrapper } from '@shared/lib/api'
 import { typePoliciesApi, typePoliciesSlugApi } from '../model/types'
 
 export const getPoliciesApi = async (): Promise<typePoliciesApi> => {
-  let response = await fetchWrapper<typePoliciesApi>(endpoints.policies)
+  const response = await fetchWrapper<typePoliciesApi>(endpoints.policies)
 
   if (!response || 'error' in response || response.data.success === false) {
     console.error('API Error:', response)
@@ -13,7 +13,7 @@ export const getPoliciesApi = async (): Promise<typePoliciesApi> => {
 }
 
 export const getPoliciesBySlugApi = async (slug: string): Promise<typePoliciesSlugApi> => {
-  let response = await fetchWrapper<typePoliciesSlugApi>(endpoints.policiesBySlug(slug))
+  const response = await fetchWrapper<typePoliciesSlugApi>(endpoints.policiesBySlug(slug))
 
   if (!response || 'error' in response || response.data.success === false) {
     console.error('API Error:', response)
