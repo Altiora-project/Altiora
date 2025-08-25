@@ -5,6 +5,7 @@ import type { typeHeaderProps } from './types'
 import { Button } from '@shared/ui/button'
 import { Logo } from '@shared/ui/logo'
 import { MainMenuDesktop, MainMenuMobile } from '@shared/ui/main-menu'
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
 export const Header: React.FC<typeHeaderProps> = ({ menuList, isErrorPage }) => {
@@ -40,9 +41,9 @@ export const Header: React.FC<typeHeaderProps> = ({ menuList, isErrorPage }) => 
             Связаться с нами
           </Button>
         ) : (
-          <a href="#form">
+          <Link href="/#form">
             <Button variant="primary">Связаться с нами</Button>
-          </a>
+          </Link>
         )}
       </div>
     </header>
