@@ -1,3 +1,5 @@
+'use server'
+
 import { endpoints, fetchWrapper } from '@shared/lib/api'
 import { typePoliciesApi, typePoliciesSlugApi } from '../model/types'
 
