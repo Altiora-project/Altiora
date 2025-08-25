@@ -44,14 +44,6 @@
       }
     }
 
-    .close {
-      background-color: transparent;
-      border: none;
-      color: var(--foreground);
-      cursor: pointer;
-      padding: 0.5rem;
-    }
-
     &:empty {
       display: none;
     }
@@ -93,6 +85,10 @@
 
     &:hover {
       color: var(--color-accent-primary);
+    }
+
+    &:active {
+      color: #59BB83;
     }
   }
 }
