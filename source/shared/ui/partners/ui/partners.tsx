@@ -3,6 +3,7 @@ import { FC } from 'react'
 import classes from '../styles/styles.module.scss'
 import { typePartnersProps } from '../types'
 import clsx from 'clsx'
+import Image from 'next/image'
 import Link from 'next/link'
 import Marquee from 'react-fast-marquee'
 
@@ -29,11 +30,12 @@ export const Partners: FC<typePartnersProps> = ({ partners }) => {
                     className={clsx(classes.linkData, phrase.name.length >= 11 ? classes.name : '')}
                     target="_blank"
                   >
-                    {phrase.logo ? (
-                      <img src={phrase.logo} className={classes.img} alt={phrase.name} />
-                    ) : (
-                      <>{phrase.name}</>
-                    )}
+                    <div style={{ display: 'flex' }}>
+                      {phrase.logo && (
+                        <Image src={phrase.logo} className={classes.img} alt={phrase.name} width={30} height={18} />
+                      )}
+                      <p>{phrase.name}</p>
+                    </div>
                   </Link>
                 </div>
               )
