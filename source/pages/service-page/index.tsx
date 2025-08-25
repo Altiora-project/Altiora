@@ -16,10 +16,7 @@ export const ServiceDetails: FC<typeServiceDetailsProps> = async ({ slug, classN
   // далее парсим данные и наполняем страницу
   const response = await getServiceDetailsAction(slug)
 
-  // if (!response || 'error' in response) throw new Error(response.error.message)
-  if (!response || 'error' in response) throw new Error(response.error.message)
-
-  if (!response.data.data) return notFound()
+  if (!response || 'error' in response || !response.data.data) notFound()
 
   const pageData = response.data.data
 
