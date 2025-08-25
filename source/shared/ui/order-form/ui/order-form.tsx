@@ -1,6 +1,6 @@
 'use client'
 
-import { FC, useState } from 'react'
+import { FC, use, useEffect, useState } from 'react'
 
 import classes from '../styles/styles.module.scss'
 import type { OrderFormData } from '../types/types'
@@ -16,12 +16,30 @@ import { Button } from '@shared/ui/button'
 import { Checkbox } from '@shared/ui/checkbox'
 import { FormSubmitModal } from '@shared/ui/form-submit-modal'
 import { Input } from '@shared/ui/input'
+import { getPoliciesApi } from '@entities/policies/api/get-policies'
+import { createRoute, routes } from '@shared/configs/routes'
 
 export const OrderForm: FC = () => {
   const [isModalOpen, setModalOpen] = useState(false)
+  const [slug, setSlug] = useState('')
+
+  useEffect(() => {
+    const getPolicies = async () => {
+      const res = await getPoliciesApi()
+
+      if (!res.success) return
+
+      const documents = res.data
+      setSlug(documents[0].slug)
+    }
+
+    getPolicies()
+  }, [])
+
   const onSubmit = async (data: OrderFormData) => {
     await sendFormDataAction(data).then(() => setModalOpen(true))
   }
+
   const {
     register,
     handleSubmit,
@@ -120,7 +138,7 @@ export const OrderForm: FC = () => {
                 !!isValid ? classes.checkboxLabelActive : classes.checkboxLabelDisabled
               )}
             >
-              <Link href="/privacy-policy" target="_blank" rel="noopener noreferrer">
+              <Link href={createRoute(routes.policiesBySlug, { slug })} target="_blank" rel="noopener noreferrer">
                 Согласен с политикой обработки персональных данных
               </Link>
             </label>
