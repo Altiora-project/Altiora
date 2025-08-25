@@ -8,7 +8,7 @@ import { SliderCard } from '@shared/ui/slider-card'
 export const ServiceHeroSection: React.FC<{ pageData: ServiceDetails }> = ({ pageData }) => {
   return (
     <div>
-      <h1 className={classes.title}>{pageData.name}</h1>
+      <h1 className={classes.title}>{`/${pageData.name}`}</h1>
       <div className={classes.heroSection}>
         <div className={classes.heroSection__info}>
           <p className={classes.heroSection__description}>{pageData.info}</p>
