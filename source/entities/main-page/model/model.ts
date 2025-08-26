@@ -48,7 +48,8 @@ export interface MainPage {
   lab_title: string
   lab_description: string
   lab_description_ps: string
-  labcart_data: Array<LabCard>
+  startup_laboratory_data: Array<LabCard>
+  digital_marketing_data: Array<LabCard>
   dig_title: string
   dig_description: string
   tokenization_title: string

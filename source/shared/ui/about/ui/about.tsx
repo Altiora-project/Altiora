@@ -26,10 +26,10 @@ export const About: FC<typeAboutDataProps> = ({ data }) => {
   const [offset, setOffset] = useState(0)
 
   useEffect(() => {
-    setOffset(window.innerWidth)
+    setOffset(window.screen.availWidth)
 
     const handleResize = () => {
-      setOffset(window.innerWidth)
+      setOffset(window.screen.availWidth)
     }
 
     window.addEventListener('resize', handleResize)

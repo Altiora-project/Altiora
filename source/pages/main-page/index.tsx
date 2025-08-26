@@ -26,7 +26,9 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
   // if (!pageData?.services_data || !pageData.hero_title || !pageData.hero_image || !pageData.case_studies_data) {
   //   return <NotFound />
   // }
-  const labCards = Array.isArray(pageData?.labcart_data) ? pageData?.labcart_data : []
+  const startupLabCards = Array.isArray(pageData?.startup_laboratory_data) ? pageData?.startup_laboratory_data : []
+
+  const digitalLabCards = Array.isArray(pageData?.digital_marketing_data) ? pageData?.digital_marketing_data : []
 
   const slides = Array.isArray(pageData.case_studies_data) ? pageData?.case_studies_data : []
 
@@ -34,6 +36,7 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
 
   const phrases = Array.isArray(pageData.services_running_line) ? pageData.services_running_line : []
 
+  console.log(pageData)
   const services = pageData.services_data.map(service => {
     return {
       id: service.id,
@@ -60,14 +63,13 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
         />
 
         <StartupLab
-          cardCount={3}
-          cards={labCards}
+          cards={startupLabCards}
           info1={pageData?.lab_description}
           info2={pageData?.lab_description_ps}
           contactURL="#form"
         />
 
-        <DigitalMarketing cards={pageData?.labcart_data} description={pageData.dig_description} />
+        <DigitalMarketing cards={digitalLabCards} description={pageData.dig_description} />
 
         <VideoFeature
           title={pageData.tokenization_title}
