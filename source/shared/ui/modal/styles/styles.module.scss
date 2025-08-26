@@ -25,7 +25,6 @@
   flex-direction: column;
   z-index: 6;
 
-
   .displayNone {
     display: none;
   }
@@ -66,7 +65,7 @@
   .closeButton {
     position: absolute;
     top: 0;
-    right: 0.3rem;
+    right: 1.8rem;
     z-index: 10;
     background-color: transparent;
     border: none;
@@ -79,7 +78,7 @@
     border-radius: 4px;
 
     @include bp.tablet {
-      right: 2rem;
+      right: 3.5rem;
     }
 
     @include bp.desktop {
