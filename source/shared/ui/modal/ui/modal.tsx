@@ -16,7 +16,14 @@ export const Modal: React.FC<typeModalProps> = ({ isOpen, setIsOpen, title, chil
           {withCloseButton && (
             <Dialog.Close className={classes.closeButton}>
               {/*<Icon  className={classes.closeIcon} />*/}
-              <svg className={classes.closeIcon} width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg
+                className={classes.closeIcon}
+                width="28"
+                height="28"
+                viewBox="0 0 28 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path d="M25 3L3 25M3 3L25 25" stroke="currentColor" strokeWidth="3" strokeLinecap="square" />
               </svg>
             </Dialog.Close>

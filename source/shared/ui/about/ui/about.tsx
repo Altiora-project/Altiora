@@ -133,7 +133,7 @@ export const About: FC<typeAboutDataProps> = ({ data }) => {
           <div className={classes.bottomContent}>
             <div>
               <a href="/#form">
-                <Button disabled={false} onClick={() => { }} className={classes.button}>
+                <Button disabled={false} onClick={() => {}} className={classes.button}>
                   {offset < 1919 ? 'связаться' : 'связаться с нами'}
                 </Button>
               </a>

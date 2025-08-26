@@ -18,8 +18,7 @@ interface LabCard {
 
 export interface StartupLabProps extends HTMLAttributes<HTMLDivElement> {
   info1: string
-  cards: LabCard[] //StartupLabCard[]
-  cardCount: number
+  cards: LabCard[]
   info2: string
   contactURL: string
 }
