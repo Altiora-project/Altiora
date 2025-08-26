@@ -36,7 +36,6 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
 
   const phrases = Array.isArray(pageData.services_running_line) ? pageData.services_running_line : []
 
-  console.log(pageData)
   const services = pageData.services_data.map(service => {
     return {
       id: service.id,
