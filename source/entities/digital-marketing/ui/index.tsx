@@ -17,7 +17,6 @@ import ServiceCard from '@shared/ui/service-card'
 const DigitalMarketing: FC<typeDigitalMarketingProps> = ({ cards, description }) => {
   const labsCards = (cards ?? [])
     .sort((a, b) => a.id - b.id)
-    .filter(card => card.id > 3)
     .map(card => ({
       id: card.id,
       imageLink: 'http://' + process.env.NEXT_PUBLIC_IMAGE_HOST + card.image,
