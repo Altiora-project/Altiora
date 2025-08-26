@@ -1,13 +1,15 @@
 import { z } from 'zod'
 
 export const OrderFormSchema = z.object({
-  name: z.string().min(1, 'Имя обязательно').max(50, 'Имя не должно превышать 50 символов'),
+  name: z.string().trim().min(1, 'Имя обязательно').max(50, 'Имя не должно превышать 50 символов'),
   company: z
     .string()
+    .trim()
     .min(1, 'Название компании обязательно')
     .max(100, 'Название компании не должно превышать 100 символов'),
   project_details: z
     .string()
+    .trim()
     .min(1, 'Подробности о проекте обязательны')
     .max(1000, 'Описание не должно превышать 1000 символов'),
   phone_number: z
@@ -18,7 +20,7 @@ export const OrderFormSchema = z.object({
       'Неверный формат телефона'
     ),
   email: z.string().regex(/^\S+@\S+\.\S+$/, 'Неверный формат электронной почты'),
-  agreed_to_terms: z.boolean().refine((val: any) => val, {
+  agreed_to_terms: z.boolean().refine((val: boolean) => val, {
     message: 'Необходимо согласие с условиями обработки персональных данных'
   })
 })
