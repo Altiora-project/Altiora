@@ -98,16 +98,13 @@
 
   &:not(:disabled):hover {
     background-color: var(--color-accent-primary);
+    color: var(--color-foreground);
   }
 
-  &:active {
-    background: var(--color-accent-primary);
-    color: var(--color-foreground);
-
-    @include bp.desktop {
-      background: var(--color-background);
-      color: var(--color-white-pressesd);
-    }
+  &:active,
+  &:hover:active {
+    background-color: var(--color-background);
+    color: var(--color-white-pressesd);
   }
 
   @include bp.tablet {
@@ -129,16 +126,13 @@
 
   &:not(:disabled):hover {
     background-color: var(--color-accent-primary);
+    color: var(--color-foreground);
   }
 
-  &:active {
-    background: var(--color-accent-primary);
-    color: var(--color-foreground);
-
-    @include bp.desktop {
-      background: var(--color-background);
-      color: var(--color-white-pressesd);
-    }
+  &:active,
+  &:hover:active {
+    background-color: var(--color-background);
+    color: var(--color-white-pressesd);
   }
 
   &:disabled {
@@ -155,7 +149,6 @@
   }
 
   @include bp.desktop {
-    // align-self: flex-end;
     order: 1;
   }
 }
