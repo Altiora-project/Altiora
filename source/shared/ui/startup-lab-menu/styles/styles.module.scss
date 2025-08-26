@@ -5,19 +5,22 @@
 $background: var(--color-background1);
 $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 600" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%" height="100%" filter="url(%23noise)" opacity="0.15"/%3E%3C/svg%3E');
 $radius-menu: 1rem;
+$radius-menu-tablet: 2.5rem;
 $radius-menu-desktop: 2rem;
 
 $radius-block: 1rem;
-$radius-block-tablet: 1.5rem;
+$radius-block-tablet: 2.5rem;
 $radius-block-desktop: 3rem;
+
+$radius-block-short: 1rem;
+$radius-block-short-tablet: 1.5rem;
+$radius-block-short-desktop: 3rem;
 
 //$big-radius: math.div($radius, 2) * 3;
 
 // Миксин для псевдоэлементов скругления
 @mixin rounded-corner($position, $cradius) {
-  @supports (
-    mask-image: radial-gradient(circle at top left, transparent 0%, transparent $cradius, black $cradius, black 100%)
-  ) {
+  @supports (mask-image: radial-gradient(circle at top left, transparent 0%, transparent $cradius, black $cradius, black 100%)) {
     content: '';
     //width: 100px;
     display: block;
@@ -30,31 +33,33 @@ $radius-block-desktop: 3rem;
     width: $cradius;
     height: $cradius;
 
-    @if $position == 'top' {
+    @if $position =='top' {
       top: -$cradius;
       mask-image: radial-gradient(circle at top left, transparent 0%, transparent $cradius, black $cradius, black 100%);
-    } @else if $position == 'inner-bottom' {
+    }
+
+    @else if $position =='inner-bottom' {
       bottom: 0;
       mask-image: radial-gradient(circle at top left, transparent 0%, transparent $cradius, black $cradius, black 100%);
-    } @else if $position == 'inner-top' {
+    }
+
+    @else if $position =='inner-top' {
       top: 0;
       right: calc(-1 * $cradius);
-      mask-image: radial-gradient(
-        circle at bottom right,
-        transparent 0%,
-        transparent $cradius,
-        black $cradius,
-        black 100%
-      );
-    } @else {
+      mask-image: radial-gradient(circle at bottom right,
+          transparent 0%,
+          transparent $cradius,
+          black $cradius,
+          black 100%);
+    }
+
+    @else {
       bottom: -$cradius;
-      mask-image: radial-gradient(
-        circle at bottom left,
-        transparent 0%,
-        transparent $cradius,
-        black $cradius,
-        black 100%
-      );
+      mask-image: radial-gradient(circle at bottom left,
+          transparent 0%,
+          transparent $cradius,
+          black $cradius,
+          black 100%);
     }
 
     mask-mode: alpha;
@@ -93,20 +98,18 @@ $radius-block-desktop: 3rem;
     font-size: 16px;
     line-height: 100%;
     margin: 0;
-    padding: 0;
-    padding-bottom: 16px;
-    padding-right: 16px;
+    padding: 0px 1rem 1.3rem 0px;
     color: var(--color-grey);
 
     &::after {
-      @include rounded-corner('inner-bottom', $radius-block);
+      @include rounded-corner('inner-bottom', $radius-block-short);
 
       @include bp.tablet {
-        @include rounded-corner('inner-bottom', $radius-block-tablet);
+        @include rounded-corner('inner-bottom', $radius-block-short-tablet);
       }
 
       @include bp.desktop {
-        @include rounded-corner('inner-bottom', $radius-block-desktop);
+        @include rounded-corner('inner-bottom', $radius-block-short-desktop);
       }
     }
 
@@ -128,11 +131,7 @@ $radius-block-desktop: 3rem;
     background-color: $background;
     background-image: $bg-image;
     position: relative;
-    border-radius: 1rem 1rem 0 0;
-
-    @include bp.desktop {
-      border-radius: 3rem 3rem 0 0;
-    }
+    border-radius: var(--radius-block) var(--radius-block) 0 0;
 
     button {
       margin: 12px 10px 0 0;
@@ -194,7 +193,11 @@ $radius-block-desktop: 3rem;
   height: 44px;
   gap: 22px;
   position: relative;
-  //border: solid 1px red;
+  min-width: 44px;
+
+  @include bp.tablet {
+    min-width: 66px;
+  }
 
   @include bp.desktop {
     border-radius: $radius-menu-desktop 0 0 $radius-menu-desktop;
@@ -321,12 +324,12 @@ $radius-block-desktop: 3rem;
 }
 
 // Убираем верхний левый радиус у contentBody когда первый элемент меню активен
-.containerBody .menuSection:has(.menuItem:first-child.active) ~ .contentSection .contentBody {
+.containerBody .menuSection:has(.menuItem:first-child.active)~.contentSection .contentBody {
   border-top-left-radius: 0;
 }
 
 // Убираем нижний левый радиус у contentBody когда последний элемент меню активен
-.containerBody .menuSection:has(.menuItem:last-child.active) ~ .contentSection .contentFooter .space {
+.containerBody .menuSection:has(.menuItem:last-child.active)~.contentSection .contentFooter .space {
   border-bottom-left-radius: 0;
 }
 
@@ -341,7 +344,6 @@ $radius-block-desktop: 3rem;
     border-bottom-right-radius: var(--radius-block);
     border-bottom-left-radius: var(--radius-block);
     position: relative;
-    //border: solid 1px red;
 
     &::after {
       @include rounded-corner('inner-top', $radius-block);
