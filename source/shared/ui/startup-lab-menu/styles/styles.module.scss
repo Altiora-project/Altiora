@@ -20,9 +20,7 @@ $radius-block-short-desktop: 3rem;
 
 // Миксин для псевдоэлементов скругления
 @mixin rounded-corner($position, $cradius) {
-  @supports (
-    mask-image: radial-gradient(circle at top left, transparent 0%, transparent $cradius, black $cradius, black 100%)
-  ) {
+  @supports (mask-image: radial-gradient(circle at top left, transparent 0%, transparent $cradius, black $cradius, black 100%)) {
     content: '';
     //width: 100px;
     display: block;
@@ -35,31 +33,33 @@ $radius-block-short-desktop: 3rem;
     width: $cradius;
     height: $cradius;
 
-    @if $position == 'top' {
+    @if $position =='top' {
       top: -$cradius;
       mask-image: radial-gradient(circle at top left, transparent 0%, transparent $cradius, black $cradius, black 100%);
-    } @else if $position == 'inner-bottom' {
+    }
+
+    @else if $position =='inner-bottom' {
       bottom: 0;
       mask-image: radial-gradient(circle at top left, transparent 0%, transparent $cradius, black $cradius, black 100%);
-    } @else if $position == 'inner-top' {
+    }
+
+    @else if $position =='inner-top' {
       top: 0;
       right: calc(-1 * $cradius);
-      mask-image: radial-gradient(
-        circle at bottom right,
-        transparent 0%,
-        transparent $cradius,
-        black $cradius,
-        black 100%
-      );
-    } @else {
+      mask-image: radial-gradient(circle at bottom right,
+          transparent 0%,
+          transparent $cradius,
+          black $cradius,
+          black 100%);
+    }
+
+    @else {
       bottom: -$cradius;
-      mask-image: radial-gradient(
-        circle at bottom left,
-        transparent 0%,
-        transparent $cradius,
-        black $cradius,
-        black 100%
-      );
+      mask-image: radial-gradient(circle at bottom left,
+          transparent 0%,
+          transparent $cradius,
+          black $cradius,
+          black 100%);
     }
 
     mask-mode: alpha;
@@ -303,7 +303,7 @@ $radius-block-short-desktop: 3rem;
 
 .contentBody {
   display: flex;
-  color: #fff;
+  color: var(--color-white);
   background-color: $background;
   background-image: $bg-image;
   border-bottom-right-radius: var(--radius-block);
@@ -311,6 +311,12 @@ $radius-block-short-desktop: 3rem;
   overflow-y: auto;
   padding: 20px;
   flex: 1;
+
+  & p {
+    color: var(--color-white);
+    font-family: var(--font-main);
+    font-weight: 400;
+  }
 
   @include bp.tablet {
     font-size: 18px;
@@ -324,12 +330,12 @@ $radius-block-short-desktop: 3rem;
 }
 
 // Убираем верхний левый радиус у contentBody когда первый элемент меню активен
-.containerBody .menuSection:has(.menuItem:first-child.active) ~ .contentSection .contentBody {
+.containerBody .menuSection:has(.menuItem:first-child.active)~.contentSection .contentBody {
   border-top-left-radius: 0;
 }
 
 // Убираем нижний левый радиус у contentBody когда последний элемент меню активен
-.containerBody .menuSection:has(.menuItem:last-child.active) ~ .contentSection .contentFooter .space {
+.containerBody .menuSection:has(.menuItem:last-child.active)~.contentSection .contentFooter .space {
   border-bottom-left-radius: 0;
 }
 
