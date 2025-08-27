@@ -7,8 +7,8 @@ import { typePartnersProps } from '@shared/ui/partners/types'
 
 export const GetPartners: FC<typePartnersProps & { header?: string }> = ({ partners, header }) => {
   return (
-    <div className={classes.content}>
-      <div id="partners" className={classes.header}>
+    <div className={classes.wrapper} id="partners">
+      <div className={'container'}>
         <h2>{header}</h2>
       </div>
       <Partners partners={partners} />

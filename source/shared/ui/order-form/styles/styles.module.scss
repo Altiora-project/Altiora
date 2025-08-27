@@ -8,15 +8,15 @@
   color: var(--color-white);
   font-family: var(--font-secondary);
   font-weight: 700;
-  font-size: 16px;
+  // font-size: 16px;
   text-align: left;
 
   @include bp.tablet {
-    font-size: 32px;
+    // font-size: 32px;
   }
 
   @include bp.desktop {
-    font-size: 70px;
+    // font-size: 70px;
   }
 }
 
