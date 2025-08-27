@@ -78,6 +78,7 @@
     border-radius: 4px;
 
     @include bp.tablet {
+      top: 0.6rem;
       right: 3.5rem;
     }
 
