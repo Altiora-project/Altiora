@@ -8,4 +8,4 @@ export type typeAboutData = {
 }
 
 // export type typeAboutDataProps = { data: typeAboutData }
-export type typeAboutDataProps = { data: string[] }
+export type typeAboutDataProps = { data?: string[] }

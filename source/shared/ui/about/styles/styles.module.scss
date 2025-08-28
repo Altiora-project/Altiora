@@ -3,346 +3,6 @@
 $radius: 20px;
 $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%" height="100%" filter="url(%23noise)" opacity="0.15"/%3E%3C/svg%3E');
 
-// .container {
-//   -webkit-box-sizing: border-box;
-//   -moz-box-sizing: border-box;
-//   box-sizing: border-box;
-//   display: -webkit-box;
-//   display: -ms-flexbox;
-//   display: flex;
-//   -webkit-flex-wrap: wrap;
-//   -ms-flex-wrap: wrap;
-//   flex-wrap: wrap;
-//   -webkit-box-orient: horizontal;
-//   -webkit-box-direction: normal;
-//   -ms-flex-direction: row;
-//   flex-direction: row;
-//   -webkit-box-lines: multiple;
-//   -webkit-gap: 11px;
-//   -ms-gap: 11px;
-//   gap: 11px;
-//   width: 100%;
-
-//   @include bp.tablet {
-//     -webkit-gap: 24px;
-//     -ms-gap: 24px;
-//     gap: 24px;
-//     margin-inline: auto;
-//     min-width: 100%;
-//     max-width: 1500px;
-//     min-height: 495px;
-//     max-height: 850px;
-//     -webkit-box-orient: vertical;
-//     -webkit-box-direction: normal;
-//     -ms-flex-direction: column;
-//     flex-direction: column;
-//     display: -ms-grid;
-//     display: grid;
-//     -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-//     -ms-grid-rows: auto auto auto;
-//     grid-template-areas:
-//       'f f f s h h'
-//       'f f f r r i'
-//       'f f f x x x';
-//   }
-
-//   @include bp.desktop {
-//     -webkit-gap: 24px;
-//     -ms-gap: 24px;
-//     gap: 24px;
-//     margin-inline: auto;
-//     max-width: 1500px;
-//     min-height: 495px;
-//     max-height: 850px;
-//     -webkit-box-orient: vertical;
-//     -webkit-box-direction: normal;
-//     -ms-flex-direction: column;
-//     flex-direction: column;
-//     display: -ms-grid;
-//     display: grid;
-//     -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-//     -ms-grid-rows: auto auto auto;
-//     grid-template-areas:
-//       'f f f s h h'
-//       'f f f r r i'
-//       'f f f x x x';
-//   }
-
-//   @media (min-width: 1920px) {
-//     max-width: 1800px;
-//     -webkit-gap: 32px;
-//     -ms-gap: 32px;
-//     gap: 32px;
-//     display: -ms-grid;
-//     display: grid;
-//     min-height: 858px;
-//     -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-//     -ms-grid-rows: auto auto auto;
-//     grid-template-areas:
-//       'f f f f s h h'
-//       'f f f f r r i'
-//       'f f f f x x x';
-//   }
-// }
-
-// .markdown {
-//   margin: 0;
-//   padding: 0;
-// }
-
-// .containerFirst,
-// .containerSecond {
-//   -webkit-flex-wrap: nowrap;
-//   -ms-flex-wrap: nowrap;
-//   flex-wrap: nowrap;
-// }
-
-// .cardContent {
-//   font-size: 12px !important;
-//   line-height: 120%;
-
-//   @include bp.tablet {
-//     font-size: clamp(0.6875rem, 0.178rem + 1.1017vw, 1.5rem) !important;
-//   }
-
-//   @include bp.desktop {
-//     font-size: 24px !important;
-//   }
-// }
-
-// .cardContent:last-of-type {
-//   background-color: transparent;
-// }
-
-// .card {
-//   z-index: 1111;
-//   font-size: 12px;
-//   -webkit-border-radius: 20px;
-//   -moz-border-radius: 20px;
-//   border-radius: 20px;
-//   padding: 12px;
-//   min-height: 132px;
-
-//   @include bp.tablet {
-//     -webkit-border-radius: 40px;
-//     -moz-border-radius: 40px;
-//     border-radius: 40px;
-//     padding: 20px;
-//     font-weight: 500;
-//     line-height: 100%;
-//     letter-spacing: 0%;
-//     vertical-align: bottom;
-//     font-size: clamp(0.6875rem, 0.178rem + 1.1017vw, 1.5rem);
-//   }
-
-//   @include bp.desktop {
-//     -webkit-border-radius: 40px;
-//     -moz-border-radius: 40px;
-//     border-radius: 40px;
-//     font-size: 24px;
-//     padding: 48px;
-//   }
-// }
-
-// .firstCardContent {
-//   display: -webkit-box;
-//   display: -ms-flexbox;
-//   display: flex;
-//   -webkit-box-orient: vertical;
-//   -webkit-box-direction: normal;
-//   -ms-flex-direction: column;
-//   flex-direction: column;
-//   -webkit-box-align: start;
-//   -ms-flex-align: start;
-//   align-items: flex-start;
-//   -webkit-box-pack: justify;
-//   -ms-flex-pack: justify;
-//   justify-content: space-between;
-//   -webkit-gap: 27px;
-//   -ms-gap: 27px;
-//   gap: 27px;
-//   height: 100%;
-//   width: 100%;
-//   z-index: 5;
-
-//   @include bp.tablet {
-//     -webkit-box-align: center;
-//     -ms-flex-align: center;
-//     align-items: center;
-//     -webkit-box-pack: justify;
-//     -ms-flex-pack: justify;
-//     justify-content: space-between;
-//     -webkit-gap: 32px;
-//     -ms-gap: 32px;
-//     gap: 32px;
-//   }
-
-//   @include bp.desktop {
-//     -webkit-box-align: center;
-//     -ms-flex-align: center;
-//     align-items: center;
-//     -webkit-box-pack: justify;
-//     -ms-flex-pack: justify;
-//     justify-content: space-between;
-//     height: 100%;
-//   }
-// }
-
-// .firstCard {
-//   width: 100%;
-//   min-height: 340px;
-//   size: 16px;
-
-//   @include bp.tablet {
-//     -ms-grid-row: 1;
-//     -ms-grid-row-span: 3;
-//     -ms-grid-column: 1;
-//     -ms-grid-column-span: 3;
-//     grid-area: f;
-//     -ms-flex-item-align: stretch;
-//     -webkit-align-self: stretch;
-//     align-self: stretch;
-//     min-width: 269px;
-//     max-width: 730px;
-//     height: 100%;
-//     padding: 21px 23px;
-//   }
-
-//   @include bp.desktop {
-//     min-width: 731px;
-//     max-height: 858px;
-//     padding: 48px;
-//   }
-// }
-
-// .secondCard {
-//   padding-inline: 10px;
-
-//   @include bp.tablet {
-//     padding-inline: 24px;
-//     -ms-grid-row: 1;
-//     -ms-grid-column: 4;
-//     grid-area: s;
-//     -ms-flex-item-align: start;
-//     -webkit-align-self: flex-start;
-//     align-self: flex-start;
-//   }
-// }
-
-// .thirdCard {
-//   line-height: 60%;
-
-//   @include bp.tablet {
-//     -ms-grid-row: 1;
-//     -ms-grid-column: 5;
-//     -ms-grid-column-span: 2;
-//     grid-area: h;
-//   }
-// }
-
-// .fourthCard {
-//   @include bp.tablet {
-//     -ms-grid-row: 2;
-//     -ms-grid-column: 4;
-//     -ms-grid-column-span: 2;
-//     grid-area: r;
-//   }
-// }
-
-// .fifthCard {
-//   padding-inline: 6px;
-
-//   @include bp.tablet {
-//     padding-inline: 6px;
-//     -ms-grid-row: 2;
-//     -ms-grid-column: 6;
-//     grid-area: i;
-//   }
-// }
-
-// .thirdCard,
-// .fourthCard {
-//   -webkit-flex-grow: 1;
-//   -ms-flex-positive: 1;
-//   flex-grow: 1;
-//   -webkit-flex-basis: 55%;
-//   -ms-flex-preferred-size: 55%;
-//   flex-basis: 55%;
-//   height: 132px;
-
-//   @include bp.tablet {
-//     min-width: 250px;
-//     min-height: 145px;
-//     max-height: 250px;
-//   }
-
-//   @include bp.desktop {
-//     min-width: 731px;
-//     height: 264px;
-//   }
-// }
-
-// .sixthCard {
-//   width: 100%;
-//   background-color: transparent;
-
-//   @include bp.tablet {
-//     -ms-grid-row: 3;
-//     -ms-grid-column: 4;
-//     -ms-grid-column-span: 3;
-//     grid-area: x;
-//   }
-
-//   @include bp.desktop {
-//     min-width: 731px;
-//   }
-// }
-
-// .secondCard,
-// .fifthCard {
-//   -webkit-flex-grow: 0;
-//   -ms-flex-positive: 0;
-//   flex-grow: 0;
-//   color: var(--color-foreground);
-//   font-weight: 700;
-//   white-space: wrap;
-//   font-family: var(--font-secondary);
-//   text-align: center !important;
-//   display: -webkit-box;
-//   display: -ms-flexbox;
-//   display: flex;
-//   -webkit-box-align: center;
-//   -ms-flex-align: center;
-//   align-items: center;
-//   -webkit-box-pack: center;
-//   -ms-flex-pack: center;
-//   justify-content: center;
-//   width: 70px;
-//   max-width: 94px;
-//   height: 132px;
-//   font-size: 20px;
-//   -webkit-border-radius: 40px !important;
-//   -moz-border-radius: 40px !important;
-//   border-radius: 40px !important;
-
-//   @include bp.tablet {
-//     -webkit-flex-grow: unset;
-//     -ms-flex-positive: unset;
-//     flex-grow: unset;
-//     min-width: 94px;
-//     max-width: 274px;
-//     min-height: 145px;
-//     max-height: 250px;
-//     font-size: clamp(1rem, -0.3326rem + 2.8814vw, 1.8rem);
-//   }
-
-//   @include bp.desktop {
-//     width: 274px;
-//     height: 265px;
-//     font-size: 52px;
-//   }
-// }
-
 .container {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -362,7 +22,6 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://w
   -ms-gap: 11px;
   gap: 11px;
   width: 100%;
-  // padding: 0 clamp(1.5rem, 0.926rem + 2.353vi, 3.75rem);
 
   @include bp.tablet {
     -webkit-gap: 16px;
@@ -370,7 +29,7 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://w
     gap: 16px;
     margin-inline: auto;
     min-width: 100%;
-    max-width: 1200px;
+    max-width: 1024px;
     min-height: 400px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -423,11 +82,6 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://w
       'f f f f r r i'
       'f f f f x x x';
   }
-}
-
-.markdown {
-  margin: 0;
-  padding: 0;
 }
 
 .containerFirst,
@@ -778,10 +432,12 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://w
   }
 
   @include bp.desktop {
-    content: '100%';
+    font-size: clamp(1rem, 2.8814vw - 0.3326rem, 1.8rem);
   }
 
   @media (min-width: 1920px) {
+    content: '100%';
+
     font-size: 52px;
   }
 }
@@ -893,6 +549,10 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://w
     }
 
     @include bp.desktop {
+      padding: 20px 20px 10px 20px;
+    }
+
+    @media (min-width: 1920px) {
       padding: 48px 48px 30px 48px;
       border-radius: 40px 40px 40px 0;
       -webkit-border-radius: 40px 40px 40px 0;
@@ -1069,12 +729,6 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://w
 .greyText {
   color: var(--color-grey2);
   line-height: 130%;
-
-  @include bp.tablet {
-  }
-
-  @include bp.desktop {
-  }
 }
 
 .fontMain {
@@ -1086,7 +740,15 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://w
 }
 
 .bold {
-  font-weight: 700;
+  font-weight: 400;
+
+  @media (min-width: 740px) {
+    font-weight: 700;
+  }
+
+  @include bp.desktop {
+    font-weight: 700;
+  }
 }
 
 .medium {
@@ -1129,11 +791,11 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://w
   font-size: 12px;
 
   @include bp.tablet {
-    font-size: 11px;
+    font-size: clamp(0.6875rem, 0.3816rem + 1.0638vw, 1.0625rem);
   }
 
   @include bp.desktop {
-    font-size: 24px;
+    font-size: clamp(0.6875rem, -0.2611rem + 1.4509vw, 1.5rem);
   }
 }
 
