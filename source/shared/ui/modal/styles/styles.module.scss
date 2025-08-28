@@ -25,7 +25,6 @@
   flex-direction: column;
   z-index: 6;
 
-
   .displayNone {
     display: none;
   }
@@ -101,7 +100,6 @@
   width: 13px;
   height: 13px;
   z-index: 6;
-
 
   @include bp.tablet {
     width: 22px;
