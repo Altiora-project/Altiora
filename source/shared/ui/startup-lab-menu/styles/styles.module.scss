@@ -95,7 +95,7 @@ $radius-block-short-desktop: 3rem;
     color: var(--color-white-light);
     font-family: var(--font-secondary);
     font-weight: 700;
-    font-size: 16px;
+    font-size: var(--section-header-title-size); //16px;
     line-height: 100%;
     margin: 0;
     padding: 0px 1rem 1.3rem 0px;
@@ -113,13 +113,6 @@ $radius-block-short-desktop: 3rem;
       }
     }
 
-    @include bp.tablet {
-      font-size: 32px;
-    }
-
-    @include bp.desktop {
-      font-size: 70px;
-    }
   }
 
   .space {
@@ -188,7 +181,7 @@ $radius-block-short-desktop: 3rem;
   color: var(--color-white);
   font-family: var(--font-secondary);
   font-weight: 700;
-  font-size: 14px;
+  font-size: var(--startup-lab-menu-size);
   text-align: left;
   height: 44px;
   gap: 22px;
@@ -268,7 +261,7 @@ $radius-block-short-desktop: 3rem;
 
   @include bp.desktop {
     padding: 16px 20px;
-    font-size: 20px;
+    //font-size: 20px;
     height: 56px;
     gap: 10px;
   }
