@@ -164,17 +164,17 @@
 }
 
 .bottomButton {
-  padding: 12px 17px;
+  //padding: 12px 17px;
   font-size: 11px;
 
   @include bp.tablet {
-    padding: 14px 49px;
+    //padding: 14px 49px;
     width: calc(50% - 13px);
     font-size: 13px;
   }
 
   @include bp.desktop {
-    padding: 24px 40px;
+    //padding: 24px 40px;
     width: 367px;
     font-size: 16px;
   }

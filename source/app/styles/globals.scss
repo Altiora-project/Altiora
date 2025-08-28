@@ -33,12 +33,18 @@ body[data-scroll-locked][style] {
   --section-text-size: clamp(12px, calc(100vw / calc(var(--figma-mobile-width) / 12)), 32px);
   --section-text1-size: clamp(16px, calc(100vw / calc(var(--figma-mobile-width) / 16)), 32px);
   --startup-lab-menu-size: clamp(14px, calc(100vw / calc(var(--figma-mobile-width) / 14)), 26px);
+  --bt-font-size: clamp(11px, calc(100vw / calc(var(--figma-mobile-width) / 11)), 13px);
+  --bt-side-padding: clamp(17px, calc(100vw / calc(var(--figma-mobile-width) / 17)), 27px);
+  --bt-vertical-padding: clamp(12px, calc(100vw / calc(var(--figma-mobile-width) / 12)), 14px);
 
   @include bp.tablet {
     --section-header-title-size: clamp(16px, calc(100vw / (var(--figma-tablet-width) / 32)), 70px);
     --section-text-size: clamp(12px, calc(100vw / calc(var(--figma-tablet-width) / 16)), 32px);
     --section-text1-size: clamp(16px, calc(100vw / calc(var(--figma-tablet-width) / 16)), 32px);
     --startup-lab-menu-size: clamp(14px, calc(100vw / calc(var(--figma-tablet-width) / 26)), 26px);
+    --bt-font-size: clamp(11px, calc(100vw / calc(var(--figma-tablet-width) / 13)), 13px);
+    --bt-side-padding: clamp(17px, calc(100vw / calc(var(--figma-tablet-width) / 27)), 27px);
+    --bt-vertical-padding: clamp(14px, calc(100vw / calc(var(--figma-tablet-width) / 14)), 24px);
   }
 
   @include bp.desktop {
@@ -46,6 +52,9 @@ body[data-scroll-locked][style] {
     --section-text-size: clamp(16px, calc(100vw / calc(var(--figma-desktop-width) / 32)), 32px);
     --section-text1-size: clamp(16px, calc(100vw / calc(var(--figma-desktop-width) / 32)), 32px);
     --startup-lab-menu-size: clamp(14px, calc(100vw / calc(var(--figma-desktop-width) / 26)), 26px);
+    --bt-font-size: clamp(13px, calc(100vw / calc(var(--figma-desktop-width) / 16)), 16px);
+    --bt-side-padding: clamp(27px, calc(100vw / calc(var(--figma-desktop-width) / 56)), 56px);
+    --bt-vertical-padding: clamp(14px, calc(100vw / calc(var(--figma-desktop-width) / 24)), 24px);
   }
 
   --card-width: clamp(400px, calc(100vw * calc(var(--figma-desktop-width) / 552)), 552px);
