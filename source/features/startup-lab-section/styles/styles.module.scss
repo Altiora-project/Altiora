@@ -17,20 +17,18 @@
 }
 
 .title {
-  // font-size: 16px;
   font-family: var(--font-secondary);
   font-weight: 700;
   color: var(--color-grey);
   padding-bottom: 2px;
+  font-size: var(--section-header-title-size);
 
   @include bp.tablet {
-    // font-size: 32px;
     text-transform: lowercase;
     padding-right: 14px;
   }
 
   @include bp.desktop {
-    // font-size: 70px;
     padding-right: 14px;
   }
 }
@@ -55,22 +53,22 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  font-size: 12px;
   white-space: pre-line;
   font-weight: 400;
   color: var(--color-grey);
 
   & p {
-    line-height: 1;
+    line-height: 1.2;
+    font-size: var(--section-text-size) !important;
   }
 
   @include bp.tablet {
-    font-size: 16px;
+    //font-size: 16px;
     gap: 18px;
   }
 
   @include bp.desktop {
-    font-size: 32px;
+    //font-size: 32px;
     gap: 24px;
   }
 }
@@ -82,21 +80,22 @@
 }
 
 .cardsTitle {
-  font-size: 15px;
-  font-weight: 400;
+  font-size: var(--what-me-size);
+  font-weight: 700;
   font-family: var(--font-main);
   color: var(--color-accent-primary);
   text-transform: none;
   padding: 25px 0 10px 0;
 
   @include bp.tablet {
-    font-size: 16px;
     padding: 24px 0 24px 0;
+    font-weight: 400;
   }
 
   @include bp.desktop {
-    font-size: 40px;
+    //font-size: 40px;
     padding: 42px 0 38px 0;
+    font-weight: 400;
   }
 }
 
@@ -114,7 +113,7 @@
 
   @include bp.desktop {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(552px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(var(--card-width), 1fr));
     gap: 24px;
     padding-bottom: 32px;
   }
@@ -238,6 +237,11 @@
     max-height: 50vh;
     object-fit: contain;
     max-width: 100%;
+  }
+
+  & p {
+    font-size: var(--section-text1-size) !important;
+    line-height: 1.2;
   }
 }
 
