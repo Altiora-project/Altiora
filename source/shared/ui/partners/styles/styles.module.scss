@@ -1,6 +1,6 @@
 .container {
   margin-block-start: 24px;
-  width: 110vw !important ;
+  width: 110vw !important;
   margin-inline-start: -28px;
   // width: 100%;
 
@@ -8,7 +8,7 @@
     margin-block-start: 30px;
   }
   @include bp.desktop {
-    width: 140vw !important ;
+    width: 140vw !important;
     margin-inline-start: -10%;
   }
 }
@@ -29,12 +29,14 @@
 }
 
 .dataContainer {
-  padding-block: auto;
+  text-decoration: none;
+  //padding-block: auto;
   height: 38px;
-  display: inline-flex;
+  display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
   min-width: 160px;
   padding-inline: 15px;
   background-color: var(--color-background1);
@@ -58,24 +60,6 @@
     width: 275px;
     height: 64px;
     margin-inline-start: 32px;
-  }
-}
-
-.linkData {
-  width: 100%;
-  height: auto;
-  text-decoration: none;
-}
-
-.img {
-  height: 20px;
-  width: fit-content;
-  @include bp.tablet {
-    height: 20px;
-  }
-
-  @include bp.desktop {
-    height: 30px;
   }
 }
 
