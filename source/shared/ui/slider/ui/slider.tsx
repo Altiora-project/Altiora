@@ -14,10 +14,10 @@ export const Slider: FC<typeSliderProps> = ({ cards, ...otherProps }) => {
   const [offset, setOffset] = useState(0)
 
   useEffect(() => {
-    setOffset(window.innerWidth)
+    setOffset(window.screen.availWidth)
 
     const handleResize = () => {
-      setOffset(window.innerWidth)
+      setOffset(window.screen.availWidth)
     }
 
     window.addEventListener('resize', handleResize)
@@ -54,7 +54,7 @@ export const Slider: FC<typeSliderProps> = ({ cards, ...otherProps }) => {
           const isInStack = index < movedInStackCount
           let offsetX
 
-          if (offset >= 1920) {
+          if (offset >= 1024) {
             offsetX = (index - movedInStackCount) * 780
           } else {
             offsetX = (index - movedInStackCount) * 340
