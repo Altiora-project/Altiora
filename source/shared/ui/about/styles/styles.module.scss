@@ -363,6 +363,7 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://w
   -ms-gap: 11px;
   gap: 11px;
   width: 100%;
+  // padding: 0 clamp(1.5rem, 0.926rem + 2.353vi, 3.75rem);
 
   @include bp.tablet {
     -webkit-gap: 16px;
@@ -391,7 +392,7 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://w
     -ms-gap: 24px;
     gap: 24px;
     margin-inline: auto;
-    max-width: 1500px;
+    // max-width: 1500px;
     min-height: 495px;
     max-height: 850px;
     -webkit-box-orient: vertical;

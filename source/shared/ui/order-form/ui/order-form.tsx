@@ -1,6 +1,6 @@
 'use client'
 
-import { FC, use, useEffect, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 
 import classes from '../styles/styles.module.scss'
 import type { OrderFormData } from '../types/types'
@@ -10,14 +10,14 @@ import { Controller } from 'react-hook-form'
 
 import sendFormDataAction from '@entities/orderFormAPI/api/server-actions'
 import useOrderForm from '@entities/orderFormAPI/model/use-form'
+import { getPoliciesApi } from '@entities/policies/api/get-policies'
 
+import { createRoute, routes } from '@shared/configs/routes'
 import { MainBlock } from '@shared/ui/_main-block'
 import { Button } from '@shared/ui/button'
 import { Checkbox } from '@shared/ui/checkbox'
 import { FormSubmitModal } from '@shared/ui/form-submit-modal'
 import { Input } from '@shared/ui/input'
-import { getPoliciesApi } from '@entities/policies/api/get-policies'
-import { createRoute, routes } from '@shared/configs/routes'
 
 export const OrderForm: FC = () => {
   const [isModalOpen, setModalOpen] = useState(false)
@@ -45,7 +45,7 @@ export const OrderForm: FC = () => {
     handleSubmit,
     setValue,
     control,
-    formState: { errors, isValid, isSubmitting }
+    formState: { errors, isValid }
   } = useOrderForm(onSubmit)
 
   const FormButton: FC = () => (
@@ -76,7 +76,7 @@ export const OrderForm: FC = () => {
               id="name"
               type="text"
               placeholder="имя"
-              supportingText="ваше имя"
+              supportingText={errors.name ? (errors.name.message as string) : 'ваше имя'}
               error={!!errors.name}
               onClear={() => setValue('name', '', { shouldValidate: true })}
               {...register('name')}
@@ -86,7 +86,7 @@ export const OrderForm: FC = () => {
               id="company"
               type="text"
               placeholder="компания"
-              supportingText="название компании"
+              supportingText={errors.company ? (errors.company.message as string) : 'название компании'}
               error={!!errors.company}
               onClear={() => setValue('company', '', { shouldValidate: true })}
               {...register('company')}
@@ -95,7 +95,9 @@ export const OrderForm: FC = () => {
               label="Детали проекта"
               id="projectDetails"
               placeholder="описание проекта"
-              supportingText="опишите детали проекта"
+              supportingText={
+                errors.project_details ? (errors.project_details.message as string) : 'опишите детали проекта'
+              }
               error={!!errors.project_details}
               onClear={() => setValue('project_details', '', { shouldValidate: true })}
               {...register('project_details')}
@@ -106,7 +108,7 @@ export const OrderForm: FC = () => {
               id="phone"
               type="tel"
               placeholder="+7 "
-              supportingText="ваш номер телефона"
+              supportingText={errors.phone_number ? (errors.phone_number.message as string) : 'ваш номер телефона'}
               error={!!errors.phone_number}
               onClear={() => setValue('phone_number', '', { shouldValidate: true })}
               {...register('phone_number')}
@@ -117,7 +119,7 @@ export const OrderForm: FC = () => {
               id="email"
               type="email"
               placeholder="name@example.ru"
-              supportingText="ваша электронная почта"
+              supportingText={errors.email ? (errors.email.message as string) : 'ваша электронная почта'}
               error={!!errors.email}
               onClear={() => setValue('email', '', { shouldValidate: true })}
               {...register('email')}

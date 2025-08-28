@@ -13,7 +13,7 @@
     0 90%;
 
   @include bp.tablet {
-    padding: 2rem;
+    padding: 0 2rem 2rem;
   }
 
   @include bp.desktop {

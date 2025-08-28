@@ -19,8 +19,8 @@ import { Modal } from '@shared/ui/modal'
 import { StartupLabMenu } from '@shared/ui/startup-lab-menu'
 
 export const StartupLab: FC<StartupLabProps> = ({
+  title,
   cards,
-  cardCount,
   info1,
   info2,
   contactURL,
@@ -33,7 +33,6 @@ export const StartupLab: FC<StartupLabProps> = ({
 
   const labsCards = (cards || [])
     .sort((a, b) => a.id - b.id)
-    .filter(card => card.id <= cardCount)
     .map(card => ({
       imageLink: 'http://' + process.env.NEXT_PUBLIC_IMAGE_HOST + card.image,
       title: card.title,
@@ -84,8 +83,6 @@ export const StartupLab: FC<StartupLabProps> = ({
       </div>
     )
   }
-
-  const title = '/лаборатория стартапов'
 
   return (
     <div className={className} id={'laboratory'} {...otherProps}>

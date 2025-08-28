@@ -26,6 +26,48 @@ body[data-scroll-locked][style] {
   --color-error: #ff6f61;
 
   --noise-img: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 600" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%" height="100%" filter="url(%23noise)" opacity="0.1"/%3E%3C/svg%3E');
+  --figma-desktop-width: 1920;
+  --figma-tablet-width: 744;
+  --figma-mobile-width: 390;
+  --section-header-title-size: clamp(16px, calc(100vw / (var(--figma-mobile-width) / 16)), 32px);
+  --section-text-size: clamp(12px, calc(100vw / calc(var(--figma-mobile-width) / 12)), 32px);
+  --section-text1-size: clamp(16px, calc(100vw / calc(var(--figma-mobile-width) / 16)), 32px);
+  --startup-lab-menu-size: clamp(14px, calc(100vw / calc(var(--figma-mobile-width) / 14)), 26px);
+  --bt-font-size: clamp(11px, calc(100vw / calc(var(--figma-mobile-width) / 11)), 13px);
+  --bt-side-padding: clamp(17px, calc(100vw / calc(var(--figma-mobile-width) / 17)), 27px);
+  --bt-vertical-padding: clamp(12px, calc(100vw / calc(var(--figma-mobile-width) / 12)), 14px);
+
+  @include bp.tablet {
+    --section-header-title-size: clamp(16px, calc(100vw / (var(--figma-tablet-width) / 32)), 70px);
+    --section-text-size: clamp(12px, calc(100vw / calc(var(--figma-tablet-width) / 16)), 32px);
+    --section-text1-size: clamp(16px, calc(100vw / calc(var(--figma-tablet-width) / 16)), 32px);
+    --startup-lab-menu-size: clamp(14px, calc(100vw / calc(var(--figma-tablet-width) / 26)), 26px);
+    --bt-font-size: clamp(11px, calc(100vw / calc(var(--figma-tablet-width) / 13)), 13px);
+    --bt-side-padding: clamp(17px, calc(100vw / calc(var(--figma-tablet-width) / 27)), 27px);
+    --bt-vertical-padding: clamp(14px, calc(100vw / calc(var(--figma-tablet-width) / 14)), 24px);
+  }
+
+  @include bp.desktop {
+    --section-header-title-size: clamp(32px, calc(100vw / (var(--figma-desktop-width) / 70)), 70px);
+    --section-text-size: clamp(16px, calc(100vw / calc(var(--figma-desktop-width) / 32)), 32px);
+    --section-text1-size: clamp(16px, calc(100vw / calc(var(--figma-desktop-width) / 32)), 32px);
+    --startup-lab-menu-size: clamp(14px, calc(100vw / calc(var(--figma-desktop-width) / 26)), 26px);
+    --bt-font-size: clamp(13px, calc(100vw / calc(var(--figma-desktop-width) / 16)), 16px);
+    --bt-side-padding: clamp(27px, calc(100vw / calc(var(--figma-desktop-width) / 56)), 56px);
+    --bt-vertical-padding: clamp(14px, calc(100vw / calc(var(--figma-desktop-width) / 24)), 24px);
+  }
+
+  --card-width: clamp(400px, calc(100vw * calc(var(--figma-desktop-width) / 552)), 552px);
+
+  --what-me-size: clamp(15px, calc(100vw / calc(var(--figma-mobile-width) / 15)), 16px);
+
+  @include bp.tablet {
+    --what-me-size: clamp(16px, calc(100vw / calc(var(--figma-tablet-width) / 16)), 40px);
+  }
+
+  @include bp.desktop {
+    --what-me-size: clamp(16px, calc(100vw / calc(var(--figma-desktop-width) / 40)), 40px);
+  }
 }
 
 html,
@@ -70,19 +112,19 @@ body {
   flex-direction: column;
   gap: 40px;
   width: 100%;
-  max-width: 1800px;
+  max-width: 1920px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 clamp(1.5rem, 0.926rem + 2.353vi, 3.75rem); //1.5rem
 
   @include bp.tablet {
     gap: 60px;
-    padding: 0 2rem;
+    // padding: 0 2rem;
     box-sizing: border-box;
   }
 
   @include bp.desktop {
     gap: 150px;
-    padding: 0;
+    // padding: 0;
   }
 }
 
@@ -126,16 +168,17 @@ h2 {
   line-height: 100%;
   letter-spacing: 0%;
   text-transform: lowercase;
-  font-size: 16px;
+  // font-size: 16px;
+  font-size: clamp(1rem, 0.14rem + 3.529vi, 4.375rem);
   vertical-align: bottom;
   text-align: left;
 
   @include bp.tablet {
-    font-size: 32px;
+    // font-size: 32px;
   }
 
   @include bp.desktop {
-    font-size: 70px;
+    // font-size: 70px;
     margin-block-start: 10px;
     margin-block-end: 10px;
   }
