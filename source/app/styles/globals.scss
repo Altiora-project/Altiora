@@ -59,7 +59,6 @@ body[data-scroll-locked][style] {
   @include bp.desktop {
     --what-me-size: clamp(16px, calc(100vw / calc(var(--figma-desktop-width) / 40)), 40px);
   }
-
 }
 
 html,
