@@ -16,17 +16,19 @@ export const MainMenuMobile: React.FC<typeMainMenuProps> = ({ menuList }) => {
         <DropdownMenu.Content className={classes.menuContainer} align="end" side="bottom">
           {menuList
             .filter(item => item.url)
-            .map((item, cnt) => (
-              item.children ?
-                item.children.map((item, index) =>
+            .map((item, cnt) =>
+              item.children ? (
+                item.children.map((item, index) => (
                   <DropdownMenu.Item className={classes.link} key={index}>
                     <Link href={item.url as string}>{item.label}</Link>
                   </DropdownMenu.Item>
-                )
-                : <DropdownMenu.Item className={classes.link} key={cnt} asChild>
+                ))
+              ) : (
+                <DropdownMenu.Item className={classes.link} key={cnt} asChild>
                   <Link href={item.url as string}>{item.label}</Link>
                 </DropdownMenu.Item>
-            ))}
+              )
+            )}
         </DropdownMenu.Content>
       </DropdownMenu.Portal>
     </DropdownMenu.Root>

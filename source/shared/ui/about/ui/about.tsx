@@ -100,9 +100,9 @@ export const About: FC<typeAboutDataProps> = ({ data }) => {
       >
         <div className={clsx(classes.greyText, classes.titleFontNormal, classes.light)}>
           <span className={clsx(classes.whiteText, classes.normal)}>Каждый проект</span> мы{' '}
-          <span className={clsx(classes.whiteText, classes.normal)}>ведем от концепции до масштабирования</span>, используя гибкие методологии и проверенные технологические
-          решения, чтобы достичь результата в согласованные сроки{' '}
-          <span className={clsx(classes.whiteText, classes.normal)}>с гарантией</span>
+          <span className={clsx(classes.whiteText, classes.normal)}>ведем от концепции до масштабирования</span>,
+          используя гибкие методологии и проверенные технологические решения, чтобы достичь результата в согласованные
+          сроки <span className={clsx(classes.whiteText, classes.normal)}>с гарантией</span>
         </div>
       </CardComponent>
 
@@ -134,7 +134,7 @@ export const About: FC<typeAboutDataProps> = ({ data }) => {
           <div className={classes.bottomContent}>
             <div>
               <a href="/#form">
-                <Button disabled={false} onClick={() => { }} className={classes.button}>
+                <Button disabled={false} onClick={() => {}} className={classes.button}>
                   <span className={classes.buttonData}></span>
                 </Button>
               </a>

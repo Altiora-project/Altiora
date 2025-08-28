@@ -46,7 +46,6 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://w
 //       'f f f x x x';
 //   }
 
-
 //   @include bp.desktop {
 //     -webkit-gap: 24px;
 //     -ms-gap: 24px;
@@ -784,10 +783,8 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://w
 
   @media (min-width: 1920px) {
     font-size: 52px;
-
   }
 }
-
 
 .card:last-of-type {
   background-color: transparent;
@@ -828,7 +825,6 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://w
   justify-content: center;
 }
 
-
 .buttonData::after {
   content: 'связаться';
   text-align: center;
@@ -852,9 +848,6 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://w
   }
 }
 
-
-
-
 .logoContainer,
 .logo {
   z-index: 3;
@@ -862,7 +855,6 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://w
   width: 131px;
 
   @include bp.tablet {
-
     height: 131px;
     width: 131px;
   }
@@ -957,27 +949,43 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://w
         clip-path: polygon(0% 0%, 200% 0%, 0% 100%);
         -webkit-clip-path: polygon(0% 0%, 200% 0%, 0% 100%);
 
-        @supports ((-webkit-mask-image: radial-gradient(circle at bottom right,
-              transparent 0%,
-              transparent $radius,
-              black $radius,
-              black 100%)) or (mask-image: radial-gradient(circle at bottom right,
-              transparent 0%,
-              transparent $radius,
-              black $radius,
-              black 100%))) {
+        @supports (
+          (
+              -webkit-mask-image: radial-gradient(
+                  circle at bottom right,
+                  transparent 0%,
+                  transparent $radius,
+                  black $radius,
+                  black 100%
+                )
+            )
+            or
+            (
+              mask-image: radial-gradient(
+                  circle at bottom right,
+                  transparent 0%,
+                  transparent $radius,
+                  black $radius,
+                  black 100%
+                )
+            )
+        ) {
           -webkit-clip-path: none;
           clip-path: none;
-          -webkit-mask-image: radial-gradient(circle at bottom right,
-              transparent 0%,
-              transparent $radius,
-              black $radius,
-              black 100%);
-          mask-image: radial-gradient(circle at bottom right,
-              transparent 0%,
-              transparent $radius,
-              black $radius,
-              black 100%);
+          -webkit-mask-image: radial-gradient(
+            circle at bottom right,
+            transparent 0%,
+            transparent $radius,
+            black $radius,
+            black 100%
+          );
+          mask-image: radial-gradient(
+            circle at bottom right,
+            transparent 0%,
+            transparent $radius,
+            black $radius,
+            black 100%
+          );
           -webkit-mask-mode: alpha;
           mask-mode: alpha;
         }
@@ -1062,9 +1070,11 @@ $bg-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 1800 700" xmlns="http://w
   color: var(--color-grey2);
   line-height: 130%;
 
-  @include bp.tablet {}
+  @include bp.tablet {
+  }
 
-  @include bp.desktop {}
+  @include bp.desktop {
+  }
 }
 
 .fontMain {
