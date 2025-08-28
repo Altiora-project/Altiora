@@ -23,52 +23,28 @@ export const Partners: FC<typePartnersProps> = ({ partners }) => {
           >
             {displayPartners.map((phrase, index) => {
               return (
-                <div className={classes.dataContainer} key={index}>
-                  <Link
-                    key={phrase.id}
-                    href={phrase.website}
-                    className={clsx(classes.linkData, phrase.name.length >= 11 ? classes.name : '')}
-                    target="_blank"
-                  >
-                    <div style={{ display: 'flex' }}>
-                      {phrase.logo && (
-                        <Image src={phrase.logo} className={classes.img} alt={phrase.name} width={30} height={18} />
-                      )}
-                      <p>{phrase.name}</p>
-                    </div>
-                  </Link>
-                </div>
+                <Link
+                  key={index}
+                  href={phrase.website}
+                  className={clsx(classes.dataContainer, phrase.name.length >= 11 ? classes.name : '')}
+                  target="_blank"
+                >
+                  {phrase.logo && (
+                    <Image
+                      src={phrase.logo}
+                      alt={phrase.name}
+                      width={30}
+                      height={30}
+                      style={{ maxWidth: '100%', height: 'auto' }}
+                    />
+                  )}
+                  <p>{phrase.name}</p>
+                </Link>
               )
             })}
           </Marquee>
         )
       })}
     </div>
-
-    // <div className={classes.container}>
-    //   <Marquee speed={70} loop={0} className={clsx(classes.marquee, classes.marqueeRight)} direction="right">
-    //     {displayPartners.map(phrase => {
-    //       return (
-    //         <div className={classes.dataContainer}>
-    //           <Link key={phrase.id} href={phrase.website} className={classes.linkData}>
-    //             {phrase.logo ? <img src={phrase.logo} className={classes.img} alt={phrase.name} /> : <>{phrase.name}</>}
-    //           </Link>
-    //         </div>
-    //       )
-    //     })}
-    //   </Marquee>
-
-    //   <Marquee speed={50} loop={0} className={clsx(classes.marquee, classes.marqueeLeft)} direction="left">
-    //     {displayPartners.map(phrase => {
-    //       return (
-    //         <div className={classes.dataContainer}>
-    //           <Link key={phrase.id} href={phrase.website} className={classes.linkData}>
-    //             {phrase.logo ? <img src={phrase.logo} className={classes.img} alt={phrase.name} /> : <>{phrase.name}</>}
-    //           </Link>
-    //         </div>
-    //       )
-    //     })}
-    //   </Marquee>
-    // </div>
   )
 }
