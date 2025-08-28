@@ -115,7 +115,6 @@
   @include bp.desktop {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(552px, 1fr));
-    gap: 24px;
     padding-bottom: 32px;
   }
 }
