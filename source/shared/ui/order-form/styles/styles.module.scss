@@ -44,9 +44,14 @@
   display: flex;
   justify-items: center;
   gap: 0.75rem;
-  margin-top: 1rem;
+  margin-top: 15px;
+
+  @include bp.tablet {
+    margin-top: 34px;
+  }
 
   @include bp.desktop {
+    margin-top: 53px;
     gap: 1.5rem;
   }
 }
