@@ -63,6 +63,7 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
         />
 
         <StartupLab
+          title={pageData.lab_title}
           cards={startupLabCards}
           info1={pageData?.lab_description}
           info2={pageData?.lab_description_ps}

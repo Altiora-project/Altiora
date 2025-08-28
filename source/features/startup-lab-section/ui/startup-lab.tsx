@@ -18,7 +18,15 @@ import { Button } from '@shared/ui/button'
 import { Modal } from '@shared/ui/modal'
 import { StartupLabMenu } from '@shared/ui/startup-lab-menu'
 
-export const StartupLab: FC<StartupLabProps> = ({ cards, info1, info2, contactURL, className, ...otherProps }) => {
+export const StartupLab: FC<StartupLabProps> = ({
+  title,
+  cards,
+  info1,
+  info2,
+  contactURL,
+  className,
+  ...otherProps
+}) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [technologiesData, setTechnologiesData] = useState<typeApiResponse<typeTechnologiesResponse> | null>(null)
   const [isLoading, setIsLoading] = useState(false)
@@ -75,8 +83,6 @@ export const StartupLab: FC<StartupLabProps> = ({ cards, info1, info2, contactUR
       </div>
     )
   }
-
-  const title = '/лаборатория стартапов'
 
   return (
     <div className={className} id={'laboratory'} {...otherProps}>
