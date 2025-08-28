@@ -112,7 +112,6 @@ $radius-block-short-desktop: 3rem;
         @include rounded-corner('inner-bottom', $radius-block-short-desktop);
       }
     }
-
   }
 
   .space {
@@ -120,11 +119,20 @@ $radius-block-short-desktop: 3rem;
     align-items: flex-start;
     justify-content: flex-end;
     flex-grow: 1;
-    min-height: 1em;
+    min-height: calc(var(--radius-block) * 1.5);
     background-color: $background;
     background-image: $bg-image;
     position: relative;
+    min-width: calc(var(--section-header-title-size) * 2);
     border-radius: var(--radius-block) var(--radius-block) 0 0;
+
+    @include bp.tablet {
+      min-width: calc(var(--section-header-title-size) * 3);
+    }
+
+    @include bp.tablet {
+      min-width: calc(var(--section-header-title-size) * 3);
+    }
 
     button {
       margin: 12px 10px 0 0;
