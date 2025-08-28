@@ -41,7 +41,12 @@ export interface MainPage {
   hero_image: string
   services_running_line: Array<string>
   about_title: string
-  about_text: string
+  about_subtitle: string
+  about_highlight_1: string
+  about_highlight_text_1: string
+  about_highlight_2: string
+  about_highlight_text_2: string
+  about_highlight_subtext: string
   highlight_1: string
   highlight_2: string
   services_section_title: string

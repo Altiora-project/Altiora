@@ -1,6 +1,6 @@
 'use client'
 
-import { FC, useEffect, useState } from 'react'
+import { FC } from 'react'
 
 import classes from '../styles/styles.module.scss'
 import { typeAboutDataProps } from '../types'
@@ -9,36 +9,8 @@ import Image from 'next/image'
 
 import { Button } from '@shared/ui/button'
 import { CardComponent } from '@shared/ui/card-component'
-// import { MarkdownRenderer } from '@shared/lib/markdown'
-// import ReactMarkdown from 'react-markdown'
-// import rehypeRaw from 'rehype-raw'
-// import remarkGfm from 'remark-gfm'
 
-export const About: FC<typeAboutDataProps> = ({ data }) => {
-  //заглушка
-  // TODO: заменить хардкод на маркдауны(!!!)
-  //    <div className={classes.cardContent}>
-  //   <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
-  //     {text}
-  //   </ReactMarkdown>
-  // </div>
-
-  const [offset, setOffset] = useState(0)
-
-  useEffect(() => {
-    setOffset(window.screen.availWidth)
-
-    const handleResize = () => {
-      setOffset(window.screen.availWidth)
-    }
-
-    window.addEventListener('resize', handleResize)
-
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
-
+export const About: FC<typeAboutDataProps> = () => {
   return (
     <div className={classes.container} id="company">
       <CardComponent
@@ -100,9 +72,9 @@ export const About: FC<typeAboutDataProps> = ({ data }) => {
       >
         <div className={clsx(classes.greyText, classes.titleFontNormal, classes.light)}>
           <span className={clsx(classes.whiteText, classes.normal)}>Каждый проект</span> мы{' '}
-          <span>ведем от концепции до масштабирования</span>, используя гибкие методологии и проверенные технологические
-          решения, чтобы достичь результата в согласованные сроки{' '}
-          <span className={clsx(classes.whiteText, classes.normal)}>с гарантией</span>
+          <span className={clsx(classes.whiteText, classes.normal)}>ведем от концепции до масштабирования</span>,
+          используя гибкие методологии и проверенные технологические решения, чтобы достичь результата в согласованные
+          сроки <span className={clsx(classes.whiteText, classes.normal)}>с гарантией</span>
         </div>
       </CardComponent>
 
@@ -112,16 +84,16 @@ export const About: FC<typeAboutDataProps> = ({ data }) => {
         tag={'default'}
         className={clsx(classes.card, classes.fifthCard)}
       >
-        {offset < 485 ? '100 %' : '100%'}
+        <span className={classes.percentData}></span>
       </CardComponent>
 
       <div className={clsx(classes.container_radius, classes.sixthCard)}>
         <div className={classes.content}>
           <div className={clsx(classes.greyText, classes.titleFontNormal, classes.footerCard, classes.light)}>
             Специальное предложение для новых клиентов:
-            <span className={clsx(classes.whiteText, offset <= 740 ? '' : classes.bold)}>
+            <span className={clsx(classes.whiteText, classes.bold)}>
               Первая консультация с аудитом проекта —
-              <span className={clsx(classes.primaryText, offset <= 740 ? '' : classes.bold)}> бесплатно</span>
+              <span className={clsx(classes.primaryText, classes.bold)}> бесплатно</span>
             </span>
             <span className={clsx(classes.whiteText, classes.titleFontSmall, classes.normal)}>
               Оставьте заявку до 30 сентября — получите тариф «Старт» c 15% скидкой
@@ -134,7 +106,7 @@ export const About: FC<typeAboutDataProps> = ({ data }) => {
             <div>
               <a href="/#form">
                 <Button disabled={false} onClick={() => {}} className={classes.button}>
-                  {offset < 1919 ? 'связаться' : 'связаться с нами'}
+                  <span className={classes.buttonData}></span>
                 </Button>
               </a>
             </div>

@@ -32,11 +32,8 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
 
   const slides = Array.isArray(pageData.case_studies_data) ? pageData?.case_studies_data : []
 
-  const aboutData = [pageData.about_title, pageData.about_text, pageData.highlight_1, pageData.highlight_2]
-
   const phrases = Array.isArray(pageData.services_running_line) ? pageData.services_running_line : []
 
-  console.log(pageData)
   const services = pageData.services_data.map(service => {
     return {
       id: service.id,
@@ -53,7 +50,7 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
       <HeroSection title={pageData.hero_title} imgUrl={pageData.hero_image} phrases={phrases} />
 
       <div className={'container'}>
-        <GetAbout data={aboutData} />
+        <GetAbout />
 
         <ServicesPromoBlock
           title={pageData.services_section_title}
