@@ -12,11 +12,28 @@ export const FooterInfoBlock: React.FC<FooterInfoBlockProps> = ({ addressDetails
   return (
     <div className={styles.container}>
       <div className={styles.addressBlock}>
-        {addressDetails?.map((item, index) => (
-          <p key={index} className={styles.text}>
-            {item}
-          </p>
-        ))}
+        {addressDetails?.map((item, index) => {
+          if (item.includes('ИНН') || item.includes('ОГРН') || item.includes('ОКВЭД2')) {
+            // Разбиваем строку по пробелам на блоки
+            const parts = item.split(/(?=ИНН|ОГРН|ОКВЭД2)/g)
+
+            return (
+              <div key={index} className={styles.details}>
+                {parts.map((part, i) => (
+                  <p key={i} className={styles.text}>
+                    {part.trim()}
+                  </p>
+                ))}
+              </div>
+            )
+          }
+
+          return (
+            <p key={index} className={styles.text}>
+              {item}
+            </p>
+          )
+        })}
       </div>
       <div className={styles.linkBlock}>
         {linkList?.map((link, index) => (
