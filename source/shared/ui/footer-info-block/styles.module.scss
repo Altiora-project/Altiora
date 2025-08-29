@@ -27,11 +27,19 @@
   }
 }
 
-.linkBlock {
+.details {
   display: flex;
   flex-wrap: wrap;
+  gap: 32px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 
   @include bp.desktop {
-    gap: 20px;
+    flex-direction: row;
+    gap: 32px;
   }
 }
