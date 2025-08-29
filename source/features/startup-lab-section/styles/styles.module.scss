@@ -114,7 +114,7 @@
   @include bp.desktop {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(var(--card-width), 1fr));
-    gap: 24px;
+    //gap: 24px;
     padding-bottom: 32px;
   }
 }
