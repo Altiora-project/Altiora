@@ -30,40 +30,42 @@ const VideoFeature: FC<videoData> = ({ title, description, video, className, ...
   if (!data) return null
 
   return (
-    <div id="tokenization" className={clsx(styles.container, className)} {...otherProps}>
-      <h2 className={styles.title}>{title}</h2>
-      <p className={styles.description}>{description}</p>
-      <div className={styles.video}>
-        <div className={styles.video__wrapper}>
-          <span className={styles.video__title}>
-            <p>Видео</p>
-          </span>
+    <>
+      <h2>{title}</h2>
+      <div id="tokenization" className={clsx(styles.container, className)} {...otherProps}>
+        <p className={styles.description}>{description}</p>
+        <div className={styles.video}>
+          <div className={styles.video__wrapper}>
+            <span className={styles.video__title}>
+              <p>Видео</p>
+            </span>
+          </div>
+          <Tag
+            className={styles.video__player}
+            src={video}
+            {...(!isFile && {
+              allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
+              allowFullScreen: true
+            })}
+            {...(isFile && { controls: true })}
+          />
         </div>
-        <Tag
-          className={styles.video__player}
-          src={video}
-          {...(!isFile && {
-            allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-          })}
-          {...(!isFile && { allowFullScreen: true })}
-          {...(isFile && { controls: true })}
-        />
-      </div>
-      <div className={styles.more}>
-        <div className={styles.more__title}>
-          <p>{data.more}</p>
-          <Image className={styles.more__icon} src={moreIcon} alt="more" />
+        <div className={styles.more}>
+          <div className={styles.more__title}>
+            <p>{data.more}</p>
+            <Image className={styles.more__icon} src={moreIcon} alt="more" />
+          </div>
+          {data.links &&
+            Object.values(data.links).map(link => (
+              <p className={styles.more__link} key={link[0]}>
+                <a target="_blank" href={link[1]}>
+                  {link[0]}
+                </a>
+              </p>
+            ))}
         </div>
-        {data.links &&
-          Object.values(data.links).map(link => (
-            <p className={styles.more__link} key={link[0]}>
-              <a target="_blank" href={link[1]}>
-                {link[0]}
-              </a>
-            </p>
-          ))}
       </div>
-    </div>
+    </>
   )
 }
 
