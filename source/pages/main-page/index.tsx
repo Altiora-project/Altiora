@@ -16,6 +16,7 @@ import DigitalMarketing from '@entities/digital-marketing'
 import { getPageDataAction } from '@entities/main-page/api/server-actions'
 
 import { OrderForm } from '@shared/ui/order-form'
+import ScrollToTop from '@shared/ui/scroll-to-top'
 
 export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, ...otherProps }) => {
   const response = await getPageDataAction()
@@ -84,6 +85,7 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
 
         <Footer title={pageData.contacts_title} />
       </div>
+      <ScrollToTop />
     </div>
   )
 }
