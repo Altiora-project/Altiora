@@ -18,7 +18,7 @@
 .description {
   grid-area: description;
   font-weight: 400;
-  font-size: 16px;
+  font-size: clamp(1rem, 0.672rem + 0.69vi, 1.5rem); //16px;
 }
 
 .video {
@@ -89,8 +89,8 @@
   }
 
   .description {
-    font-weight: 400;
-    font-size: 16px;
+    // font-weight: 400;
+    // font-size: 16px;
     // inline-size: 600px;
   }
 
@@ -125,7 +125,7 @@
   }
 
   .description {
-    font-size: 24px;
+    // font-size: 24px;
     // inline-size: 100%; //426px;
   }
 
@@ -135,7 +135,7 @@
 
     &__title {
       font-weight: 600;
-      font-size: 32px;
+      // font-size: 32px;
     }
   }
 
