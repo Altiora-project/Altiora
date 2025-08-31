@@ -10,6 +10,10 @@
     line-height: normal;
     text-align: start;
 
+    @include bp.tablet {
+      font-size: clamp(1.875rem, 1.167rem + 2.361vi, 4rem);
+    }
+
     @include bp.desktop {
       line-height: 130%;
       margin-bottom: 2.5rem;

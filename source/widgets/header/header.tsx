@@ -5,6 +5,7 @@ import type { typeHeaderProps } from './types'
 import { Button } from '@shared/ui/button'
 import { Logo } from '@shared/ui/logo'
 import { MainMenuDesktop, MainMenuMobile } from '@shared/ui/main-menu'
+import clsx from 'clsx'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
@@ -19,7 +20,7 @@ export const Header: React.FC<typeHeaderProps> = ({ menuList, isErrorPage }) => 
   }
 
   return (
-    <header className={classes.header}>
+    <header className={clsx('container', classes.header)}>
       <div className={classes.logoSection}>
         <Logo variant="long" className={classes.logo} />
       </div>
