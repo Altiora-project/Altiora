@@ -1,12 +1,10 @@
 .trigger {
   display: inline-block;
   border: none;
-  width: 228px;
   height: fit-content;
-  padding: 3px 12px;
   font-family: var(--font-main);
   font-weight: 700;
-  font-size: 16px;
+  font-size: inherit;
   color: var(--color-white);
   background-color: transparent;
 
@@ -50,11 +48,10 @@
 
 .icon {
   color: transparent;
-  margin-left: 8px;
+  margin-left: 6px;
 }
 
 .content {
-  width: 228px;
   margin-top: 11px;
   padding: 12px;
   background-color: var(--color-background);
