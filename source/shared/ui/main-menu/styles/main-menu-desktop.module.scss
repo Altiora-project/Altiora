@@ -1,15 +1,13 @@
 .desktopMenuContainer {
   display: none;
-  justify-content: space-between;
-  gap: clamp(0.375rem, -1.486rem + 2.905vi, 2rem);
+  gap: clamp(0.375rem, -4.911rem + 8.259vi, 5rem);
 
   @include bp.desktop {
     display: flex;
-    // gap: 32px;
     align-items: center;
     font-family: var(--font-main);
     font-weight: 700;
-    font-size: 16px;
+    font-size: clamp(0.875rem, 0.732rem + 0.223vi, 1rem);
     color: #fefefe;
   }
 
@@ -38,5 +36,4 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  // padding: 0 108.5px;
 }

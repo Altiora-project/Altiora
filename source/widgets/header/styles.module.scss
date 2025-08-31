@@ -4,21 +4,16 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  // border: 1px solid var(--foreground);
-  // margin: 0 auto;
   color: var(--foreground);
   width: 100%;
   padding: 0 clamp(1.5rem, 0.926rem + 2.353vi, 3.75rem);
-  // padding: 1rem 1.5rem 0.5rem;
 
   @include bp.tablet {
     // padding: 1.5rem 2rem;
   }
 
   @include bp.desktop {
-    // max-width: 1800px;
     margin: 48px auto 40px;
-    // padding: 0;
   }
 
   //добавить mobile
@@ -46,8 +41,6 @@
 
   @include bp.desktop {
     display: flex;
-    // align-items: center;
-    // width: 100%;
   }
 }
 
