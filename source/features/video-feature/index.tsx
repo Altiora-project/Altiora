@@ -4,7 +4,7 @@ import { FC, HTMLAttributes, useEffect, useState } from 'react'
 
 import data from './data'
 import moreIcon from './moreIcon.svg'
-import styles from './styles.module.scss'
+import classes from './styles.module.scss'
 import clsx from 'clsx'
 import Image from 'next/image'
 
@@ -30,17 +30,17 @@ const VideoFeature: FC<videoData> = ({ title, description, video, className, ...
   if (!data) return null
 
   return (
-    <div id="tokenization" className={clsx(styles.container, className)} {...otherProps}>
-      <h2 className={styles.title}>{title}</h2>
-      <p className={styles.description}>{description}</p>
-      <div className={styles.video}>
-        <div className={styles.video__wrapper}>
-          <span className={styles.video__title}>
-            <p>Видео</p>
+    <div id="tokenization" className={clsx(classes.container, className)} {...otherProps}>
+      <h2 className={classes.title}>{title}</h2>
+      <p className={classes.description}>{description}</p>
+      <div className={classes.video}>
+        <div className={classes.video__wrapper}>
+          <span className={classes.video__title}>
+            <p>видео</p>
           </span>
         </div>
         <Tag
-          className={styles.video__player}
+          className={classes.video__player}
           src={video}
           {...(!isFile && {
             allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
@@ -49,14 +49,14 @@ const VideoFeature: FC<videoData> = ({ title, description, video, className, ...
           {...(isFile && { controls: true })}
         />
       </div>
-      <div className={styles.more}>
-        <div className={styles.more__title}>
+      <div className={classes.more}>
+        <div className={classes.more__title}>
           <p>{data.more}</p>
-          <Image className={styles.more__icon} src={moreIcon} alt="more" />
+          <Image className={classes.more__icon} src={moreIcon} alt="more" />
         </div>
         {data.links &&
           Object.values(data.links).map(link => (
-            <p className={styles.more__link} key={link[0]}>
+            <p className={classes.more__link} key={link[0]}>
               <a target="_blank" href={link[1]}>
                 {link[0]}
               </a>
