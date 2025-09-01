@@ -9,19 +9,21 @@ export const MainBlock: React.FC<typeMainBlockProps> = ({
   className,
   bottomStyles,
   topStyles,
+  topSpace,
+  botoomSpace,
   ...otherProps
 }) => {
   return (
     <div className={clsx(classes.container, classes.noise, className)} {...otherProps}>
       <div className={clsx(classes.topContainer, topStyles)}>
         <div className={classes.topContent}>{topContent}</div>
-        <div className={classes.space}></div>
+        <div className={clsx(classes.space, classes.topSpace)}></div>
       </div>
 
       <div className={classes.content}>{children}</div>
 
       <div className={clsx(classes.bottomContainer, bottomStyles)}>
-        <div className={classes.space}></div>
+        <div className={clsx(classes.space, classes.botoomSpace)}></div>
         <div className={classes.bottomContent}>{bottomContent}</div>
       </div>
     </div>
