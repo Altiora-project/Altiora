@@ -71,6 +71,10 @@ body[data-scroll-locked][style] {
   }
 }
 
+html {
+  scroll-padding-top: 50px;
+}
+
 html,
 body {
   max-width: 100dvw;
