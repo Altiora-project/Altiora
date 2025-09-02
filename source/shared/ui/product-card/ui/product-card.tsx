@@ -23,7 +23,7 @@ export const ProductCard: FC<ProductCardProps> = ({
     className={clsx(styles.card, className)}
   >
     <div className={styles.content}>
-      {/* <h3 className={styles.titleCard}>{title}</h3> */}
+      <h3 className={styles.titleCard}>{title}</h3>
       <p className={styles.descriptionCard}>{description}</p>
     </div>
     <div className={styles.actions}>
