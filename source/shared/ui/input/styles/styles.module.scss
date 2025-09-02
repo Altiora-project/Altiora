@@ -15,7 +15,7 @@
 
 .inputContent input {
   margin-left: 0;
-  padding-left: 0;
+  padding-left: 10px;
 }
 
 .inputLabel {
@@ -34,9 +34,11 @@
   .inputLabel {
     font-size: 16px;
   }
+
   .inputContent {
     font-size: 20px;
   }
+
   .supportingText {
     font-size: 14px;
   }
@@ -56,6 +58,7 @@
     align-items: center;
     gap: 32px;
   }
+
   .inputLabel {
     margin-bottom: 0;
     min-width: 479px;
@@ -64,11 +67,13 @@
     margin-left: 0;
     font-size: 32px;
   }
+
   .inputContent {
     display: flex;
     flex-direction: column;
     flex: 1;
   }
+
   .supportingText {
     margin-top: 8px;
     margin-left: 0;
@@ -81,6 +86,7 @@
     width: 100%;
     font-size: 32px;
   }
+
   .clearButton {
     top: 0;
   }
@@ -103,8 +109,12 @@
   border-bottom: 3px solid #5de19c;
 }
 
-.inputField:focus.error {
+.inputField.error {
   border-bottom: 3px solid #e15d5d;
+}
+
+.inputField.valid {
+  border-bottom: 3px solid #5de19c;
 }
 
 .supportingText {
@@ -114,10 +124,20 @@
   margin-top: 4px;
   text-align: left;
   align-self: flex-start;
+  padding-left: 10px;
 }
 
 .supportingText.error {
   color: #e15d5d;
+}
+
+.clearButton {
+  display: none;
+}
+
+// Показываем кнопку только когда input в фокусе
+.inputContent:focus-within .clearButton {
+  display: flex;
 }
 
 /* Стили для автозаполнения */

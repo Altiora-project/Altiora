@@ -1,5 +1,5 @@
 export type typeButtonProps = {
-  variant?: 'primary' | 'secondary'
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'secondary-black'
   leftIcon?: React.ReactNode
   rightIcon?: React.ReactNode
   children?: React.ReactNode

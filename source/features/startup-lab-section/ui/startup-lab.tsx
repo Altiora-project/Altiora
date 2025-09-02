@@ -1,24 +1,43 @@
 'use client'
 
-import React, { useState } from 'react'
-import Link from 'next/link'
-import { MainBlock } from '../../../shared/ui/_main-block/ui/main-block'
-import ServiceCard from '../../../shared/ui/service-card'
-import { Button } from '../../../shared/ui/button/ui/button'
-import { Modal } from '../../../shared/ui/modal'
-import { StartupLabProps } from '../types/types'
-import { typeTechnologiesResponse } from '@entities/technologies'
-import { typeApiResponse } from '@shared/lib/api/types/types'
-import classes from '../styles/styles.module.scss'
-import clsx from 'clsx'
-import { StartupLabMenu } from '@shared/ui/startup-lab-menu'
-import { handleTechnologiesClick as handleTechnologiesClickAction } from '../api/server-actions'
-import { MarkdownRenderer } from '@shared/lib/markdown'
+import React, { FC, useState } from 'react'
 
-export const StartupLab: React.FC<StartupLabProps> = ({ info1, cards, info2, contactURL }) => {
+import ServiceCard from '../../../shared/ui/service-card'
+import { handleTechnologiesClick as handleTechnologiesClickAction } from '../api/server-actions'
+import classes from '../styles/styles.module.scss'
+import { StartupLabProps } from '../types/types'
+import clsx from 'clsx'
+import Link from 'next/link'
+
+import { typeTechnologiesResponse } from '@entities/technologies'
+
+import { typeApiResponse } from '@shared/lib/api/types/types'
+import { MarkdownRenderer } from '@shared/lib/markdown'
+import { MainBlock } from '@shared/ui/_main-block'
+import { Button } from '@shared/ui/button'
+import { Modal } from '@shared/ui/modal'
+import { StartupLabMenu } from '@shared/ui/startup-lab-menu'
+
+export const StartupLab: FC<StartupLabProps> = ({
+  title,
+  cards,
+  info1,
+  info2,
+  contactURL,
+  className,
+  ...otherProps
+}) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [technologiesData, setTechnologiesData] = useState<typeApiResponse<typeTechnologiesResponse> | null>(null)
   const [isLoading, setIsLoading] = useState(false)
+
+  const labsCards = (cards || [])
+    .sort((a, b) => a.id - b.id)
+    .map(card => ({
+      imageLink: 'http://' + process.env.NEXT_PUBLIC_IMAGE_HOST + card.image,
+      title: card.title,
+      info: card.description
+    }))
 
   // Функция для загрузки технологий
   const handleTechnologiesClick = async () => {
@@ -35,16 +54,10 @@ export const StartupLab: React.FC<StartupLabProps> = ({ info1, cards, info2, con
   }
 
   const renderCards = () => {
-    //console.log('renderCards', 'cards', cards);
     return (
       <div className={classes.cardsContainer}>
-        {cards?.map((card, index) => (
-          <ServiceCard
-            key={index}
-            icon={<img src={card.imageLink} className={classes.cardIcon} alt={card.title} />}
-            title={card.title}
-            text={card.info}
-          />
+        {labsCards?.map((card, index) => (
+          <ServiceCard key={index} icon={card.imageLink} title={card.title} text={card.info} />
         ))}
       </div>
     )
@@ -54,42 +67,37 @@ export const StartupLab: React.FC<StartupLabProps> = ({ info1, cards, info2, con
     return (
       <div className={clsx(classes.bottomContent, asMain ? classes.bottomAsMain : classes.bottomAsFooter)}>
         <Button
-          variant="secondary"
+          variant={asMain ? 'secondary' : 'secondary-black'}
           onClick={handleTechnologiesClick}
           disabled={isLoading}
-          className={classes.bottomButton}
+          className={clsx(classes.bottomButton, !asMain && classes.bottomButtonAsFooter)}
         >
           {isLoading ? 'Загрузка...' : 'Подробнее'}
         </Button>
 
-        <Button variant="primary" className={classes.bottomButton}>
-          <Link href={contactURL}>
-            Связаться<span className={classes.buttonFullText}> с нами</span>
-          </Link>
-        </Button>
+        <Link href={contactURL} className={clsx(!asMain && classes.bottomButtonAsFooter)}>
+          <Button variant="primary" className={clsx(classes.bottomButton, !asMain && classes.bottomSubButtonAsFooter)}>
+            Связаться&nbsp;<span> с нами</span>
+          </Button>
+        </Link>
       </div>
     )
   }
 
-  const title = '/лаборатория стартапов'
-
   return (
-    <>
+    <div className={className} id={'laboratory'} {...otherProps}>
       <MainBlock
-        topContent={
-          <h2 className={classes.title} id="laboratory">
-            {title}
-          </h2>
-        }
+        bottomStyles={classes.bottomContainer}
+        topContent={<h2 className={classes.title}>{title}</h2>}
         bottomContent={renderBottomContent(true)}
       >
         <div className={classes.content}>
-          <p className={classes.infoText}>{info1}</p>
+          <MarkdownRenderer className={classes.markdown} content={info1} />
           <div className={classes.cards}>
             <h3 className={classes.cardsTitle}>Что мы предлагаем:</h3>
             {renderCards()}
           </div>
-          <p className={classes.infoText}>{info2}</p>
+          <MarkdownRenderer className={classes.markdown} content={info2} />
           {renderBottomContent(false)}
         </div>
       </MainBlock>
@@ -123,7 +131,7 @@ export const StartupLab: React.FC<StartupLabProps> = ({ info1, cards, info2, con
           )}
         </div>
       </Modal>
-    </>
+    </div>
   )
 }
 

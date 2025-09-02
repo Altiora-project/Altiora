@@ -8,15 +8,15 @@
   color: var(--color-white);
   font-family: var(--font-secondary);
   font-weight: 700;
-  font-size: 16px;
+  // font-size: 16px;
   text-align: left;
 
   @include bp.tablet {
-    font-size: 32px;
+    // font-size: 32px;
   }
 
   @include bp.desktop {
-    font-size: 70px;
+    // font-size: 70px;
   }
 }
 
@@ -44,7 +44,16 @@
   display: flex;
   justify-items: center;
   gap: 0.75rem;
-  margin-top: 1rem;
+  margin-top: 15px;
+
+  @include bp.tablet {
+    margin-top: 34px;
+  }
+
+  @include bp.desktop {
+    margin-top: 53px;
+    gap: 1.5rem;
+  }
 }
 
 .checkboxLabel {
@@ -52,7 +61,6 @@
   align-items: center;
   font-size: 12px;
   line-height: 1;
-  flex: 1;
   font-family: var(--font-main);
   color: var(--color-grey2);
 
@@ -65,10 +73,8 @@
   }
 
   a {
-    color: var(--color-accent-active);
-    text-decoration: underline;
-    text-underline-offset: 2px;
-    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.3s ease;
 
     &:hover {
       color: var(--color-accent-active);
@@ -91,8 +97,7 @@
 }
 
 .buttonMobileTablet {
-  margin-left: 24px;
-  margin-right: 24px;
+  margin: 16px auto 8px;
   display: flex;
   align-items: stretch;
   flex-shrink: 1;
@@ -102,6 +107,37 @@
   }
 }
 
+.button {
+  width: 100%;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
 .buttonText {
   display: inline-block;
+  font-size: 11px;
+  text-transform: uppercase;
+
+  @include bp.tablet {
+    font-size: 13px;
+  }
+
+  @include bp.desktop {
+    font-size: 16px;
+  }
+}
+
+.bottomStyles {
+  display: none;
+  visibility: hidden;
+
+  @include bp.tablet {
+    display: none;
+    visibility: hidden;
+  }
+
+  @include bp.desktop {
+    display: flex;
+    visibility: visible;
+  }
 }

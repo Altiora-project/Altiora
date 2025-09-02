@@ -1,11 +1,12 @@
 'use client'
 import { useEffect, useState } from 'react'
-import type { typeSliderProps } from '../types'
-import classes from '../styles/styles.module.scss'
 import { FC } from 'react'
+
+import classes from '../styles/styles.module.scss'
+import type { typeSliderProps } from '../types'
 import { NextButton, PrevButton } from './arrow-buttons'
-import { useSwipeable } from 'react-swipeable'
 import clsx from 'clsx'
+import { useSwipeable } from 'react-swipeable'
 
 export const Slider: FC<typeSliderProps> = ({ cards, ...otherProps }) => {
   const cardsStack = cards.length
@@ -13,10 +14,10 @@ export const Slider: FC<typeSliderProps> = ({ cards, ...otherProps }) => {
   const [offset, setOffset] = useState(0)
 
   useEffect(() => {
-    setOffset(window.innerWidth)
+    setOffset(window.screen.availWidth)
 
     const handleResize = () => {
-      setOffset(window.innerWidth)
+      setOffset(window.screen.availWidth)
     }
 
     window.addEventListener('resize', handleResize)
@@ -53,7 +54,7 @@ export const Slider: FC<typeSliderProps> = ({ cards, ...otherProps }) => {
           const isInStack = index < movedInStackCount
           let offsetX
 
-          if (offset >= 1920) {
+          if (offset >= 1024) {
             offsetX = (index - movedInStackCount) * 780
           } else {
             offsetX = (index - movedInStackCount) * 340

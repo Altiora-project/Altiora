@@ -1,4 +1,5 @@
 .overlay {
+  opacity: 0.8;
   position: fixed;
   top: 0;
   left: 0;
@@ -6,6 +7,7 @@
   height: 100dvh;
   background-color: var(--color-background);
   backdrop-filter: blur(4px);
+  z-index: 5;
 }
 
 .container {
@@ -13,14 +15,15 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: calc(100dvw - 0.1rem);
+  width: 100%;
+  max-width: min(calc(100dvw - 0.1rem), 1800px);
   max-height: calc(100dvh - 0.1rem);
   background-color: var(--color-background);
   min-width: 150px;
-  //border: 1px solid red;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  z-index: 6;
 
   .displayNone {
     display: none;
@@ -44,14 +47,6 @@
       }
     }
 
-    .close {
-      background-color: transparent;
-      border: none;
-      color: var(--foreground);
-      cursor: pointer;
-      padding: 0.5rem;
-    }
-
     &:empty {
       display: none;
     }
@@ -70,7 +65,7 @@
   .closeButton {
     position: absolute;
     top: 0;
-    right: 0.3rem;
+    right: 1.8rem;
     z-index: 10;
     background-color: transparent;
     border: none;
@@ -83,16 +78,21 @@
     border-radius: 4px;
 
     @include bp.tablet {
-      right: 2rem;
+      top: 0.6rem;
+      right: 3.5rem;
     }
 
     @include bp.desktop {
       top: 1rem;
-      right: 2rem;
+      right: 3rem;
     }
 
     &:hover {
       color: var(--color-accent-primary);
+    }
+
+    &:active {
+      color: #59bb83;
     }
   }
 }
@@ -100,6 +100,7 @@
 .closeIcon {
   width: 13px;
   height: 13px;
+  z-index: 6;
 
   @include bp.tablet {
     width: 22px;

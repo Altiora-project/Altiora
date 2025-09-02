@@ -1,10 +1,10 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
 
   @include bp.desktop {
-    gap: 24px;
+    gap: 32px;
   }
 }
 
@@ -20,24 +20,34 @@
 
 .addressBlock {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 12px;
 
   @include bp.desktop {
+    flex-direction: row;
+    gap: 32px;
+    align-items: flex-start;
+  }
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  @include bp.desktop {
+    flex-direction: row;
     gap: 32px;
   }
 }
 
 .linkBlock {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 8px;
 
   @include bp.desktop {
-    gap: 20px;
-  }
-}
-
-.year {
-  @include bp.desktop {
-    display: none;
+    flex-direction: row;
+    gap: 32px;
   }
 }

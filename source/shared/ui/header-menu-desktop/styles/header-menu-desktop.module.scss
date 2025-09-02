@@ -1,18 +1,20 @@
 .trigger {
   display: inline-block;
   border: none;
-  width: 228px;
   height: fit-content;
-  padding: 3px 12px;
   font-family: var(--font-main);
   font-weight: 700;
-  font-size: 16px;
+  font-size: inherit;
   color: var(--color-white);
   background-color: transparent;
 
   &:hover {
-    text-decoration: underline 2px var(--color-accent-primary);
-    text-underline-offset: 10px;
+    &:hover {
+      text-decoration-line: underline;
+      text-decoration-thickness: 2px;
+      text-decoration-color: var(--color-accent-primary);
+      text-underline-offset: 10px;
+    }
   }
 
   &:active {
@@ -46,11 +48,10 @@
 
 .icon {
   color: transparent;
-  margin-left: 8px;
+  margin-left: 6px;
 }
 
 .content {
-  width: 228px;
   margin-top: 11px;
   padding: 12px;
   background-color: var(--color-background);

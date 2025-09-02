@@ -4,9 +4,10 @@
   justify-content: center;
   font-family: 'drukWideCyrFont', sans-serif;
   font-weight: 700;
+  font-size: var(--bt-font-size);
   text-transform: uppercase;
   border-radius: 40px;
-  padding: 0 40px;
+  padding: var(--bt-vertical-padding) var(--bt-side-padding);
   border: none;
   cursor: pointer;
   transition:
@@ -22,14 +23,14 @@
 @include bp.tablet {
   .button {
     height: 44px;
-    font-size: 13px;
+    //font-size: 13px;
   }
 }
 
 @include bp.desktop {
   .button {
     height: 68px;
-    font-size: 16px;
+    //font-size: 16px;
   }
 }
 
@@ -48,19 +49,71 @@
   }
 
   &:active {
-    background: #111;
-    color: #e7d6c6;
+    background: var(--color-accent-primary);
+    color: var(--color-foreground);
+
+    @include bp.desktop {
+      background: var(--color-background);
+      color: var(--color-white-pressesd);
+    }
   }
 
   &:disabled {
     background: #666666;
+    color: rgba(47, 47, 47, 0.3);
+
+    //opacity: 0.3;
+    cursor: not-allowed;
+  }
+}
+
+.secondary {
+  background: transparent;
+  color: #fefefe;
+
+  &:hover {
+    color: #50f195;
+  }
+
+  &:focus-visible {
+    color: #50f195;
+  }
+
+  &:active {
+    color: #59bb83;
+  }
+
+  &:disabled {
     color: #2f2f2f4d;
     opacity: 0.3;
     cursor: not-allowed;
   }
 }
 
-.secondary {
+.secondary-black {
+  background: var(--color-background);
+  color: #fefefe;
+
+  &:hover {
+    color: #50f195;
+  }
+
+  &:focus-visible {
+    color: #50f195;
+  }
+
+  &:active {
+    color: #59bb83;
+  }
+
+  &:disabled {
+    color: #2f2f2f4d;
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+}
+
+.tertiary {
   background: #666666;
   color: #fefefe;
 

@@ -5,6 +5,7 @@
   width: 100%;
   border-radius: 1.25rem;
   background-color: var(--color-background1);
+  background-image: var(--noise-img);
   padding: 12px 12px 24px;
   transition: all 0.3s ease;
 
@@ -14,6 +15,7 @@
 
   @include bp.desktop {
     width: 100%;
+    border-radius: 2.5rem;
     padding: 48px 48px 0;
   }
 }
@@ -24,7 +26,6 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  z-index: 3;
 
   @include bp.tablet {
     flex-direction: row;
@@ -41,7 +42,7 @@
   h1 {
     padding-bottom: 0;
     padding-left: 0.5rem;
-    font-size: 1.75rem; //clamp(1.75rem, 1.176rem + 2.353vi, 4rem);
+    font-size: 1.75rem;
 
     @include bp.tablet {
       padding-left: 0;
@@ -50,9 +51,9 @@
     }
 
     @include bp.desktop {
-      max-width: 688px;
+      max-width: 15ch;
       margin-top: 0;
-      line-height: 130%; /* 83.2px */
+      line-height: 130%;
       font-size: 4rem;
     }
   }
@@ -91,6 +92,7 @@
   transform: scale(1);
 
   @include bp.desktop {
+    display: none;
     opacity: 0;
     pointer-events: none;
     transform: scale(0.95);

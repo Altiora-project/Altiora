@@ -1,39 +1,42 @@
 import classes from '../styles/styles.module.scss'
-import { Contacts } from '@shared/ui/contacts-list/ui/contacts-list'
-import { getSiteSettingsAction } from '@entities/footer'
-import { FooterInfoBlock } from '@shared/ui/footer-info-block'
+
 import { typeContact, typeDocument } from '@widgets/footer/types'
+
+import { getSiteSettingsAction } from '@entities/footer'
+
+import { Contacts } from '@shared/ui/contacts-list/ui/contacts-list'
+import { FooterInfoBlock } from '@shared/ui/footer-info-block'
+import { getPoliciesApi } from '@entities/policies/api/get-policies'
 
 export const FooterSection = async () => {
   const response = await getSiteSettingsAction()
+  const policies = await getPoliciesApi()
 
   if (!response || 'error' in response) {
     return null
   }
 
   const { requisites, email, phone, address } = response.data.data
+
   const contacts: Array<typeContact> = [
-    {
-      type: 'email',
-      title: email
-    },
     {
       type: 'phone',
       title: phone
     },
     {
-      type: 'address',
-      title: address
+      type: 'email',
+      title: email
     }
   ]
+
   const documents: typeDocument[] = [
     {
-      url: '',
-      title: 'Политика конфиденциальности'
+      slug: policies.data[1].slug,
+      title: policies.data[1].title
     },
     {
-      url: '',
-      title: 'Согласие на обработку персональных данных'
+      slug: policies.data[0].slug,
+      title: policies.data[0].title
     }
   ]
 

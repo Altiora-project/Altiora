@@ -1,4 +1,5 @@
 import { FC } from 'react'
+
 import classes from '../styles/styles.module.scss'
 import { CardComponentProps } from '../types'
 import clsx from 'clsx'

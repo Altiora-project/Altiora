@@ -13,7 +13,7 @@ export const chevronLeftIcon: React.FC<typeIconProps> = ({ size, ...otherProps }
         transform="scale(-1 1)"
         {...otherProps}
       >
-        <path d="M0 1.3 5.765 8 0 14.7 1.118 16 8 8 1.118 0z" fill="#111" />
+        <path d="M0 1.3 5.765 8 0 14.7 1.118 16 8 8 1.118 0z" fill="currentColor" />
       </svg>
     )
 

@@ -3,7 +3,7 @@
 import classes from '../styles/styles.module.scss'
 import { useRouter } from 'next/navigation'
 
-import { ServiceDelails } from '@entities/service-page/model/model'
+import { Postscriptum, ServiceDelails } from '@entities/service-page/model/model'
 
 import { Button } from '@shared/ui/button'
 import { ArrowLeftIcon } from '@shared/ui/icon/ui/icons/arrow-left'
@@ -16,22 +16,17 @@ export const PostscriptumSection: React.FC<{ pageData: ServiceDelails }> = ({ pa
     return null
   }
 
+  const itemsToProcess: Exclude<keyof Postscriptum, 'id' | 'name'>[] = ['info', 'item1', 'item2', 'item3', 'item4']
+  const processedData = itemsToProcess.map(item => {
+    const value = pageData.postscriptum[item]
+    return value && value.includes('-') ? value.replace('-', '\u2011') : value
+  })
+
   return (
     <div className={classes.postscriptumSection}>
-      {pageData.postscriptum && (
-        <InfoBlock
-          title={pageData.postscriptum.name}
-          data={[
-            pageData.postscriptum.info,
-            pageData.postscriptum.item1,
-            pageData.postscriptum.item2,
-            pageData.postscriptum.item3,
-            pageData.postscriptum.item4
-          ]}
-        />
-      )}
+      {pageData.postscriptum && <InfoBlock title={pageData.postscriptum.name} data={processedData} />}
       <Button variant="primary" leftIcon={<ArrowLeftIcon />} onClick={() => router.push('/')}>
-        Вернуться к сайту
+        Вернутьсяк сайту
       </Button>
     </div>
   )

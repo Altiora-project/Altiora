@@ -5,7 +5,7 @@
   border-radius: 40px;
   padding: 16px 16px 20px;
   background-color: #353735;
-  inline-size: 100%;
+  width: 100%;
   min-block-size: 149px;
 }
 
@@ -13,7 +13,7 @@
   display: flex;
   flex-direction: column;
   gap: 7px;
-  min-inline-size: 284px;
+  //min-inline-size: 284px;
 }
 
 .title {
@@ -26,9 +26,17 @@
   color: #fefefe;
   font-weight: 400;
   font-size: 13px;
+
+  @include bp.tablet {
+    font-size: 16px;
+  }
+  @include bp.desktop {
+    font-size: 20px;
+  }
 }
 
 .icon {
+  position: relative;
   display: flex;
   flex-shrink: 0;
   justify-content: center;
@@ -38,11 +46,6 @@
   border-radius: 100px;
   padding: 10px;
   background-color: #50f195;
-
-  svg {
-    width: 100%;
-    height: 100%;
-  }
 }
 
 @include bp.tablet {
@@ -56,24 +59,19 @@
 
   .content {
     gap: 11px;
-    min-inline-size: 468px;
+    //min-inline-size: 468px;
   }
 
   .icon {
     width: 80px;
     height: 80px;
-    padding: 16px;
+    //padding: 16px;
   }
 
   .title {
     font-weight: 700;
     font-size: 16px;
     text-transform: none;
-  }
-
-  .text {
-    font-weight: 400;
-    font-size: 16px;
   }
 }
 
@@ -82,24 +80,22 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 40px;
-    padding: 32px 32px 48px;
+    //padding: 32px 32px 48px;
     min-block-size: 296px;
   }
 
   .icon {
-    padding: 20px;
+    //  width: 80px;
+    //height: 80px;
+    //padding: 20px;
   }
 
   .content {
     gap: 12px;
-    min-inline-size: 488px;
+    //min-inline-size: 488px;
   }
 
   .title {
     font-size: 28px;
-  }
-
-  .text {
-    font-size: 20px;
   }
 }

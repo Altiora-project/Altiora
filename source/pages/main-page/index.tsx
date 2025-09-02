@@ -1,31 +1,40 @@
 import classes from './styles.module.scss'
 import clsx from 'clsx'
+import { notFound } from 'next/navigation'
 import type { FC, HTMLAttributes } from 'react'
+
+import { Footer } from '@widgets/footer'
+
+import { GetAbout } from '@features/about'
 import { HeroSection } from '@features/hero-section'
 import { GetPartners } from '@features/partners/partners'
 import { ServicesPromoBlock } from '@features/services-promo-block'
-import VideoFeature from '@features/video-feature'
-import { getPageDataAction } from '@entities/main-page/api/server-actions'
-import ServiceCards from '@entities/service-cards'
-import { NotFound } from '@shared/ui/not-found'
-import { OrderForm } from '@shared/ui/order-form'
 import { StartupLab } from '@features/startup-lab-section'
-import { GetAbout } from '@features/about'
-import { Footer } from '@widgets/footer'
+import VideoFeature from '@features/video-feature'
+
+import DigitalMarketing from '@entities/digital-marketing'
+import { getPageDataAction } from '@entities/main-page/api/server-actions'
+
+import { OrderForm } from '@shared/ui/order-form'
+import ScrollToTop from '@shared/ui/scroll-to-top'
 
 export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, ...otherProps }) => {
   const response = await getPageDataAction()
 
-  if (!response || 'error' in response || !response.data?.data) {
-    return <NotFound />
-  }
+  if (!response || 'error' in response || !response.data.data) notFound()
 
   const pageData = response.data.data
   // if (!pageData?.services_data || !pageData.hero_title || !pageData.hero_image || !pageData.case_studies_data) {
   //   return <NotFound />
   // }
+  const startupLabCards = Array.isArray(pageData?.startup_laboratory_data) ? pageData?.startup_laboratory_data : []
 
-  const phrases = pageData.services_data.map(service => service.name)
+  const digitalLabCards = Array.isArray(pageData?.digital_marketing_data) ? pageData?.digital_marketing_data : []
+
+  const slides = Array.isArray(pageData.case_studies_data) ? pageData?.case_studies_data : []
+
+  const phrases = Array.isArray(pageData.services_running_line) ? pageData.services_running_line : []
+
   const services = pageData.services_data.map(service => {
     return {
       id: service.id,
@@ -41,87 +50,42 @@ export const MainPage: FC<HTMLAttributes<HTMLDivElement>> = async ({ className, 
     <div className={clsx(classes.wrapper, className)} {...otherProps}>
       <HeroSection title={pageData.hero_title} imgUrl={pageData.hero_image} phrases={phrases} />
 
-      <div className={clsx(classes.container)}>
-        <GetAbout data={[pageData.about_title, pageData.about_text, pageData.highlight_1, pageData.highlight_2]} />
-        <div className={clsx(classes.content)} id="services">
-          <ServicesPromoBlock
-            title={pageData.services_section_title}
-            slides={Array.isArray(pageData.case_studies_data) ? pageData.case_studies_data : []}
-            services={services}
-          />
-        </div>
+      <div className={'container'}>
+        <GetAbout />
 
-        <div className={clsx(classes.content)} id="laboratory">
-          <StartupLab
-            info1={pageData?.lab_description}
-            cards={
-              Array.isArray(pageData?.labcart_data)
-                ? [...pageData.labcart_data]
-                    .sort((a, b) => a.id - b.id)
-                    .map(card => ({
-                      imageLink: 'http://' + process.env.NEXT_PUBLIC_IMAGE_HOST + card.image,
-                      title: card.title,
-                      info: card.description
-                    }))
-                : []
-            }
-            info2={pageData?.lab_description_ps}
-            contactURL="/contact"
-          />
-        </div>
+        <ServicesPromoBlock
+          title={pageData.services_section_title}
+          slides={slides}
+          services={services}
+          id={'services'}
+        />
 
-        <div className={clsx(classes.content)} id="digital">
-          <ServiceCards />
-        </div>
+        <StartupLab
+          title={pageData.lab_title}
+          cards={startupLabCards}
+          info1={pageData?.lab_description}
+          info2={pageData?.lab_description_ps}
+          contactURL="#form"
+        />
 
-        <div className={clsx(classes.content)} id="tokenization">
-          <VideoFeature />
-        </div>
+        <DigitalMarketing cards={digitalLabCards} description={pageData.dig_description} />
 
-        <div className={clsx(classes.content, classes.partnersSection)} id="partners">
-          <GetPartners header={pageData.partners_section_title} partners={pageData.partners_data} />
-        </div>
-
-        <div id="form">
-          <OrderForm />
-        </div>
-
-        {/* <div className={classes.contentContainer}>  TODO: убрать, если код выше не сломается
-        <div className={classes.container}>
-          <StartupLab
-            info1={pageData.lab_description}
-            cards={pageData.labcart_data
-              .sort((a, b) => a.id - b.id)
-              .map(card => {
-                return {
-                  imageLink: process.env.NEXT_PUBLIC_IMAGE_HOST + card.image,
-                  title: card.title,
-                  info: card.description
-                }
-              })}
-            info2={pageData.lab_description_ps}
-            contactURL="/contact"
-          />
-        </div>
-
-        <div className={clsx(classes.content, classes.container)}>
-          <ServiceCards />
-        </div>
-        <div className={clsx(classes.content, classes.container)}>
-          <VideoFeature />
-        </div>
-        <div className={clsx(classes.content, classes.partnersSection)}>
-          <GetPartners header={pageData.partners_section_title} partners={pageData.partners_data} />
-        </div>
-        <div className={classes.container}>
-          <OrderForm />
-        </div>
-      </div> */}
-
-        <div className={classes.container}>
-          <Footer />
-        </div>
+        <VideoFeature
+          title={pageData.tokenization_title}
+          description={pageData.tokenization_description}
+          video={pageData.tokenization_video_url}
+          more={pageData.tokenization_links}
+        />
       </div>
+
+      <GetPartners header={pageData.partners_section_title} partners={pageData.partners_data} />
+
+      <div className={'container'}>
+        <OrderForm />
+
+        <Footer title={pageData.contacts_title} />
+      </div>
+      <ScrollToTop />
     </div>
   )
 }

@@ -29,7 +29,7 @@ export const UICardComponent: React.FC = () => {
       components={
         <>
           <div style={{ width: '300px' }}>
-            <CardComponent radius="md" background="grey" tag="default">
+            <CardComponent radius="md" background={'grey'} tag="default">
               <div>
                 <p style={{ color: '#666666', fontSize: '24px' }}>
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae possimus ad ratione inventore
@@ -44,7 +44,7 @@ export const UICardComponent: React.FC = () => {
             </CardComponent>
           </div>
           <div style={{ width: '400px' }}>
-            <CardComponent radius="lg" background="black" tag="default">
+            <CardComponent radius="lg" background={'black'} tag="default">
               <div>
                 <p style={{ color: '#666666', fontSize: '24px' }}>
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae possimus ad ratione inventore
@@ -61,7 +61,7 @@ export const UICardComponent: React.FC = () => {
             </CardComponent>
           </div>
           <div style={{ width: '300px' }}>
-            <CardComponent radius="md" background="light-grey" tag="link" href="/">
+            <CardComponent radius="md" background={'light-grey'} tag="link" href="/">
               <div>
                 <p style={{ color: '#FEFEFE', fontSize: '18px' }}>
                   Xercitationem cupiditate, laboriosam ullam ipsum repellendus. Enim perspiciatise

@@ -1,20 +1,19 @@
 .header {
   display: flex;
+  gap: 0;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid var(--foreground);
-  margin: 0 auto; //0 25px 6px;
   color: var(--foreground);
   width: 100%;
-  max-width: 1800px;
+  padding: 0 clamp(1.5rem, 0.926rem + 2.353vi, 3.75rem);
 
   @include bp.tablet {
-    //margin: 32px 33px;
+    // padding: 1.5rem 2rem;
   }
 
   @include bp.desktop {
-    margin: 50px auto;
-    //width: 90.5%;
+    margin: 48px auto 40px;
   }
 
   //добавить mobile
@@ -26,10 +25,10 @@
 }
 
 .menuSection {
-  display: flex;
-  align-items: center;
-  flex: 1 1 auto;
-  justify-content: flex-end;
+  // display: flex;
+  // align-items: center;
+  // flex: 1 1 auto;
+  // justify-content: flex-end;
 }
 
 .buttonSection {
@@ -39,15 +38,15 @@
 
 .desktopMenu {
   display: none;
+
   @include bp.desktop {
     display: flex;
-    align-items: center;
-    width: 100%;
   }
 }
 
 .mobileMenu {
   display: flex;
+
   @include bp.desktop {
     display: none;
   }
@@ -55,6 +54,7 @@
 
 .buttonSection {
   display: none;
+
   @include bp.desktop {
     display: inline-flex;
   }

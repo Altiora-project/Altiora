@@ -1,7 +1,8 @@
 import React from 'react'
-import clsx from 'clsx'
+
 import classes from '../styles/styles.module.scss'
 import { typeButtonProps } from '../types/types'
+import clsx from 'clsx'
 
 export const Button: React.FC<typeButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>> = ({
   variant = 'primary',

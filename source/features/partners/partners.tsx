@@ -1,15 +1,17 @@
+import { FC } from 'react'
+
+import classes from './styles.module.scss'
+
 import { Partners } from '@shared/ui/partners'
 import { typePartnersProps } from '@shared/ui/partners/types'
-import { FC } from 'react'
 
 export const GetPartners: FC<typePartnersProps & { header?: string }> = ({ partners, header }) => {
   return (
-    <>
-      <div id="partners">
-        <h1>{header}</h1>
+    <div className={classes.wrapper} id="partners">
+      <div className={'container'}>
+        <h2>{header}</h2>
       </div>
-
       <Partners partners={partners} />
-    </>
+    </div>
   )
 }

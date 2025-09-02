@@ -1,18 +1,34 @@
+.bottomContainer {
+  position: relative;
+  display: block;
+  visibility: visible;
+
+  @include bp.tablet {
+    position: absolute !important;
+    display: none;
+    visibility: hidden;
+  }
+
+  @include bp.desktop {
+    position: relative !important;
+    display: block;
+    visibility: visible;
+  }
+}
+
 .title {
-  font-size: 16px;
   font-family: var(--font-secondary);
   font-weight: 700;
   color: var(--color-grey);
   padding-bottom: 2px;
+  font-size: var(--section-header-title-size);
 
   @include bp.tablet {
-    font-size: 32px;
     text-transform: lowercase;
     padding-right: 14px;
   }
 
   @include bp.desktop {
-    font-size: 70px;
     padding-right: 14px;
   }
 }
@@ -20,34 +36,40 @@
 .content {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 0;
   width: 100%;
-  padding: 12px 12px 17px 12px;
+  padding: 0;
 
   @include bp.tablet {
-    gap: 24px;
-    padding: 26px 24px 0 24px;
+    gap: 0;
   }
 
   @include bp.desktop {
-    gap: 40px;
-    padding: 48px 48px 17px 48px;
+    gap: 0;
   }
 }
 
-.infoText {
-  font-size: 12px;
-  font-family: var(--font-main);
+.markdown {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   white-space: pre-line;
   font-weight: 400;
   color: var(--color-grey);
 
+  & p {
+    line-height: 1.2;
+    font-size: var(--section-text-size) !important;
+  }
+
   @include bp.tablet {
-    font-size: 16px;
+    //font-size: 16px;
+    gap: 18px;
   }
 
   @include bp.desktop {
-    font-size: 32px;
+    //font-size: 32px;
+    gap: 24px;
   }
 }
 
@@ -58,43 +80,43 @@
 }
 
 .cardsTitle {
-  font-size: 15px;
+  font-size: var(--what-me-size);
   font-weight: 700;
   font-family: var(--font-main);
   color: var(--color-accent-primary);
   text-transform: none;
-  padding: 10px 0;
+  padding: 25px 0 10px 0;
 
   @include bp.tablet {
-    font-size: 16px;
-    padding: 24px 0;
+    padding: 24px 0 24px 0;
+    font-weight: 400;
   }
 
   @include bp.desktop {
-    font-size: 40px;
+    //font-size: 40px;
     padding: 42px 0 38px 0;
+    font-weight: 400;
   }
 }
 
 .cardsContainer {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 8px;
   width: 100%;
+  padding-bottom: 15px;
 
   @include bp.tablet {
     gap: 24px;
+    padding-bottom: 24px;
   }
 
   @include bp.desktop {
-    grid-template-columns: repeat(auto-fit, minmax(552px, 1fr));
-    gap: 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--card-width), 1fr));
+    //gap: 24px;
+    padding-bottom: 32px;
   }
-}
-
-.cardIcon {
-  width: 100%;
-  height: 100%;
 }
 
 .bottomAsMain {
@@ -113,7 +135,12 @@
   display: none;
 
   @include bp.tablet {
-    display: flex;
+    display: grid;
+    width: 100%;
+    gap: 24px;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 24px;
+    //border: 1px solid red;
   }
 
   @include bp.desktop {
@@ -137,20 +164,41 @@
 }
 
 .bottomButton {
-  padding: 12px 17px;
+  //padding: 12px 17px;
   font-size: 11px;
 
   @include bp.tablet {
-    padding: 14px 49px;
+    //padding: 14px 49px;
     width: calc(50% - 13px);
     font-size: 13px;
   }
 
   @include bp.desktop {
-    padding: 24px 40px;
+    //padding: 24px 40px;
     width: 367px;
     font-size: 16px;
   }
+
+  & span {
+    display: none;
+
+    @include bp.tablet {
+      display: inline;
+    }
+
+    @include bp.desktop {
+      display: inline;
+    }
+  }
+}
+
+.bottomButtonAsFooter {
+  width: 100%;
+  //border: 1px solid yellow;
+}
+
+.bottomSubButtonAsFooter {
+  width: 100%;
 }
 
 .buttonFullText {
@@ -166,19 +214,16 @@
 }
 
 .modalContent {
-  background-color: rgba(47, 47, 47, 0.3);
-  height: calc(100dvh - 48px);
-  width: calc(100dvw - 10px);
-  overflow: auto;
+  width: 100%;
+  padding: 0 1.5rem;
+  margin: 0 auto;
 
   @include bp.tablet {
-    height: calc(100dvh - 92px);
-    width: calc(100dvw - 64px);
+    padding: 0 2rem;
   }
 
   @include bp.desktop {
-    height: calc(100dvh - 4rem);
-    width: calc(100dvw - 4rem);
+    padding: 0;
   }
 }
 
@@ -188,9 +233,15 @@
   gap: 12px;
 
   & img {
-    max-height: 40vh;
+    padding: 12px;
+    max-height: 50vh;
     object-fit: contain;
     max-width: 100%;
+  }
+
+  & p {
+    font-size: var(--section-text1-size) !important;
+    line-height: 1.2;
   }
 }
 

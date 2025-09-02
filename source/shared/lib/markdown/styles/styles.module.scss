@@ -6,15 +6,18 @@
   }
 
   h1 {
-    //margin-bottom: 1.25rem;
-    //line-height: normal;
-    //text-align: center;
-    //
-    //@include bp.desktop {
-    //  //font-size: 2rem;
-    //  margin-bottom: 2.5rem;
-    //  text-align: start;
-    //}
+    margin-bottom: 1.25rem;
+    line-height: normal;
+    text-align: start;
+
+    @include bp.tablet {
+      font-size: clamp(1.875rem, 1.167rem + 2.361vi, 4rem);
+    }
+
+    @include bp.desktop {
+      line-height: 130%;
+      margin-bottom: 2.5rem;
+    }
   }
 
   h2,
@@ -39,12 +42,12 @@
     }
   }
 
+  h2,
   h3 {
     font-family: 'drukWideCyrFont', sans-serif;
     font-size: 1rem;
     margin-top: 1.75rem;
     margin-bottom: 1.25rem;
-    color: var(--color-accent-primary);
 
     @include bp.tablet {
       margin-top: 2.75rem;
@@ -137,67 +140,67 @@
   }
 }
 
-.markdownBody h2,
-.markdownBody h3 {
-  color: var(--color-fg);
-  letter-spacing: 1.4px;
-  line-height: 1.4;
-  font-weight: 600;
-  text-align: start;
-  font-size: var(--font-size-mob-m);
-
-  @include bp.desktop {
-    line-height: 38px;
-    font-size: var(--font-size-m);
-  }
-}
-
-.markdownBody h2 {
-  margin-top: 1.875rem;
-  margin-bottom: 0.7rem;
-  font-family: var(--font-main);
-
-  @include bp.desktop {
-    margin-top: 3.8rem;
-    margin-bottom: 1.4rem;
-  }
-}
-
-.markdownBody h3 {
-  margin-top: 1.875rem;
-
-  @include bp.desktop {
-    margin-top: 3.6rem;
-  }
-}
-
-.markdownBody ul {
-  list-style-type: disc;
-  padding-left: 1.5rem;
-  margin-top: 1rem;
-  margin-bottom: 1.5rem;
-
-  @include bp.desktop {
-    padding-left: 2rem;
-    margin-top: 1.3rem;
-    margin-bottom: 2rem;
-  }
-}
-
-.markdownBody ul + p {
-  color: var(--color-primary);
-  font-weight: 500;
-}
-
-.markdownBody p {
-  // margin-bottom: 1.5rem;
-
-  @include bp.desktop {
-    // margin-bottom: 2rem;
-  }
-}
-
-.markdownBody em {
-  color: var(--color-accent-primary);
-  font-style: normal;
-}
+//.markdownBody h2,
+//.markdownBody h3 {
+//  color: var(--color-fg);
+//  letter-spacing: 1.4px;
+//  line-height: 1.4;
+//  font-weight: 600;
+//  text-align: start;
+//  font-size: var(--font-size-mob-m);
+//
+//  @include bp.desktop {
+//    line-height: 38px;
+//    font-size: var(--font-size-m);
+//  }
+//}
+//
+//.markdownBody h2 {
+//  margin-top: 1.875rem;
+//  margin-bottom: 0.7rem;
+//  font-family: var(--font-main);
+//
+//  @include bp.desktop {
+//    margin-top: 3.8rem;
+//    margin-bottom: 1.4rem;
+//  }
+//}
+//
+//.markdownBody h3 {
+//  margin-top: 1.875rem;
+//
+//  @include bp.desktop {
+//    margin-top: 3.6rem;
+//  }
+//}
+//
+//.markdownBody ul {
+//  list-style-type: disc;
+//  padding-left: 1.5rem;
+//  margin-top: 1rem;
+//  margin-bottom: 1.5rem;
+//
+//  @include bp.desktop {
+//    padding-left: 2rem;
+//    margin-top: 1.3rem;
+//    margin-bottom: 2rem;
+//  }
+//}
+//
+//.markdownBody ul + p {
+//  color: var(--color-primary);
+//  font-weight: 500;
+//}
+//
+//.markdownBody p {
+//  // margin-bottom: 1.5rem;
+//
+//  @include bp.desktop {
+//    // margin-bottom: 2rem;
+//  }
+//}
+//
+//.markdownBody em {
+//  color: var(--color-accent-primary);
+//  font-style: normal;
+//}

@@ -9,17 +9,19 @@
   letter-spacing: 0%;
   text-transform: uppercase;
   color: var(--color-foreground);
-  margin-top: 2.5rem;
+  margin: 2.5rem 0;
 
   @include bp.tablet {
     height: 48px;
     margin-top: 2.375rem;
+    margin-bottom: 2.75rem;
   }
 
   @include bp.desktop {
     font-size: 16px;
     height: 72px;
     margin-top: 2rem;
+    margin-bottom: 150px;
   }
 }
 
