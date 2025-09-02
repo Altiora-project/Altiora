@@ -7,7 +7,7 @@ $duration: 0.4s;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  min-width: 328px;
+  //min-width: 328px;
   min-height: 189px;
   text-decoration: none;
   color: #2f2f2f4d;
@@ -65,7 +65,7 @@ $duration: 0.4s;
 
 .descriptionCard {
   margin-block-start: 16px;
-  font-size: clamp(0.8125rem, 0.701rem + 0.4575vw, 1.25rem);
+  font-size: clamp(0.875rem, 0.446rem + 0.67vi, 1.25rem);
   color: var(--color-foreground-light1);
 }
 
@@ -118,8 +118,7 @@ $duration: 0.4s;
   text-transform: lowercase;
   color: var(--color-foreground-light1);
   background-color: var(--color-grey2);
-  white-space: nowrap;
-  flex-shrink: 0;
+  flex-shrink: 1;
 
   @include bp.tablet {
     padding: 10px 16px;
