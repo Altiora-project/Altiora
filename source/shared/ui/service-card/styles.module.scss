@@ -5,7 +5,7 @@
   border-radius: 40px;
   padding: 16px 16px 20px;
   background-color: #353735;
-  width: 100%;
+  //width: 100%;
   min-block-size: 149px;
 }
 
@@ -25,13 +25,13 @@
 .text {
   color: #fefefe;
   font-weight: 400;
-  font-size: 13px;
+  font-size: 14px;
 
   @include bp.tablet {
-    font-size: 16px;
+    font-size: clamp(1rem, 0.714rem + 0.447vi, 1.25rem); //16px;
   }
   @include bp.desktop {
-    font-size: 20px;
+    //font-size: 20px;
   }
 }
 
@@ -69,8 +69,8 @@
   }
 
   .title {
-    font-weight: 700;
-    font-size: 16px;
+    //font-weight: 400;
+    font-size: clamp(1rem, 0.141rem + 1.341vi, 1.75rem);
     text-transform: none;
   }
 }
@@ -96,6 +96,6 @@
   }
 
   .title {
-    font-size: 28px;
+    //font-size: 28px;
   }
 }
