@@ -1,6 +1,6 @@
-import { LinkMenuIcon } from './link-menu-icon'
-import { LinkMenuProps } from '../types/types'
 import styles from '../styles/styles.module.scss'
+import { LinkMenuProps } from '../types/types'
+import { LinkMenuIcon } from './link-menu-icon'
 import clsx from 'clsx'
 import Link from 'next/link'
 
