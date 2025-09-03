@@ -6,8 +6,8 @@
   }
 
   @include bp.desktop {
-    display: flex;
     height: 400px;
+    display: flex;
   }
 }
 
