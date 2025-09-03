@@ -47,7 +47,7 @@ export const ServicesPromoBlock: FC<typeServicesPromoBlockProps> = ({ title, sli
   })
 
   return (
-    <>
+    <div>
       <div className={classes.header} id="services">
         <div className={classes.headerTitle}>
           <h2>{title}</h2>
@@ -56,7 +56,7 @@ export const ServicesPromoBlock: FC<typeServicesPromoBlockProps> = ({ title, sli
             СМОТРЕТЬ ВСЕ ПРОЕКТЫ
           </Link>
         </div>
-        <Slider cards={sliderCards} />
+        <Slider cards={sliderCards} className={classes.slider} />
       </div>
 
       <CardComponent
@@ -67,6 +67,6 @@ export const ServicesPromoBlock: FC<typeServicesPromoBlockProps> = ({ title, sli
       >
         <div className={classes.content}>{serviceCards}</div>
       </CardComponent>
-    </>
+    </div>
   )
 }
