@@ -8,15 +8,19 @@
   color: var(--color-white);
   font-family: var(--font-secondary);
   font-weight: 700;
+  font-size: var(--section-header-title-size);
   // font-size: 16px;
   text-align: left;
+  text-transform: uppercase;
 
   @include bp.tablet {
     // font-size: 32px;
+    text-transform: lowercase;
   }
 
   @include bp.desktop {
     // font-size: 70px;
+    text-transform: lowercase;
   }
 }
 

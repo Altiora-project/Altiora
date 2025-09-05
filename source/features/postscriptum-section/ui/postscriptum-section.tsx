@@ -26,7 +26,7 @@ export const PostscriptumSection: React.FC<{ pageData: ServiceDelails }> = ({ pa
     <div className={classes.postscriptumSection}>
       {pageData.postscriptum && <InfoBlock title={pageData.postscriptum.name} data={processedData} />}
       <Button variant="primary" leftIcon={<ArrowLeftIcon />} onClick={() => router.push('/')}>
-        Вернутьсяк сайту
+        Вернуться к сайту
       </Button>
     </div>
   )
