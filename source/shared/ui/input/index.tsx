@@ -76,14 +76,13 @@ const Input: React.FC<InputProps> = ({
               position: 'absolute',
               right: 0,
               background: 'none',
-              border: 'none',
               cursor: 'pointer',
               padding: 0,
               alignItems: 'start',
-              height: '100%'
+              height: '100%',
             }}
           >
-            <svg width="36" height="36" viewBox="0 0 36 36">
+            <svg viewBox="0 0 36 36">
               <line x1="8" y1="8" x2="28" y2="28" stroke="#fff" strokeWidth="3" strokeLinecap="round" />
               <line x1="28" y1="8" x2="8" y2="28" stroke="#fff" strokeWidth="3" strokeLinecap="round" />
             </svg>
