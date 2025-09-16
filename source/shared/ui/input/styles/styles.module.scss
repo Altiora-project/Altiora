@@ -16,6 +16,7 @@
 .inputContent input {
   margin-left: 0;
   padding-left: 10px;
+  font-size: var(--input-value-font-size);
 }
 
 .inputLabel {
@@ -24,6 +25,13 @@
   font-weight: 700;
   margin-bottom: 4px;
   text-transform: uppercase;
+  font-size: var(--input-label-font-size);
+}
+
+.clearButton {
+  width: 22px;
+  height: 22px;
+  border: none;
 }
 
 @include bp.tablet {
@@ -31,7 +39,7 @@
     flex-direction: column;
   }
 
-  .inputLabel {
+  /* .inputLabel {
     font-size: 16px;
   }
 
@@ -41,14 +49,17 @@
 
   .supportingText {
     font-size: 14px;
-  }
+  }*/
 
   .inputField {
     width: 100%;
   }
 
   .clearButton {
+    // clear button for tablet
     top: -12px;
+    width: 36px;
+    height: 36px;
   }
 }
 
@@ -61,11 +72,11 @@
 
   .inputLabel {
     margin-bottom: 0;
-    min-width: 479px;
+    min-width: var(--input-label-min-size);
     text-align: left;
     align-self: flex-start;
     margin-left: 0;
-    font-size: 32px;
+    // font-size: 32px;
   }
 
   .inputContent {
@@ -78,17 +89,20 @@
     margin-top: 8px;
     margin-left: 0;
     white-space: normal;
-    font-size: 24px;
+    //font-size: 24px;
   }
 
   .inputField {
     align-self: flex-start;
     width: 100%;
-    font-size: 32px;
+    //font-size: 32px;
   }
 
   .clearButton {
+    // clear button for desktop
     top: 0;
+    width: 30px;
+    height: 30px;
   }
 }
 
@@ -125,6 +139,7 @@
   text-align: left;
   align-self: flex-start;
   padding-left: 10px;
+  font-size: var(--input-placeholder-font-size);
 }
 
 .supportingText.error {

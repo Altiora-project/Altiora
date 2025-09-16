@@ -60,7 +60,7 @@ export const Slider: FC<typeSliderProps> = ({ cards, className, ...otherProps })
             offsetX = (index - movedInStackCount) * 340
           }
 
-          const offsetDeg = (index - movedInStackCount) * cardsStack
+          const offsetDeg = (index - movedInStackCount) * 4
 
           return (
             <div
